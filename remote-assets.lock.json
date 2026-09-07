@@ -1,0 +1,181 @@
+{
+  "onnx": {
+    "repo": "andrewleech/qwen3-asr-1.7b-onnx",
+    "revision": "df916193ac67e59347769891a21e10d81d12acdd",
+    "files": [
+      {
+        "path": "decoder_init.int4.onnx",
+        "bytes": 356165,
+        "sha256": "c638585ada629b3cf65ce9cb068b7b980fccc9454a7f05e2333b8813730c1999"
+      },
+      {
+        "path": "decoder_init.onnx",
+        "bytes": 286423,
+        "sha256": "209662efa6ddc74d2bef5dd1ce922409a3896f6fceddb15ab721393059818e39"
+      },
+      {
+        "path": "decoder_step.int4.onnx",
+        "bytes": 355662,
+        "sha256": "fa138c025c26f6559e12be51cfbba5204a0b6993a1f3bb1177f80a0a65873bb5"
+      },
+      {
+        "path": "decoder_step.onnx",
+        "bytes": 285925,
+        "sha256": "45e90e376cb937d9c772d1c8d2b8330e34a94555b29730389e0fa8ff0ad2e1c0"
+      },
+      {
+        "path": "decoder_weights.data",
+        "bytes": 8126930944,
+        "sha256": "a46ff8cf2ef299a3737f7ebd78f39a8fb2ca273f2807f33f9b2a337ef0ebb4bb"
+      },
+      {
+        "path": "decoder_weights.int4.data",
+        "bytes": 2226321408,
+        "sha256": "3f8d8fb695bcffc20ce8d8e823471e011404420785adf7678aac31057ef67333"
+      },
+      {
+        "path": "embed_tokens.bin",
+        "bytes": 622329856,
+        "sha256": "1489075dbd08fcd6b87bc69c5feca278014d29fa5693bd4aa61e47c1a3a160d4"
+      },
+      {
+        "path": "encoder.int4.onnx",
+        "bytes": 1270241779,
+        "sha256": "c19ff8d702707693877a509ba1867472b0ad964593b93751091891a143edffec"
+      },
+      {
+        "path": "encoder.onnx",
+        "bytes": 1270241779,
+        "sha256": "c19ff8d702707693877a509ba1867472b0ad964593b93751091891a143edffec"
+      },
+      {
+        "path": "qwen3-asr-1.7b-int4.tar.gz",
+        "bytes": 2662920036,
+        "sha256": "7a5dfae185b8c426192c27a98df90dab1a4963d54ef27f7ea4ab91e4e921c424"
+      },
+      {
+        "path": "qwen3-asr-1.7b.tar.gz",
+        "bytes": 5372045206,
+        "sha256": "a53b623f29b882a6152364f18e68282b3e2fc0745dcb7a538b12ea42461cc24d"
+      },
+      {
+        "path": "tokenizer.json",
+        "bytes": 11429377,
+        "sha256": "bd2a97b55c8f7f9c328c73ee9b9178771037e9f566dfca8e238a063d41cbac92"
+      }
+    ]
+  },
+  "reference": {
+    "repo": "Qwen/Qwen3-ASR-1.7B",
+    "revision": "7278e1e70fe206f11671096ffdd38061171dd6e5",
+    "files": [
+      {
+        "path": "model-00001-of-00002.safetensors",
+        "bytes": 4220320824,
+        "sha256": "a4cd1f1a04d90b757dc7f7dd26254e69a013b19e80efe590a83c6a3bde8608d6"
+      },
+      {
+        "path": "model-00002-of-00002.safetensors",
+        "bytes": 478200688,
+        "sha256": "6e0b9d9e09e2e0238e7ef3cc8a484ab387e91b90f1900bedf88bc92d7929ccfc"
+      }
+    ]
+  },
+  "onnx_0_6b": {
+    "repo": "andrewleech/qwen3-asr-0.6b-onnx",
+    "revision": "4fc24a1402e74db89c4d2ef256875e71680128c4",
+    "files": [
+      {
+        "path": "README.md",
+        "bytes": 3379,
+        "sha256": null
+      },
+      {
+        "path": "config.json",
+        "bytes": 1250,
+        "sha256": null
+      },
+      {
+        "path": "decoder_init.onnx",
+        "bytes": 286310,
+        "sha256": "9d43df2bd332f039422bcf77b4ddfd09c8d15d334879d4ed316727b0eb06e57f"
+      },
+      {
+        "path": "decoder_step.onnx",
+        "bytes": 285813,
+        "sha256": "c5bb74a3758cd2e2e1bbb0c0b075b368fcca900a087cf688cf7909576b6c497a"
+      },
+      {
+        "path": "decoder_weights.data",
+        "bytes": 3006500864,
+        "sha256": "98ea738a3453fada779aa6c0f6e05489f6ca4da26f3861c8af74637d5d03a3b0"
+      },
+      {
+        "path": "embed_tokens.bin",
+        "bytes": 311164928,
+        "sha256": "e80150119fa5f7e56e85aed64c3a02d5c78eb7a37cfdcb973d0987316f15bee2"
+      },
+      {
+        "path": "encoder.onnx",
+        "bytes": 745762694,
+        "sha256": "3c027f880f677615de85e1f6934906e1d5d77624b724096d33accef99c753eed"
+      },
+      {
+        "path": "tokenizer.json",
+        "bytes": 11429377,
+        "sha256": "bd2a97b55c8f7f9c328c73ee9b9178771037e9f566dfca8e238a063d41cbac92"
+      }
+    ]
+  },
+  "reference_0_6b": {
+    "repo": "Qwen/Qwen3-ASR-0.6B",
+    "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+    "files": [
+      {
+        "path": "README.md",
+        "bytes": 57456,
+        "sha256": null
+      },
+      {
+        "path": "chat_template.json",
+        "bytes": 1161,
+        "sha256": null
+      },
+      {
+        "path": "config.json",
+        "bytes": 6193,
+        "sha256": null
+      },
+      {
+        "path": "generation_config.json",
+        "bytes": 142,
+        "sha256": null
+      },
+      {
+        "path": "merges.txt",
+        "bytes": 1671853,
+        "sha256": null
+      },
+      {
+        "path": "model.safetensors",
+        "bytes": 1876091704,
+        "sha256": "79d6cbd4c98c7bbffe9db2edac07f56cd6637d0d5944b27f6c2b8353840323ea"
+      },
+      {
+        "path": "preprocessor_config.json",
+        "bytes": 330,
+        "sha256": null
+      },
+      {
+        "path": "tokenizer_config.json",
+        "bytes": 12487,
+        "sha256": null
+      },
+      {
+        "path": "vocab.json",
+        "bytes": 2776833,
+        "sha256": null
+      }
+    ]
+  }
+}

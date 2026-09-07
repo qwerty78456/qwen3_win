@@ -1,0 +1,769 @@
+{
+  "success": true,
+  "cases": [
+    {
+      "name": "boundary-1",
+      "exit_code": 0,
+      "success": true,
+      "pcm_exact": true,
+      "reference_mel_shape": [
+        1,
+        128,
+        100
+      ],
+      "native": {
+        "audio_tokens": 13,
+        "frames": 100,
+        "samples": 16000,
+        "source": {
+          "bits": 32,
+          "channels": 1,
+          "format": "float",
+          "sample_rate": 16000
+        }
+      },
+      "mel_shape_exact": true,
+      "mel_max_absolute_error": 0.0,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true
+    },
+    {
+      "name": "boundary-159",
+      "exit_code": 0,
+      "success": true,
+      "pcm_exact": true,
+      "reference_mel_shape": [
+        1,
+        128,
+        100
+      ],
+      "native": {
+        "audio_tokens": 13,
+        "frames": 100,
+        "samples": 16000,
+        "source": {
+          "bits": 32,
+          "channels": 1,
+          "format": "float",
+          "sample_rate": 16000
+        }
+      },
+      "mel_shape_exact": true,
+      "mel_max_absolute_error": 7.510185241699219e-06,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true
+    },
+    {
+      "name": "boundary-160",
+      "exit_code": 0,
+      "success": true,
+      "pcm_exact": true,
+      "reference_mel_shape": [
+        1,
+        128,
+        100
+      ],
+      "native": {
+        "audio_tokens": 13,
+        "frames": 100,
+        "samples": 16000,
+        "source": {
+          "bits": 32,
+          "channels": 1,
+          "format": "float",
+          "sample_rate": 16000
+        }
+      },
+      "mel_shape_exact": true,
+      "mel_max_absolute_error": 5.245208740234375e-06,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true
+    },
+    {
+      "name": "boundary-199",
+      "exit_code": 0,
+      "success": true,
+      "pcm_exact": true,
+      "reference_mel_shape": [
+        1,
+        128,
+        100
+      ],
+      "native": {
+        "audio_tokens": 13,
+        "frames": 100,
+        "samples": 16000,
+        "source": {
+          "bits": 32,
+          "channels": 1,
+          "format": "float",
+          "sample_rate": 16000
+        }
+      },
+      "mel_shape_exact": true,
+      "mel_max_absolute_error": 1.7881393432617188e-06,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true
+    },
+    {
+      "name": "boundary-200",
+      "exit_code": 0,
+      "success": true,
+      "pcm_exact": true,
+      "reference_mel_shape": [
+        1,
+        128,
+        100
+      ],
+      "native": {
+        "audio_tokens": 13,
+        "frames": 100,
+        "samples": 16000,
+        "source": {
+          "bits": 32,
+          "channels": 1,
+          "format": "float",
+          "sample_rate": 16000
+        }
+      },
+      "mel_shape_exact": true,
+      "mel_max_absolute_error": 3.5762786865234375e-06,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true
+    },
+    {
+      "name": "boundary-201",
+      "exit_code": 0,
+      "success": true,
+      "pcm_exact": true,
+      "reference_mel_shape": [
+        1,
+        128,
+        100
+      ],
+      "native": {
+        "audio_tokens": 13,
+        "frames": 100,
+        "samples": 16000,
+        "source": {
+          "bits": 32,
+          "channels": 1,
+          "format": "float",
+          "sample_rate": 16000
+        }
+      },
+      "mel_shape_exact": true,
+      "mel_max_absolute_error": 2.2649765014648438e-06,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true
+    },
+    {
+      "name": "boundary-7999",
+      "exit_code": 0,
+      "success": true,
+      "pcm_exact": true,
+      "reference_mel_shape": [
+        1,
+        128,
+        100
+      ],
+      "native": {
+        "audio_tokens": 13,
+        "frames": 100,
+        "samples": 16000,
+        "source": {
+          "bits": 32,
+          "channels": 1,
+          "format": "float",
+          "sample_rate": 16000
+        }
+      },
+      "mel_shape_exact": true,
+      "mel_max_absolute_error": 5.066394805908203e-05,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true
+    },
+    {
+      "name": "boundary-8000",
+      "exit_code": 0,
+      "success": true,
+      "pcm_exact": true,
+      "reference_mel_shape": [
+        1,
+        128,
+        100
+      ],
+      "native": {
+        "audio_tokens": 13,
+        "frames": 100,
+        "samples": 16000,
+        "source": {
+          "bits": 32,
+          "channels": 1,
+          "format": "float",
+          "sample_rate": 16000
+        }
+      },
+      "mel_shape_exact": true,
+      "mel_max_absolute_error": 5.066394805908203e-05,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true
+    },
+    {
+      "name": "boundary-8011",
+      "exit_code": 0,
+      "success": true,
+      "pcm_exact": true,
+      "reference_mel_shape": [
+        1,
+        128,
+        100
+      ],
+      "native": {
+        "audio_tokens": 13,
+        "frames": 100,
+        "samples": 16000,
+        "source": {
+          "bits": 32,
+          "channels": 1,
+          "format": "float",
+          "sample_rate": 16000
+        }
+      },
+      "mel_shape_exact": true,
+      "mel_max_absolute_error": 5.066394805908203e-05,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true
+    },
+    {
+      "name": "boundary-15840",
+      "exit_code": 0,
+      "success": true,
+      "pcm_exact": true,
+      "reference_mel_shape": [
+        1,
+        128,
+        100
+      ],
+      "native": {
+        "audio_tokens": 13,
+        "frames": 100,
+        "samples": 16000,
+        "source": {
+          "bits": 32,
+          "channels": 1,
+          "format": "float",
+          "sample_rate": 16000
+        }
+      },
+      "mel_shape_exact": true,
+      "mel_max_absolute_error": 5.066394805908203e-05,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true
+    },
+    {
+      "name": "boundary-15999",
+      "exit_code": 0,
+      "success": true,
+      "pcm_exact": true,
+      "reference_mel_shape": [
+        1,
+        128,
+        100
+      ],
+      "native": {
+        "audio_tokens": 13,
+        "frames": 100,
+        "samples": 16000,
+        "source": {
+          "bits": 32,
+          "channels": 1,
+          "format": "float",
+          "sample_rate": 16000
+        }
+      },
+      "mel_shape_exact": true,
+      "mel_max_absolute_error": 5.066394805908203e-05,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true
+    },
+    {
+      "name": "boundary-16000",
+      "exit_code": 0,
+      "success": true,
+      "pcm_exact": true,
+      "reference_mel_shape": [
+        1,
+        128,
+        100
+      ],
+      "native": {
+        "audio_tokens": 13,
+        "frames": 100,
+        "samples": 16000,
+        "source": {
+          "bits": 32,
+          "channels": 1,
+          "format": "float",
+          "sample_rate": 16000
+        }
+      },
+      "mel_shape_exact": true,
+      "mel_max_absolute_error": 5.066394805908203e-05,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true
+    },
+    {
+      "name": "boundary-16001",
+      "exit_code": 0,
+      "success": true,
+      "pcm_exact": true,
+      "reference_mel_shape": [
+        1,
+        128,
+        100
+      ],
+      "native": {
+        "audio_tokens": 13,
+        "frames": 100,
+        "samples": 16001,
+        "source": {
+          "bits": 32,
+          "channels": 1,
+          "format": "float",
+          "sample_rate": 16000
+        }
+      },
+      "mel_shape_exact": true,
+      "mel_max_absolute_error": 5.066394805908203e-05,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true
+    },
+    {
+      "name": "boundary-16160",
+      "exit_code": 0,
+      "success": true,
+      "pcm_exact": true,
+      "reference_mel_shape": [
+        1,
+        128,
+        101
+      ],
+      "native": {
+        "audio_tokens": 14,
+        "frames": 101,
+        "samples": 16160,
+        "source": {
+          "bits": 32,
+          "channels": 1,
+          "format": "float",
+          "sample_rate": 16000
+        }
+      },
+      "mel_shape_exact": true,
+      "mel_max_absolute_error": 5.066394805908203e-05,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true
+    },
+    {
+      "name": "boundary-127840",
+      "exit_code": 0,
+      "success": true,
+      "pcm_exact": true,
+      "reference_mel_shape": [
+        1,
+        128,
+        799
+      ],
+      "native": {
+        "audio_tokens": 104,
+        "frames": 799,
+        "samples": 127840,
+        "source": {
+          "bits": 32,
+          "channels": 1,
+          "format": "float",
+          "sample_rate": 16000
+        }
+      },
+      "mel_shape_exact": true,
+      "mel_max_absolute_error": 7.832050323486328e-05,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true
+    },
+    {
+      "name": "boundary-128000",
+      "exit_code": 0,
+      "success": true,
+      "pcm_exact": true,
+      "reference_mel_shape": [
+        1,
+        128,
+        800
+      ],
+      "native": {
+        "audio_tokens": 104,
+        "frames": 800,
+        "samples": 128000,
+        "source": {
+          "bits": 32,
+          "channels": 1,
+          "format": "float",
+          "sample_rate": 16000
+        }
+      },
+      "mel_shape_exact": true,
+      "mel_max_absolute_error": 7.832050323486328e-05,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true
+    },
+    {
+      "name": "boundary-128160",
+      "exit_code": 0,
+      "success": true,
+      "pcm_exact": true,
+      "reference_mel_shape": [
+        1,
+        128,
+        801
+      ],
+      "native": {
+        "audio_tokens": 105,
+        "frames": 801,
+        "samples": 128160,
+        "source": {
+          "bits": 32,
+          "channels": 1,
+          "format": "float",
+          "sample_rate": 16000
+        }
+      },
+      "mel_shape_exact": true,
+      "mel_max_absolute_error": 7.832050323486328e-05,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true
+    },
+    {
+      "name": "boundary-239999",
+      "exit_code": 0,
+      "success": true,
+      "pcm_exact": true,
+      "reference_mel_shape": [
+        1,
+        128,
+        1499
+      ],
+      "native": {
+        "audio_tokens": 195,
+        "frames": 1499,
+        "samples": 239999,
+        "source": {
+          "bits": 32,
+          "channels": 1,
+          "format": "float",
+          "sample_rate": 16000
+        }
+      },
+      "mel_shape_exact": true,
+      "mel_max_absolute_error": 8.52346420288086e-05,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true
+    },
+    {
+      "name": "boundary-240000",
+      "exit_code": 0,
+      "success": true,
+      "pcm_exact": true,
+      "reference_mel_shape": [
+        1,
+        128,
+        1500
+      ],
+      "native": {
+        "audio_tokens": 195,
+        "frames": 1500,
+        "samples": 240000,
+        "source": {
+          "bits": 32,
+          "channels": 1,
+          "format": "float",
+          "sample_rate": 16000
+        }
+      },
+      "mel_shape_exact": true,
+      "mel_max_absolute_error": 8.52346420288086e-05,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true
+    },
+    {
+      "name": "stereo-PCM_U8",
+      "exit_code": 0,
+      "success": true,
+      "pcm_exact": true,
+      "reference_mel_shape": [
+        1,
+        128,
+        200
+      ],
+      "native": {
+        "audio_tokens": 26,
+        "frames": 200,
+        "samples": 32000,
+        "source": {
+          "bits": 8,
+          "channels": 2,
+          "format": "pcm",
+          "sample_rate": 16000
+        }
+      },
+      "mel_shape_exact": true,
+      "mel_max_absolute_error": 7.486343383789062e-05,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true
+    },
+    {
+      "name": "stereo-PCM_16",
+      "exit_code": 0,
+      "success": true,
+      "pcm_exact": true,
+      "reference_mel_shape": [
+        1,
+        128,
+        200
+      ],
+      "native": {
+        "audio_tokens": 26,
+        "frames": 200,
+        "samples": 32000,
+        "source": {
+          "bits": 16,
+          "channels": 2,
+          "format": "pcm",
+          "sample_rate": 16000
+        }
+      },
+      "mel_shape_exact": true,
+      "mel_max_absolute_error": 3.719329833984375e-05,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true
+    },
+    {
+      "name": "stereo-PCM_24",
+      "exit_code": 0,
+      "success": true,
+      "pcm_exact": true,
+      "reference_mel_shape": [
+        1,
+        128,
+        200
+      ],
+      "native": {
+        "audio_tokens": 26,
+        "frames": 200,
+        "samples": 32000,
+        "source": {
+          "bits": 24,
+          "channels": 2,
+          "format": "pcm",
+          "sample_rate": 16000
+        }
+      },
+      "mel_shape_exact": true,
+      "mel_max_absolute_error": 1.8715858459472656e-05,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true
+    },
+    {
+      "name": "stereo-PCM_32",
+      "exit_code": 0,
+      "success": true,
+      "pcm_exact": true,
+      "reference_mel_shape": [
+        1,
+        128,
+        200
+      ],
+      "native": {
+        "audio_tokens": 26,
+        "frames": 200,
+        "samples": 32000,
+        "source": {
+          "bits": 32,
+          "channels": 2,
+          "format": "pcm",
+          "sample_rate": 16000
+        }
+      },
+      "mel_shape_exact": true,
+      "mel_max_absolute_error": 1.8835067749023438e-05,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true
+    },
+    {
+      "name": "stereo-FLOAT",
+      "exit_code": 0,
+      "success": true,
+      "pcm_exact": true,
+      "reference_mel_shape": [
+        1,
+        128,
+        200
+      ],
+      "native": {
+        "audio_tokens": 26,
+        "frames": 200,
+        "samples": 32000,
+        "source": {
+          "bits": 32,
+          "channels": 2,
+          "format": "float",
+          "sample_rate": 16000
+        }
+      },
+      "mel_shape_exact": true,
+      "mel_max_absolute_error": 1.8835067749023438e-05,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true
+    },
+    {
+      "name": "resample-8000",
+      "exit_code": 0,
+      "success": true,
+      "resampling_length_delta": -1,
+      "resampling_interior_rmse": 1.0443823157402221e-06,
+      "pcm_exact": true,
+      "reference_mel_shape": [
+        1,
+        128,
+        199
+      ],
+      "native": {
+        "audio_tokens": 26,
+        "frames": 199,
+        "samples": 31999,
+        "source": {
+          "bits": 32,
+          "channels": 1,
+          "format": "float",
+          "sample_rate": 8000
+        }
+      },
+      "mel_shape_exact": true,
+      "mel_max_absolute_error": 8.106231689453125e-06,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true
+    },
+    {
+      "name": "resample-22050",
+      "exit_code": 0,
+      "success": true,
+      "resampling_length_delta": 0,
+      "resampling_interior_rmse": 1.1920590168301715e-06,
+      "pcm_exact": true,
+      "reference_mel_shape": [
+        1,
+        128,
+        200
+      ],
+      "native": {
+        "audio_tokens": 26,
+        "frames": 200,
+        "samples": 32000,
+        "source": {
+          "bits": 32,
+          "channels": 1,
+          "format": "float",
+          "sample_rate": 22050
+        }
+      },
+      "mel_shape_exact": true,
+      "mel_max_absolute_error": 1.430511474609375e-05,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true
+    },
+    {
+      "name": "resample-44100",
+      "exit_code": 0,
+      "success": true,
+      "resampling_length_delta": 0,
+      "resampling_interior_rmse": 1.1473186987132067e-06,
+      "pcm_exact": true,
+      "reference_mel_shape": [
+        1,
+        128,
+        200
+      ],
+      "native": {
+        "audio_tokens": 26,
+        "frames": 200,
+        "samples": 32000,
+        "source": {
+          "bits": 32,
+          "channels": 1,
+          "format": "float",
+          "sample_rate": 44100
+        }
+      },
+      "mel_shape_exact": true,
+      "mel_max_absolute_error": 2.1696090698242188e-05,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true
+    },
+    {
+      "name": "resample-48000",
+      "exit_code": 0,
+      "success": true,
+      "resampling_length_delta": 0,
+      "resampling_interior_rmse": 1.979130274776253e-06,
+      "pcm_exact": true,
+      "reference_mel_shape": [
+        1,
+        128,
+        200
+      ],
+      "native": {
+        "audio_tokens": 26,
+        "frames": 200,
+        "samples": 32000,
+        "source": {
+          "bits": 32,
+          "channels": 1,
+          "format": "float",
+          "sample_rate": 48000
+        }
+      },
+      "mel_shape_exact": true,
+      "mel_max_absolute_error": 1.2755393981933594e-05,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true
+    },
+    {
+      "name": "resample-96000",
+      "exit_code": 0,
+      "success": true,
+      "resampling_length_delta": 0,
+      "resampling_interior_rmse": 2.995305692365946e-07,
+      "pcm_exact": true,
+      "reference_mel_shape": [
+        1,
+        128,
+        200
+      ],
+      "native": {
+        "audio_tokens": 26,
+        "frames": 200,
+        "samples": 32000,
+        "source": {
+          "bits": 32,
+          "channels": 1,
+          "format": "float",
+          "sample_rate": 96000
+        }
+      },
+      "mel_shape_exact": true,
+      "mel_max_absolute_error": 2.0265579223632812e-05,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true
+    }
+  ]
+}

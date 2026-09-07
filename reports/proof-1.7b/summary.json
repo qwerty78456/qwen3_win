@@ -1,0 +1,5 @@
+{
+  "configuration": "Qwen3-ASR-1.7B FP32 graphs with FP16 embedding storage (models/qwen3-asr-1.7b-fp32)",
+  "summary": "24/24 transcripts matched the official oracle, 24/24 token sequences identical, 24/24 numerical stages within tolerance, all boundary/session cases passed, interface and loopback tests passed; the p95 provisional-lag target was missed on 15 s utterances (decode about 140 ms/token) and peak working set was 15.25 GiB, which triggered the smaller-configuration evaluation.",
+  "archived": "verification, stages, boundaries, thread sweep, memory modes, simulated live runs, loopback captures, interface test, encoder diff, regression and evaluation references"
+}

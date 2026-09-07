@@ -1,0 +1,55 @@
+Verifying model assets...
+Loading encoder...
+Loading decoder prefill...
+Loading cached decoder...
+Model ready...
+mandarin-0000: PASS
+mandarin-0001: PASS
+mandarin-0002: PASS
+mandarin-0003: PASS
+mandarin-0004: PASS
+mandarin-0005: PASS
+english-0000: PASS
+english-0001: PASS
+english-0002: PASS
+english-0003: PASS
+english-0004: PASS
+english-0005: PASS
+mixed-0004: PASS
+mixed-0009: PASS
+mixed-0028: PASS
+mixed-0055: PASS
+mixed-0066: PASS
+mixed-0068: PASS
+silence-short: PASS
+silence: PASS
+silence-long: PASS
+low-noise: PASS
+tone: PASS
+clicks: PASS
+EXIT=0
+mandarin-0000 stage_exit=1
+mandarin-0001 stage_exit=1
+mandarin-0002 stage_exit=1
+mandarin-0003 stage_exit=1
+mandarin-0004 stage_exit=1
+mandarin-0005 stage_exit=1
+english-0000 stage_exit=0
+english-0001 stage_exit=0
+english-0002 stage_exit=1
+english-0003 stage_exit=0
+english-0004 stage_exit=1
+english-0005 stage_exit=1
+mixed-0004 stage_exit=0
+mixed-0009 stage_exit=0
+mixed-0028 stage_exit=0
+mixed-0055 stage_exit=0
+mixed-0066 stage_exit=0
+mixed-0068 stage_exit=0
+silence-short stage_exit=1
+silence stage_exit=0
+silence-long stage_exit=0
+low-noise stage_exit=1
+tone stage_exit=0
+clicks stage_exit=0
+STAGES_DONE

@@ -1,0 +1,341 @@
+{
+  "engine": {
+    "assets_verified": false,
+    "embedding_dtype": "float16",
+    "encoder": [
+      {
+        "dtype": 1,
+        "name": "mel",
+        "shape": [
+          1,
+          128,
+          -1
+        ]
+      }
+    ],
+    "eos_ids": [
+      151643,
+      151645
+    ],
+    "memory_mode": "shared-prepack",
+    "prefill": [
+      {
+        "dtype": 7,
+        "name": "input_ids",
+        "shape": [
+          -1,
+          -1
+        ]
+      },
+      {
+        "dtype": 7,
+        "name": "position_ids",
+        "shape": [
+          -1,
+          -1
+        ]
+      },
+      {
+        "dtype": 1,
+        "name": "audio_features",
+        "shape": [
+          -1,
+          -1,
+          1024
+        ]
+      },
+      {
+        "dtype": 7,
+        "name": "audio_offset",
+        "shape": [
+          1
+        ]
+      }
+    ],
+    "prefill_format": "input_ids",
+    "prefix_ids": [
+      151644,
+      8948,
+      198,
+      151645,
+      198,
+      151644,
+      872,
+      198,
+      151669
+    ],
+    "provider": "CPU",
+    "runtime": "1.24.4",
+    "step": [
+      {
+        "dtype": 1,
+        "name": "input_embeds",
+        "shape": [
+          -1,
+          1,
+          1024
+        ]
+      },
+      {
+        "dtype": 7,
+        "name": "position_ids",
+        "shape": [
+          -1,
+          1
+        ]
+      },
+      {
+        "dtype": 1,
+        "name": "past_keys",
+        "shape": [
+          28,
+          -1,
+          8,
+          -1,
+          128
+        ]
+      },
+      {
+        "dtype": 1,
+        "name": "past_values",
+        "shape": [
+          28,
+          -1,
+          8,
+          -1,
+          128
+        ]
+      }
+    ],
+    "suffix_ids": [
+      151670,
+      151645,
+      198,
+      151644,
+      77091,
+      198
+    ],
+    "threads": 4,
+    "variant": "fp32"
+  },
+  "live": {
+    "clean_stop": true,
+    "errors": 0,
+    "events": [
+      {
+        "audio_end": 0.0,
+        "audio_start": 0.0,
+        "backlog_seconds": 0.0,
+        "boundary": "",
+        "completion": "",
+        "incomplete": false,
+        "inference_seconds": 0.0,
+        "kind": "status",
+        "lag_seconds": 0.0,
+        "revision": 0,
+        "since_start_seconds": 0.0,
+        "status": "Listening",
+        "t": 0.0008244,
+        "text": "",
+        "utterance": 0
+      },
+      {
+        "audio_end": 2.0,
+        "audio_start": 0.0,
+        "backlog_seconds": 0.0,
+        "boundary": "",
+        "completion": "eos",
+        "incomplete": false,
+        "inference_seconds": 0.6668048,
+        "kind": "provisional",
+        "lag_seconds": 0.6668267,
+        "revision": 1,
+        "since_start_seconds": 2.6634327,
+        "status": "",
+        "t": 2.6643946,
+        "text": "那我最爱是那个ISM。",
+        "utterance": 1
+      },
+      {
+        "audio_end": 0.0,
+        "audio_start": 0.0,
+        "backlog_seconds": 0.0,
+        "boundary": "",
+        "completion": "",
+        "incomplete": false,
+        "inference_seconds": 0.0,
+        "kind": "status",
+        "lag_seconds": 0.0,
+        "revision": 0,
+        "since_start_seconds": 0.0,
+        "status": "Catching up: finalized-work backlog 5 s",
+        "t": 4.6001978,
+        "text": "",
+        "utterance": 0
+      },
+      {
+        "audio_end": 0.0,
+        "audio_start": 0.0,
+        "backlog_seconds": 0.0,
+        "boundary": "",
+        "completion": "",
+        "incomplete": false,
+        "inference_seconds": 0.0,
+        "kind": "status",
+        "lag_seconds": 0.0,
+        "revision": 0,
+        "since_start_seconds": 0.0,
+        "status": "Listening",
+        "t": 5.5283948,
+        "text": "",
+        "utterance": 0
+      },
+      {
+        "audio_end": 4.6,
+        "audio_start": 0.0,
+        "backlog_seconds": 0.0,
+        "boundary": "silence",
+        "completion": "eos",
+        "incomplete": false,
+        "inference_seconds": 0.9140122,
+        "kind": "final",
+        "lag_seconds": 0.9280995,
+        "revision": 0,
+        "since_start_seconds": 5.5274333,
+        "status": "",
+        "t": 5.5284254,
+        "text": "那我专业是那个ISM Information Systems Management。",
+        "utterance": 1
+      },
+      {
+        "audio_end": 0.0,
+        "audio_start": 0.0,
+        "backlog_seconds": 0.0,
+        "boundary": "",
+        "completion": "",
+        "incomplete": false,
+        "inference_seconds": 0.0,
+        "kind": "stopped",
+        "lag_seconds": 0.0,
+        "revision": 0,
+        "since_start_seconds": 0.0,
+        "status": "Input exhausted",
+        "t": 5.528459,
+        "text": "",
+        "utterance": 0
+      }
+    ],
+    "final_count": 1,
+    "finalization_delay_seconds": {
+      "count": 1,
+      "max": 0.9280995,
+      "p50": 0.9280995,
+      "p95": 0.9280995
+    },
+    "first_caption_lag_seconds": {
+      "count": 1,
+      "max": 2.6634327,
+      "p50": 2.6634327,
+      "p95": 2.6634327
+    },
+    "incomplete_finals": 0,
+    "no_audio_loss": true,
+    "pipeline": {
+      "audio_seconds_processed": 5.03,
+      "capture": {
+        "channels": 1,
+        "frames": 80480,
+        "late_packets": 0,
+        "max_late_seconds": 0.0,
+        "overflow_events": 0,
+        "pace": 1.0,
+        "packets": 503,
+        "ring_capacity_frames": 32000,
+        "ring_peak_used_frames": 320,
+        "sample_rate": 16000,
+        "source": "wav-replay",
+        "tail_silence_seconds": 1.0
+      },
+      "error": "",
+      "finals": 1,
+      "max_backlog_seconds": 4.6,
+      "memory": {
+        "peak_pagefile_bytes": 6179000320,
+        "peak_working_set_bytes": 6226345984,
+        "private_bytes": 6178934784,
+        "working_set_bytes": 5892644864
+      },
+      "process_cpu_seconds": 11.5625,
+      "provisionals": 1,
+      "provisionals_cancelled": 1,
+      "provisionals_skipped": 0,
+      "retained_peak_seconds": 4.6,
+      "segmenter": {
+        "energy_gated_positive_frames": 193,
+        "longest_start_run_frames": 5,
+        "peak_frame_rms": 0.10532892785955071,
+        "vad_positive_frames": 193
+      },
+      "session": 1,
+      "stop_reason": "",
+      "suspensions": 1,
+      "wall_seconds": 5.5276947
+    },
+    "provisional_lag_seconds": {
+      "count": 1,
+      "max": 0.6668267,
+      "p50": 0.6668267,
+      "p95": 0.6668267
+    },
+    "speech_utterances": 1,
+    "success": true,
+    "transcript": "那我专业是那个ISM Information Systems Management。\n",
+    "utterances": [
+      {
+        "audio_end": 4.6,
+        "audio_start": 0.0,
+        "boundary": "silence",
+        "completion": "eos",
+        "final_inference_seconds": 0.9140122,
+        "final_text": "那我专业是那个ISM Information Systems Management。",
+        "finalization_delay": 0.9280995,
+        "first_caption_lag": 2.6634327,
+        "id": 1,
+        "incomplete": false,
+        "provisional_count": 1,
+        "provisional_lags": [
+          0.6668267
+        ]
+      }
+    ]
+  },
+  "memory_after_load": {
+    "peak_pagefile_bytes": 5604708352,
+    "peak_working_set_bytes": 6226345984,
+    "private_bytes": 5603438592,
+    "working_set_bytes": 5604048896
+  },
+  "mode": "simulate-live",
+  "model_load_seconds": 4.991403,
+  "options": {
+    "overload_backlog": 20.0,
+    "provisional": true,
+    "provisional_after": 2.0,
+    "provisional_interval": 2.0,
+    "resume_backlog": 2.0,
+    "retained_limit": 60.0,
+    "suspend_backlog": 4.0
+  },
+  "source": {
+    "audio_seconds": 4.03,
+    "file": "regression/mixed-0009.wav",
+    "pace": 1.0,
+    "source": {
+      "bits": 16,
+      "channels": 1,
+      "format": "pcm",
+      "sample_rate": 16000
+    }
+  },
+  "success": true
+}

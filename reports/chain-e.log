@@ -1,0 +1,101 @@
+== chain C summary ==
+EXIT=0
+Encoder attention: windowed (official _prepare_attention_mask applied, n_window_infer=800)
+regression EXIT=0
+evaluation EXIT=0
+== preprocessing ==
+29
+preprocessing EXIT=0
+== frontend ==
+24
+frontend EXIT=0
+== verify (0.6B) ==
+mandarin-0000: PASS
+mandarin-0001: PASS
+mandarin-0002: PASS
+mandarin-0003: PASS
+mandarin-0004: PASS
+mandarin-0005: PASS
+english-0000: PASS
+english-0001: PASS
+english-0002: PASS
+english-0003: PASS
+english-0004: PASS
+english-0005: PASS
+mixed-0004: PASS
+mixed-0009: PASS
+mixed-0028: PASS
+mixed-0055: PASS
+mixed-0066: PASS
+mixed-0068: PASS
+silence-short: PASS
+silence: PASS
+silence-long: PASS
+low-noise: PASS
+tone: PASS
+clicks: PASS
+verify EXIT=0
+stage FAIL low-noise
+stages pass 23/24
+== encoder diff (0.6B) ==
+      "pair": "official_direct vs official_generate_trace",	      "max_abs": 0.11348602175712585,
+      "pair": "official vs wrapper",	      "max_abs": 0.11348602175712585,
+      "pair": "wrapper vs onnx_native",	      "max_abs": 1.7657876014709473e-06,
+      "pair": "official vs onnx_native",	      "max_abs": 0.11348617076873779,
+      "pair": "official_with_window_mask vs wrapper",	      "max_abs": 1.7415732145309448e-07,
+      "pair": "official_with_window_mask vs onnx_native",	      "max_abs": 1.7657876014709473e-06,
+== boundaries ==
+Generating official references for ['short-1sample', 'short-half-second', 'window-799-frames', 'window-800-frames', 'window-801-frames', 'window-1600-frames', 'limit-15s', 'limit-15s-padded']
+short-1sample FAIL 13 tokens; None
+short-half-second FAIL 13 tokens; None
+window-799-frames FAIL 104 tokens; None
+window-800-frames FAIL 104 tokens; None
+window-801-frames FAIL 105 tokens; None
+window-1600-frames FAIL 201 tokens; None
+limit-15s FAIL 195 tokens; None
+limit-15s-padded FAIL 195 tokens; None
+repeat-interleaved FAIL
+boundaries: FAIL
+boundaries EXIT=1
+== simulate-live ==
+finals 3, provisional lag p95 1.1988204 s, first-caption p95 2.6654563 s, finalization p95 1.4844563 s, max backlog 5.6 s, peak working set 6226169856 bytes
+live english-0002 EXIT=0
+finals 1, provisional lag p95 2.5522572 s, first-caption p95 2.6551024 s, finalization p95 3.617102 s, max backlog 14.74 s, peak working set 6477438976 bytes
+live mandarin-0003 EXIT=0
+finals 1, provisional lag p95 0.6668267 s, first-caption p95 2.6634327 s, finalization p95 0.9280995 s, max backlog 4.6 s, peak working set 6226345984 bytes
+live mixed-0009 EXIT=0
+finals 2, provisional lag p95 1.4760383 s, first-caption p95 2.7258616 s, finalization p95 2.292733 s, max backlog 11.120000000000001 s, peak working set 6226120704 bytes
+live mandarin-0002 EXIT=0
+== gui test ==
+provisional area cleared after stop OK {}
+start enabled again OK {}
+finals match oracle text for fully played clips FAIL {'pooled_error_rate': 0.718, 'exact_line_matches': 0, 'expected': 4, 'lines': ['The ISM Information Systems Management.', 'OK，附件。不是告别。', '嗯，运动啊，男生一般不都喜欢运动。', '哦，这么technical的。', 'Computer language属于金属，银和金等元素，当然也是金。这并不是告别，这是一个篇章的结束，也是新篇章的开始。桥下垂直净空十五米，盖向木鱼。', '二零一一年八月完工，但直到二零一七年三月才开始通车。当然也是金属。', '适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题指出自己的观点。Work 2002。', '适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文。']}
+save enabled with transcript OK {}
+window closes cleanly OK {'exit_code': 0}
+gui-test FAIL
+gui EXIT=1
+== capture 3min ==
+      "clips_without_caption": 0
+    },
+    "english": {
+      "clips": 6,
+      "human_error_rate": 0.04065040650406504,
+      "oracle_error_rate": 0.0,
+      "clips_without_caption": 0
+    },
+    "mixed": {
+      "clips": 6,
+      "human_error_rate": 0.34146341463414637,
+      "oracle_error_rate": 0.05263157894736842,
+      "clips_without_caption": 0
+    }
+  },
+  "success": true,
+  "stop_reason": "Duration elapsed",
+  "provisional_lag_p95": 1.8279423,
+  "first_caption_p95": 3.1689529,
+  "finalization_p95": 3.7520909,
+  "max_backlog": 15.0
+}
+capture3 EXIT=0
+== capture 60min ==

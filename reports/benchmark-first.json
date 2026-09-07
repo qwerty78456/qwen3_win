@@ -1,0 +1,500 @@
+{
+  "audio_conversion_seconds": 0.0025057,
+  "engine": {
+    "embedding_dtype": "float16",
+    "encoder": [
+      {
+        "dtype": 1,
+        "name": "mel",
+        "shape": [
+          1,
+          128,
+          -1
+        ]
+      }
+    ],
+    "eos_ids": [
+      151643,
+      151645
+    ],
+    "prefill": [
+      {
+        "dtype": 7,
+        "name": "input_ids",
+        "shape": [
+          -1,
+          -1
+        ]
+      },
+      {
+        "dtype": 7,
+        "name": "position_ids",
+        "shape": [
+          -1,
+          -1
+        ]
+      },
+      {
+        "dtype": 1,
+        "name": "audio_features",
+        "shape": [
+          -1,
+          -1,
+          2048
+        ]
+      },
+      {
+        "dtype": 7,
+        "name": "audio_offset",
+        "shape": [
+          1
+        ]
+      }
+    ],
+    "prefill_format": "input_ids",
+    "prefix_ids": [
+      151644,
+      8948,
+      198,
+      151645,
+      198,
+      151644,
+      872,
+      198,
+      151669
+    ],
+    "provider": "CPU",
+    "runtime": "1.24.4",
+    "step": [
+      {
+        "dtype": 1,
+        "name": "input_embeds",
+        "shape": [
+          -1,
+          1,
+          2048
+        ]
+      },
+      {
+        "dtype": 7,
+        "name": "position_ids",
+        "shape": [
+          -1,
+          1
+        ]
+      },
+      {
+        "dtype": 1,
+        "name": "past_keys",
+        "shape": [
+          28,
+          -1,
+          8,
+          -1,
+          128
+        ]
+      },
+      {
+        "dtype": 1,
+        "name": "past_values",
+        "shape": [
+          28,
+          -1,
+          8,
+          -1,
+          128
+        ]
+      }
+    ],
+    "suffix_ids": [
+      151670,
+      151645,
+      198,
+      151644,
+      77091,
+      198
+    ],
+    "threads": 6
+  },
+  "file": "regression/mandarin-0000.wav",
+  "memory_after_load": {
+    "peak_pagefile_bytes": 15147913216,
+    "peak_working_set_bytes": 16370012160,
+    "private_bytes": 15145418752,
+    "working_set_bytes": 15125385216
+  },
+  "model_load_seconds": 38.246228,
+  "source": {
+    "bits": 16,
+    "channels": 1,
+    "format": "pcm",
+    "sample_rate": 16000
+  },
+  "success": true,
+  "total_elapsed_seconds": 41.8161767,
+  "transcription": {
+    "audio_seconds": 10.38,
+    "cache_steps": [
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          150,
+          128
+        ],
+        "next_token": 11528,
+        "step": 0,
+        "values": [
+          28,
+          1,
+          8,
+          150,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          151,
+          128
+        ],
+        "next_token": 8453,
+        "step": 1,
+        "values": [
+          28,
+          1,
+          8,
+          151,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          152,
+          128
+        ],
+        "next_token": 151704,
+        "step": 2,
+        "values": [
+          28,
+          1,
+          8,
+          152,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          153,
+          128
+        ],
+        "next_token": 43288,
+        "step": 3,
+        "values": [
+          28,
+          1,
+          8,
+          153,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          154,
+          128
+        ],
+        "next_token": 102095,
+        "step": 4,
+        "values": [
+          28,
+          1,
+          8,
+          154,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          155,
+          128
+        ],
+        "next_token": 108526,
+        "step": 5,
+        "values": [
+          28,
+          1,
+          8,
+          155,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          156,
+          128
+        ],
+        "next_token": 3837,
+        "step": 6,
+        "values": [
+          28,
+          1,
+          8,
+          156,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          157,
+          128
+        ],
+        "next_token": 105464,
+        "step": 7,
+        "values": [
+          28,
+          1,
+          8,
+          157,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          158,
+          128
+        ],
+        "next_token": 103798,
+        "step": 8,
+        "values": [
+          28,
+          1,
+          8,
+          158,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          159,
+          128
+        ],
+        "next_token": 9370,
+        "step": 9,
+        "values": [
+          28,
+          1,
+          8,
+          159,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          160,
+          128
+        ],
+        "next_token": 80565,
+        "step": 10,
+        "values": [
+          28,
+          1,
+          8,
+          160,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          161,
+          128
+        ],
+        "next_token": 3837,
+        "step": 11,
+        "values": [
+          28,
+          1,
+          8,
+          161,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          162,
+          128
+        ],
+        "next_token": 100000,
+        "step": 12,
+        "values": [
+          28,
+          1,
+          8,
+          162,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          163,
+          128
+        ],
+        "next_token": 116887,
+        "step": 13,
+        "values": [
+          28,
+          1,
+          8,
+          163,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          164,
+          128
+        ],
+        "next_token": 9370,
+        "step": 14,
+        "values": [
+          28,
+          1,
+          8,
+          164,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          165,
+          128
+        ],
+        "next_token": 55286,
+        "step": 15,
+        "values": [
+          28,
+          1,
+          8,
+          165,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          166,
+          128
+        ],
+        "next_token": 1773,
+        "step": 16,
+        "values": [
+          28,
+          1,
+          8,
+          166,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          167,
+          128
+        ],
+        "next_token": 151645,
+        "step": 17,
+        "values": [
+          28,
+          1,
+          8,
+          167,
+          128
+        ]
+      }
+    ],
+    "completion": "eos",
+    "decode_seconds": 2.488045,
+    "encoder_seconds": 0.2825503,
+    "memory": {
+      "peak_pagefile_bytes": 15984140288,
+      "peak_working_set_bytes": 16370012160,
+      "private_bytes": 15984115712,
+      "working_set_bytes": 15726067712
+    },
+    "model_samples": 166080,
+    "prefill_seconds": 0.7374698,
+    "preprocess_seconds": 0.0103149,
+    "raw_output": "language Chinese<asr_text>这并不是告别，这是一个篇章的结束，也是新篇章的开始。<|im_end|>",
+    "rtf": 0.34368457610789976,
+    "text": "这并不是告别，这是一个篇章的结束，也是新篇章的开始。",
+    "tokens": [
+      11528,
+      8453,
+      151704,
+      43288,
+      102095,
+      108526,
+      3837,
+      105464,
+      103798,
+      9370,
+      80565,
+      3837,
+      100000,
+      116887,
+      9370,
+      55286,
+      1773,
+      151645
+    ],
+    "total_seconds": 3.567443
+  }
+}

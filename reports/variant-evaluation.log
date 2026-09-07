@@ -1,0 +1,35 @@
+{
+  "baseline": {
+    "mandarin": 0.07575757575757576,
+    "english": 0.03546099290780142,
+    "mixed": 0.23529411764705882
+  },
+  "decisions": {
+    "int4": {
+      "accepted": false,
+      "deltas_percentage_points": {
+        "mandarin": {
+          "baseline": 0.07575757575757576,
+          "candidate": 0.09595959595959595,
+          "delta_pp": 2.0202020202020194
+        },
+        "english": {
+          "baseline": 0.03546099290780142,
+          "candidate": 0.03546099290780142,
+          "delta_pp": 0.0
+        },
+        "mixed": {
+          "baseline": 0.23529411764705882,
+          "candidate": 0.23529411764705882,
+          "delta_pp": 0.0
+        }
+      },
+      "new_silence_failures": []
+    }
+  },
+  "rtf": {
+    "fp32": 0.6699825430129305,
+    "int4": 0.2252756209168995
+  }
+}
+EXIT=0

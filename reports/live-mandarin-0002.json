@@ -1,0 +1,407 @@
+{
+  "engine": {
+    "assets_verified": false,
+    "embedding_dtype": "float16",
+    "encoder": [
+      {
+        "dtype": 1,
+        "name": "mel",
+        "shape": [
+          1,
+          128,
+          -1
+        ]
+      }
+    ],
+    "eos_ids": [
+      151643,
+      151645
+    ],
+    "memory_mode": "shared-prepack",
+    "prefill": [
+      {
+        "dtype": 7,
+        "name": "input_ids",
+        "shape": [
+          -1,
+          -1
+        ]
+      },
+      {
+        "dtype": 7,
+        "name": "position_ids",
+        "shape": [
+          -1,
+          -1
+        ]
+      },
+      {
+        "dtype": 1,
+        "name": "audio_features",
+        "shape": [
+          -1,
+          -1,
+          1024
+        ]
+      },
+      {
+        "dtype": 7,
+        "name": "audio_offset",
+        "shape": [
+          1
+        ]
+      }
+    ],
+    "prefill_format": "input_ids",
+    "prefix_ids": [
+      151644,
+      8948,
+      198,
+      151645,
+      198,
+      151644,
+      872,
+      198,
+      151669
+    ],
+    "provider": "CPU",
+    "runtime": "1.24.4",
+    "step": [
+      {
+        "dtype": 1,
+        "name": "input_embeds",
+        "shape": [
+          -1,
+          1,
+          1024
+        ]
+      },
+      {
+        "dtype": 7,
+        "name": "position_ids",
+        "shape": [
+          -1,
+          1
+        ]
+      },
+      {
+        "dtype": 1,
+        "name": "past_keys",
+        "shape": [
+          28,
+          -1,
+          8,
+          -1,
+          128
+        ]
+      },
+      {
+        "dtype": 1,
+        "name": "past_values",
+        "shape": [
+          28,
+          -1,
+          8,
+          -1,
+          128
+        ]
+      }
+    ],
+    "suffix_ids": [
+      151670,
+      151645,
+      198,
+      151644,
+      77091,
+      198
+    ],
+    "threads": 4,
+    "variant": "fp32"
+  },
+  "live": {
+    "clean_stop": true,
+    "errors": 0,
+    "events": [
+      {
+        "audio_end": 0.0,
+        "audio_start": 0.0,
+        "backlog_seconds": 0.0,
+        "boundary": "",
+        "completion": "",
+        "incomplete": false,
+        "inference_seconds": 0.0,
+        "kind": "status",
+        "lag_seconds": 0.0,
+        "revision": 0,
+        "since_start_seconds": 0.0,
+        "status": "Listening",
+        "t": 0.00268,
+        "text": "",
+        "utterance": 0
+      },
+      {
+        "audio_end": 4.58,
+        "audio_start": 2.58,
+        "backlog_seconds": 0.0,
+        "boundary": "",
+        "completion": "eos",
+        "incomplete": false,
+        "inference_seconds": 0.7228087,
+        "kind": "provisional",
+        "lag_seconds": 0.7228293,
+        "revision": 1,
+        "since_start_seconds": 2.7258616,
+        "status": "",
+        "t": 5.302394,
+        "text": "桥下垂直净空十五米。",
+        "utterance": 1
+      },
+      {
+        "audio_end": 6.58,
+        "audio_start": 2.58,
+        "backlog_seconds": 0.0,
+        "boundary": "",
+        "completion": "eos",
+        "incomplete": false,
+        "inference_seconds": 1.1389998,
+        "kind": "provisional",
+        "lag_seconds": 1.1390343,
+        "revision": 2,
+        "since_start_seconds": 5.1475714,
+        "status": "",
+        "t": 7.7241042,
+        "text": "桥下垂直净空十五米，该项目于二零一一年。",
+        "utterance": 1
+      },
+      {
+        "audio_end": 8.58,
+        "audio_start": 2.58,
+        "backlog_seconds": 0.0,
+        "boundary": "",
+        "completion": "eos",
+        "incomplete": false,
+        "inference_seconds": 1.4760148,
+        "kind": "provisional",
+        "lag_seconds": 1.4760383,
+        "revision": 3,
+        "since_start_seconds": 7.4789714,
+        "status": "",
+        "t": 10.0555047,
+        "text": "桥下垂直净空十五米，该项目于二零一一年八月完工。但",
+        "utterance": 1
+      },
+      {
+        "audio_end": 0.0,
+        "audio_start": 0.0,
+        "backlog_seconds": 0.0,
+        "boundary": "",
+        "completion": "",
+        "incomplete": false,
+        "inference_seconds": 0.0,
+        "kind": "status",
+        "lag_seconds": 0.0,
+        "revision": 0,
+        "since_start_seconds": 0.0,
+        "status": "Catching up: finalized-work backlog 10 s",
+        "t": 12.1455032,
+        "text": "",
+        "utterance": 0
+      },
+      {
+        "audio_end": 0.0,
+        "audio_start": 0.0,
+        "backlog_seconds": 0.0,
+        "boundary": "",
+        "completion": "",
+        "incomplete": false,
+        "inference_seconds": 0.0,
+        "kind": "status",
+        "lag_seconds": 0.0,
+        "revision": 0,
+        "since_start_seconds": 0.0,
+        "status": "Listening",
+        "t": 14.4383566,
+        "text": "",
+        "utterance": 0
+      },
+      {
+        "audio_end": 12.14,
+        "audio_start": 2.58,
+        "backlog_seconds": 1.56,
+        "boundary": "silence",
+        "completion": "eos",
+        "incomplete": false,
+        "inference_seconds": 2.2811155,
+        "kind": "final",
+        "lag_seconds": 2.292733,
+        "revision": 0,
+        "since_start_seconds": 11.8618238,
+        "status": "",
+        "t": 14.4383878,
+        "text": "桥下垂直净空十五米，该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。",
+        "utterance": 1
+      },
+      {
+        "audio_end": 13.7,
+        "audio_start": 12.14,
+        "backlog_seconds": 0.0,
+        "boundary": "silence",
+        "completion": "eos",
+        "incomplete": false,
+        "inference_seconds": 0.2996489,
+        "kind": "final",
+        "lag_seconds": 1.037927,
+        "revision": 0,
+        "since_start_seconds": 2.5924993,
+        "status": "",
+        "t": 14.7381248,
+        "text": "",
+        "utterance": 3
+      },
+      {
+        "audio_end": 0.0,
+        "audio_start": 0.0,
+        "backlog_seconds": 0.0,
+        "boundary": "",
+        "completion": "",
+        "incomplete": false,
+        "inference_seconds": 0.0,
+        "kind": "stopped",
+        "lag_seconds": 0.0,
+        "revision": 0,
+        "since_start_seconds": 0.0,
+        "status": "Input exhausted",
+        "t": 14.8685175,
+        "text": "",
+        "utterance": 0
+      }
+    ],
+    "final_count": 2,
+    "finalization_delay_seconds": {
+      "count": 2,
+      "max": 2.292733,
+      "p50": 1.037927,
+      "p95": 2.292733
+    },
+    "first_caption_lag_seconds": {
+      "count": 1,
+      "max": 2.7258616,
+      "p50": 2.7258616,
+      "p95": 2.7258616
+    },
+    "incomplete_finals": 0,
+    "no_audio_loss": true,
+    "pipeline": {
+      "audio_seconds_processed": 14.86,
+      "capture": {
+        "channels": 1,
+        "frames": 237760,
+        "late_packets": 0,
+        "max_late_seconds": 0.0,
+        "overflow_events": 0,
+        "pace": 1.0,
+        "packets": 1486,
+        "ring_capacity_frames": 32000,
+        "ring_peak_used_frames": 320,
+        "sample_rate": 16000,
+        "source": "wav-replay",
+        "tail_silence_seconds": 1.0
+      },
+      "error": "",
+      "finals": 2,
+      "max_backlog_seconds": 11.120000000000001,
+      "memory": {
+        "peak_pagefile_bytes": 6458818560,
+        "peak_working_set_bytes": 6226120704,
+        "private_bytes": 6455349248,
+        "working_set_bytes": 6222970880
+      },
+      "process_cpu_seconds": 30.140625,
+      "provisionals": 3,
+      "provisionals_cancelled": 1,
+      "provisionals_skipped": 0,
+      "retained_peak_seconds": 11.120000000000001,
+      "segmenter": {
+        "energy_gated_positive_frames": 428,
+        "longest_start_run_frames": 5,
+        "peak_frame_rms": 0.11917919421134923,
+        "vad_positive_frames": 428
+      },
+      "session": 1,
+      "stop_reason": "",
+      "suspensions": 1,
+      "wall_seconds": 14.8659288
+    },
+    "provisional_lag_seconds": {
+      "count": 3,
+      "max": 1.4760383,
+      "p50": 1.1390343,
+      "p95": 1.4760383
+    },
+    "speech_utterances": 1,
+    "success": true,
+    "transcript": "桥下垂直净空十五米，该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。\n",
+    "utterances": [
+      {
+        "audio_end": 12.14,
+        "audio_start": 2.58,
+        "boundary": "silence",
+        "completion": "eos",
+        "final_inference_seconds": 2.2811155,
+        "final_text": "桥下垂直净空十五米，该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。",
+        "finalization_delay": 2.292733,
+        "first_caption_lag": 2.7258616,
+        "id": 1,
+        "incomplete": false,
+        "provisional_count": 3,
+        "provisional_lags": [
+          0.7228293,
+          1.1390343,
+          1.4760383
+        ]
+      },
+      {
+        "audio_end": 13.7,
+        "audio_start": 12.14,
+        "boundary": "silence",
+        "completion": "eos",
+        "final_inference_seconds": 0.2996489,
+        "final_text": "",
+        "finalization_delay": 1.037927,
+        "id": 3,
+        "incomplete": false,
+        "provisional_count": 0,
+        "provisional_lags": []
+      }
+    ]
+  },
+  "memory_after_load": {
+    "peak_pagefile_bytes": 5603934208,
+    "peak_working_set_bytes": 6225997824,
+    "private_bytes": 5602672640,
+    "working_set_bytes": 5603700736
+  },
+  "mode": "simulate-live",
+  "model_load_seconds": 4.1432632,
+  "options": {
+    "overload_backlog": 20.0,
+    "provisional": true,
+    "provisional_after": 2.0,
+    "provisional_interval": 2.0,
+    "resume_backlog": 2.0,
+    "retained_limit": 60.0,
+    "suspend_backlog": 4.0
+  },
+  "source": {
+    "audio_seconds": 13.86,
+    "file": "regression/mandarin-0002.wav",
+    "pace": 1.0,
+    "source": {
+      "bits": 16,
+      "channels": 1,
+      "format": "pcm",
+      "sample_rate": 16000
+    }
+  },
+  "success": true
+}

@@ -1,0 +1,81 @@
+The tokenizer you are loading from 'D:\asr_win\reference-model' with an incorrect regex pattern: https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503/discussions/84#69121093e8b480e709447d5e. This will lead to incorrect tokenization. You should set the `fix_mistral_regex=True` flag when loading this tokenizer to fix this issue.
+Official prompt: '<|im_start|>system\n<|im_end|>\n<|im_start|>user\n<|audio_start|><|audio_pad|><|audio_end|><|im_end|>\n<|im_start|>assistant\n'
+Prefix: [151644, 8948, 198, 151645, 198, 151644, 872, 198, 151669] Suffix: [151670, 151645, 198, 151644, 77091, 198]
+Loading original Qwen3-ASR-1.7B FP32 on CPU...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:08<00:08,  8.98s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:10<00:00,  4.30s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:10<00:00,  5.01s/it]
+The following generation flags are not valid and may be ignored: ['temperature']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+Encoder attention: windowed (official _prepare_attention_mask applied, n_window_infer=800)
+Reference: heldout-mandarin-0006
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+10.75s eos: 1963年大坝建成后，季节性洪水被控制住了，沉积物不再冲散到河流里。
+Reference: heldout-mandarin-0007
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+11.71s eos: 它的长下颚上布满了七十多颗剃刀般锋利的牙齿，上颚上还有一排，这意味着任何与它相遇的东西都无路可逃。
+Reference: heldout-mandarin-0008
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+7.62s eos: Scoturb四零三路公交汽车定期发车，前往新特拉，在罗卡角停靠。
+Reference: heldout-mandarin-0009
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+7.52s eos: 这里几乎都是沙滩，游泳很安全，大部分地方都有新西兰圣诞树的树荫。
+Reference: heldout-mandarin-0010
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+8.09s eos: 当所有可用的资源在一个组织的职能部门之间得到有效利用时，创造力和独创性就会发生。
+Reference: heldout-mandarin-0011
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+4.98s eos: 他随后被转转送到剑桥的阿登布鲁克医院。
+Reference: heldout-english-0006
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+6.37s eos: The Northern Marianas Emergency Management Office said that there were no damages reported in the nation.
+Reference: heldout-english-0007
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+6.55s eos: 20th-century research has shown that there are two pools of genetic variation, hidden and expressed.
+Reference: heldout-english-0008
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+14.52s eos: The aspect ratio of this format, dividing by 12 to obtain the simplest whole number ratio, is therefore said to be 3 to 2.
+Reference: heldout-english-0009
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+12.47s eos: As light pollution in their heyday was not the kind of problem it is today, they are usually located in cities or at campuses, easier to reach than those built in modern times.
+Reference: heldout-english-0010
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+7.77s eos: For the night between 150 and 200 copies were made, now known as Dunlap broadsides.
+Reference: heldout-english-0011
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+14.36s eos: For example, each year students from Bennett School in North Carolina design a website about their trip to the state capital. Each year the website gets remodeled, but old versions are kept online to serve as a scrapbook.
+Reference: heldout-mixed-0080
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+2.62s eos: Hmm. Yeah.
+Reference: heldout-mixed-0081
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+3.32s eos: 所以我上学期也学了Python。
+Reference: heldout-mixed-0098
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+4.99s eos: 所以就会还是选择回大陆找，不过这学期适应多了。
+Reference: heldout-mixed-0131
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+2.50s eos: 也没有很多Girls Night。
+Reference: heldout-mixed-0132
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+3.06s eos: 大多数那一周是在床上睡觉。
+Reference: heldout-mixed-0138
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+3.81s eos: 嗯，所以你现在还是比较focus在找工作这件事。
+Reference: heldout-silence-short
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+1.18s eos: 
+Reference: heldout-silence
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+1.37s eos: 
+Reference: heldout-silence-long
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+2.27s eos: 
+Reference: heldout-low-noise
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+1.44s eos: 
+Reference: heldout-tone
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+1.34s eos: 
+Reference: heldout-clicks
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+1.95s eos: 
+EXIT=0

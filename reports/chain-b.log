@@ -1,0 +1,96 @@
+== verify (threads 6, shared-prepack) ==
+mandarin-0000: PASS
+mandarin-0001: PASS
+mandarin-0002: PASS
+mandarin-0003: PASS
+mandarin-0004: PASS
+mandarin-0005: PASS
+english-0000: PASS
+english-0001: PASS
+english-0002: PASS
+english-0003: PASS
+english-0004: PASS
+english-0005: PASS
+mixed-0004: PASS
+mixed-0009: PASS
+mixed-0028: PASS
+mixed-0055: PASS
+mixed-0066: PASS
+mixed-0068: PASS
+silence-short: PASS
+silence: PASS
+silence-long: PASS
+low-noise: PASS
+tone: PASS
+clicks: PASS
+verify EXIT=0
+stages pass 24/24
+== boundaries ==
+Generating official references for ['short-1sample', 'short-half-second', 'window-799-frames', 'window-800-frames', 'window-801-frames', 'window-1600-frames', 'limit-15s', 'limit-15s-padded']
+short-1sample PASS 13 tokens; 
+short-half-second PASS 13 tokens; They.
+window-799-frames PASS 104 tokens; To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing.
+window-800-frames PASS 104 tokens; To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing.
+window-801-frames PASS 105 tokens; To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing.
+window-1600-frames PASS 201 tokens; 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work 2002。
+limit-15s PASS 195 tokens; 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work 2002。
+limit-15s-padded PASS 195 tokens; Many people don't think about them as dinosaurs because they have feathers and can fly.
+repeat-interleaved PASS
+boundaries: PASS
+boundaries EXIT=0
+== simulate-live ==
+finals 3, provisional lag p95 2.304315 s, first-caption p95 6.4183179 s, finalization p95 3.5518321 s, max backlog 5.6 s, peak working set 16370270208 bytes
+live english-0002 EXIT=0
+finals 1, provisional lag p95 4.595291 s, first-caption p95 3.7933028 s, finalization p95 9.0990771 s, max backlog 14.74 s, peak working set 16370089984 bytes
+live mandarin-0003 EXIT=0
+finals 1, provisional lag p95 1.8088427 s, first-caption p95 3.8015378 s, finalization p95 2.555312 s, max backlog 4.6 s, peak working set 16370757632 bytes
+live mixed-0009 EXIT=0
+finals 2, provisional lag p95 2.9970746 s, first-caption p95 3.8972296 s, finalization p95 5.6916652 s, max backlog 11.120000000000001 s, peak working set 16369975296 bytes
+live mandarin-0002 EXIT=0
+== gui test ==
+window appears OK {}
+controls present OK {'notice': 'Captures computer playback audio. Does not record the microphone.', 'devices': 4}
+notice text OK {}
+start disabled while loading OK {'status': 'Loading model: Verifying model assets…'}
+model loads OK {'status': 'Ready. Select a playback device and press Start.', 'load_seconds': 19.5}
+start enabled after load OK {}
+listening after start OK {'status': 'Listening: 2 - VG279QE5A (2- AMD High Definition Audio Device)', 'stop_enabled': True, 'start_enabled': False}
+
+first provisional caption appeared OK {'seconds_after_playback_start': 9.52, 'first_clip_start': 2.0, 'provisional_samples': ['这是一个篇章的结束。', '钙、钾等元素属于金。', '桥下垂直净空。', '桥下垂直净空十五米。该项目于二零。', '桥下垂直净空十五米。该项目于二零一一年八月完工。', '适当使用博客，可以使学生。']}
+final captions appeared OK {'seconds_after_playback_start': 7.77}
+stopped after Stop OK {'status': 'Stopped: Stop requested', 'stop_seconds': 0.25, 'statuses_seen': ['Catching up', 'Listening']}
+provisional area cleared after stop OK {}
+start enabled again OK {}
+finals match oracle text for fully played clips FAIL {'matched': 2, 'expected': 4, 'lines': ['这并不是告别。', '这是一个篇章的结束，也是新篇章的开始。', '钙、钾等元素属于金属，银和金等元素当然也是金属。', '桥下垂直净空十五米。该项目于2011年8月完工，但直到2017年3月才开始通车。', '适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work 2002。', '科学家们可以的。']}
+save enabled with transcript OK {}
+window closes cleanly OK {'exit_code': 0}
+gui-test FAIL
+gui EXIT=1
+== capture short (playlist-1x, load 2) ==
+      "clips": 6,
+      "human_error_rate": 0.78125,
+      "oracle_error_rate": 0.7733333333333333,
+      "clips_without_caption": 0
+    },
+    "english": {
+      "clips": 6,
+      "human_error_rate": 0.032520325203252036,
+      "oracle_error_rate": 0.0,
+      "clips_without_caption": 0
+    },
+    "mixed": {
+      "clips": 6,
+      "human_error_rate": 1.0975609756097562,
+      "oracle_error_rate": 0.9230769230769231,
+      "clips_without_caption": 0
+    }
+  },
+  "success": true,
+  "stop_reason": "Duration elapsed",
+  "provisional_lag_p95": 4.1442954,
+  "first_caption_p95": 8.8555596,
+  "finalization_p95": 6.4733106,
+  "max_backlog": 15.0
+}
+capture EXIT=0
+CHAIN_B_DONE

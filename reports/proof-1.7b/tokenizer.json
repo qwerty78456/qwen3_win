@@ -1,0 +1,37 @@
+{
+  "success": true,
+  "cases": [
+    {
+      "text": "<|im_start|>system\n<|im_end|>\n<|im_start|>user\n<|audio_start|>",
+      "match": true
+    },
+    {
+      "text": "<|audio_end|><|im_end|>\n<|im_start|>assistant\n",
+      "match": true
+    },
+    {
+      "text": "<|im_start|>system\n<|im_end|>\n<|im_start|>user\n<|audio_start|><|audio_pad|><|audio_end|><|im_end|>\n<|im_start|>assistant\n",
+      "match": true
+    },
+    {
+      "text": "你好，今天开会。",
+      "match": true
+    },
+    {
+      "text": "Hello, world!",
+      "match": true
+    },
+    {
+      "text": "请打开 the presentation，然后继续。",
+      "match": true
+    },
+    {
+      "text": "<|endoftext|>",
+      "match": true
+    },
+    {
+      "text": "<|im_end|>",
+      "match": true
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+== memory modes (0.6B) ==
+default {'configuration': 'default', 'exit': 0, 'peak_working_set_bytes': 6315302912, 'private_bytes': 6718709760, 'model_load_seconds': 3.7089801, 'total_seconds': 2.4955899, 'rtf': 0.18005702741702745, 'tokens_identical': True, 'completion': 'eos'}
+no-prepack {'configuration': 'no-prepack', 'exit': 0, 'peak_working_set_bytes': 6313840640, 'private_bytes': 7350235136, 'model_load_seconds': 1.1641948, 'total_seconds': 3.1743297, 'rtf': 0.2290281673881674, 'tokens_identical': True, 'completion': 'eos'}
+shared-prepack {'configuration': 'shared-prepack', 'exit': 0, 'peak_working_set_bytes': 6315085824, 'private_bytes': 6718464000, 'model_load_seconds': 3.7471073, 'total_seconds': 2.4762706, 'rtf': 0.17866316017316017, 'tokens_identical': True, 'completion': 'eos'}
+selected: shared-prepack
+memory EXIT=0
+== thread sweep (0.6B) ==
+threads=4 english-0002: rtf 0.252 decode 56.9 ms/token prefill 0.255 s encoder 0.170 s load 3.7 s
+threads=4 mandarin-0002: rtf 0.176 decode 57.6 ms/token prefill 0.287 s encoder 0.173 s load 3.7 s
+threads=4 mixed-0009: rtf 0.226 decode 49.9 ms/token prefill 0.116 s encoder 0.092 s load 3.8 s
+threads=6 english-0002: rtf 0.254 decode 59.4 ms/token prefill 0.211 s encoder 0.130 s load 3.8 s
+threads=6 mandarin-0002: rtf 0.177 decode 60.0 ms/token prefill 0.250 s encoder 0.142 s load 3.7 s
+threads=6 mixed-0009: rtf 0.220 decode 51.1 ms/token prefill 0.092 s encoder 0.072 s load 3.8 s
+threads=8 english-0002: rtf 0.262 decode 60.8 ms/token prefill 0.232 s encoder 0.141 s load 3.7 s
+threads=8 mandarin-0002: rtf 0.183 decode 61.9 ms/token prefill 0.267 s encoder 0.148 s load 3.7 s
+threads=8 mixed-0009: rtf 0.232 decode 53.3 ms/token prefill 0.107 s encoder 0.078 s load 3.7 s
+threads=12 english-0002: rtf 0.273 decode 65.5 ms/token prefill 0.191 s encoder 0.110 s load 3.8 s
+threads=12 mandarin-0002: rtf 0.190 decode 66.3 ms/token prefill 0.223 s encoder 0.136 s load 3.7 s
+threads=12 mixed-0009: rtf 0.242 decode 57.4 ms/token prefill 0.105 s encoder 0.060 s load 3.7 s
+threads=16 english-0002: rtf 0.287 decode 69.1 ms/token prefill 0.192 s encoder 0.110 s load 3.7 s
+threads=16 mandarin-0002: rtf 0.196 decode 69.3 ms/token prefill 0.226 s encoder 0.118 s load 3.7 s
+threads=16 mixed-0009: rtf 0.253 decode 60.4 ms/token prefill 0.103 s encoder 0.067 s load 3.7 s
+  "selected": 4
+threads EXIT=0
+== preprocessing (0.6B processor) ==
+0
+preprocessing EXIT=1
+== fixture frontend ==
+0
+frontend EXIT=1
+== speech gate ==
+gate EXIT=0
+== cli failures ==
+cli EXIT=0
+CHAIN_D_DONE

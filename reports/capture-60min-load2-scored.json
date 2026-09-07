@@ -1,0 +1,3884 @@
+{
+  "name": "60min-load2",
+  "playlist": "playlist-60",
+  "device": "2 - VG279QE5A (2- AMD High Definition Audio Device)",
+  "background_load_processes": 2,
+  "capture_started": "Capturing playback from: 2 - VG279QE5A (2- AMD High Definition Audio Device) for 3691.51 s",
+  "alignment_offset_seconds": 1.2300625000000025,
+  "clips": [
+    {
+      "id": "mandarin-0000",
+      "category": "mandarin",
+      "finals": 6,
+      "hypothesis": "这并不是告别。 这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。",
+      "human_edits": 92,
+      "human_units": 23,
+      "oracle_edits": 92,
+      "oracle_units": 23
+    },
+    {
+      "id": "mandarin-0001",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。",
+      "human_edits": 84,
+      "human_units": 21,
+      "oracle_edits": 84,
+      "oracle_units": 21
+    },
+    {
+      "id": "mandarin-0002",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。",
+      "human_edits": 160,
+      "human_units": 37,
+      "oracle_edits": 148,
+      "oracle_units": 37
+    },
+    {
+      "id": "mandarin-0003",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work 二零零二。",
+      "human_edits": 336,
+      "human_units": 83,
+      "oracle_edits": 328,
+      "oracle_units": 82
+    },
+    {
+      "id": "mandarin-0004",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。",
+      "human_edits": 124,
+      "human_units": 31,
+      "oracle_edits": 124,
+      "oracle_units": 31
+    },
+    {
+      "id": "mandarin-0005",
+      "category": "mandarin",
+      "finals": 4,
+      "hypothesis": "大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。",
+      "human_edits": 95,
+      "human_units": 29,
+      "oracle_edits": 93,
+      "oracle_units": 31
+    },
+    {
+      "id": "english-0000",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years.",
+      "human_edits": 58,
+      "human_units": 19,
+      "oracle_edits": 57,
+      "oracle_units": 19
+    },
+    {
+      "id": "english-0001",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence.",
+      "human_edits": 65,
+      "human_units": 21,
+      "oracle_edits": 63,
+      "oracle_units": 21
+    },
+    {
+      "id": "english-0002",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous, to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron.",
+      "human_edits": 100,
+      "human_units": 33,
+      "oracle_edits": 99,
+      "oracle_units": 33
+    },
+    {
+      "id": "english-0003",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is.",
+      "human_edits": 42,
+      "human_units": 15,
+      "oracle_edits": 42,
+      "oracle_units": 14
+    },
+    {
+      "id": "english-0004",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly.",
+      "human_edits": 45,
+      "human_units": 15,
+      "oracle_edits": 45,
+      "oracle_units": 15
+    },
+    {
+      "id": "english-0005",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others.",
+      "human_edits": 60,
+      "human_units": 20,
+      "oracle_edits": 60,
+      "oracle_units": 20
+    },
+    {
+      "id": "mixed-0004",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "So it was the. No, it was the. So it was the. No, it was the.",
+      "human_edits": 15,
+      "human_units": 4,
+      "oracle_edits": 14,
+      "oracle_units": 3
+    },
+    {
+      "id": "mixed-0009",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。",
+      "human_edits": 35,
+      "human_units": 13,
+      "oracle_edits": 33,
+      "oracle_units": 11
+    },
+    {
+      "id": "mixed-0028",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "OK，附件。 OK，附件。 OK，附件。 OK，附件。",
+      "human_edits": 11,
+      "human_units": 3,
+      "oracle_edits": 9,
+      "oracle_units": 3
+    },
+    {
+      "id": "mixed-0055",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。",
+      "human_edits": 43,
+      "human_units": 14,
+      "oracle_edits": 42,
+      "oracle_units": 14
+    },
+    {
+      "id": "mixed-0066",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "哦，这么technical的。 哦，这么technical的。 哦，这么technical的。 哦，这么technical的。",
+      "human_edits": 16,
+      "human_units": 4,
+      "oracle_edits": 15,
+      "oracle_units": 5
+    },
+    {
+      "id": "mixed-0068",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "Computer language. Computer language. Computer language. Computer language.",
+      "human_edits": 7,
+      "human_units": 3,
+      "oracle_edits": 6,
+      "oracle_units": 2
+    },
+    {
+      "id": "mandarin-0000",
+      "category": "mandarin",
+      "finals": 6,
+      "hypothesis": "这并不是告别。 这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。",
+      "human_edits": 92,
+      "human_units": 23,
+      "oracle_edits": 92,
+      "oracle_units": 23
+    },
+    {
+      "id": "mandarin-0001",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。",
+      "human_edits": 84,
+      "human_units": 21,
+      "oracle_edits": 84,
+      "oracle_units": 21
+    },
+    {
+      "id": "mandarin-0002",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。",
+      "human_edits": 160,
+      "human_units": 37,
+      "oracle_edits": 148,
+      "oracle_units": 37
+    },
+    {
+      "id": "mandarin-0003",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work 二零零二。",
+      "human_edits": 336,
+      "human_units": 83,
+      "oracle_edits": 328,
+      "oracle_units": 82
+    },
+    {
+      "id": "mandarin-0004",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。",
+      "human_edits": 124,
+      "human_units": 31,
+      "oracle_edits": 124,
+      "oracle_units": 31
+    },
+    {
+      "id": "mandarin-0005",
+      "category": "mandarin",
+      "finals": 4,
+      "hypothesis": "大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。",
+      "human_edits": 95,
+      "human_units": 29,
+      "oracle_edits": 93,
+      "oracle_units": 31
+    },
+    {
+      "id": "english-0000",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years.",
+      "human_edits": 58,
+      "human_units": 19,
+      "oracle_edits": 57,
+      "oracle_units": 19
+    },
+    {
+      "id": "english-0001",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence.",
+      "human_edits": 65,
+      "human_units": 21,
+      "oracle_edits": 63,
+      "oracle_units": 21
+    },
+    {
+      "id": "english-0002",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous, to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron.",
+      "human_edits": 100,
+      "human_units": 33,
+      "oracle_edits": 99,
+      "oracle_units": 33
+    },
+    {
+      "id": "english-0003",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is.",
+      "human_edits": 42,
+      "human_units": 15,
+      "oracle_edits": 42,
+      "oracle_units": 14
+    },
+    {
+      "id": "english-0004",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly.",
+      "human_edits": 45,
+      "human_units": 15,
+      "oracle_edits": 45,
+      "oracle_units": 15
+    },
+    {
+      "id": "english-0005",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others.",
+      "human_edits": 60,
+      "human_units": 20,
+      "oracle_edits": 60,
+      "oracle_units": 20
+    },
+    {
+      "id": "mixed-0004",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "So it was the. No, it was the. So it was the. No, it was the.",
+      "human_edits": 15,
+      "human_units": 4,
+      "oracle_edits": 14,
+      "oracle_units": 3
+    },
+    {
+      "id": "mixed-0009",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。",
+      "human_edits": 35,
+      "human_units": 13,
+      "oracle_edits": 33,
+      "oracle_units": 11
+    },
+    {
+      "id": "mixed-0028",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "OK，附件。 OK，附件。 OK，附件。 OK，附件。",
+      "human_edits": 11,
+      "human_units": 3,
+      "oracle_edits": 9,
+      "oracle_units": 3
+    },
+    {
+      "id": "mixed-0055",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。",
+      "human_edits": 43,
+      "human_units": 14,
+      "oracle_edits": 42,
+      "oracle_units": 14
+    },
+    {
+      "id": "mixed-0066",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "哦，这么technical的。 哦，这么technical的。 哦，这么technical的。 哦，这么technical的。",
+      "human_edits": 16,
+      "human_units": 4,
+      "oracle_edits": 15,
+      "oracle_units": 5
+    },
+    {
+      "id": "mixed-0068",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "Computer language. Computer language. Computer language. Computer language.",
+      "human_edits": 7,
+      "human_units": 3,
+      "oracle_edits": 6,
+      "oracle_units": 2
+    },
+    {
+      "id": "mandarin-0000",
+      "category": "mandarin",
+      "finals": 6,
+      "hypothesis": "这并不是告别。 这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。",
+      "human_edits": 92,
+      "human_units": 23,
+      "oracle_edits": 92,
+      "oracle_units": 23
+    },
+    {
+      "id": "mandarin-0001",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。",
+      "human_edits": 84,
+      "human_units": 21,
+      "oracle_edits": 84,
+      "oracle_units": 21
+    },
+    {
+      "id": "mandarin-0002",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。",
+      "human_edits": 160,
+      "human_units": 37,
+      "oracle_edits": 148,
+      "oracle_units": 37
+    },
+    {
+      "id": "mandarin-0003",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work 二零零二。",
+      "human_edits": 336,
+      "human_units": 83,
+      "oracle_edits": 328,
+      "oracle_units": 82
+    },
+    {
+      "id": "mandarin-0004",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。",
+      "human_edits": 124,
+      "human_units": 31,
+      "oracle_edits": 124,
+      "oracle_units": 31
+    },
+    {
+      "id": "mandarin-0005",
+      "category": "mandarin",
+      "finals": 4,
+      "hypothesis": "大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。",
+      "human_edits": 95,
+      "human_units": 29,
+      "oracle_edits": 93,
+      "oracle_units": 31
+    },
+    {
+      "id": "english-0000",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years.",
+      "human_edits": 58,
+      "human_units": 19,
+      "oracle_edits": 57,
+      "oracle_units": 19
+    },
+    {
+      "id": "english-0001",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence.",
+      "human_edits": 65,
+      "human_units": 21,
+      "oracle_edits": 63,
+      "oracle_units": 21
+    },
+    {
+      "id": "english-0002",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous, to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron.",
+      "human_edits": 100,
+      "human_units": 33,
+      "oracle_edits": 99,
+      "oracle_units": 33
+    },
+    {
+      "id": "english-0003",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is.",
+      "human_edits": 42,
+      "human_units": 15,
+      "oracle_edits": 42,
+      "oracle_units": 14
+    },
+    {
+      "id": "english-0004",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly.",
+      "human_edits": 45,
+      "human_units": 15,
+      "oracle_edits": 45,
+      "oracle_units": 15
+    },
+    {
+      "id": "english-0005",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others.",
+      "human_edits": 60,
+      "human_units": 20,
+      "oracle_edits": 60,
+      "oracle_units": 20
+    },
+    {
+      "id": "mixed-0004",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "So it was the. No, it was the. So it was the. No, it was the.",
+      "human_edits": 15,
+      "human_units": 4,
+      "oracle_edits": 14,
+      "oracle_units": 3
+    },
+    {
+      "id": "mixed-0009",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。",
+      "human_edits": 35,
+      "human_units": 13,
+      "oracle_edits": 33,
+      "oracle_units": 11
+    },
+    {
+      "id": "mixed-0028",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "OK，附件。 OK，附件。 OK，附件。 OK，附件。",
+      "human_edits": 11,
+      "human_units": 3,
+      "oracle_edits": 9,
+      "oracle_units": 3
+    },
+    {
+      "id": "mixed-0055",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。",
+      "human_edits": 43,
+      "human_units": 14,
+      "oracle_edits": 42,
+      "oracle_units": 14
+    },
+    {
+      "id": "mixed-0066",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "哦，这么technical的。 哦，这么technical的。 哦，这么technical的。 哦，这么technical的。",
+      "human_edits": 16,
+      "human_units": 4,
+      "oracle_edits": 15,
+      "oracle_units": 5
+    },
+    {
+      "id": "mixed-0068",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "Computer language. Computer language. Computer language. Computer language.",
+      "human_edits": 7,
+      "human_units": 3,
+      "oracle_edits": 6,
+      "oracle_units": 2
+    },
+    {
+      "id": "mandarin-0000",
+      "category": "mandarin",
+      "finals": 6,
+      "hypothesis": "这并不是告别。 这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。",
+      "human_edits": 92,
+      "human_units": 23,
+      "oracle_edits": 92,
+      "oracle_units": 23
+    },
+    {
+      "id": "mandarin-0001",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。",
+      "human_edits": 84,
+      "human_units": 21,
+      "oracle_edits": 84,
+      "oracle_units": 21
+    },
+    {
+      "id": "mandarin-0002",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。",
+      "human_edits": 160,
+      "human_units": 37,
+      "oracle_edits": 148,
+      "oracle_units": 37
+    },
+    {
+      "id": "mandarin-0003",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work 二零零二。",
+      "human_edits": 336,
+      "human_units": 83,
+      "oracle_edits": 328,
+      "oracle_units": 82
+    },
+    {
+      "id": "mandarin-0004",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。",
+      "human_edits": 124,
+      "human_units": 31,
+      "oracle_edits": 124,
+      "oracle_units": 31
+    },
+    {
+      "id": "mandarin-0005",
+      "category": "mandarin",
+      "finals": 4,
+      "hypothesis": "大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。",
+      "human_edits": 95,
+      "human_units": 29,
+      "oracle_edits": 93,
+      "oracle_units": 31
+    },
+    {
+      "id": "english-0000",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years.",
+      "human_edits": 58,
+      "human_units": 19,
+      "oracle_edits": 57,
+      "oracle_units": 19
+    },
+    {
+      "id": "english-0001",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence.",
+      "human_edits": 65,
+      "human_units": 21,
+      "oracle_edits": 63,
+      "oracle_units": 21
+    },
+    {
+      "id": "english-0002",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous, to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron.",
+      "human_edits": 100,
+      "human_units": 33,
+      "oracle_edits": 99,
+      "oracle_units": 33
+    },
+    {
+      "id": "english-0003",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is.",
+      "human_edits": 42,
+      "human_units": 15,
+      "oracle_edits": 42,
+      "oracle_units": 14
+    },
+    {
+      "id": "english-0004",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly.",
+      "human_edits": 45,
+      "human_units": 15,
+      "oracle_edits": 45,
+      "oracle_units": 15
+    },
+    {
+      "id": "english-0005",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others.",
+      "human_edits": 60,
+      "human_units": 20,
+      "oracle_edits": 60,
+      "oracle_units": 20
+    },
+    {
+      "id": "mixed-0004",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "So it was the. No, it was the. So it was the. No, it was the.",
+      "human_edits": 15,
+      "human_units": 4,
+      "oracle_edits": 14,
+      "oracle_units": 3
+    },
+    {
+      "id": "mixed-0009",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。",
+      "human_edits": 35,
+      "human_units": 13,
+      "oracle_edits": 33,
+      "oracle_units": 11
+    },
+    {
+      "id": "mixed-0028",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "OK，附件。 OK，附件。 OK，附件。 OK，附件。",
+      "human_edits": 11,
+      "human_units": 3,
+      "oracle_edits": 9,
+      "oracle_units": 3
+    },
+    {
+      "id": "mixed-0055",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。",
+      "human_edits": 43,
+      "human_units": 14,
+      "oracle_edits": 42,
+      "oracle_units": 14
+    },
+    {
+      "id": "mixed-0066",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "哦，这么technical的。 哦，这么technical的。 哦，这么technical的。 哦，这么technical的。",
+      "human_edits": 16,
+      "human_units": 4,
+      "oracle_edits": 15,
+      "oracle_units": 5
+    },
+    {
+      "id": "mixed-0068",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "Computer language. Computer language. Computer language. Computer language.",
+      "human_edits": 7,
+      "human_units": 3,
+      "oracle_edits": 6,
+      "oracle_units": 2
+    },
+    {
+      "id": "mandarin-0000",
+      "category": "mandarin",
+      "finals": 6,
+      "hypothesis": "这并不是告别。 这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。",
+      "human_edits": 92,
+      "human_units": 23,
+      "oracle_edits": 92,
+      "oracle_units": 23
+    },
+    {
+      "id": "mandarin-0001",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。",
+      "human_edits": 84,
+      "human_units": 21,
+      "oracle_edits": 84,
+      "oracle_units": 21
+    },
+    {
+      "id": "mandarin-0002",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。",
+      "human_edits": 160,
+      "human_units": 37,
+      "oracle_edits": 148,
+      "oracle_units": 37
+    },
+    {
+      "id": "mandarin-0003",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work 二零零二。",
+      "human_edits": 336,
+      "human_units": 83,
+      "oracle_edits": 328,
+      "oracle_units": 82
+    },
+    {
+      "id": "mandarin-0004",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。",
+      "human_edits": 124,
+      "human_units": 31,
+      "oracle_edits": 124,
+      "oracle_units": 31
+    },
+    {
+      "id": "mandarin-0005",
+      "category": "mandarin",
+      "finals": 4,
+      "hypothesis": "大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。",
+      "human_edits": 95,
+      "human_units": 29,
+      "oracle_edits": 93,
+      "oracle_units": 31
+    },
+    {
+      "id": "english-0000",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years.",
+      "human_edits": 58,
+      "human_units": 19,
+      "oracle_edits": 57,
+      "oracle_units": 19
+    },
+    {
+      "id": "english-0001",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence.",
+      "human_edits": 65,
+      "human_units": 21,
+      "oracle_edits": 63,
+      "oracle_units": 21
+    },
+    {
+      "id": "english-0002",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous, to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron.",
+      "human_edits": 100,
+      "human_units": 33,
+      "oracle_edits": 99,
+      "oracle_units": 33
+    },
+    {
+      "id": "english-0003",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is.",
+      "human_edits": 42,
+      "human_units": 15,
+      "oracle_edits": 42,
+      "oracle_units": 14
+    },
+    {
+      "id": "english-0004",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly.",
+      "human_edits": 45,
+      "human_units": 15,
+      "oracle_edits": 45,
+      "oracle_units": 15
+    },
+    {
+      "id": "english-0005",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others.",
+      "human_edits": 60,
+      "human_units": 20,
+      "oracle_edits": 60,
+      "oracle_units": 20
+    },
+    {
+      "id": "mixed-0004",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "So it was the. No, it was the. So it was the. No, it was the.",
+      "human_edits": 15,
+      "human_units": 4,
+      "oracle_edits": 14,
+      "oracle_units": 3
+    },
+    {
+      "id": "mixed-0009",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。",
+      "human_edits": 35,
+      "human_units": 13,
+      "oracle_edits": 33,
+      "oracle_units": 11
+    },
+    {
+      "id": "mixed-0028",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "OK，附件。 OK，附件。 OK，附件。 OK，附件。",
+      "human_edits": 11,
+      "human_units": 3,
+      "oracle_edits": 9,
+      "oracle_units": 3
+    },
+    {
+      "id": "mixed-0055",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。",
+      "human_edits": 43,
+      "human_units": 14,
+      "oracle_edits": 42,
+      "oracle_units": 14
+    },
+    {
+      "id": "mixed-0066",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "哦，这么technical的。 哦，这么technical的。 哦，这么technical的。 哦，这么technical的。",
+      "human_edits": 16,
+      "human_units": 4,
+      "oracle_edits": 15,
+      "oracle_units": 5
+    },
+    {
+      "id": "mixed-0068",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "Computer language. Computer language. Computer language. Computer language.",
+      "human_edits": 7,
+      "human_units": 3,
+      "oracle_edits": 6,
+      "oracle_units": 2
+    },
+    {
+      "id": "mandarin-0000",
+      "category": "mandarin",
+      "finals": 6,
+      "hypothesis": "这并不是告别。 这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。",
+      "human_edits": 92,
+      "human_units": 23,
+      "oracle_edits": 92,
+      "oracle_units": 23
+    },
+    {
+      "id": "mandarin-0001",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。",
+      "human_edits": 84,
+      "human_units": 21,
+      "oracle_edits": 84,
+      "oracle_units": 21
+    },
+    {
+      "id": "mandarin-0002",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。",
+      "human_edits": 160,
+      "human_units": 37,
+      "oracle_edits": 148,
+      "oracle_units": 37
+    },
+    {
+      "id": "mandarin-0003",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work 二零零二。",
+      "human_edits": 336,
+      "human_units": 83,
+      "oracle_edits": 328,
+      "oracle_units": 82
+    },
+    {
+      "id": "mandarin-0004",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。",
+      "human_edits": 124,
+      "human_units": 31,
+      "oracle_edits": 124,
+      "oracle_units": 31
+    },
+    {
+      "id": "mandarin-0005",
+      "category": "mandarin",
+      "finals": 4,
+      "hypothesis": "大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。",
+      "human_edits": 95,
+      "human_units": 29,
+      "oracle_edits": 93,
+      "oracle_units": 31
+    },
+    {
+      "id": "english-0000",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years.",
+      "human_edits": 58,
+      "human_units": 19,
+      "oracle_edits": 57,
+      "oracle_units": 19
+    },
+    {
+      "id": "english-0001",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence.",
+      "human_edits": 65,
+      "human_units": 21,
+      "oracle_edits": 63,
+      "oracle_units": 21
+    },
+    {
+      "id": "english-0002",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous, to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron.",
+      "human_edits": 100,
+      "human_units": 33,
+      "oracle_edits": 99,
+      "oracle_units": 33
+    },
+    {
+      "id": "english-0003",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is.",
+      "human_edits": 42,
+      "human_units": 15,
+      "oracle_edits": 42,
+      "oracle_units": 14
+    },
+    {
+      "id": "english-0004",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly.",
+      "human_edits": 45,
+      "human_units": 15,
+      "oracle_edits": 45,
+      "oracle_units": 15
+    },
+    {
+      "id": "english-0005",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others.",
+      "human_edits": 60,
+      "human_units": 20,
+      "oracle_edits": 60,
+      "oracle_units": 20
+    },
+    {
+      "id": "mixed-0004",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "So it was the. No, it was the. So it was the. No, it was the.",
+      "human_edits": 15,
+      "human_units": 4,
+      "oracle_edits": 14,
+      "oracle_units": 3
+    },
+    {
+      "id": "mixed-0009",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。",
+      "human_edits": 35,
+      "human_units": 13,
+      "oracle_edits": 33,
+      "oracle_units": 11
+    },
+    {
+      "id": "mixed-0028",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "OK，附件。 OK，附件。 OK，附件。 OK，附件。",
+      "human_edits": 11,
+      "human_units": 3,
+      "oracle_edits": 9,
+      "oracle_units": 3
+    },
+    {
+      "id": "mixed-0055",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。",
+      "human_edits": 43,
+      "human_units": 14,
+      "oracle_edits": 42,
+      "oracle_units": 14
+    },
+    {
+      "id": "mixed-0066",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "哦，这么technical的。 哦，这么technical的。 哦，这么technical的。 哦，这么technical的。",
+      "human_edits": 16,
+      "human_units": 4,
+      "oracle_edits": 15,
+      "oracle_units": 5
+    },
+    {
+      "id": "mixed-0068",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "Computer language. Computer language. Computer language. Computer language.",
+      "human_edits": 7,
+      "human_units": 3,
+      "oracle_edits": 6,
+      "oracle_units": 2
+    },
+    {
+      "id": "mandarin-0000",
+      "category": "mandarin",
+      "finals": 6,
+      "hypothesis": "这并不是告别。 这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。",
+      "human_edits": 92,
+      "human_units": 23,
+      "oracle_edits": 92,
+      "oracle_units": 23
+    },
+    {
+      "id": "mandarin-0001",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。",
+      "human_edits": 84,
+      "human_units": 21,
+      "oracle_edits": 84,
+      "oracle_units": 21
+    },
+    {
+      "id": "mandarin-0002",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。",
+      "human_edits": 160,
+      "human_units": 37,
+      "oracle_edits": 148,
+      "oracle_units": 37
+    },
+    {
+      "id": "mandarin-0003",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work 二零零二。",
+      "human_edits": 336,
+      "human_units": 83,
+      "oracle_edits": 328,
+      "oracle_units": 82
+    },
+    {
+      "id": "mandarin-0004",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。",
+      "human_edits": 124,
+      "human_units": 31,
+      "oracle_edits": 124,
+      "oracle_units": 31
+    },
+    {
+      "id": "mandarin-0005",
+      "category": "mandarin",
+      "finals": 4,
+      "hypothesis": "大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。",
+      "human_edits": 95,
+      "human_units": 29,
+      "oracle_edits": 93,
+      "oracle_units": 31
+    },
+    {
+      "id": "english-0000",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years.",
+      "human_edits": 58,
+      "human_units": 19,
+      "oracle_edits": 57,
+      "oracle_units": 19
+    },
+    {
+      "id": "english-0001",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence.",
+      "human_edits": 65,
+      "human_units": 21,
+      "oracle_edits": 63,
+      "oracle_units": 21
+    },
+    {
+      "id": "english-0002",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous, to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron.",
+      "human_edits": 100,
+      "human_units": 33,
+      "oracle_edits": 99,
+      "oracle_units": 33
+    },
+    {
+      "id": "english-0003",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is.",
+      "human_edits": 42,
+      "human_units": 15,
+      "oracle_edits": 42,
+      "oracle_units": 14
+    },
+    {
+      "id": "english-0004",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly.",
+      "human_edits": 45,
+      "human_units": 15,
+      "oracle_edits": 45,
+      "oracle_units": 15
+    },
+    {
+      "id": "english-0005",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others.",
+      "human_edits": 60,
+      "human_units": 20,
+      "oracle_edits": 60,
+      "oracle_units": 20
+    },
+    {
+      "id": "mixed-0004",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "So it was the. No, it was the. So it was the. No, it was the.",
+      "human_edits": 15,
+      "human_units": 4,
+      "oracle_edits": 14,
+      "oracle_units": 3
+    },
+    {
+      "id": "mixed-0009",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。",
+      "human_edits": 35,
+      "human_units": 13,
+      "oracle_edits": 33,
+      "oracle_units": 11
+    },
+    {
+      "id": "mixed-0028",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "OK，附件。 OK，附件。 OK，附件。 OK，附件。",
+      "human_edits": 11,
+      "human_units": 3,
+      "oracle_edits": 9,
+      "oracle_units": 3
+    },
+    {
+      "id": "mixed-0055",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。",
+      "human_edits": 43,
+      "human_units": 14,
+      "oracle_edits": 42,
+      "oracle_units": 14
+    },
+    {
+      "id": "mixed-0066",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "哦，这么technical的。 哦，这么technical的。 哦，这么technical的。 哦，这么technical的。",
+      "human_edits": 16,
+      "human_units": 4,
+      "oracle_edits": 15,
+      "oracle_units": 5
+    },
+    {
+      "id": "mixed-0068",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "Computer language. Computer language. Computer language. Computer language.",
+      "human_edits": 7,
+      "human_units": 3,
+      "oracle_edits": 6,
+      "oracle_units": 2
+    },
+    {
+      "id": "mandarin-0000",
+      "category": "mandarin",
+      "finals": 6,
+      "hypothesis": "这并不是告别。 这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。",
+      "human_edits": 92,
+      "human_units": 23,
+      "oracle_edits": 92,
+      "oracle_units": 23
+    },
+    {
+      "id": "mandarin-0001",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。",
+      "human_edits": 84,
+      "human_units": 21,
+      "oracle_edits": 84,
+      "oracle_units": 21
+    },
+    {
+      "id": "mandarin-0002",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。",
+      "human_edits": 160,
+      "human_units": 37,
+      "oracle_edits": 148,
+      "oracle_units": 37
+    },
+    {
+      "id": "mandarin-0003",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work 二零零二。",
+      "human_edits": 336,
+      "human_units": 83,
+      "oracle_edits": 328,
+      "oracle_units": 82
+    },
+    {
+      "id": "mandarin-0004",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。",
+      "human_edits": 124,
+      "human_units": 31,
+      "oracle_edits": 124,
+      "oracle_units": 31
+    },
+    {
+      "id": "mandarin-0005",
+      "category": "mandarin",
+      "finals": 4,
+      "hypothesis": "大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。",
+      "human_edits": 95,
+      "human_units": 29,
+      "oracle_edits": 93,
+      "oracle_units": 31
+    },
+    {
+      "id": "english-0000",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years.",
+      "human_edits": 58,
+      "human_units": 19,
+      "oracle_edits": 57,
+      "oracle_units": 19
+    },
+    {
+      "id": "english-0001",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence.",
+      "human_edits": 65,
+      "human_units": 21,
+      "oracle_edits": 63,
+      "oracle_units": 21
+    },
+    {
+      "id": "english-0002",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous, to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron.",
+      "human_edits": 100,
+      "human_units": 33,
+      "oracle_edits": 99,
+      "oracle_units": 33
+    },
+    {
+      "id": "english-0003",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is.",
+      "human_edits": 42,
+      "human_units": 15,
+      "oracle_edits": 42,
+      "oracle_units": 14
+    },
+    {
+      "id": "english-0004",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly.",
+      "human_edits": 45,
+      "human_units": 15,
+      "oracle_edits": 45,
+      "oracle_units": 15
+    },
+    {
+      "id": "english-0005",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others.",
+      "human_edits": 60,
+      "human_units": 20,
+      "oracle_edits": 60,
+      "oracle_units": 20
+    },
+    {
+      "id": "mixed-0004",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "So it was the. No, it was the. So it was the. No, it was the.",
+      "human_edits": 15,
+      "human_units": 4,
+      "oracle_edits": 14,
+      "oracle_units": 3
+    },
+    {
+      "id": "mixed-0009",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。",
+      "human_edits": 35,
+      "human_units": 13,
+      "oracle_edits": 33,
+      "oracle_units": 11
+    },
+    {
+      "id": "mixed-0028",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "OK，附件。 OK，附件。 OK，附件。 OK，附件。",
+      "human_edits": 11,
+      "human_units": 3,
+      "oracle_edits": 9,
+      "oracle_units": 3
+    },
+    {
+      "id": "mixed-0055",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。",
+      "human_edits": 43,
+      "human_units": 14,
+      "oracle_edits": 42,
+      "oracle_units": 14
+    },
+    {
+      "id": "mixed-0066",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "哦，这么technical的。 哦，这么technical的。 哦，这么technical的。 哦，这么technical的。",
+      "human_edits": 16,
+      "human_units": 4,
+      "oracle_edits": 15,
+      "oracle_units": 5
+    },
+    {
+      "id": "mixed-0068",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "Computer language. Computer language. Computer language. Computer language.",
+      "human_edits": 7,
+      "human_units": 3,
+      "oracle_edits": 6,
+      "oracle_units": 2
+    },
+    {
+      "id": "mandarin-0000",
+      "category": "mandarin",
+      "finals": 6,
+      "hypothesis": "这并不是告别。 这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。",
+      "human_edits": 92,
+      "human_units": 23,
+      "oracle_edits": 92,
+      "oracle_units": 23
+    },
+    {
+      "id": "mandarin-0001",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。",
+      "human_edits": 84,
+      "human_units": 21,
+      "oracle_edits": 84,
+      "oracle_units": 21
+    },
+    {
+      "id": "mandarin-0002",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。",
+      "human_edits": 160,
+      "human_units": 37,
+      "oracle_edits": 148,
+      "oracle_units": 37
+    },
+    {
+      "id": "mandarin-0003",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work 二零零二。",
+      "human_edits": 336,
+      "human_units": 83,
+      "oracle_edits": 328,
+      "oracle_units": 82
+    },
+    {
+      "id": "mandarin-0004",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。",
+      "human_edits": 124,
+      "human_units": 31,
+      "oracle_edits": 124,
+      "oracle_units": 31
+    },
+    {
+      "id": "mandarin-0005",
+      "category": "mandarin",
+      "finals": 4,
+      "hypothesis": "大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。",
+      "human_edits": 95,
+      "human_units": 29,
+      "oracle_edits": 93,
+      "oracle_units": 31
+    },
+    {
+      "id": "english-0000",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years.",
+      "human_edits": 58,
+      "human_units": 19,
+      "oracle_edits": 57,
+      "oracle_units": 19
+    },
+    {
+      "id": "english-0001",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence.",
+      "human_edits": 65,
+      "human_units": 21,
+      "oracle_edits": 63,
+      "oracle_units": 21
+    },
+    {
+      "id": "english-0002",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous, to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron.",
+      "human_edits": 100,
+      "human_units": 33,
+      "oracle_edits": 99,
+      "oracle_units": 33
+    },
+    {
+      "id": "english-0003",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is.",
+      "human_edits": 42,
+      "human_units": 15,
+      "oracle_edits": 42,
+      "oracle_units": 14
+    },
+    {
+      "id": "english-0004",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly.",
+      "human_edits": 45,
+      "human_units": 15,
+      "oracle_edits": 45,
+      "oracle_units": 15
+    },
+    {
+      "id": "english-0005",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others.",
+      "human_edits": 60,
+      "human_units": 20,
+      "oracle_edits": 60,
+      "oracle_units": 20
+    },
+    {
+      "id": "mixed-0004",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "So it was the. No, it was the. So it was the. No, it was the.",
+      "human_edits": 15,
+      "human_units": 4,
+      "oracle_edits": 14,
+      "oracle_units": 3
+    },
+    {
+      "id": "mixed-0009",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。",
+      "human_edits": 35,
+      "human_units": 13,
+      "oracle_edits": 33,
+      "oracle_units": 11
+    },
+    {
+      "id": "mixed-0028",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "OK，附件。 OK，附件。 OK，附件。 OK，附件。",
+      "human_edits": 11,
+      "human_units": 3,
+      "oracle_edits": 9,
+      "oracle_units": 3
+    },
+    {
+      "id": "mixed-0055",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。",
+      "human_edits": 43,
+      "human_units": 14,
+      "oracle_edits": 42,
+      "oracle_units": 14
+    },
+    {
+      "id": "mixed-0066",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "哦，这么technical的。 哦，这么technical的。 哦，这么technical的。 哦，这么technical的。",
+      "human_edits": 16,
+      "human_units": 4,
+      "oracle_edits": 15,
+      "oracle_units": 5
+    },
+    {
+      "id": "mixed-0068",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "Computer language. Computer language. Computer language. Computer language.",
+      "human_edits": 7,
+      "human_units": 3,
+      "oracle_edits": 6,
+      "oracle_units": 2
+    },
+    {
+      "id": "mandarin-0000",
+      "category": "mandarin",
+      "finals": 6,
+      "hypothesis": "这并不是告别。 这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。",
+      "human_edits": 92,
+      "human_units": 23,
+      "oracle_edits": 92,
+      "oracle_units": 23
+    },
+    {
+      "id": "mandarin-0001",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。",
+      "human_edits": 84,
+      "human_units": 21,
+      "oracle_edits": 84,
+      "oracle_units": 21
+    },
+    {
+      "id": "mandarin-0002",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。",
+      "human_edits": 160,
+      "human_units": 37,
+      "oracle_edits": 148,
+      "oracle_units": 37
+    },
+    {
+      "id": "mandarin-0003",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work 二零零二。",
+      "human_edits": 336,
+      "human_units": 83,
+      "oracle_edits": 328,
+      "oracle_units": 82
+    },
+    {
+      "id": "mandarin-0004",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。",
+      "human_edits": 124,
+      "human_units": 31,
+      "oracle_edits": 124,
+      "oracle_units": 31
+    },
+    {
+      "id": "mandarin-0005",
+      "category": "mandarin",
+      "finals": 4,
+      "hypothesis": "大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。",
+      "human_edits": 95,
+      "human_units": 29,
+      "oracle_edits": 93,
+      "oracle_units": 31
+    },
+    {
+      "id": "english-0000",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years.",
+      "human_edits": 58,
+      "human_units": 19,
+      "oracle_edits": 57,
+      "oracle_units": 19
+    },
+    {
+      "id": "english-0001",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence.",
+      "human_edits": 65,
+      "human_units": 21,
+      "oracle_edits": 63,
+      "oracle_units": 21
+    },
+    {
+      "id": "english-0002",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous, to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron.",
+      "human_edits": 100,
+      "human_units": 33,
+      "oracle_edits": 99,
+      "oracle_units": 33
+    },
+    {
+      "id": "english-0003",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is.",
+      "human_edits": 42,
+      "human_units": 15,
+      "oracle_edits": 42,
+      "oracle_units": 14
+    },
+    {
+      "id": "english-0004",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly.",
+      "human_edits": 45,
+      "human_units": 15,
+      "oracle_edits": 45,
+      "oracle_units": 15
+    },
+    {
+      "id": "english-0005",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others.",
+      "human_edits": 60,
+      "human_units": 20,
+      "oracle_edits": 60,
+      "oracle_units": 20
+    },
+    {
+      "id": "mixed-0004",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "So it was the. No, it was the. So it was the. No, it was the.",
+      "human_edits": 15,
+      "human_units": 4,
+      "oracle_edits": 14,
+      "oracle_units": 3
+    },
+    {
+      "id": "mixed-0009",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。",
+      "human_edits": 35,
+      "human_units": 13,
+      "oracle_edits": 33,
+      "oracle_units": 11
+    },
+    {
+      "id": "mixed-0028",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "OK，附件。 OK，附件。 OK，附件。 OK，附件。",
+      "human_edits": 11,
+      "human_units": 3,
+      "oracle_edits": 9,
+      "oracle_units": 3
+    },
+    {
+      "id": "mixed-0055",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。",
+      "human_edits": 43,
+      "human_units": 14,
+      "oracle_edits": 42,
+      "oracle_units": 14
+    },
+    {
+      "id": "mixed-0066",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "哦，这么technical的。 哦，这么technical的。 哦，这么technical的。 哦，这么technical的。",
+      "human_edits": 16,
+      "human_units": 4,
+      "oracle_edits": 15,
+      "oracle_units": 5
+    },
+    {
+      "id": "mixed-0068",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "Computer language. Computer language. Computer language. Computer language.",
+      "human_edits": 7,
+      "human_units": 3,
+      "oracle_edits": 6,
+      "oracle_units": 2
+    },
+    {
+      "id": "mandarin-0000",
+      "category": "mandarin",
+      "finals": 6,
+      "hypothesis": "这并不是告别。 这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。",
+      "human_edits": 92,
+      "human_units": 23,
+      "oracle_edits": 92,
+      "oracle_units": 23
+    },
+    {
+      "id": "mandarin-0001",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。",
+      "human_edits": 84,
+      "human_units": 21,
+      "oracle_edits": 84,
+      "oracle_units": 21
+    },
+    {
+      "id": "mandarin-0002",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。",
+      "human_edits": 160,
+      "human_units": 37,
+      "oracle_edits": 148,
+      "oracle_units": 37
+    },
+    {
+      "id": "mandarin-0003",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work 二零零二。",
+      "human_edits": 336,
+      "human_units": 83,
+      "oracle_edits": 328,
+      "oracle_units": 82
+    },
+    {
+      "id": "mandarin-0004",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。",
+      "human_edits": 124,
+      "human_units": 31,
+      "oracle_edits": 124,
+      "oracle_units": 31
+    },
+    {
+      "id": "mandarin-0005",
+      "category": "mandarin",
+      "finals": 4,
+      "hypothesis": "大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。",
+      "human_edits": 95,
+      "human_units": 29,
+      "oracle_edits": 93,
+      "oracle_units": 31
+    },
+    {
+      "id": "english-0000",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years.",
+      "human_edits": 58,
+      "human_units": 19,
+      "oracle_edits": 57,
+      "oracle_units": 19
+    },
+    {
+      "id": "english-0001",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence.",
+      "human_edits": 65,
+      "human_units": 21,
+      "oracle_edits": 63,
+      "oracle_units": 21
+    },
+    {
+      "id": "english-0002",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous, to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron.",
+      "human_edits": 100,
+      "human_units": 33,
+      "oracle_edits": 99,
+      "oracle_units": 33
+    },
+    {
+      "id": "english-0003",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is.",
+      "human_edits": 42,
+      "human_units": 15,
+      "oracle_edits": 42,
+      "oracle_units": 14
+    },
+    {
+      "id": "english-0004",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly.",
+      "human_edits": 45,
+      "human_units": 15,
+      "oracle_edits": 45,
+      "oracle_units": 15
+    },
+    {
+      "id": "english-0005",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others.",
+      "human_edits": 60,
+      "human_units": 20,
+      "oracle_edits": 60,
+      "oracle_units": 20
+    },
+    {
+      "id": "mixed-0004",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "So it was the. No, it was the. So it was the. No, it was the.",
+      "human_edits": 15,
+      "human_units": 4,
+      "oracle_edits": 14,
+      "oracle_units": 3
+    },
+    {
+      "id": "mixed-0009",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。",
+      "human_edits": 35,
+      "human_units": 13,
+      "oracle_edits": 33,
+      "oracle_units": 11
+    },
+    {
+      "id": "mixed-0028",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "OK，附件。 OK，附件。 OK，附件。 OK，附件。",
+      "human_edits": 11,
+      "human_units": 3,
+      "oracle_edits": 9,
+      "oracle_units": 3
+    },
+    {
+      "id": "mixed-0055",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。",
+      "human_edits": 43,
+      "human_units": 14,
+      "oracle_edits": 42,
+      "oracle_units": 14
+    },
+    {
+      "id": "mixed-0066",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "哦，这么technical的。 哦，这么technical的。 哦，这么technical的。 哦，这么technical的。",
+      "human_edits": 16,
+      "human_units": 4,
+      "oracle_edits": 15,
+      "oracle_units": 5
+    },
+    {
+      "id": "mixed-0068",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "Computer language. Computer language. Computer language. Computer language.",
+      "human_edits": 7,
+      "human_units": 3,
+      "oracle_edits": 6,
+      "oracle_units": 2
+    },
+    {
+      "id": "mandarin-0000",
+      "category": "mandarin",
+      "finals": 6,
+      "hypothesis": "这并不是告别。 这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。",
+      "human_edits": 92,
+      "human_units": 23,
+      "oracle_edits": 92,
+      "oracle_units": 23
+    },
+    {
+      "id": "mandarin-0001",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。",
+      "human_edits": 84,
+      "human_units": 21,
+      "oracle_edits": 84,
+      "oracle_units": 21
+    },
+    {
+      "id": "mandarin-0002",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。",
+      "human_edits": 160,
+      "human_units": 37,
+      "oracle_edits": 148,
+      "oracle_units": 37
+    },
+    {
+      "id": "mandarin-0003",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work 二零零二。",
+      "human_edits": 336,
+      "human_units": 83,
+      "oracle_edits": 328,
+      "oracle_units": 82
+    },
+    {
+      "id": "mandarin-0004",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。",
+      "human_edits": 124,
+      "human_units": 31,
+      "oracle_edits": 124,
+      "oracle_units": 31
+    },
+    {
+      "id": "mandarin-0005",
+      "category": "mandarin",
+      "finals": 4,
+      "hypothesis": "大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。",
+      "human_edits": 95,
+      "human_units": 29,
+      "oracle_edits": 93,
+      "oracle_units": 31
+    },
+    {
+      "id": "english-0000",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years.",
+      "human_edits": 58,
+      "human_units": 19,
+      "oracle_edits": 57,
+      "oracle_units": 19
+    },
+    {
+      "id": "english-0001",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence.",
+      "human_edits": 65,
+      "human_units": 21,
+      "oracle_edits": 63,
+      "oracle_units": 21
+    },
+    {
+      "id": "english-0002",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous, to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron.",
+      "human_edits": 100,
+      "human_units": 33,
+      "oracle_edits": 99,
+      "oracle_units": 33
+    },
+    {
+      "id": "english-0003",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is.",
+      "human_edits": 42,
+      "human_units": 15,
+      "oracle_edits": 42,
+      "oracle_units": 14
+    },
+    {
+      "id": "english-0004",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly.",
+      "human_edits": 45,
+      "human_units": 15,
+      "oracle_edits": 45,
+      "oracle_units": 15
+    },
+    {
+      "id": "english-0005",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others.",
+      "human_edits": 60,
+      "human_units": 20,
+      "oracle_edits": 60,
+      "oracle_units": 20
+    },
+    {
+      "id": "mixed-0004",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "So it was the. No, it was the. So it was the. No, it was the.",
+      "human_edits": 15,
+      "human_units": 4,
+      "oracle_edits": 14,
+      "oracle_units": 3
+    },
+    {
+      "id": "mixed-0009",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。",
+      "human_edits": 35,
+      "human_units": 13,
+      "oracle_edits": 33,
+      "oracle_units": 11
+    },
+    {
+      "id": "mixed-0028",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "OK，附件。 OK，附件。 OK，附件。 OK，附件。",
+      "human_edits": 11,
+      "human_units": 3,
+      "oracle_edits": 9,
+      "oracle_units": 3
+    },
+    {
+      "id": "mixed-0055",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。",
+      "human_edits": 43,
+      "human_units": 14,
+      "oracle_edits": 42,
+      "oracle_units": 14
+    },
+    {
+      "id": "mixed-0066",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "哦，这么technical的。 哦，这么technical的。 哦，这么technical的。 哦，这么technical的。",
+      "human_edits": 16,
+      "human_units": 4,
+      "oracle_edits": 15,
+      "oracle_units": 5
+    },
+    {
+      "id": "mixed-0068",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "Computer language. Computer language. Computer language. Computer language.",
+      "human_edits": 7,
+      "human_units": 3,
+      "oracle_edits": 6,
+      "oracle_units": 2
+    },
+    {
+      "id": "mandarin-0000",
+      "category": "mandarin",
+      "finals": 6,
+      "hypothesis": "这并不是告别。 这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。",
+      "human_edits": 92,
+      "human_units": 23,
+      "oracle_edits": 92,
+      "oracle_units": 23
+    },
+    {
+      "id": "mandarin-0001",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。",
+      "human_edits": 84,
+      "human_units": 21,
+      "oracle_edits": 84,
+      "oracle_units": 21
+    },
+    {
+      "id": "mandarin-0002",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。",
+      "human_edits": 160,
+      "human_units": 37,
+      "oracle_edits": 148,
+      "oracle_units": 37
+    },
+    {
+      "id": "mandarin-0003",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work 二零零二。",
+      "human_edits": 336,
+      "human_units": 83,
+      "oracle_edits": 328,
+      "oracle_units": 82
+    },
+    {
+      "id": "mandarin-0004",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。",
+      "human_edits": 124,
+      "human_units": 31,
+      "oracle_edits": 124,
+      "oracle_units": 31
+    },
+    {
+      "id": "mandarin-0005",
+      "category": "mandarin",
+      "finals": 4,
+      "hypothesis": "大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。",
+      "human_edits": 95,
+      "human_units": 29,
+      "oracle_edits": 93,
+      "oracle_units": 31
+    },
+    {
+      "id": "english-0000",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years.",
+      "human_edits": 58,
+      "human_units": 19,
+      "oracle_edits": 57,
+      "oracle_units": 19
+    },
+    {
+      "id": "english-0001",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence.",
+      "human_edits": 65,
+      "human_units": 21,
+      "oracle_edits": 63,
+      "oracle_units": 21
+    },
+    {
+      "id": "english-0002",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous, to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron.",
+      "human_edits": 100,
+      "human_units": 33,
+      "oracle_edits": 99,
+      "oracle_units": 33
+    },
+    {
+      "id": "english-0003",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is.",
+      "human_edits": 42,
+      "human_units": 15,
+      "oracle_edits": 42,
+      "oracle_units": 14
+    },
+    {
+      "id": "english-0004",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly.",
+      "human_edits": 45,
+      "human_units": 15,
+      "oracle_edits": 45,
+      "oracle_units": 15
+    },
+    {
+      "id": "english-0005",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others.",
+      "human_edits": 60,
+      "human_units": 20,
+      "oracle_edits": 60,
+      "oracle_units": 20
+    },
+    {
+      "id": "mixed-0004",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "So it was the. No, it was the. So it was the. No, it was the.",
+      "human_edits": 15,
+      "human_units": 4,
+      "oracle_edits": 14,
+      "oracle_units": 3
+    },
+    {
+      "id": "mixed-0009",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。",
+      "human_edits": 35,
+      "human_units": 13,
+      "oracle_edits": 33,
+      "oracle_units": 11
+    },
+    {
+      "id": "mixed-0028",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "OK，附件。 OK，附件。 OK，附件。 OK，附件。",
+      "human_edits": 11,
+      "human_units": 3,
+      "oracle_edits": 9,
+      "oracle_units": 3
+    },
+    {
+      "id": "mixed-0055",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。",
+      "human_edits": 43,
+      "human_units": 14,
+      "oracle_edits": 42,
+      "oracle_units": 14
+    },
+    {
+      "id": "mixed-0066",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "哦，这么technical的。 哦，这么technical的。 哦，这么technical的。 哦，这么technical的。",
+      "human_edits": 16,
+      "human_units": 4,
+      "oracle_edits": 15,
+      "oracle_units": 5
+    },
+    {
+      "id": "mixed-0068",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "Computer language. Computer language. Computer language. Computer language.",
+      "human_edits": 7,
+      "human_units": 3,
+      "oracle_edits": 6,
+      "oracle_units": 2
+    },
+    {
+      "id": "mandarin-0000",
+      "category": "mandarin",
+      "finals": 6,
+      "hypothesis": "这并不是告别。 这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。",
+      "human_edits": 92,
+      "human_units": 23,
+      "oracle_edits": 92,
+      "oracle_units": 23
+    },
+    {
+      "id": "mandarin-0001",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。",
+      "human_edits": 84,
+      "human_units": 21,
+      "oracle_edits": 84,
+      "oracle_units": 21
+    },
+    {
+      "id": "mandarin-0002",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。",
+      "human_edits": 160,
+      "human_units": 37,
+      "oracle_edits": 148,
+      "oracle_units": 37
+    },
+    {
+      "id": "mandarin-0003",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work 二零零二。",
+      "human_edits": 336,
+      "human_units": 83,
+      "oracle_edits": 328,
+      "oracle_units": 82
+    },
+    {
+      "id": "mandarin-0004",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。",
+      "human_edits": 124,
+      "human_units": 31,
+      "oracle_edits": 124,
+      "oracle_units": 31
+    },
+    {
+      "id": "mandarin-0005",
+      "category": "mandarin",
+      "finals": 4,
+      "hypothesis": "大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。",
+      "human_edits": 95,
+      "human_units": 29,
+      "oracle_edits": 93,
+      "oracle_units": 31
+    },
+    {
+      "id": "english-0000",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years.",
+      "human_edits": 58,
+      "human_units": 19,
+      "oracle_edits": 57,
+      "oracle_units": 19
+    },
+    {
+      "id": "english-0001",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence.",
+      "human_edits": 65,
+      "human_units": 21,
+      "oracle_edits": 63,
+      "oracle_units": 21
+    },
+    {
+      "id": "english-0002",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous, to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron.",
+      "human_edits": 100,
+      "human_units": 33,
+      "oracle_edits": 99,
+      "oracle_units": 33
+    },
+    {
+      "id": "english-0003",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is.",
+      "human_edits": 42,
+      "human_units": 15,
+      "oracle_edits": 42,
+      "oracle_units": 14
+    },
+    {
+      "id": "english-0004",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly.",
+      "human_edits": 45,
+      "human_units": 15,
+      "oracle_edits": 45,
+      "oracle_units": 15
+    },
+    {
+      "id": "english-0005",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others.",
+      "human_edits": 60,
+      "human_units": 20,
+      "oracle_edits": 60,
+      "oracle_units": 20
+    },
+    {
+      "id": "mixed-0004",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "So it was the. No, it was the. So it was the. No, it was the.",
+      "human_edits": 15,
+      "human_units": 4,
+      "oracle_edits": 14,
+      "oracle_units": 3
+    },
+    {
+      "id": "mixed-0009",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。",
+      "human_edits": 35,
+      "human_units": 13,
+      "oracle_edits": 33,
+      "oracle_units": 11
+    },
+    {
+      "id": "mixed-0028",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "OK，附件。 OK，附件。 OK，附件。 OK，附件。",
+      "human_edits": 11,
+      "human_units": 3,
+      "oracle_edits": 9,
+      "oracle_units": 3
+    },
+    {
+      "id": "mixed-0055",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。",
+      "human_edits": 43,
+      "human_units": 14,
+      "oracle_edits": 42,
+      "oracle_units": 14
+    },
+    {
+      "id": "mixed-0066",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "哦，这么technical的。 哦，这么technical的。 哦，这么technical的。 哦，这么technical的。",
+      "human_edits": 16,
+      "human_units": 4,
+      "oracle_edits": 15,
+      "oracle_units": 5
+    },
+    {
+      "id": "mixed-0068",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "Computer language. Computer language. Computer language. Computer language.",
+      "human_edits": 7,
+      "human_units": 3,
+      "oracle_edits": 6,
+      "oracle_units": 2
+    },
+    {
+      "id": "mandarin-0000",
+      "category": "mandarin",
+      "finals": 6,
+      "hypothesis": "这并不是告别。 这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。",
+      "human_edits": 92,
+      "human_units": 23,
+      "oracle_edits": 92,
+      "oracle_units": 23
+    },
+    {
+      "id": "mandarin-0001",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。",
+      "human_edits": 84,
+      "human_units": 21,
+      "oracle_edits": 84,
+      "oracle_units": 21
+    },
+    {
+      "id": "mandarin-0002",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。",
+      "human_edits": 160,
+      "human_units": 37,
+      "oracle_edits": 148,
+      "oracle_units": 37
+    },
+    {
+      "id": "mandarin-0003",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work 二零零二。",
+      "human_edits": 336,
+      "human_units": 83,
+      "oracle_edits": 328,
+      "oracle_units": 82
+    },
+    {
+      "id": "mandarin-0004",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。",
+      "human_edits": 124,
+      "human_units": 31,
+      "oracle_edits": 124,
+      "oracle_units": 31
+    },
+    {
+      "id": "mandarin-0005",
+      "category": "mandarin",
+      "finals": 4,
+      "hypothesis": "大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。",
+      "human_edits": 95,
+      "human_units": 29,
+      "oracle_edits": 93,
+      "oracle_units": 31
+    },
+    {
+      "id": "english-0000",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years.",
+      "human_edits": 58,
+      "human_units": 19,
+      "oracle_edits": 57,
+      "oracle_units": 19
+    },
+    {
+      "id": "english-0001",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence.",
+      "human_edits": 65,
+      "human_units": 21,
+      "oracle_edits": 63,
+      "oracle_units": 21
+    },
+    {
+      "id": "english-0002",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous, to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron.",
+      "human_edits": 100,
+      "human_units": 33,
+      "oracle_edits": 99,
+      "oracle_units": 33
+    },
+    {
+      "id": "english-0003",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is.",
+      "human_edits": 42,
+      "human_units": 15,
+      "oracle_edits": 42,
+      "oracle_units": 14
+    },
+    {
+      "id": "english-0004",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly.",
+      "human_edits": 45,
+      "human_units": 15,
+      "oracle_edits": 45,
+      "oracle_units": 15
+    },
+    {
+      "id": "english-0005",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others.",
+      "human_edits": 60,
+      "human_units": 20,
+      "oracle_edits": 60,
+      "oracle_units": 20
+    },
+    {
+      "id": "mixed-0004",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "So it was the. No, it was the. So it was the. No, it was the.",
+      "human_edits": 15,
+      "human_units": 4,
+      "oracle_edits": 14,
+      "oracle_units": 3
+    },
+    {
+      "id": "mixed-0009",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。",
+      "human_edits": 35,
+      "human_units": 13,
+      "oracle_edits": 33,
+      "oracle_units": 11
+    },
+    {
+      "id": "mixed-0028",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "OK，附件。 OK，附件。 OK，附件。 OK，附件。",
+      "human_edits": 11,
+      "human_units": 3,
+      "oracle_edits": 9,
+      "oracle_units": 3
+    },
+    {
+      "id": "mixed-0055",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。",
+      "human_edits": 43,
+      "human_units": 14,
+      "oracle_edits": 42,
+      "oracle_units": 14
+    },
+    {
+      "id": "mixed-0066",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "哦，这么technical的。 哦，这么technical的。 哦，这么technical的。 哦，这么technical的。",
+      "human_edits": 16,
+      "human_units": 4,
+      "oracle_edits": 15,
+      "oracle_units": 5
+    },
+    {
+      "id": "mixed-0068",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "Computer language. Computer language. Computer language. Computer language.",
+      "human_edits": 7,
+      "human_units": 3,
+      "oracle_edits": 6,
+      "oracle_units": 2
+    },
+    {
+      "id": "mandarin-0000",
+      "category": "mandarin",
+      "finals": 6,
+      "hypothesis": "这并不是告别。 这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。",
+      "human_edits": 92,
+      "human_units": 23,
+      "oracle_edits": 92,
+      "oracle_units": 23
+    },
+    {
+      "id": "mandarin-0001",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。",
+      "human_edits": 84,
+      "human_units": 21,
+      "oracle_edits": 84,
+      "oracle_units": 21
+    },
+    {
+      "id": "mandarin-0002",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。",
+      "human_edits": 160,
+      "human_units": 37,
+      "oracle_edits": 148,
+      "oracle_units": 37
+    },
+    {
+      "id": "mandarin-0003",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work 二零零二。",
+      "human_edits": 336,
+      "human_units": 83,
+      "oracle_edits": 328,
+      "oracle_units": 82
+    },
+    {
+      "id": "mandarin-0004",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。",
+      "human_edits": 124,
+      "human_units": 31,
+      "oracle_edits": 124,
+      "oracle_units": 31
+    },
+    {
+      "id": "mandarin-0005",
+      "category": "mandarin",
+      "finals": 4,
+      "hypothesis": "大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。",
+      "human_edits": 95,
+      "human_units": 29,
+      "oracle_edits": 93,
+      "oracle_units": 31
+    },
+    {
+      "id": "english-0000",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years.",
+      "human_edits": 58,
+      "human_units": 19,
+      "oracle_edits": 57,
+      "oracle_units": 19
+    },
+    {
+      "id": "english-0001",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence.",
+      "human_edits": 65,
+      "human_units": 21,
+      "oracle_edits": 63,
+      "oracle_units": 21
+    },
+    {
+      "id": "english-0002",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous, to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron.",
+      "human_edits": 100,
+      "human_units": 33,
+      "oracle_edits": 99,
+      "oracle_units": 33
+    },
+    {
+      "id": "english-0003",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is.",
+      "human_edits": 42,
+      "human_units": 15,
+      "oracle_edits": 42,
+      "oracle_units": 14
+    },
+    {
+      "id": "english-0004",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly.",
+      "human_edits": 45,
+      "human_units": 15,
+      "oracle_edits": 45,
+      "oracle_units": 15
+    },
+    {
+      "id": "english-0005",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others.",
+      "human_edits": 60,
+      "human_units": 20,
+      "oracle_edits": 60,
+      "oracle_units": 20
+    },
+    {
+      "id": "mixed-0004",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "So it was the. No, it was the. So it was the. No, it was the.",
+      "human_edits": 15,
+      "human_units": 4,
+      "oracle_edits": 14,
+      "oracle_units": 3
+    },
+    {
+      "id": "mixed-0009",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。",
+      "human_edits": 35,
+      "human_units": 13,
+      "oracle_edits": 33,
+      "oracle_units": 11
+    },
+    {
+      "id": "mixed-0028",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "OK，附件。 OK，附件。 OK，附件。 OK，附件。",
+      "human_edits": 11,
+      "human_units": 3,
+      "oracle_edits": 9,
+      "oracle_units": 3
+    },
+    {
+      "id": "mixed-0055",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。",
+      "human_edits": 43,
+      "human_units": 14,
+      "oracle_edits": 42,
+      "oracle_units": 14
+    },
+    {
+      "id": "mixed-0066",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "哦，这么technical的。 哦，这么technical的。 哦，这么technical的。 哦，这么technical的。",
+      "human_edits": 16,
+      "human_units": 4,
+      "oracle_edits": 15,
+      "oracle_units": 5
+    },
+    {
+      "id": "mixed-0068",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "Computer language. Computer language. Computer language. Computer language.",
+      "human_edits": 7,
+      "human_units": 3,
+      "oracle_edits": 6,
+      "oracle_units": 2
+    },
+    {
+      "id": "mandarin-0000",
+      "category": "mandarin",
+      "finals": 6,
+      "hypothesis": "这并不是告别。 这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。",
+      "human_edits": 92,
+      "human_units": 23,
+      "oracle_edits": 92,
+      "oracle_units": 23
+    },
+    {
+      "id": "mandarin-0001",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。",
+      "human_edits": 84,
+      "human_units": 21,
+      "oracle_edits": 84,
+      "oracle_units": 21
+    },
+    {
+      "id": "mandarin-0002",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。",
+      "human_edits": 160,
+      "human_units": 37,
+      "oracle_edits": 148,
+      "oracle_units": 37
+    },
+    {
+      "id": "mandarin-0003",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work 二零零二。",
+      "human_edits": 336,
+      "human_units": 83,
+      "oracle_edits": 328,
+      "oracle_units": 82
+    },
+    {
+      "id": "mandarin-0004",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。",
+      "human_edits": 124,
+      "human_units": 31,
+      "oracle_edits": 124,
+      "oracle_units": 31
+    },
+    {
+      "id": "mandarin-0005",
+      "category": "mandarin",
+      "finals": 4,
+      "hypothesis": "大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。",
+      "human_edits": 95,
+      "human_units": 29,
+      "oracle_edits": 93,
+      "oracle_units": 31
+    },
+    {
+      "id": "english-0000",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years.",
+      "human_edits": 58,
+      "human_units": 19,
+      "oracle_edits": 57,
+      "oracle_units": 19
+    },
+    {
+      "id": "english-0001",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence.",
+      "human_edits": 65,
+      "human_units": 21,
+      "oracle_edits": 63,
+      "oracle_units": 21
+    },
+    {
+      "id": "english-0002",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous, to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron.",
+      "human_edits": 100,
+      "human_units": 33,
+      "oracle_edits": 99,
+      "oracle_units": 33
+    },
+    {
+      "id": "english-0003",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is.",
+      "human_edits": 42,
+      "human_units": 15,
+      "oracle_edits": 42,
+      "oracle_units": 14
+    },
+    {
+      "id": "english-0004",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly.",
+      "human_edits": 45,
+      "human_units": 15,
+      "oracle_edits": 45,
+      "oracle_units": 15
+    },
+    {
+      "id": "english-0005",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others.",
+      "human_edits": 60,
+      "human_units": 20,
+      "oracle_edits": 60,
+      "oracle_units": 20
+    },
+    {
+      "id": "mixed-0004",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "So it was the. No, it was the. So it was the. No, it was the.",
+      "human_edits": 15,
+      "human_units": 4,
+      "oracle_edits": 14,
+      "oracle_units": 3
+    },
+    {
+      "id": "mixed-0009",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。",
+      "human_edits": 35,
+      "human_units": 13,
+      "oracle_edits": 33,
+      "oracle_units": 11
+    },
+    {
+      "id": "mixed-0028",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "OK，附件。 OK，附件。 OK，附件。 OK，附件。",
+      "human_edits": 11,
+      "human_units": 3,
+      "oracle_edits": 9,
+      "oracle_units": 3
+    },
+    {
+      "id": "mixed-0055",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。",
+      "human_edits": 43,
+      "human_units": 14,
+      "oracle_edits": 42,
+      "oracle_units": 14
+    },
+    {
+      "id": "mixed-0066",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "哦，这么technical的。 哦，这么technical的。 哦，这么technical的。 哦，这么technical的。",
+      "human_edits": 16,
+      "human_units": 4,
+      "oracle_edits": 15,
+      "oracle_units": 5
+    },
+    {
+      "id": "mixed-0068",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "Computer language. Computer language. Computer language. Computer language.",
+      "human_edits": 7,
+      "human_units": 3,
+      "oracle_edits": 6,
+      "oracle_units": 2
+    },
+    {
+      "id": "mandarin-0000",
+      "category": "mandarin",
+      "finals": 6,
+      "hypothesis": "这并不是告别。 这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。",
+      "human_edits": 92,
+      "human_units": 23,
+      "oracle_edits": 92,
+      "oracle_units": 23
+    },
+    {
+      "id": "mandarin-0001",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。",
+      "human_edits": 84,
+      "human_units": 21,
+      "oracle_edits": 84,
+      "oracle_units": 21
+    },
+    {
+      "id": "mandarin-0002",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。",
+      "human_edits": 160,
+      "human_units": 37,
+      "oracle_edits": 148,
+      "oracle_units": 37
+    },
+    {
+      "id": "mandarin-0003",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work 二零零二。",
+      "human_edits": 336,
+      "human_units": 83,
+      "oracle_edits": 328,
+      "oracle_units": 82
+    },
+    {
+      "id": "mandarin-0004",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。",
+      "human_edits": 124,
+      "human_units": 31,
+      "oracle_edits": 124,
+      "oracle_units": 31
+    },
+    {
+      "id": "mandarin-0005",
+      "category": "mandarin",
+      "finals": 4,
+      "hypothesis": "大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。",
+      "human_edits": 95,
+      "human_units": 29,
+      "oracle_edits": 93,
+      "oracle_units": 31
+    },
+    {
+      "id": "english-0000",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years.",
+      "human_edits": 58,
+      "human_units": 19,
+      "oracle_edits": 57,
+      "oracle_units": 19
+    },
+    {
+      "id": "english-0001",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence.",
+      "human_edits": 65,
+      "human_units": 21,
+      "oracle_edits": 63,
+      "oracle_units": 21
+    },
+    {
+      "id": "english-0002",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous, to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron.",
+      "human_edits": 100,
+      "human_units": 33,
+      "oracle_edits": 99,
+      "oracle_units": 33
+    },
+    {
+      "id": "english-0003",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is.",
+      "human_edits": 42,
+      "human_units": 15,
+      "oracle_edits": 42,
+      "oracle_units": 14
+    },
+    {
+      "id": "english-0004",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly.",
+      "human_edits": 45,
+      "human_units": 15,
+      "oracle_edits": 45,
+      "oracle_units": 15
+    },
+    {
+      "id": "english-0005",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others.",
+      "human_edits": 60,
+      "human_units": 20,
+      "oracle_edits": 60,
+      "oracle_units": 20
+    },
+    {
+      "id": "mixed-0004",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "So it was the. No, it was the. So it was the. No, it was the.",
+      "human_edits": 15,
+      "human_units": 4,
+      "oracle_edits": 14,
+      "oracle_units": 3
+    },
+    {
+      "id": "mixed-0009",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。",
+      "human_edits": 35,
+      "human_units": 13,
+      "oracle_edits": 33,
+      "oracle_units": 11
+    },
+    {
+      "id": "mixed-0028",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "OK，附件。 OK，附件。 OK，附件。 OK，附件。",
+      "human_edits": 11,
+      "human_units": 3,
+      "oracle_edits": 9,
+      "oracle_units": 3
+    },
+    {
+      "id": "mixed-0055",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。",
+      "human_edits": 43,
+      "human_units": 14,
+      "oracle_edits": 42,
+      "oracle_units": 14
+    },
+    {
+      "id": "mixed-0066",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "哦，这么technical的。 哦，这么technical的。 哦，这么technical的。 哦，这么technical的。",
+      "human_edits": 16,
+      "human_units": 4,
+      "oracle_edits": 15,
+      "oracle_units": 5
+    },
+    {
+      "id": "mixed-0068",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "Computer language. Computer language. Computer language. Computer language.",
+      "human_edits": 7,
+      "human_units": 3,
+      "oracle_edits": 6,
+      "oracle_units": 2
+    },
+    {
+      "id": "mandarin-0000",
+      "category": "mandarin",
+      "finals": 6,
+      "hypothesis": "这并不是告别。 这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。",
+      "human_edits": 92,
+      "human_units": 23,
+      "oracle_edits": 92,
+      "oracle_units": 23
+    },
+    {
+      "id": "mandarin-0001",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。",
+      "human_edits": 84,
+      "human_units": 21,
+      "oracle_edits": 84,
+      "oracle_units": 21
+    },
+    {
+      "id": "mandarin-0002",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。",
+      "human_edits": 160,
+      "human_units": 37,
+      "oracle_edits": 148,
+      "oracle_units": 37
+    },
+    {
+      "id": "mandarin-0003",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work 二零零二。",
+      "human_edits": 336,
+      "human_units": 83,
+      "oracle_edits": 328,
+      "oracle_units": 82
+    },
+    {
+      "id": "mandarin-0004",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。",
+      "human_edits": 124,
+      "human_units": 31,
+      "oracle_edits": 124,
+      "oracle_units": 31
+    },
+    {
+      "id": "mandarin-0005",
+      "category": "mandarin",
+      "finals": 4,
+      "hypothesis": "大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。",
+      "human_edits": 95,
+      "human_units": 29,
+      "oracle_edits": 93,
+      "oracle_units": 31
+    },
+    {
+      "id": "english-0000",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years.",
+      "human_edits": 58,
+      "human_units": 19,
+      "oracle_edits": 57,
+      "oracle_units": 19
+    },
+    {
+      "id": "english-0001",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence.",
+      "human_edits": 65,
+      "human_units": 21,
+      "oracle_edits": 63,
+      "oracle_units": 21
+    },
+    {
+      "id": "english-0002",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous, to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron.",
+      "human_edits": 100,
+      "human_units": 33,
+      "oracle_edits": 99,
+      "oracle_units": 33
+    },
+    {
+      "id": "english-0003",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is.",
+      "human_edits": 42,
+      "human_units": 15,
+      "oracle_edits": 42,
+      "oracle_units": 14
+    },
+    {
+      "id": "english-0004",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly.",
+      "human_edits": 45,
+      "human_units": 15,
+      "oracle_edits": 45,
+      "oracle_units": 15
+    },
+    {
+      "id": "english-0005",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others.",
+      "human_edits": 60,
+      "human_units": 20,
+      "oracle_edits": 60,
+      "oracle_units": 20
+    },
+    {
+      "id": "mixed-0004",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "So it was the. No, it was the. So it was the. No, it was the.",
+      "human_edits": 15,
+      "human_units": 4,
+      "oracle_edits": 14,
+      "oracle_units": 3
+    },
+    {
+      "id": "mixed-0009",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。",
+      "human_edits": 35,
+      "human_units": 13,
+      "oracle_edits": 33,
+      "oracle_units": 11
+    },
+    {
+      "id": "mixed-0028",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "OK，附件。 OK，附件。 OK，附件。 OK，附件。",
+      "human_edits": 11,
+      "human_units": 3,
+      "oracle_edits": 9,
+      "oracle_units": 3
+    },
+    {
+      "id": "mixed-0055",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。",
+      "human_edits": 43,
+      "human_units": 14,
+      "oracle_edits": 42,
+      "oracle_units": 14
+    },
+    {
+      "id": "mixed-0066",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "哦，这么technical的。 哦，这么technical的。 哦，这么technical的。 哦，这么technical的。",
+      "human_edits": 16,
+      "human_units": 4,
+      "oracle_edits": 15,
+      "oracle_units": 5
+    },
+    {
+      "id": "mixed-0068",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "Computer language. Computer language. Computer language. Computer language.",
+      "human_edits": 7,
+      "human_units": 3,
+      "oracle_edits": 6,
+      "oracle_units": 2
+    },
+    {
+      "id": "mandarin-0000",
+      "category": "mandarin",
+      "finals": 6,
+      "hypothesis": "这并不是告别。 这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。",
+      "human_edits": 92,
+      "human_units": 23,
+      "oracle_edits": 92,
+      "oracle_units": 23
+    },
+    {
+      "id": "mandarin-0001",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。",
+      "human_edits": 84,
+      "human_units": 21,
+      "oracle_edits": 84,
+      "oracle_units": 21
+    },
+    {
+      "id": "mandarin-0002",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。",
+      "human_edits": 160,
+      "human_units": 37,
+      "oracle_edits": 148,
+      "oracle_units": 37
+    },
+    {
+      "id": "mandarin-0003",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work 二零零二。",
+      "human_edits": 336,
+      "human_units": 83,
+      "oracle_edits": 328,
+      "oracle_units": 82
+    },
+    {
+      "id": "mandarin-0004",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。",
+      "human_edits": 124,
+      "human_units": 31,
+      "oracle_edits": 124,
+      "oracle_units": 31
+    },
+    {
+      "id": "mandarin-0005",
+      "category": "mandarin",
+      "finals": 4,
+      "hypothesis": "大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。",
+      "human_edits": 95,
+      "human_units": 29,
+      "oracle_edits": 93,
+      "oracle_units": 31
+    },
+    {
+      "id": "english-0000",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years.",
+      "human_edits": 58,
+      "human_units": 19,
+      "oracle_edits": 57,
+      "oracle_units": 19
+    },
+    {
+      "id": "english-0001",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence.",
+      "human_edits": 65,
+      "human_units": 21,
+      "oracle_edits": 63,
+      "oracle_units": 21
+    },
+    {
+      "id": "english-0002",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous, to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron.",
+      "human_edits": 100,
+      "human_units": 33,
+      "oracle_edits": 99,
+      "oracle_units": 33
+    },
+    {
+      "id": "english-0003",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is.",
+      "human_edits": 42,
+      "human_units": 15,
+      "oracle_edits": 42,
+      "oracle_units": 14
+    },
+    {
+      "id": "english-0004",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly.",
+      "human_edits": 45,
+      "human_units": 15,
+      "oracle_edits": 45,
+      "oracle_units": 15
+    },
+    {
+      "id": "english-0005",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others.",
+      "human_edits": 60,
+      "human_units": 20,
+      "oracle_edits": 60,
+      "oracle_units": 20
+    },
+    {
+      "id": "mixed-0004",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "So it was the. No, it was the. So it was the. No, it was the.",
+      "human_edits": 15,
+      "human_units": 4,
+      "oracle_edits": 14,
+      "oracle_units": 3
+    },
+    {
+      "id": "mixed-0009",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。",
+      "human_edits": 35,
+      "human_units": 13,
+      "oracle_edits": 33,
+      "oracle_units": 11
+    },
+    {
+      "id": "mixed-0028",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "OK，附件。 OK，附件。 OK，附件。 OK，附件。",
+      "human_edits": 11,
+      "human_units": 3,
+      "oracle_edits": 9,
+      "oracle_units": 3
+    },
+    {
+      "id": "mixed-0055",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。",
+      "human_edits": 43,
+      "human_units": 14,
+      "oracle_edits": 42,
+      "oracle_units": 14
+    },
+    {
+      "id": "mixed-0066",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "哦，这么technical的。 哦，这么technical的。 哦，这么technical的。 哦，这么technical的。",
+      "human_edits": 16,
+      "human_units": 4,
+      "oracle_edits": 15,
+      "oracle_units": 5
+    },
+    {
+      "id": "mixed-0068",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "Computer language. Computer language. Computer language. Computer language.",
+      "human_edits": 7,
+      "human_units": 3,
+      "oracle_edits": 6,
+      "oracle_units": 2
+    },
+    {
+      "id": "mandarin-0000",
+      "category": "mandarin",
+      "finals": 6,
+      "hypothesis": "这并不是告别。 这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。 这并不是告别，这是一个篇章的结束，也是新篇章的开始。",
+      "human_edits": 92,
+      "human_units": 23,
+      "oracle_edits": 92,
+      "oracle_units": 23
+    },
+    {
+      "id": "mandarin-0001",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。 钙、钾等元素属于金属，银和金等元素，当然也是金属。",
+      "human_edits": 84,
+      "human_units": 21,
+      "oracle_edits": 84,
+      "oracle_units": 21
+    },
+    {
+      "id": "mandarin-0002",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。",
+      "human_edits": 160,
+      "human_units": 37,
+      "oracle_edits": 148,
+      "oracle_units": 37
+    },
+    {
+      "id": "mandarin-0003",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work 二零零二。",
+      "human_edits": 336,
+      "human_units": 83,
+      "oracle_edits": 328,
+      "oracle_units": 82
+    },
+    {
+      "id": "mandarin-0004",
+      "category": "mandarin",
+      "finals": 5,
+      "hypothesis": "科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。",
+      "human_edits": 124,
+      "human_units": 31,
+      "oracle_edits": 124,
+      "oracle_units": 31
+    },
+    {
+      "id": "mandarin-0005",
+      "category": "mandarin",
+      "finals": 4,
+      "hypothesis": "大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。",
+      "human_edits": 95,
+      "human_units": 29,
+      "oracle_edits": 93,
+      "oracle_units": 31
+    },
+    {
+      "id": "english-0000",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years. However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years.",
+      "human_edits": 58,
+      "human_units": 19,
+      "oracle_edits": 57,
+      "oracle_units": 19
+    },
+    {
+      "id": "english-0001",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence. All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence.",
+      "human_edits": 65,
+      "human_units": 21,
+      "oracle_edits": 63,
+      "oracle_units": 21
+    },
+    {
+      "id": "english-0002",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous, to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron. To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron.",
+      "human_edits": 100,
+      "human_units": 33,
+      "oracle_edits": 99,
+      "oracle_units": 33
+    },
+    {
+      "id": "english-0003",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is. The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is.",
+      "human_edits": 42,
+      "human_units": 15,
+      "oracle_edits": 42,
+      "oracle_units": 14
+    },
+    {
+      "id": "english-0004",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly. Many people don't think about them as dinosaurs because they have feathers and can fly.",
+      "human_edits": 45,
+      "human_units": 15,
+      "oracle_edits": 45,
+      "oracle_units": 15
+    },
+    {
+      "id": "english-0005",
+      "category": "english",
+      "finals": 4,
+      "hypothesis": "The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others. The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others.",
+      "human_edits": 60,
+      "human_units": 20,
+      "oracle_edits": 60,
+      "oracle_units": 20
+    },
+    {
+      "id": "mixed-0004",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "So it was the. No, it was the. So it was the. No, it was the.",
+      "human_edits": 15,
+      "human_units": 4,
+      "oracle_edits": 14,
+      "oracle_units": 3
+    },
+    {
+      "id": "mixed-0009",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。 那我专业是那个ISM Information Systems Management。",
+      "human_edits": 35,
+      "human_units": 13,
+      "oracle_edits": 33,
+      "oracle_units": 11
+    },
+    {
+      "id": "mixed-0028",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "OK，附件。 OK，附件。 OK，附件。 OK，附件。",
+      "human_edits": 11,
+      "human_units": 3,
+      "oracle_edits": 9,
+      "oracle_units": 3
+    },
+    {
+      "id": "mixed-0055",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。 嗯，运动啊，男生一般不都喜欢运动。",
+      "human_edits": 43,
+      "human_units": 14,
+      "oracle_edits": 42,
+      "oracle_units": 14
+    },
+    {
+      "id": "mixed-0066",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "哦，这么technical的。 哦，这么technical的。 哦，这么technical的。 哦，这么technical的。",
+      "human_edits": 16,
+      "human_units": 4,
+      "oracle_edits": 15,
+      "oracle_units": 5
+    },
+    {
+      "id": "mixed-0068",
+      "category": "mixed",
+      "finals": 4,
+      "hypothesis": "Computer language. Computer language. Computer language. Computer language.",
+      "human_edits": 7,
+      "human_units": 3,
+      "oracle_edits": 6,
+      "oracle_units": 2
+    }
+  ],
+  "summary": {
+    "mandarin": {
+      "clips": 126,
+      "human_error_rate": 3.9776785714285716,
+      "oracle_error_rate": 3.862222222222222,
+      "clips_without_caption": 0
+    },
+    "english": {
+      "clips": 126,
+      "human_error_rate": 3.008130081300813,
+      "oracle_error_rate": 3.0,
+      "clips_without_caption": 0
+    },
+    "mixed": {
+      "clips": 126,
+      "human_error_rate": 3.097560975609756,
+      "oracle_error_rate": 3.1315789473684212,
+      "clips_without_caption": 0
+    }
+  },
+  "live": {
+    "clean_stop": false,
+    "errors": 0,
+    "final_count": 83,
+    "finalization_delay_seconds": {
+      "count": 83,
+      "max": 3.7092868,
+      "p50": 1.4137786,
+      "p95": 3.6379107
+    },
+    "first_caption_lag_seconds": {
+      "count": 78,
+      "max": 3.1986302,
+      "p50": 2.5718388,
+      "p95": 3.1533533
+    },
+    "incomplete_finals": 0,
+    "no_audio_loss": true,
+    "pipeline": {
+      "audio_seconds_processed": 771.96,
+      "capture": {
+        "channels": 2,
+        "default_device": true,
+        "device": "2 - VG279QE5A (2- AMD High Definition Audio Device)",
+        "device_buffer_frames": 4800,
+        "device_id": "{0.0.0.00000000}.{406c6046-09de-4663-887e-8041094dab78}",
+        "discontinuities": 1,
+        "dropped_frames": 0,
+        "failure": "Loopback packet query failed (device lost?) hr=0x88890004",
+        "frames": 37054080,
+        "mix_format": "float32",
+        "overflow_events": 0,
+        "packets": 77196,
+        "ring_capacity_frames": 96000,
+        "ring_peak_used_frames": 480,
+        "sample_rate": 48000,
+        "silent_packets": 0,
+        "timestamp_errors": 0
+      },
+      "error": "",
+      "finals": 83,
+      "max_backlog_seconds": 15.0,
+      "memory": {
+        "peak_pagefile_bytes": 7018958848,
+        "peak_working_set_bytes": 6767710208,
+        "private_bytes": 7013285888,
+        "working_set_bytes": 6763438080
+      },
+      "process_cpu_seconds": 1300.34375,
+      "provisionals": 188,
+      "provisionals_cancelled": 57,
+      "provisionals_skipped": 10,
+      "retained_peak_seconds": 28.98,
+      "segmenter": {
+        "energy_gated_positive_frames": 23728,
+        "longest_start_run_frames": 5,
+        "peak_frame_rms": 0.2057057445029319,
+        "vad_positive_frames": 24623
+      },
+      "session": 1,
+      "stop_reason": "Capture failed: Loopback packet query failed (device lost?) hr=0x88890004",
+      "suspensions": 57,
+      "wall_seconds": 771.9657845
+    },
+    "provisional_lag_seconds": {
+      "count": 188,
+      "max": 2.4017215,
+      "p50": 0.9119979,
+      "p95": 1.8654626
+    },
+    "speech_utterances": 78,
+    "success": false
+  },
+  "success": false
+}

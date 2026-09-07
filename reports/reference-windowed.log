@@ -1,0 +1,81 @@
+The tokenizer you are loading from 'D:\asr_win\reference-model' with an incorrect regex pattern: https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503/discussions/84#69121093e8b480e709447d5e. This will lead to incorrect tokenization. You should set the `fix_mistral_regex=True` flag when loading this tokenizer to fix this issue.
+Official prompt: '<|im_start|>system\n<|im_end|>\n<|im_start|>user\n<|audio_start|><|audio_pad|><|audio_end|><|im_end|>\n<|im_start|>assistant\n'
+Prefix: [151644, 8948, 198, 151645, 198, 151644, 872, 198, 151669] Suffix: [151670, 151645, 198, 151644, 77091, 198]
+Loading original Qwen3-ASR-1.7B FP32 on CPU...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:00<00:00,  1.04it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  2.20it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.89it/s]
+The following generation flags are not valid and may be ignored: ['temperature']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+Encoder attention: windowed (official _prepare_attention_mask applied, n_window_infer=800)
+Reference: mandarin-0000
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+4.66s eos: 这并不是告别，这是一个篇章的结束，也是新篇章的开始。
+Reference: mandarin-0001
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+4.88s eos: 钙、钾等元素属于金属，银和金等元素当然也是金属。
+Reference: mandarin-0002
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+8.02s eos: 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。
+Reference: mandarin-0003
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+12.20s eos: 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work 2002。
+Reference: mandarin-0004
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+5.72s eos: 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。
+Reference: mandarin-0005
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+5.85s eos: 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。
+Reference: english-0000
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+6.83s eos: However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years.
+Reference: english-0001
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+6.34s eos: All nouns, alongside the words say for you, always begin with a capital letter, even in the middle of a sentence.
+Reference: english-0002
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+9.70s eos: To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendours recorded by Lord Byron.
+Reference: english-0003
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+4.93s eos: The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is.
+Reference: english-0004
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+4.44s eos: Many people don't think about them as dinosaurs because they have feathers and can fly.
+Reference: english-0005
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+6.16s eos: The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others.
+Reference: mixed-0004
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+1.90s eos: So it was the.
+Reference: mixed-0009
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+3.23s eos: 那我专业是那个ISM，Information Systems Management。
+Reference: mixed-0028
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+1.66s eos: OK，福建。
+Reference: mixed-0055
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+3.22s eos: 嗯，运动啊，男生一般不都喜欢运动。
+Reference: mixed-0066
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+2.09s eos: 哦，这么technical的。
+Reference: mixed-0068
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+1.52s eos: Computer language.
+Reference: silence-short
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+0.90s eos: 
+Reference: silence
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+1.01s eos: 
+Reference: silence-long
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+2.22s eos: 
+Reference: low-noise
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+1.13s eos: 
+Reference: tone
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+1.03s eos: 
+Reference: clicks
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+1.18s eos: 
+EXIT=0

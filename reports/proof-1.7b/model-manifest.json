@@ -1,0 +1,98 @@
+{
+  "schema": 1,
+  "configuration": "Qwen3-ASR-1.7B FP32 graphs with FP16 embedding storage",
+  "source_model": {
+    "repo": "andrewleech/qwen3-asr-1.7b-onnx",
+    "revision": "df916193ac67e59347769891a21e10d81d12acdd",
+    "files": [
+      ".gitattributes",
+      "README.md",
+      "added_tokens.json",
+      "config.json",
+      "decoder_init.int4.onnx",
+      "decoder_init.onnx",
+      "decoder_step.int4.onnx",
+      "decoder_step.onnx",
+      "decoder_weights.data",
+      "decoder_weights.int4.data",
+      "embed_tokens.bin",
+      "encoder.int4.onnx",
+      "encoder.onnx",
+      "preprocessor_config.json",
+      "qwen3-asr-1.7b-int4.tar.gz",
+      "qwen3-asr-1.7b.tar.gz",
+      "tokenizer.json",
+      "tokenizer_config.json",
+      "vocab.json"
+    ]
+  },
+  "reference_model": {
+    "repo": "Qwen/Qwen3-ASR-1.7B",
+    "revision": "7278e1e70fe206f11671096ffdd38061171dd6e5",
+    "files": [
+      ".gitattributes",
+      "README.md",
+      "chat_template.json",
+      "config.json",
+      "generation_config.json",
+      "merges.txt",
+      "model-00001-of-00002.safetensors",
+      "model-00002-of-00002.safetensors",
+      "model.safetensors.index.json",
+      "preprocessor_config.json",
+      "tokenizer_config.json",
+      "vocab.json"
+    ]
+  },
+  "runtime": {
+    "package": "Microsoft.ML.OnnxRuntime.DirectML",
+    "version": "1.24.4"
+  },
+  "files": [
+    {
+      "path": "config.json",
+      "bytes": 1251,
+      "sha256": "d82437248b7c4674fe4091f98819a2a6167355b0fa66c0198f70622d1b778b49"
+    },
+    {
+      "path": "tokenizer.json",
+      "bytes": 11429377,
+      "sha256": "bd2a97b55c8f7f9c328c73ee9b9178771037e9f566dfca8e238a063d41cbac92"
+    },
+    {
+      "path": "prompt_reference.json",
+      "bytes": 1888,
+      "sha256": "d4041e031683c0e1cc199f0861b3311cffebf76946967c97573bb743761880eb"
+    },
+    {
+      "path": "mel_filters.bin",
+      "bytes": 102912,
+      "sha256": "aaac37f621282123f884373225515a47f119d6635d1fecd7fd78700fd961ae1c"
+    },
+    {
+      "path": "encoder.onnx",
+      "bytes": 1270241779,
+      "sha256": "c19ff8d702707693877a509ba1867472b0ad964593b93751091891a143edffec"
+    },
+    {
+      "path": "decoder_init.onnx",
+      "bytes": 286423,
+      "sha256": "209662efa6ddc74d2bef5dd1ce922409a3896f6fceddb15ab721393059818e39"
+    },
+    {
+      "path": "decoder_step.onnx",
+      "bytes": 285925,
+      "sha256": "45e90e376cb937d9c772d1c8d2b8330e34a94555b29730389e0fa8ff0ad2e1c0"
+    },
+    {
+      "path": "decoder_weights.data",
+      "bytes": 8126930944,
+      "sha256": "a46ff8cf2ef299a3737f7ebd78f39a8fb2ca273f2807f33f9b2a337ef0ebb4bb"
+    },
+    {
+      "path": "embed_tokens.bin",
+      "bytes": 622329856,
+      "sha256": "1489075dbd08fcd6b87bc69c5feca278014d29fa5693bd4aa61e47c1a3a160d4"
+    }
+  ]
+}

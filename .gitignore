@@ -1,0 +1,12 @@
+build/
+dist/
+.deps/
+.venv/
+.cache/
+models/
+reference-model/
+reports/traces/
+traces/
+__pycache__/
+*.part
+reference-model-0.6b/

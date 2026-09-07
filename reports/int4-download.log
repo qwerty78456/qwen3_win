@@ -1,0 +1,18 @@
+Downloading models\qwen3-asr-1.7b-fp32\decoder_init.int4.onnx (0/356165 bytes)
+  decoder_init.int4.onnx: 356165/356165
+decoder_init.int4.onnx 356165 c638585ada629b3cf65ce9cb068b7b980fccc9454a7f05e2333b8813730c1999 PUBLISHER-HASH-OK
+Downloading models\qwen3-asr-1.7b-fp32\decoder_step.int4.onnx (0/355662 bytes)
+  decoder_step.int4.onnx: 355662/355662
+decoder_step.int4.onnx 355662 fa138c025c26f6559e12be51cfbba5204a0b6993a1f3bb1177f80a0a65873bb5 PUBLISHER-HASH-OK
+Downloading models\qwen3-asr-1.7b-fp32\decoder_weights.int4.data (0/2226321408 bytes)
+  decoder_weights.int4.data: 268435456/2226321408
+  decoder_weights.int4.data: 536870912/2226321408
+  decoder_weights.int4.data: 805306368/2226321408
+  decoder_weights.int4.data: 1073741824/2226321408
+  decoder_weights.int4.data: 1342177280/2226321408
+  decoder_weights.int4.data: 1610612736/2226321408
+  decoder_weights.int4.data: 1879048192/2226321408
+  decoder_weights.int4.data: 2147483648/2226321408
+  decoder_weights.int4.data: 2226321408/2226321408
+decoder_weights.int4.data 2226321408 3f8d8fb695bcffc20ce8d8e823471e011404420785adf7678aac31057ef67333 PUBLISHER-HASH-OK
+INT4 assets acquired

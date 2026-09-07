@@ -1,0 +1,42 @@
+Pinned andrewleech/qwen3-asr-0.6b-onnx 4fc24a1402e74db89c4d2ef256875e71680128c4
+Downloading models\qwen3-asr-0.6b-fp32\README.md (0/3379 bytes)
+  README.md: 3379/3379
+verified README.md 3379 d138aa17d5cd131f
+Downloading models\qwen3-asr-0.6b-fp32\config.json (0/1250 bytes)
+  config.json: 1250/1250
+verified config.json 1250 df31c4689abe9d78
+Downloading models\qwen3-asr-0.6b-fp32\decoder_init.onnx (0/286310 bytes)
+  decoder_init.onnx: 286310/286310
+verified decoder_init.onnx 286310 9d43df2bd332f039
+Downloading models\qwen3-asr-0.6b-fp32\decoder_step.onnx (0/285813 bytes)
+  decoder_step.onnx: 285813/285813
+verified decoder_step.onnx 285813 c5bb74a3758cd2e2
+Downloading models\qwen3-asr-0.6b-fp32\decoder_weights.data (0/3006500864 bytes)
+  decoder_weights.data: 268435456/3006500864
+  decoder_weights.data: 536870912/3006500864
+  decoder_weights.data: 805306368/3006500864
+  decoder_weights.data: 1073741824/3006500864
+  decoder_weights.data: 1342177280/3006500864
+  decoder_weights.data: 1610612736/3006500864
+  decoder_weights.data: 1879048192/3006500864
+  decoder_weights.data: 2147483648/3006500864
+  decoder_weights.data: 2415919104/3006500864
+  decoder_weights.data: 2684354560/3006500864
+  decoder_weights.data: 2952790016/3006500864
+  decoder_weights.data: 3006500864/3006500864
+verified decoder_weights.data 3006500864 98ea738a3453fada
+Downloading models\qwen3-asr-0.6b-fp32\embed_tokens.bin (0/311164928 bytes)
+  embed_tokens.bin: 268435456/311164928
+  embed_tokens.bin: 311164928/311164928
+verified embed_tokens.bin 311164928 e80150119fa5f7e5
+Downloading models\qwen3-asr-0.6b-fp32\encoder.onnx (0/745762694 bytes)
+  encoder.onnx: 268435456/745762694
+  encoder.onnx: 536870912/745762694
+  encoder.onnx: 745762694/745762694
+verified encoder.onnx 745762694 3c027f880f677615
+Downloading models\qwen3-asr-0.6b-fp32\tokenizer.json (0/11429377 bytes)
+  tokenizer.json: 11429377/11429377
+verified tokenizer.json 11429377 bd2a97b55c8f7f9c
+tokenizer identical to 1.7B export: True
+0.6B assets ready
+EXIT=0

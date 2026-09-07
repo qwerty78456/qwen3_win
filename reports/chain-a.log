@@ -1,0 +1,44 @@
+== test_preprocessing ==
+resample-8000 PASS
+resample-22050 PASS
+resample-44100 PASS
+resample-48000 PASS
+resample-96000 PASS
+preprocessing EXIT=0
+== reference silence-short ==
+Encoder attention: windowed (official _prepare_attention_mask applied, n_window_infer=800)
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+1.31s eos: 
+reference EXIT=0
+== thread sweep ==
+      "encoder_seconds": 0.2548459,
+      "model_load_seconds": 12.816733133333333
+    },
+    {
+      "threads": 8,
+      "rtf": 0.5491112509426932,
+      "decode_ms_per_token": 141.82710968253969,
+      "prefill_seconds": 0.5398170333333333,
+      "encoder_seconds": 0.207421,
+      "model_load_seconds": 12.253813666666666
+    },
+    {
+      "threads": 12,
+      "rtf": 0.5444120148156121,
+      "decode_ms_per_token": 146.41400840336135,
+      "prefill_seconds": 0.40628580000000003,
+      "encoder_seconds": 0.15725076666666668,
+      "model_load_seconds": 14.605431233333332
+    },
+    {
+      "threads": 16,
+      "rtf": 0.5530937399296831,
+      "decode_ms_per_token": 150.39135588235297,
+      "prefill_seconds": 0.3588831666666667,
+      "encoder_seconds": 0.13856853333333333,
+      "model_load_seconds": 15.541454333333334
+    }
+  ],
+  "selected": 6
+}
+threads EXIT=0

@@ -1,0 +1,36 @@
+Pinned Qwen/Qwen3-ASR-0.6B 5eb144179a02acc5e5ba31e748d22b0cf3e303b0
+Downloading reference-model-0.6b\README.md (0/57456 bytes)
+  README.md: 57456/57456
+verified README.md 57456 5058416891bc47a2
+Downloading reference-model-0.6b\chat_template.json (0/1161 bytes)
+  chat_template.json: 1161/1161
+verified chat_template.json 1161 75a8cfca24f00de7
+Downloading reference-model-0.6b\config.json (0/6193 bytes)
+  config.json: 6193/6193
+verified config.json 6193 76d3ae4601ce9398
+Downloading reference-model-0.6b\generation_config.json (0/142 bytes)
+  generation_config.json: 142/142
+verified generation_config.json 142 1da527824d81e071
+Downloading reference-model-0.6b\merges.txt (0/1671853 bytes)
+  merges.txt: 1671853/1671853
+verified merges.txt 1671853 8831e4f1a0444713
+Downloading reference-model-0.6b\model.safetensors (0/1876091704 bytes)
+  model.safetensors: 268435456/1876091704
+  model.safetensors: 536870912/1876091704
+  model.safetensors: 805306368/1876091704
+  model.safetensors: 1073741824/1876091704
+  model.safetensors: 1342177280/1876091704
+  model.safetensors: 1610612736/1876091704
+  model.safetensors: 1876091704/1876091704
+verified model.safetensors 1876091704 79d6cbd4c98c7bbf
+Downloading reference-model-0.6b\preprocessor_config.json (0/330 bytes)
+  preprocessor_config.json: 330/330
+verified preprocessor_config.json 330 45e120a4eda2c20c
+Downloading reference-model-0.6b\tokenizer_config.json (0/12487 bytes)
+  tokenizer_config.json: 12487/12487
+verified tokenizer_config.json 12487 4942d00560426680
+Downloading reference-model-0.6b\vocab.json (0/2776833 bytes)
+  vocab.json: 2776833/2776833
+verified vocab.json 2776833 ca10d7e9fb3ed185
+0.6B reference checkpoint ready
+EXIT=0

@@ -1,0 +1,12 @@
+{
+  "configuration": "Qwen3-ASR-0.6B FP32 graphs with FP16 embedding storage",
+  "name": "0.6b",
+  "model_dir": "models/qwen3-asr-0.6b-fp32",
+  "variant": "fp32",
+  "onnx_lock_key": "onnx_0_6b",
+  "reference_dir": "reference-model-0.6b",
+  "reference_lock_key": "reference_0_6b",
+  "decision": "reports/variant-evaluation.json",
+  "previous_proof": "reports/proof-1.7b",
+  "note": "Chosen by scripts/evaluate_variants.py on the held-out set: 1.7B int4 rejected (+2.0 pp Mandarin CER), 0.6B FP32 accepted (-0.5 pp Mandarin, 0.0 pp English/mixed, no new silence failures). The 1.7B FP32 proof artifacts are archived under reports/proof-1.7b."
+}

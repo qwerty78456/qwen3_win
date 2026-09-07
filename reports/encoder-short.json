@@ -1,0 +1,26 @@
+{
+  "audio_tokens": 7,
+  "encoder_seconds": 0.0702729,
+  "encoder_sha256": "c19ff8d702707693877a509ba1867472b0ad964593b93751091891a143edffec",
+  "frames": 50,
+  "load_seconds": 1.0130275,
+  "memory": {
+    "peak_pagefile_bytes": 1326653440,
+    "peak_working_set_bytes": 1340375040,
+    "private_bytes": 1313927168,
+    "working_set_bytes": 1324732416
+  },
+  "samples": 8000,
+  "scope": "encoder diagnostic only; does not prove complete transcription",
+  "shape": [
+    1,
+    7,
+    2048
+  ],
+  "source": {
+    "bits": 16,
+    "channels": 1,
+    "format": "pcm",
+    "sample_rate": 16000
+  }
+}

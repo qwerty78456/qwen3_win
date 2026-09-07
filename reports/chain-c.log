@@ -1,0 +1,66 @@
+0.6B reference checkpoint ready
+EXIT=0
+== prepare-only (0.6B processor) ==
+aaac37f621282123f884373225515a47f119d6635d1fecd7fd78700fd961ae1c *models/qwen3-asr-0.6b-fp32/mel_filters.bin
+d4041e031683c0e1cc199f0861b3311cffebf76946967c97573bb743761880eb *models/qwen3-asr-0.6b-fp32/prompt_reference.json
+The tokenizer you are loading from 'D:\asr_win\reference-model-0.6b' with an incorrect regex pattern: https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503/discussions/84#69121093e8b480e709447d5e. This will lead to incorrect tokenization. You should set the `fix_mistral_regex=True` flag when loading this tokenizer to fix this issue.
+Official prompt: '<|im_start|>system\n<|im_end|>\n<|im_start|>user\n<|audio_start|><|audio_pad|><|audio_end|><|im_end|>\n<|im_start|>assistant\n'
+Prefix: [151644, 8948, 198, 151645, 198, 151644, 872, 198, 151669] Suffix: [151670, 151645, 198, 151644, 77091, 198]
+aaac37f621282123f884373225515a47f119d6635d1fecd7fd78700fd961ae1c *models/qwen3-asr-0.6b-fp32/mel_filters.bin
+d4041e031683c0e1cc199f0861b3311cffebf76946967c97573bb743761880eb *models/qwen3-asr-0.6b-fp32/prompt_reference.json
+aaac37f621282123f884373225515a47f119d6635d1fecd7fd78700fd961ae1c *models/qwen3-asr-1.7b-fp32/mel_filters.bin
+d4041e031683c0e1cc199f0861b3311cffebf76946967c97573bb743761880eb *models/qwen3-asr-1.7b-fp32/prompt_reference.json
+== regression references (0.6B) ==
+Encoder attention: windowed (official _prepare_attention_mask applied, n_window_infer=800)
+2.22s eos: 这并不是告别，这是一个篇章的结束，也是新篇章的开始。
+2.30s eos: 钙、钾等元素属于金属，银和金等元素当然也是金属。
+3.91s eos: 桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。
+5.60s eos: 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。
+2.82s eos: 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。
+2.88s eos: 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。
+3.30s eos: However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years.
+2.82s eos: All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence.
+4.55s eos: To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron.
+2.28s eos: The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is.
+2.07s eos: Many people don't think about them as dinosaurs because they have feathers and can fly.
+2.92s eos: The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others.
+0.84s eos: That was the.
+1.43s eos: 那我专业是那个ISM Information Systems Management。
+0.78s eos: OK，附件。
+1.48s eos: 嗯，运动啊，男生一般不都喜欢运动。
+0.98s eos: 哦，这么technical的。
+0.72s eos: Computer language.
+0.44s eos: 
+0.48s eos: 
+1.10s eos: 
+0.52s eos: 
+0.48s eos: 
+0.55s eos: 
+regression EXIT=0
+== evaluation references (0.6B) ==
+3.78s eos: 1963年，大坝建成后，季节性洪水被控制住了，沉积物不再冲散到河流里。
+4.62s eos: 它的长下颚上布满了七十多颗剃刀般锋利的牙齿，上颚上还有一排，这意味着任何与它相遇的东西都无路可逃。
+2.72s eos: Scotturb四零三路公交汽车定期发车前往新特拉，在罗卡角停靠。
+2.41s eos: 这里几乎都是沙滩，游泳很安全。大部分地方都有新西兰圣诞树的树荫。
+2.71s eos: 当所有可用的资源在一个组织的职能部门之间得到有效利用时，创造力和独创性就会发生。
+2.03s eos: 他随后被转转送到剑桥的阿登布鲁克医院。
+2.56s eos: The Northern Marianas Emergency Management Office said that there were no damages reported in the nation.
+2.39s eos: 20th-century research has shown that there are two pools of genetic variation hidden and expressed.
+3.78s eos: The aspect ratio of this format, dividing by 12 to obtain the simplest whole number ratio, is therefore said to be 3 to 2.
+4.14s eos: As light pollution in their heyday was not the kind of problem it is today, they are usually located in cities or at campuses, easier to reach than those built in modern times.
+3.05s eos: For the night, between 150 and 200 copies were made, now known as Dunlap broadsides.
+5.07s eos: For example, each year students from Bennett School in North Carolina design a website about their trip to the state capital. Each year the website gets remodeled, but old versions are kept online to serve as a scrapbook.
+0.80s eos: 嗯，对。
+1.16s eos: 所以我上学期也学了Python。
+1.82s eos: 所以就会还是选择回大陆找。不过这学期适应多。
+0.89s eos: 也没有很多 Ghost Night。
+1.12s eos: 大多数那一周是在床上睡觉。
+1.40s eos: 嗯，所以你现在还是比较focus在找工作这件事。
+0.44s eos: 
+0.52s eos: 
+0.98s eos: 
+0.56s eos: 
+0.52s eos: 
+0.60s eos: 
+evaluation EXIT=0
+CHAIN_C_DONE
