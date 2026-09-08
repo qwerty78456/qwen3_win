@@ -1,5 +1,6 @@
 #pragma once
 #include "common.hpp"
+#include "compute.hpp"
 #include "mel.hpp"
 #include <atomic>
 #include <functional>
@@ -10,7 +11,8 @@ struct EngineOptions {
   int threads=ASRWIN_THREADS;  // selected for the configured model
   int max_tokens=512;
   bool directml=false;
-  int adapter=0;
+  int adapter=0;               // DXGI/DirectML adapter index, already resolved by the caller (see compute.hpp)
+  bool large_model=false;      // the optional GPU-only model from shipped-model.json (reporting only)
   bool verify_assets=true;
   bool verify_distribution=false;
   fs::path profile;
@@ -32,10 +34,14 @@ class Engine {
                         const std::atomic<bool>* cancel=nullptr, int max_tokens=0);
   Json inspect() const;
   Json finish_profiling();
+  void warm_up();               // DirectML only: one short generation so kernel compilation does not land in the first caption
+  Json gpu_memory() const;      // this process's video memory on the adapter (null on CPU)
   const EngineOptions& options() const { return options_; }
+  const ComputeAdapter& adapter() const { return adapter_; }
  private:
   fs::path model_;
   EngineOptions options_;
+  ComputeAdapter adapter_; bool luid_confirmed_=false; uint64_t gpu_peak_local_=0; double warm_up_seconds_=-1; std::string warm_up_error_;
   Json config_;
   Ort::Env env_{ORT_LOGGING_LEVEL_WARNING,"AsrWin"};
   Ort::MemoryInfo cpu_{Ort::MemoryInfo::CreateCpu(OrtArenaAllocator,OrtMemTypeDefault)};

@@ -1,0 +1,867 @@
+{
+  "schema": 1,
+  "generated_at": "2026-09-08T09:42:24+00:00",
+  "success": false,
+  "summary": "DirectML NOT validated: 1.7b: sustained_load",
+  "binary": {
+    "path": "build/Release/AsrWin.exe",
+    "sha256": "0757ade8509a10fbdcf6d9fd31ab31cc7d4b7dad431e20dcdc70dd8b680c23f2",
+    "directml_validated_at_build": false,
+    "runtime": "1.24.4"
+  },
+  "adapter": {
+    "dedicated_video_memory_bytes": 16974905344,
+    "default": true,
+    "device_id": 30096,
+    "directml_index": 0,
+    "driver_version": "32.0.31041.1004",
+    "duplicate_of": null,
+    "eligible": true,
+    "eligible_models": [
+      "default",
+      "large"
+    ],
+    "luid": "0x0000000000015569",
+    "name": "AMD Radeon RX 9060 XT",
+    "reason": "",
+    "shared_system_memory_bytes": 16704294912,
+    "software": false,
+    "vendor_id": 4098
+  },
+  "adapters": {
+    "adapters": [
+      {
+        "dedicated_video_memory_bytes": 16974905344,
+        "default": true,
+        "device_id": 30096,
+        "directml_index": 0,
+        "driver_version": "32.0.31041.1004",
+        "duplicate_of": null,
+        "eligible": true,
+        "eligible_models": [
+          "default",
+          "large"
+        ],
+        "luid": "0x0000000000015569",
+        "name": "AMD Radeon RX 9060 XT",
+        "reason": "",
+        "shared_system_memory_bytes": 16704294912,
+        "software": false,
+        "vendor_id": 4098
+      },
+      {
+        "dedicated_video_memory_bytes": 16974905344,
+        "default": false,
+        "device_id": 30096,
+        "directml_index": 1,
+        "driver_version": "32.0.31041.1004",
+        "duplicate_of": null,
+        "eligible": true,
+        "eligible_models": [
+          "default",
+          "large"
+        ],
+        "luid": "0x00000000000248B8",
+        "name": "AMD Radeon RX 9060 XT",
+        "reason": "",
+        "shared_system_memory_bytes": 16704294912,
+        "software": false,
+        "vendor_id": 4098
+      },
+      {
+        "dedicated_video_memory_bytes": 509353984,
+        "default": false,
+        "device_id": 5056,
+        "directml_index": 2,
+        "driver_version": "32.0.21045.5002",
+        "duplicate_of": null,
+        "eligible": false,
+        "eligible_models": [],
+        "luid": "0x00000000000177EB",
+        "name": "AMD Radeon(TM) Graphics",
+        "reason": "dedicated video memory below 8,000 MB",
+        "shared_system_memory_bytes": 16704294912,
+        "software": false,
+        "vendor_id": 4098
+      },
+      {
+        "dedicated_video_memory_bytes": 16974905344,
+        "default": false,
+        "device_id": 30096,
+        "directml_index": 3,
+        "driver_version": "32.0.31041.1004",
+        "duplicate_of": null,
+        "eligible": true,
+        "eligible_models": [
+          "default",
+          "large"
+        ],
+        "luid": "0x000000000A8BCD39",
+        "name": "AMD Radeon RX 9060 XT",
+        "reason": "",
+        "shared_system_memory_bytes": 16704294912,
+        "software": false,
+        "vendor_id": 4098
+      },
+      {
+        "dedicated_video_memory_bytes": 0,
+        "default": false,
+        "device_id": 140,
+        "directml_index": 4,
+        "driver_version": "10.0.26100.3624",
+        "duplicate_of": null,
+        "eligible": false,
+        "eligible_models": [],
+        "luid": "0x000000000001777A",
+        "name": "Microsoft Basic Render Driver",
+        "reason": "software renderer",
+        "shared_system_memory_bytes": 16704294912,
+        "software": true,
+        "vendor_id": 5140
+      }
+    ],
+    "memory_factor": 1.5,
+    "models": [
+      {
+        "minimum_dedicated_video_memory_bytes": 8000000000,
+        "name": "default",
+        "required_dedicated_video_memory_bytes": 8000000000,
+        "weight_bytes": 3752835681
+      },
+      {
+        "minimum_dedicated_video_memory_bytes": 16000000000,
+        "name": "large",
+        "required_dedicated_video_memory_bytes": 16000000000,
+        "weight_bytes": 9397745071
+      }
+    ],
+    "skip_memory_check": false
+  },
+  "default_provider": "cpu",
+  "models": {
+    "1.7b": {
+      "name": "1.7b",
+      "model_dir": "models/qwen3-asr-1.7b-fp32",
+      "suffix": "-1.7b",
+      "criteria": {
+        "regression_24_pass": {
+          "success": true,
+          "passed": 24,
+          "tokens_exact": 24,
+          "report": "reports/verification-directml-1.7b.json"
+        },
+        "tokens_identical_to_cpu": {
+          "success": true,
+          "differing_fixtures": [],
+          "cpu_baseline": "reports/proof-1.7b/verification.json"
+        },
+        "stages_within_tolerance": {
+          "success": true,
+          "passed": 24,
+          "failed": [],
+          "overrides_used": [
+            "clicks:keys_0",
+            "clicks:keys_1",
+            "clicks:values_0",
+            "clicks:values_1",
+            "english-0000:keys_0",
+            "english-0000:keys_1",
+            "english-0000:keys_7",
+            "english-0000:values_0",
+            "english-0000:values_1",
+            "english-0000:values_7",
+            "english-0001:keys_0",
+            "english-0001:keys_1",
+            "english-0001:keys_7",
+            "english-0001:values_0",
+            "english-0001:values_1",
+            "english-0001:values_7",
+            "english-0002:keys_0",
+            "english-0002:keys_1",
+            "english-0002:keys_7",
+            "english-0002:values_0",
+            "english-0002:values_1",
+            "english-0002:values_7",
+            "english-0003:keys_0",
+            "english-0003:keys_1",
+            "english-0003:keys_7",
+            "english-0003:values_0",
+            "english-0003:values_1",
+            "english-0003:values_7",
+            "english-0004:keys_0",
+            "english-0004:keys_1",
+            "english-0004:keys_7",
+            "english-0004:values_0",
+            "english-0004:values_1",
+            "english-0004:values_7",
+            "english-0005:keys_0",
+            "english-0005:keys_1",
+            "english-0005:keys_7",
+            "english-0005:values_0",
+            "english-0005:values_1",
+            "english-0005:values_7",
+            "low-noise:keys_0",
+            "low-noise:keys_1",
+            "low-noise:values_0",
+            "low-noise:values_1",
+            "mandarin-0000:keys_0",
+            "mandarin-0000:keys_1",
+            "mandarin-0000:keys_7",
+            "mandarin-0000:values_0",
+            "mandarin-0000:values_1",
+            "mandarin-0000:values_7",
+            "mandarin-0001:keys_0",
+            "mandarin-0001:keys_1",
+            "mandarin-0001:keys_7",
+            "mandarin-0001:values_0",
+            "mandarin-0001:values_1",
+            "mandarin-0001:values_7",
+            "mandarin-0002:keys_0",
+            "mandarin-0002:keys_1",
+            "mandarin-0002:keys_7",
+            "mandarin-0002:values_0",
+            "mandarin-0002:values_1",
+            "mandarin-0002:values_7",
+            "mandarin-0003:keys_0",
+            "mandarin-0003:keys_1",
+            "mandarin-0003:keys_7",
+            "mandarin-0003:values_0",
+            "mandarin-0003:values_1",
+            "mandarin-0003:values_7",
+            "mandarin-0004:keys_0",
+            "mandarin-0004:keys_1",
+            "mandarin-0004:keys_7",
+            "mandarin-0004:values_0",
+            "mandarin-0004:values_1",
+            "mandarin-0004:values_7",
+            "mandarin-0005:keys_0",
+            "mandarin-0005:keys_1",
+            "mandarin-0005:keys_7",
+            "mandarin-0005:values_0",
+            "mandarin-0005:values_1",
+            "mandarin-0005:values_7",
+            "mixed-0004:keys_0",
+            "mixed-0004:keys_1",
+            "mixed-0004:keys_7",
+            "mixed-0004:values_0",
+            "mixed-0004:values_1",
+            "mixed-0004:values_7",
+            "mixed-0009:keys_0",
+            "mixed-0009:keys_1",
+            "mixed-0009:keys_7",
+            "mixed-0009:values_0",
+            "mixed-0009:values_1",
+            "mixed-0009:values_7",
+            "mixed-0028:keys_0",
+            "mixed-0028:keys_1",
+            "mixed-0028:keys_7",
+            "mixed-0028:values_0",
+            "mixed-0028:values_1",
+            "mixed-0028:values_7",
+            "mixed-0055:keys_0",
+            "mixed-0055:keys_1",
+            "mixed-0055:keys_7",
+            "mixed-0055:values_0",
+            "mixed-0055:values_1",
+            "mixed-0055:values_7",
+            "mixed-0066:keys_0",
+            "mixed-0066:keys_1",
+            "mixed-0066:keys_7",
+            "mixed-0066:values_0",
+            "mixed-0066:values_1",
+            "mixed-0066:values_7",
+            "mixed-0068:keys_0",
+            "mixed-0068:keys_1",
+            "mixed-0068:values_0",
+            "mixed-0068:values_1",
+            "silence-long:keys_0",
+            "silence-long:keys_1",
+            "silence-long:values_0",
+            "silence-long:values_1",
+            "silence-short:keys_0",
+            "silence-short:keys_1",
+            "silence-short:values_0",
+            "silence-short:values_1",
+            "silence:keys_0",
+            "silence:keys_1",
+            "silence:values_0",
+            "silence:values_1",
+            "tone:keys_0",
+            "tone:keys_1",
+            "tone:values_0",
+            "tone:values_1"
+          ],
+          "report_dir": "reports/stages-directml-1.7b/"
+        },
+        "end_to_end_gain": {
+          "success": true,
+          "minimum": 0.15,
+          "gain_all_fixtures": 0.4178782923865284,
+          "gain_speech": 0.43055599385805277,
+          "cpu_total_seconds": 74.3688956,
+          "directml_total_seconds": 43.2917485,
+          "cpu_threads": 6
+        },
+        "live_runs_pass": {
+          "success": true,
+          "runs": {
+            "english-0002": {
+              "success": true,
+              "directml": {
+                "success": true,
+                "final_count": 3,
+                "provisional_p95": 1.3403737,
+                "provisional_max": 1.3403737,
+                "first_caption_p95": 2.7952422,
+                "finalization_p95": 1.7223296,
+                "max_backlog": 1.375175,
+                "suspensions": 0,
+                "stop_reason": "",
+                "peak_working_set_bytes": 2946977792,
+                "private_bytes": 17671262208,
+                "wall_seconds": 13.0027358
+              },
+              "cpu": {
+                "success": true,
+                "final_count": 3,
+                "provisional_p95": 2.304315,
+                "provisional_max": 2.304315,
+                "first_caption_p95": 6.4183179,
+                "finalization_p95": 3.5518321,
+                "max_backlog": 5.6,
+                "suspensions": 1,
+                "stop_reason": "",
+                "peak_working_set_bytes": 16370270208,
+                "private_bytes": 15705534464,
+                "wall_seconds": 14.8226641
+              },
+              "warm_up_seconds": 0.7569176
+            },
+            "mandarin-0002": {
+              "success": true,
+              "directml": {
+                "success": true,
+                "final_count": 2,
+                "provisional_p95": 1.845693,
+                "provisional_max": 1.845693,
+                "first_caption_p95": 2.9621445,
+                "finalization_p95": 3.4076221,
+                "max_backlog": 2.712364,
+                "suspensions": 0,
+                "stop_reason": "",
+                "peak_working_set_bytes": 3192692736,
+                "private_bytes": 18170499072,
+                "wall_seconds": 15.962635
+              },
+              "cpu": {
+                "success": true,
+                "final_count": 2,
+                "provisional_p95": 2.9970746,
+                "provisional_max": 2.9970746,
+                "first_caption_p95": 3.8972296,
+                "finalization_p95": 5.6916652,
+                "max_backlog": 11.120000000000001,
+                "suspensions": 1,
+                "stop_reason": "",
+                "peak_working_set_bytes": 16369975296,
+                "private_bytes": 16258166784,
+                "wall_seconds": 18.565943
+              },
+              "warm_up_seconds": 0.7792298
+            },
+            "mandarin-0003": {
+              "success": true,
+              "directml": {
+                "success": true,
+                "final_count": 1,
+                "provisional_p95": 1.687357,
+                "provisional_max": 1.687357,
+                "first_caption_p95": 2.7767899,
+                "finalization_p95": 4.1968564,
+                "max_backlog": 1.053289,
+                "suspensions": 0,
+                "stop_reason": "",
+                "peak_working_set_bytes": 9249947648,
+                "private_bytes": 18853298176,
+                "wall_seconds": 19.5571107
+              },
+              "cpu": {
+                "success": true,
+                "final_count": 1,
+                "provisional_p95": 4.595291,
+                "provisional_max": 4.595291,
+                "first_caption_p95": 3.7933028,
+                "finalization_p95": 9.0990771,
+                "max_backlog": 14.74,
+                "suspensions": 1,
+                "stop_reason": "",
+                "peak_working_set_bytes": 16370089984,
+                "private_bytes": 16537571328,
+                "wall_seconds": 24.449944
+              },
+              "warm_up_seconds": 0.6343718
+            },
+            "mixed-0009": {
+              "success": true,
+              "directml": {
+                "success": true,
+                "final_count": 1,
+                "provisional_p95": 0.8836598,
+                "provisional_max": 0.8836598,
+                "first_caption_p95": 2.8736598,
+                "finalization_p95": 1.2175749,
+                "max_backlog": 0.4290967,
+                "suspensions": 0,
+                "stop_reason": "",
+                "peak_working_set_bytes": 2954670080,
+                "private_bytes": 17381978112,
+                "wall_seconds": 5.817847
+              },
+              "cpu": {
+                "success": true,
+                "final_count": 1,
+                "provisional_p95": 1.8088427,
+                "provisional_max": 1.8088427,
+                "first_caption_p95": 3.8015378,
+                "finalization_p95": 2.555312,
+                "max_backlog": 4.6,
+                "suspensions": 1,
+                "stop_reason": "",
+                "peak_working_set_bytes": 16370757632,
+                "private_bytes": 15705047040,
+                "wall_seconds": 7.1527468
+              },
+              "warm_up_seconds": 0.8629358
+            }
+          }
+        },
+        "sustained_load": {
+          "report": "reports/capture-60min-load2-directml-1.7b.json",
+          "present": true,
+          "success": false,
+          "final_count": 374,
+          "provisional_p95": 1.767165,
+          "provisional_max": 1.947833599,
+          "first_caption_p95": 3.2842464,
+          "finalization_p95": 4.216281901,
+          "max_backlog": 5.3770834,
+          "suspensions": 20,
+          "stop_reason": "Capture failed: Loopback packet query failed (device lost?) hr=0x88890004",
+          "peak_working_set_bytes": 12433096704,
+          "private_bytes": 18897240064,
+          "wall_seconds": 3471.5050352,
+          "provider": "DirectML (experimental)",
+          "adapter_luid": "0x0000000000015569",
+          "adapter_driver_version": "32.0.31041.1004",
+          "gpu_memory": {
+            "adapter_index": 0,
+            "adapter_luid": "0x0000000000015569",
+            "current": {
+              "local_budget_bytes": 14855094216,
+              "local_usage_bytes": 17881247744,
+              "nonlocal_budget_bytes": 15898988544,
+              "nonlocal_usage_bytes": 488112128
+            },
+            "peak_local_usage_bytes": 17881247744
+          },
+          "background_load_processes": 2,
+          "no_audio_loss": true,
+          "overload_stop": false,
+          "accuracy": {
+            "mandarin": {
+              "clips": 126,
+              "human_error_rate": 0.09438775510204081,
+              "oracle_error_rate": 0.10687830687830688,
+              "clips_without_caption": 6
+            },
+            "english": {
+              "clips": 126,
+              "human_error_rate": 0.08633372048006194,
+              "oracle_error_rate": 0.07103825136612021,
+              "clips_without_caption": 7
+            },
+            "mixed": {
+              "clips": 126,
+              "human_error_rate": 0.3693379790940767,
+              "oracle_error_rate": 0.18045112781954886,
+              "clips_without_caption": 12
+            }
+          }
+        },
+        "adapter_identity": {
+          "success": true,
+          "runs": {
+            "verification": {
+              "adapter_index": 0,
+              "adapter_name": "AMD Radeon RX 9060 XT",
+              "adapter_luid": "0x0000000000015569",
+              "adapter_driver_version": "32.0.31041.1004",
+              "adapter_luid_confirmed": true
+            },
+            "live-english-0002": {
+              "adapter_index": 0,
+              "adapter_name": "AMD Radeon RX 9060 XT",
+              "adapter_luid": "0x0000000000015569",
+              "adapter_driver_version": "32.0.31041.1004",
+              "adapter_luid_confirmed": true
+            },
+            "live-mandarin-0002": {
+              "adapter_index": 0,
+              "adapter_name": "AMD Radeon RX 9060 XT",
+              "adapter_luid": "0x0000000000015569",
+              "adapter_driver_version": "32.0.31041.1004",
+              "adapter_luid_confirmed": true
+            },
+            "live-mandarin-0003": {
+              "adapter_index": 0,
+              "adapter_name": "AMD Radeon RX 9060 XT",
+              "adapter_luid": "0x0000000000015569",
+              "adapter_driver_version": "32.0.31041.1004",
+              "adapter_luid_confirmed": true
+            },
+            "live-mixed-0009": {
+              "adapter_index": 0,
+              "adapter_name": "AMD Radeon RX 9060 XT",
+              "adapter_luid": "0x0000000000015569",
+              "adapter_driver_version": "32.0.31041.1004",
+              "adapter_luid_confirmed": true
+            },
+            "sustained": {
+              "adapter_index": 0,
+              "adapter_name": "AMD Radeon RX 9060 XT",
+              "adapter_luid": "0x0000000000015569",
+              "adapter_driver_version": "32.0.31041.1004",
+              "adapter_luid_confirmed": true
+            }
+          }
+        },
+        "heldout_tokens_identical_to_cpu": {
+          "success": true,
+          "decision": {
+            "accepted": true,
+            "deltas_percentage_points": {
+              "mandarin": {
+                "baseline": 0.07575757575757576,
+                "candidate": 0.07575757575757576,
+                "delta_pp": 0.0
+              },
+              "english": {
+                "baseline": 0.03546099290780142,
+                "candidate": 0.03546099290780142,
+                "delta_pp": 0.0
+              },
+              "mixed": {
+                "baseline": 0.23529411764705882,
+                "candidate": 0.23529411764705882,
+                "delta_pp": 0.0
+              }
+            },
+            "new_silence_failures": [],
+            "fixtures_differing_from_baseline": [],
+            "tokens_identical_to_cpu_baseline": true,
+            "fixtures_with_different_tokens": []
+          },
+          "report": "reports/variant-evaluation.json"
+        }
+      },
+      "measurements": {
+        "file": {
+          "cpu": {
+            "fixtures": 24,
+            "passed": 24,
+            "tokens_exact": 24,
+            "total_seconds": 74.3688956,
+            "speech_total_seconds": 69.713396,
+            "decode_ms_per_token": 138.03064976744187,
+            "mean_encoder_seconds": 0.15449386666666667,
+            "mean_prefill_seconds": 0.41926945,
+            "mean_rtf_speech": 0.6158405083229122,
+            "max_rtf_speech": 1.18564,
+            "model_load_seconds": 22.4617341,
+            "peak_working_set_bytes": 16369922048,
+            "max_private_bytes": 16541741056,
+            "engine": {
+              "provider": "CPU",
+              "threads": 6,
+              "adapter_index": null,
+              "adapter_name": null,
+              "adapter_luid": null,
+              "adapter_driver_version": null,
+              "adapter_luid_confirmed": null,
+              "large_model": null,
+              "runtime": "1.24.4"
+            },
+            "gpu_memory": null
+          },
+          "directml": {
+            "fixtures": 24,
+            "passed": 24,
+            "tokens_exact": 24,
+            "total_seconds": 43.2917485,
+            "speech_total_seconds": 39.6978755,
+            "decode_ms_per_token": 76.14601720930233,
+            "mean_encoder_seconds": 0.10898400833333333,
+            "mean_prefill_seconds": 0.2519092958333333,
+            "mean_rtf_speech": 0.3853753043808108,
+            "max_rtf_speech": 0.8617298039215686,
+            "model_load_seconds": 18.0048739,
+            "peak_working_set_bytes": 3794649088,
+            "max_private_bytes": 18892476416,
+            "engine": {
+              "provider": "DirectML (experimental)",
+              "threads": 6,
+              "adapter_index": 0,
+              "adapter_name": "AMD Radeon RX 9060 XT",
+              "adapter_luid": "0x0000000000015569",
+              "adapter_driver_version": "32.0.31041.1004",
+              "adapter_luid_confirmed": true,
+              "large_model": true,
+              "runtime": "1.24.4"
+            },
+            "gpu_memory": {
+              "adapter_index": 0,
+              "adapter_luid": "0x0000000000015569",
+              "current": {
+                "local_budget_bytes": 15040892928,
+                "local_usage_bytes": 17879412736,
+                "nonlocal_budget_bytes": 15898988544,
+                "nonlocal_usage_bytes": 496844800
+              },
+              "peak_local_usage_bytes": 17879412736
+            }
+          },
+          "per_fixture": [
+            {
+              "id": "mandarin-0000",
+              "cpu_seconds": 3.5857903,
+              "directml_seconds": 2.1313067,
+              "tokens_identical": true,
+              "directml_encoder_seconds": 0.1619312,
+              "cpu_encoder_seconds": 0.2784139
+            },
+            {
+              "id": "mandarin-0001",
+              "cpu_seconds": 3.7946239,
+              "directml_seconds": 2.0363303,
+              "tokens_identical": true,
+              "directml_encoder_seconds": 0.0619591,
+              "cpu_encoder_seconds": 0.267515
+            },
+            {
+              "id": "mandarin-0002",
+              "cpu_seconds": 6.2336295,
+              "directml_seconds": 3.3045392,
+              "tokens_identical": true,
+              "directml_encoder_seconds": 0.0512186,
+              "cpu_encoder_seconds": 0.3094776
+            },
+            {
+              "id": "mandarin-0003",
+              "cpu_seconds": 9.387377,
+              "directml_seconds": 5.192334,
+              "tokens_identical": true,
+              "directml_encoder_seconds": 0.0522571,
+              "cpu_encoder_seconds": 0.3045953
+            },
+            {
+              "id": "mandarin-0004",
+              "cpu_seconds": 4.5463138,
+              "directml_seconds": 2.3981792,
+              "tokens_identical": true,
+              "directml_encoder_seconds": 0.0493316,
+              "cpu_encoder_seconds": 0.2762588
+            },
+            {
+              "id": "mandarin-0005",
+              "cpu_seconds": 4.5577091,
+              "directml_seconds": 2.3968522,
+              "tokens_identical": true,
+              "directml_encoder_seconds": 0.0498763,
+              "cpu_encoder_seconds": 0.2747714
+            },
+            {
+              "id": "english-0000",
+              "cpu_seconds": 5.3485298,
+              "directml_seconds": 2.7859711,
+              "tokens_identical": true,
+              "directml_encoder_seconds": 0.0429721,
+              "cpu_encoder_seconds": 0.2593326
+            },
+            {
+              "id": "english-0001",
+              "cpu_seconds": 4.9862876,
+              "directml_seconds": 2.5100877,
+              "tokens_identical": true,
+              "directml_encoder_seconds": 0.041939,
+              "cpu_encoder_seconds": 0.2555194
+            },
+            {
+              "id": "english-0002",
+              "cpu_seconds": 6.7466016,
+              "directml_seconds": 3.8225619,
+              "tokens_identical": true,
+              "directml_encoder_seconds": 0.0446915,
+              "cpu_encoder_seconds": 0.157289
+            },
+            {
+              "id": "english-0003",
+              "cpu_seconds": 3.3774409,
+              "directml_seconds": 2.0370042,
+              "tokens_identical": true,
+              "directml_encoder_seconds": 0.14215,
+              "cpu_encoder_seconds": 0.0853058
+            },
+            {
+              "id": "english-0004",
+              "cpu_seconds": 3.1672527,
+              "directml_seconds": 1.8362188,
+              "tokens_identical": true,
+              "directml_encoder_seconds": 0.1356688,
+              "cpu_encoder_seconds": 0.0915907
+            },
+            {
+              "id": "english-0005",
+              "cpu_seconds": 4.3044455,
+              "directml_seconds": 2.5100821,
+              "tokens_identical": true,
+              "directml_encoder_seconds": 0.0447523,
+              "cpu_encoder_seconds": 0.1506145
+            },
+            {
+              "id": "mixed-0004",
+              "cpu_seconds": 1.3461916,
+              "directml_seconds": 0.8777314,
+              "tokens_identical": true,
+              "directml_encoder_seconds": 0.1233549,
+              "cpu_encoder_seconds": 0.0750157
+            },
+            {
+              "id": "mixed-0009",
+              "cpu_seconds": 2.2974342,
+              "directml_seconds": 1.5229116,
+              "tokens_identical": true,
+              "directml_encoder_seconds": 0.1351231,
+              "cpu_encoder_seconds": 0.0826151
+            },
+            {
+              "id": "mixed-0028",
+              "cpu_seconds": 1.2093521,
+              "directml_seconds": 0.8789637,
+              "tokens_identical": true,
+              "directml_encoder_seconds": 0.1666411,
+              "cpu_encoder_seconds": 0.0753833
+            },
+            {
+              "id": "mixed-0055",
+              "cpu_seconds": 2.2556107,
+              "directml_seconds": 1.5026832,
+              "tokens_identical": true,
+              "directml_encoder_seconds": 0.1597299,
+              "cpu_encoder_seconds": 0.077599
+            },
+            {
+              "id": "mixed-0066",
+              "cpu_seconds": 1.501991,
+              "directml_seconds": 1.0872928,
+              "tokens_identical": true,
+              "directml_encoder_seconds": 0.176404,
+              "cpu_encoder_seconds": 0.0746313
+            },
+            {
+              "id": "mixed-0068",
+              "cpu_seconds": 1.0668147,
+              "directml_seconds": 0.8668254,
+              "tokens_identical": true,
+              "directml_encoder_seconds": 0.1666773,
+              "cpu_encoder_seconds": 0.0729784
+            },
+            {
+              "id": "silence-short",
+              "cpu_seconds": 0.6371253,
+              "directml_seconds": 0.6047514,
+              "tokens_identical": true,
+              "directml_encoder_seconds": 0.1687699,
+              "cpu_encoder_seconds": 0.0625461
+            },
+            {
+              "id": "silence",
+              "cpu_seconds": 0.6831047,
+              "directml_seconds": 0.590415,
+              "tokens_identical": true,
+              "directml_encoder_seconds": 0.1567572,
+              "cpu_encoder_seconds": 0.0745284
+            },
+            {
+              "id": "silence-long",
+              "cpu_seconds": 1.2590542,
+              "directml_seconds": 0.8104882,
+              "tokens_identical": true,
+              "directml_encoder_seconds": 0.0541741,
+              "cpu_encoder_seconds": 0.1635392
+            },
+            {
+              "id": "low-noise",
+              "cpu_seconds": 0.6849906,
+              "directml_seconds": 0.6174208,
+              "tokens_identical": true,
+              "directml_encoder_seconds": 0.1700955,
+              "cpu_encoder_seconds": 0.0776347
+            },
+            {
+              "id": "tone",
+              "cpu_seconds": 0.6633786,
+              "directml_seconds": 0.4710978,
+              "tokens_identical": true,
+              "directml_encoder_seconds": 0.1269365,
+              "cpu_encoder_seconds": 0.0732837
+            },
+            {
+              "id": "clicks",
+              "cpu_seconds": 0.7278462,
+              "directml_seconds": 0.4996998,
+              "tokens_identical": true,
+              "directml_encoder_seconds": 0.1322051,
+              "cpu_encoder_seconds": 0.0874139
+            }
+          ]
+        },
+        "gpu_memory": {
+          "verification": {
+            "adapter_index": 0,
+            "adapter_luid": "0x0000000000015569",
+            "current": {
+              "local_budget_bytes": 15040892928,
+              "local_usage_bytes": 17879412736,
+              "nonlocal_budget_bytes": 15898988544,
+              "nonlocal_usage_bytes": 496844800
+            },
+            "peak_local_usage_bytes": 17879412736
+          },
+          "sustained": {
+            "adapter_index": 0,
+            "adapter_luid": "0x0000000000015569",
+            "current": {
+              "local_budget_bytes": 14855094216,
+              "local_usage_bytes": 17881247744,
+              "nonlocal_budget_bytes": 15898988544,
+              "nonlocal_usage_bytes": 488112128
+            },
+            "peak_local_usage_bytes": 17881247744
+          }
+        }
+      },
+      "model": {
+        "configuration": "Qwen3-ASR-1.7B FP32 graphs with FP16 embedding storage",
+        "manifest_sha256": "0c21d1a6e9f3b82416c98afe401cd97a46e82ac65d4878ba777bdb6a87c30c29",
+        "variant": "fp32",
+        "weight_bytes": 9397745071
+      },
+      "success": false
+    }
+  },
+  "failed_criteria": {
+    "1.7b": [
+      "sustained_load"
+    ]
+  }
+}

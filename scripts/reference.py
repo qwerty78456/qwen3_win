@@ -30,7 +30,8 @@ processor_module=importlib.util.module_from_spec(spec)
 spec.loader.exec_module(processor_module)
 Qwen3ASRProcessor=processor_module.Qwen3ASRProcessor
 from bootstrap import sha256
-from shipped import MODEL_DIR, REFERENCE_DIR, remote
+from shipped import MODEL_DIR, REFERENCE_DIR, remote, model_config
+MODEL_KEY='default'; SUFFIX=''; TRACES=ROOT/'traces/reference'
 
 def write_json(path, value):
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -44,15 +45,19 @@ def prepare(processor):
     out = MODEL_DIR
     filters = processor.feature_extractor.mel_filters.T.astype('<f4')
     if filters.shape != (128,201): raise RuntimeError(f'Unexpected mel filter shape: {filters.shape}')
-    filters.tofile(out/'mel_filters.bin')
+    def write_if_changed(path, data):  # keep frozen manifest hashes stable when the content is unchanged (text files use platform newlines, as write_json does)
+        if isinstance(data, str):
+            if not path.exists() or path.read_text('utf-8')!=data: path.write_text(data, encoding='utf-8'); print('Wrote',path.relative_to(ROOT),flush=True)
+        elif not path.exists() or path.read_bytes()!=data: path.write_bytes(data); print('Wrote',path.relative_to(ROOT),flush=True)
+    write_if_changed(out/'mel_filters.bin', filters.tobytes())
     messages=[{'role':'system','content':''},{'role':'user','content':[{'type':'audio','audio':''}]}]
     prompt=processor.apply_chat_template(messages, add_generation_prompt=True, tokenize=False)
     prefix,suffix=prompt.split('<|audio_pad|>')
     cases=[]
     for text in [prefix,suffix,prompt,'你好，今天开会。','Hello, world!','请打开 the presentation，然后继续。','<|endoftext|>','<|im_end|>']:
         cases.append({'text':text,'ids':processor.tokenizer.encode(text,add_special_tokens=False)})
-    write_json(out/'prompt_reference.json',{'prefix':prefix,'suffix':suffix,'cases':cases,
-        'source':'Official Qwen3ASRProcessor.apply_chat_template and Qwen2TokenizerFast; empty system context, automatic language'})
+    write_if_changed(out/'prompt_reference.json',json.dumps({'prefix':prefix,'suffix':suffix,'cases':cases,
+        'source':'Official Qwen3ASRProcessor.apply_chat_template and Qwen2TokenizerFast; empty system context, automatic language'},ensure_ascii=False,indent=2)+'\n')
     print('Official prompt:', repr(prompt), flush=True)
     print('Prefix:', cases[0]['ids'], 'Suffix:', cases[1]['ids'], flush=True)
     return prompt
@@ -77,9 +82,14 @@ def main():
     parser.add_argument('--max-tokens',type=int,default=512)
     parser.add_argument('--wait-assets',action='store_true')
     parser.add_argument('--global-attention',action='store_true',help='Reproduce the pinned eager path that omits the encoder window mask')
-    parser.add_argument('--manifest',default='regression/manifest.json',help='fixture manifest (regression or evaluation set)')
+    parser.add_argument('--manifest',default=None,help='fixture manifest (regression or evaluation set); default from the model configuration')
     parser.add_argument('--extra',action='append',default=[],help='Ad-hoc WAV (boundary tests); id is the file stem, output under traces/reference and regression/reference-extra')
+    parser.add_argument('--model-key',default='default',choices=['default','large'],help='which shipped model configuration to reference (shipped-model.json)')
     args=parser.parse_args()
+    global MODEL_DIR, REFERENCE_DIR, MODEL_KEY, SUFFIX, TRACES
+    cfg=model_config(args.model_key); MODEL_KEY=args.model_key; SUFFIX=cfg['suffix']
+    MODEL_DIR=ROOT/cfg['model_dir']; REFERENCE_DIR=ROOT/cfg['reference_dir']; TRACES=ROOT/('traces/reference'+SUFFIX)
+    if args.manifest is None: args.manifest=cfg['regression_manifest']
     if torch is not None:
         torch.set_num_threads(args.threads)
         torch.set_num_interop_threads(1)
@@ -88,7 +98,7 @@ def main():
     if args.prepare_only: return
     if torch is None: raise RuntimeError('Install the pinned reference Torch wheel before generation')
     from transformers_backend import Qwen3ASRForConditionalGeneration
-    assets=remote('reference_lock_key')['files']
+    assets=remote('reference_lock_key',MODEL_KEY)['files']
     assets=[x for x in assets if x['path'].endswith('.safetensors')]
     if args.wait_assets and any(not (REFERENCE_DIR/x['path']).exists() for x in assets):
         print('Waiting for the pinned original-model download to finish...',flush=True)
@@ -106,7 +116,7 @@ def main():
     if args.fixture and len(chosen)!=len(args.fixture): raise RuntimeError('Unknown fixture ID')
     if args.extra:
         chosen=[{'id':Path(x).stem,'path':str(Path(x).resolve()),'sha256':sha256(Path(x)),'extra':True} for x in args.extra]
-    print('Loading original Qwen3-ASR-1.7B FP32 on CPU...',flush=True)
+    print('Loading original',remote('reference_lock_key',MODEL_KEY)['repo'],'FP32 on CPU...',flush=True)
     start=time.perf_counter()
     model=Qwen3ASRForConditionalGeneration.from_pretrained(REFERENCE_DIR,torch_dtype=torch.float32,
         attn_implementation='eager',local_files_only=True).eval()
@@ -131,7 +141,7 @@ def main():
         wav=Path(fixture['path']) if fixture.get('extra') else set_dir/fixture['path']
         if sha256(wav)!=fixture['sha256']: raise RuntimeError('Fixture hash mismatch')
         audio=load_audio(wav)
-        folder=ROOT/'traces/reference'/fixture['id']
+        folder=TRACES/fixture['id']
         folder.mkdir(parents=True,exist_ok=True)
         floats(folder/'pcm.f32',audio)
         inputs=processor(text=[prompt],audio=[audio],return_tensors='pt',padding=True)
@@ -181,13 +191,13 @@ def main():
             'prompt_ids':ids,'cache_steps':cache_shapes,'elapsed_seconds':elapsed,'model_load_seconds':load_time,
             'audio_seconds':len(audio)/16000,'dtype':'float32','attention':'eager','encoder_attention':encoder_attention,'threads':args.threads,
             'reference_source_revision':json.loads((ROOT/'dependencies.lock.json').read_text())['sources']['qwen-reference']['revision'],
-            'reference_model_repo':remote('reference_lock_key')['repo'],'reference_model_revision':remote('reference_lock_key')['revision'],
+            'reference_model_repo':remote('reference_lock_key',MODEL_KEY)['repo'],'reference_model_revision':remote('reference_lock_key',MODEL_KEY)['revision'],
             'torch_version':torch.__version__}
         write_json(folder/'result.json',result)
         if fixture.get('extra'):
-            write_json(ROOT/'regression/reference-extra'/(fixture['id']+'.json'),result)
+            write_json(ROOT/('regression/reference-extra'+SUFFIX)/(fixture['id']+'.json'),result)
         else:
-            refpath=set_dir/'reference'/(fixture['id']+'.json')
+            refpath=set_dir/('reference'+SUFFIX)/(fixture['id']+'.json')
             write_json(refpath,result)
             fixture.update(reference_path=refpath.relative_to(set_dir).as_posix(),reference_sha256=sha256(refpath))
             manifest['reference_status']='complete' if all('reference_sha256' in x for x in manifest['fixtures']) else 'pending'

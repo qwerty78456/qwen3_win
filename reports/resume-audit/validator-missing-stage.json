@@ -1,5 +1,9 @@
 {
   "fixture": "_validator-self-test",
+  "provider": "cpu",
+  "model": "0.6b",
+  "native_traces": "traces/native/_validator-self-test",
+  "reference_traces": "traces/reference/_validator-self-test",
   "success": false,
   "stages": {
     "pcm": {
@@ -9,6 +13,7 @@
         "absolute": 1e-07,
         "relative": 0.0
       },
+      "tolerance_source": "base",
       "success": true,
       "max_absolute_error": 0.0,
       "rmse": 0.0,

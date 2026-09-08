@@ -1,0 +1,417 @@
+{
+  "engine": {
+    "adapter_dedicated_video_memory_bytes": 16974905344,
+    "adapter_device_id": 30096,
+    "adapter_driver_version": "32.0.31041.1004",
+    "adapter_index": 0,
+    "adapter_luid": "0x0000000000015569",
+    "adapter_luid_confirmed": true,
+    "adapter_name": "AMD Radeon RX 9060 XT",
+    "adapter_vendor_id": 4098,
+    "assets_verified": true,
+    "configuration": "Qwen3-ASR-1.7B FP32 graphs with FP16 embedding storage",
+    "directml_validated": false,
+    "embedding_dtype": "float16",
+    "encoder": [
+      {
+        "dtype": 1,
+        "name": "mel",
+        "shape": [
+          1,
+          128,
+          -1
+        ]
+      }
+    ],
+    "eos_ids": [
+      151643,
+      151645
+    ],
+    "large_model": true,
+    "memory_mode": "shared-prepack",
+    "model_directory": "qwen3-asr-1.7b-fp32",
+    "model_hidden_size": 2048,
+    "model_manifest_sha256": "0c21d1a6e9f3b82416c98afe401cd97a46e82ac65d4878ba777bdb6a87c30c29",
+    "prefill": [
+      {
+        "dtype": 7,
+        "name": "input_ids",
+        "shape": [
+          -1,
+          -1
+        ]
+      },
+      {
+        "dtype": 7,
+        "name": "position_ids",
+        "shape": [
+          -1,
+          -1
+        ]
+      },
+      {
+        "dtype": 1,
+        "name": "audio_features",
+        "shape": [
+          -1,
+          -1,
+          2048
+        ]
+      },
+      {
+        "dtype": 7,
+        "name": "audio_offset",
+        "shape": [
+          1
+        ]
+      }
+    ],
+    "prefill_format": "input_ids",
+    "prefix_ids": [
+      151644,
+      8948,
+      198,
+      151645,
+      198,
+      151644,
+      872,
+      198,
+      151669
+    ],
+    "provider": "DirectML (experimental)",
+    "reference_model": {
+      "repo": "Qwen/Qwen3-ASR-1.7B",
+      "revision": "7278e1e70fe206f11671096ffdd38061171dd6e5"
+    },
+    "runtime": "1.24.4",
+    "step": [
+      {
+        "dtype": 1,
+        "name": "input_embeds",
+        "shape": [
+          -1,
+          1,
+          2048
+        ]
+      },
+      {
+        "dtype": 7,
+        "name": "position_ids",
+        "shape": [
+          -1,
+          1
+        ]
+      },
+      {
+        "dtype": 1,
+        "name": "past_keys",
+        "shape": [
+          28,
+          -1,
+          8,
+          -1,
+          128
+        ]
+      },
+      {
+        "dtype": 1,
+        "name": "past_values",
+        "shape": [
+          28,
+          -1,
+          8,
+          -1,
+          128
+        ]
+      }
+    ],
+    "suffix_ids": [
+      151670,
+      151645,
+      198,
+      151644,
+      77091,
+      198
+    ],
+    "threads": 6,
+    "variant": "fp32",
+    "warm_up_error": null,
+    "warm_up_seconds": 0.7792298
+  },
+  "gpu_memory": {
+    "adapter_index": 0,
+    "adapter_luid": "0x0000000000015569",
+    "current": {
+      "local_budget_bytes": 14951632864,
+      "local_usage_bytes": 17425444864,
+      "nonlocal_budget_bytes": 15898988544,
+      "nonlocal_usage_bytes": 350806016
+    },
+    "peak_local_usage_bytes": 17425444864
+  },
+  "live": {
+    "clean_stop": true,
+    "duplicate_finals": 0,
+    "errors": 0,
+    "events": [
+      {
+        "audio_end": 0.0,
+        "audio_start": 0.0,
+        "backlog_seconds": 0.0,
+        "boundary": "",
+        "completion": "",
+        "incomplete": false,
+        "inference_seconds": 0.0,
+        "kind": "status",
+        "lag_seconds": 0.0,
+        "revision": 0,
+        "since_start_seconds": 0.0,
+        "status": "Listening",
+        "t": 0.0023103,
+        "text": "",
+        "utterance": 0
+      },
+      {
+        "audio_end": 4.58,
+        "audio_start": 2.58,
+        "backlog_seconds": 0.0,
+        "boundary": "",
+        "completion": "eos",
+        "incomplete": false,
+        "inference_seconds": 0.9668327,
+        "kind": "provisional",
+        "lag_seconds": 0.9621445,
+        "revision": 1,
+        "since_start_seconds": 2.9621445,
+        "status": "",
+        "t": 5.5446393,
+        "text": "桥下垂直净空十五米。",
+        "utterance": 1
+      },
+      {
+        "audio_end": 6.58,
+        "audio_start": 2.58,
+        "backlog_seconds": 0.0,
+        "boundary": "",
+        "completion": "eos",
+        "incomplete": false,
+        "inference_seconds": 1.4850051,
+        "kind": "provisional",
+        "lag_seconds": 1.4788612,
+        "revision": 2,
+        "since_start_seconds": 5.4788612,
+        "status": "",
+        "t": 8.0613558,
+        "text": "桥下垂直净空十五米。该项目于二零一一年。",
+        "utterance": 1
+      },
+      {
+        "audio_end": 8.58,
+        "audio_start": 2.58,
+        "backlog_seconds": 0.0,
+        "boundary": "",
+        "completion": "eos",
+        "incomplete": false,
+        "inference_seconds": 1.8540114,
+        "kind": "provisional",
+        "lag_seconds": 1.845693,
+        "revision": 3,
+        "since_start_seconds": 7.845693,
+        "status": "",
+        "t": 10.4281896,
+        "text": "桥下垂直净空十五米。该项目于二零一一年八月完工，但。",
+        "utterance": 1
+      },
+      {
+        "audio_end": 12.14,
+        "audio_start": 2.58,
+        "backlog_seconds": 1.8376252,
+        "boundary": "silence",
+        "completion": "eos",
+        "incomplete": false,
+        "inference_seconds": 3.4030157,
+        "kind": "final",
+        "lag_seconds": 3.4076221,
+        "revision": 0,
+        "since_start_seconds": 12.9676221,
+        "status": "",
+        "t": 15.5501187,
+        "text": "桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。",
+        "utterance": 1
+      },
+      {
+        "audio_end": 13.7,
+        "audio_start": 12.14,
+        "backlog_seconds": 0.0,
+        "boundary": "silence",
+        "completion": "eos",
+        "incomplete": false,
+        "inference_seconds": 0.4145267,
+        "kind": "final",
+        "lag_seconds": 2.2522261,
+        "revision": 0,
+        "since_start_seconds": 3.8222261,
+        "status": "",
+        "t": 15.9647256,
+        "text": "",
+        "utterance": 3
+      },
+      {
+        "audio_end": 0.0,
+        "audio_start": 0.0,
+        "backlog_seconds": 0.0,
+        "boundary": "",
+        "completion": "",
+        "incomplete": false,
+        "inference_seconds": 0.0,
+        "kind": "stopped",
+        "lag_seconds": 0.0,
+        "revision": 0,
+        "since_start_seconds": 0.0,
+        "status": "Input exhausted",
+        "t": 15.9648747,
+        "text": "",
+        "utterance": 0
+      }
+    ],
+    "final_count": 2,
+    "finalization_delay_seconds": {
+      "count": 2,
+      "max": 3.4076221,
+      "p50": 2.2522261,
+      "p95": 3.4076221
+    },
+    "first_caption_lag_seconds": {
+      "count": 1,
+      "max": 2.9621445,
+      "p50": 2.9621445,
+      "p95": 2.9621445
+    },
+    "incomplete_finals": 0,
+    "no_audio_loss": true,
+    "overload_stop": false,
+    "pipeline": {
+      "audio_seconds_processed": 14.86,
+      "backlog_definition": "age of the oldest unfinished utterance since its audio ended (queued or decoding)",
+      "capture": {
+        "channels": 1,
+        "frames": 237760,
+        "late_packets": 0,
+        "max_late_seconds": 0.0,
+        "overflow_events": 0,
+        "pace": 1.0,
+        "packets": 1486,
+        "ring_capacity_frames": 32000,
+        "ring_peak_used_frames": 320,
+        "sample_rate": 16000,
+        "source": "wav-replay",
+        "tail_silence_seconds": 1.0
+      },
+      "error": "",
+      "finals": 2,
+      "lag_clock": "producer sample timestamps (WASAPI QPC for device capture)",
+      "max_backlog_seconds": 2.712364,
+      "max_queued_audio_seconds": 9.56,
+      "memory": {
+        "peak_pagefile_bytes": 18249109504,
+        "peak_working_set_bytes": 3192692736,
+        "private_bytes": 18170499072,
+        "working_set_bytes": 3112841216
+      },
+      "process_cpu_seconds": 4.171875,
+      "provisionals": 3,
+      "provisionals_cancelled": 1,
+      "provisionals_skipped": 0,
+      "retained_peak_seconds": 17.560000000000002,
+      "segmenter": {
+        "energy_gated_positive_frames": 428,
+        "longest_start_run_frames": 5,
+        "peak_frame_rms": 0.11917919421134923,
+        "vad_positive_frames": 428
+      },
+      "session": 1,
+      "stop_reason": "",
+      "suspensions": 0,
+      "wall_seconds": 15.962635
+    },
+    "provisional_lag_seconds": {
+      "count": 3,
+      "max": 1.845693,
+      "p50": 1.4788612,
+      "p95": 1.845693
+    },
+    "speech_utterances": 1,
+    "stale_provisionals_delivered": 0,
+    "success": true,
+    "transcript": "桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。\n",
+    "utterances": [
+      {
+        "audio_end": 12.14,
+        "audio_start": 2.58,
+        "boundary": "silence",
+        "completion": "eos",
+        "final_inference_seconds": 3.4030157,
+        "final_text": "桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。",
+        "finalization_delay": 3.4076221,
+        "first_caption_lag": 2.9621445,
+        "id": 1,
+        "incomplete": false,
+        "provisional_count": 3,
+        "provisional_lags": [
+          0.9621445,
+          1.4788612,
+          1.845693
+        ]
+      },
+      {
+        "audio_end": 13.7,
+        "audio_start": 12.14,
+        "boundary": "silence",
+        "completion": "eos",
+        "final_inference_seconds": 0.4145267,
+        "final_text": "",
+        "finalization_delay": 2.2522261,
+        "id": 3,
+        "incomplete": false,
+        "provisional_count": 0,
+        "provisional_lags": []
+      }
+    ]
+  },
+  "memory_after_load": {
+    "peak_pagefile_bytes": 17868611584,
+    "peak_working_set_bytes": 3048538112,
+    "private_bytes": 16503865344,
+    "working_set_bytes": 1637822464
+  },
+  "mode": "simulate-live",
+  "model_load_seconds": 14.9368012,
+  "options": {
+    "adapter": 0,
+    "adapter_selector": "0",
+    "large_model": true,
+    "overload_backlog": 20.0,
+    "provider": "directml",
+    "provisional": true,
+    "provisional_after": 2.0,
+    "provisional_interval": 2.0,
+    "resume_backlog": 2.0,
+    "retained_limit": 60.0,
+    "slow_inference": 0.0,
+    "suspend_backlog": 4.0,
+    "threads": 6,
+    "variant": "fp32"
+  },
+  "source": {
+    "audio_seconds": 13.86,
+    "file": "D:\\asr_win\\regression\\mandarin-0002.wav",
+    "pace": 1.0,
+    "source": {
+      "bits": 16,
+      "channels": 1,
+      "format": "pcm",
+      "sample_rate": 16000
+    }
+  },
+  "success": true
+}

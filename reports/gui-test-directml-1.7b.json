@@ -1,0 +1,169 @@
+{
+  "success": true,
+  "provider": "directml",
+  "large_model": true,
+  "directml_validated": false,
+  "steps": [
+    {
+      "step": "window appears",
+      "success": true
+    },
+    {
+      "step": "controls present",
+      "success": true,
+      "notice": "Captures computer playback audio. Does not record the microphone.",
+      "devices": 4
+    },
+    {
+      "step": "notice text",
+      "success": true
+    },
+    {
+      "step": "compute list",
+      "success": true,
+      "items": [
+        "CPU — Qwen3-ASR-0.6B (4 threads)",
+        "GPU: AMD Radeon RX 9060 XT (17 GB) [adapter 0] — Qwen3-ASR-0.6B (experimental)",
+        "GPU: AMD Radeon RX 9060 XT (17 GB) [adapter 0] — Qwen3-ASR-1.7B (higher accuracy) (experimental)",
+        "GPU: AMD Radeon RX 9060 XT (17 GB) [adapter 2] — Qwen3-ASR-0.6B (experimental)",
+        "GPU: AMD Radeon RX 9060 XT (17 GB) [adapter 2] — Qwen3-ASR-1.7B (higher accuracy) (experimental)"
+      ]
+    },
+    {
+      "step": "start disabled while loading",
+      "success": true,
+      "status": "Loading model: Verifying model assets…"
+    },
+    {
+      "step": "model loads",
+      "success": true,
+      "status": "Ready (CPU — Qwen3-ASR-0.6B (4 threads)). Select a playback device and press Start.",
+      "load_seconds": 6.5
+    },
+    {
+      "step": "start enabled after load",
+      "success": true
+    },
+    {
+      "step": "gpu item present",
+      "success": true,
+      "items": [
+        "CPU — Qwen3-ASR-0.6B (4 threads)",
+        "GPU: AMD Radeon RX 9060 XT (17 GB) [adapter 0] — Qwen3-ASR-0.6B (experimental)",
+        "GPU: AMD Radeon RX 9060 XT (17 GB) [adapter 0] — Qwen3-ASR-1.7B (higher accuracy) (experimental)",
+        "GPU: AMD Radeon RX 9060 XT (17 GB) [adapter 2] — Qwen3-ASR-0.6B (experimental)",
+        "GPU: AMD Radeon RX 9060 XT (17 GB) [adapter 2] — Qwen3-ASR-1.7B (higher accuracy) (experimental)"
+      ]
+    },
+    {
+      "step": "start disabled while reloading",
+      "success": true,
+      "status": "Loading model: Verifying model assets…"
+    },
+    {
+      "step": "model reloads on GPU",
+      "success": true,
+      "status": "Ready (GPU: AMD Radeon RX 9060 XT (17 GB) [adapter 0] — Qwen3-ASR-1.7B (higher accuracy) (experimental)). Select a playback device and press Start.",
+      "reload_seconds": 21.5,
+      "item": "GPU: AMD Radeon RX 9060 XT (17 GB) [adapter 0] — Qwen3-ASR-1.7B (higher accuracy) (experimental)"
+    },
+    {
+      "step": "gpu choice saved to settings",
+      "success": true,
+      "settings": {
+        "adapter_luid": "0x0000000000015569",
+        "adapter_name": "AMD Radeon RX 9060 XT",
+        "large_model": true,
+        "provider": "directml",
+        "schema": 1
+      }
+    },
+    {
+      "step": "listening after start",
+      "success": true,
+      "status": "Listening: 2 - VG279QE5A (2- AMD High Definition Audio Device)",
+      "stop_enabled": true,
+      "start_enabled": false,
+      "compute_enabled": false
+    },
+    {
+      "step": "first provisional caption appeared",
+      "success": true,
+      "seconds_after_playback_start": 8.77,
+      "first_clip_start": 2.0,
+      "provisional_samples": [
+        "这是一个篇章的结束。",
+        "钙、钾等元素属于金。",
+        "钙、钾等元素属于金属，银和金等元素。",
+        "桥下垂直净空。",
+        "桥下垂直净空十五米。该项目于二零。",
+        "桥下垂直净空十五米。该项目于二零一一年八月完工。"
+      ]
+    },
+    {
+      "step": "final captions appeared",
+      "success": true,
+      "seconds_after_playback_start": 6.77
+    },
+    {
+      "step": "stopped after Stop",
+      "success": true,
+      "status": "Stopped: Stop requested",
+      "stop_seconds": 0.5,
+      "statuses_seen": [
+        "Catching up",
+        "Listening"
+      ]
+    },
+    {
+      "step": "provisional area cleared after stop",
+      "success": true
+    },
+    {
+      "step": "start enabled again",
+      "success": true
+    },
+    {
+      "step": "finals match oracle text for fully played clips",
+      "success": true,
+      "pooled_error_rate": 0.086,
+      "exact_line_matches": 1,
+      "expected": 4,
+      "lines": [
+        "这并不是告别。",
+        "这是一个篇章的结束，也是新篇章的开始。",
+        "钙、钾等元素属于金属，银和金等元素当然也是金属。",
+        "桥下垂直净空十五米。该项目于2011年8月完工，但直到2017年3月才开始通车。",
+        "适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work 2002。",
+        "科学家们可以的。"
+      ]
+    },
+    {
+      "step": "save enabled with transcript",
+      "success": true
+    },
+    {
+      "step": "switch back to CPU",
+      "success": true,
+      "status": "Ready (CPU — Qwen3-ASR-0.6B (4 threads)). Select a playback device and press Start.",
+      "reload_seconds": 8.5
+    },
+    {
+      "step": "cpu choice saved to settings",
+      "success": true,
+      "settings": {
+        "adapter_luid": "",
+        "adapter_name": "",
+        "large_model": false,
+        "provider": "cpu",
+        "schema": 1
+      }
+    },
+    {
+      "step": "window closes cleanly",
+      "success": true,
+      "exit_code": 0
+    }
+  ],
+  "transcript": "这并不是告别。\r\n这是一个篇章的结束，也是新篇章的开始。\r\n钙、钾等元素属于金属，银和金等元素当然也是金属。\r\n桥下垂直净空十五米。该项目于2011年8月完工，但直到2017年3月才开始通车。\r\n适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work 2002。\r\n科学家们可以的。\r\n"
+}

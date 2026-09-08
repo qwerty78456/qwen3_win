@@ -1,0 +1,351 @@
+{
+  "engine": {
+    "adapter_dedicated_video_memory_bytes": 16974905344,
+    "adapter_device_id": 30096,
+    "adapter_driver_version": "32.0.31041.1004",
+    "adapter_index": 0,
+    "adapter_luid": "0x0000000000015569",
+    "adapter_luid_confirmed": true,
+    "adapter_name": "AMD Radeon RX 9060 XT",
+    "adapter_vendor_id": 4098,
+    "assets_verified": true,
+    "configuration": "Qwen3-ASR-1.7B FP32 graphs with FP16 embedding storage",
+    "directml_validated": false,
+    "embedding_dtype": "float16",
+    "encoder": [
+      {
+        "dtype": 1,
+        "name": "mel",
+        "shape": [
+          1,
+          128,
+          -1
+        ]
+      }
+    ],
+    "eos_ids": [
+      151643,
+      151645
+    ],
+    "large_model": true,
+    "memory_mode": "shared-prepack",
+    "model_directory": "qwen3-asr-1.7b-fp32",
+    "model_hidden_size": 2048,
+    "model_manifest_sha256": "0c21d1a6e9f3b82416c98afe401cd97a46e82ac65d4878ba777bdb6a87c30c29",
+    "prefill": [
+      {
+        "dtype": 7,
+        "name": "input_ids",
+        "shape": [
+          -1,
+          -1
+        ]
+      },
+      {
+        "dtype": 7,
+        "name": "position_ids",
+        "shape": [
+          -1,
+          -1
+        ]
+      },
+      {
+        "dtype": 1,
+        "name": "audio_features",
+        "shape": [
+          -1,
+          -1,
+          2048
+        ]
+      },
+      {
+        "dtype": 7,
+        "name": "audio_offset",
+        "shape": [
+          1
+        ]
+      }
+    ],
+    "prefill_format": "input_ids",
+    "prefix_ids": [
+      151644,
+      8948,
+      198,
+      151645,
+      198,
+      151644,
+      872,
+      198,
+      151669
+    ],
+    "provider": "DirectML (experimental)",
+    "reference_model": {
+      "repo": "Qwen/Qwen3-ASR-1.7B",
+      "revision": "7278e1e70fe206f11671096ffdd38061171dd6e5"
+    },
+    "runtime": "1.24.4",
+    "step": [
+      {
+        "dtype": 1,
+        "name": "input_embeds",
+        "shape": [
+          -1,
+          1,
+          2048
+        ]
+      },
+      {
+        "dtype": 7,
+        "name": "position_ids",
+        "shape": [
+          -1,
+          1
+        ]
+      },
+      {
+        "dtype": 1,
+        "name": "past_keys",
+        "shape": [
+          28,
+          -1,
+          8,
+          -1,
+          128
+        ]
+      },
+      {
+        "dtype": 1,
+        "name": "past_values",
+        "shape": [
+          28,
+          -1,
+          8,
+          -1,
+          128
+        ]
+      }
+    ],
+    "suffix_ids": [
+      151670,
+      151645,
+      198,
+      151644,
+      77091,
+      198
+    ],
+    "threads": 6,
+    "variant": "fp32",
+    "warm_up_error": null,
+    "warm_up_seconds": 0.8629358
+  },
+  "gpu_memory": {
+    "adapter_index": 0,
+    "adapter_luid": "0x0000000000015569",
+    "current": {
+      "local_budget_bytes": 15000653784,
+      "local_usage_bytes": 16867078144,
+      "nonlocal_budget_bytes": 15898988544,
+      "nonlocal_usage_bytes": 180846592
+    },
+    "peak_local_usage_bytes": 16867078144
+  },
+  "live": {
+    "clean_stop": true,
+    "duplicate_finals": 0,
+    "errors": 0,
+    "events": [
+      {
+        "audio_end": 0.0,
+        "audio_start": 0.0,
+        "backlog_seconds": 0.0,
+        "boundary": "",
+        "completion": "",
+        "incomplete": false,
+        "inference_seconds": 0.0,
+        "kind": "status",
+        "lag_seconds": 0.0,
+        "revision": 0,
+        "since_start_seconds": 0.0,
+        "status": "Listening",
+        "t": 0.0054364,
+        "text": "",
+        "utterance": 0
+      },
+      {
+        "audio_end": 2.0,
+        "audio_start": 0.0,
+        "backlog_seconds": 0.0,
+        "boundary": "",
+        "completion": "eos",
+        "incomplete": false,
+        "inference_seconds": 0.8925924,
+        "kind": "provisional",
+        "lag_seconds": 0.8836598,
+        "revision": 1,
+        "since_start_seconds": 2.8736598,
+        "status": "",
+        "t": 2.8892055,
+        "text": "那我专业是那个ISM。",
+        "utterance": 1
+      },
+      {
+        "audio_end": 4.6,
+        "audio_start": 0.0,
+        "backlog_seconds": 0.0,
+        "boundary": "silence",
+        "completion": "eos",
+        "incomplete": false,
+        "inference_seconds": 1.1783172,
+        "kind": "final",
+        "lag_seconds": 1.2175749,
+        "revision": 0,
+        "since_start_seconds": 5.8075749,
+        "status": "",
+        "t": 5.8231252,
+        "text": "那我专业是那个ISM，Information Systems Management。",
+        "utterance": 1
+      },
+      {
+        "audio_end": 0.0,
+        "audio_start": 0.0,
+        "backlog_seconds": 0.0,
+        "boundary": "",
+        "completion": "",
+        "incomplete": false,
+        "inference_seconds": 0.0,
+        "kind": "stopped",
+        "lag_seconds": 0.0,
+        "revision": 0,
+        "since_start_seconds": 0.0,
+        "status": "Input exhausted",
+        "t": 5.823215,
+        "text": "",
+        "utterance": 0
+      }
+    ],
+    "final_count": 1,
+    "finalization_delay_seconds": {
+      "count": 1,
+      "max": 1.2175749,
+      "p50": 1.2175749,
+      "p95": 1.2175749
+    },
+    "first_caption_lag_seconds": {
+      "count": 1,
+      "max": 2.8736598,
+      "p50": 2.8736598,
+      "p95": 2.8736598
+    },
+    "incomplete_finals": 0,
+    "no_audio_loss": true,
+    "overload_stop": false,
+    "pipeline": {
+      "audio_seconds_processed": 5.03,
+      "backlog_definition": "age of the oldest unfinished utterance since its audio ended (queued or decoding)",
+      "capture": {
+        "channels": 1,
+        "frames": 80480,
+        "late_packets": 0,
+        "max_late_seconds": 0.0,
+        "overflow_events": 0,
+        "pace": 1.0,
+        "packets": 503,
+        "ring_capacity_frames": 32000,
+        "ring_peak_used_frames": 320,
+        "sample_rate": 16000,
+        "source": "wav-replay",
+        "tail_silence_seconds": 1.0
+      },
+      "error": "",
+      "finals": 1,
+      "lag_clock": "producer sample timestamps (WASAPI QPC for device capture)",
+      "max_backlog_seconds": 0.4290967,
+      "max_queued_audio_seconds": 4.6,
+      "memory": {
+        "peak_pagefile_bytes": 17826398208,
+        "peak_working_set_bytes": 2954670080,
+        "private_bytes": 17381978112,
+        "working_set_bytes": 2196013056
+      },
+      "process_cpu_seconds": 1.359375,
+      "provisionals": 1,
+      "provisionals_cancelled": 1,
+      "provisionals_skipped": 0,
+      "retained_peak_seconds": 8.6,
+      "segmenter": {
+        "energy_gated_positive_frames": 193,
+        "longest_start_run_frames": 5,
+        "peak_frame_rms": 0.10532892785955071,
+        "vad_positive_frames": 193
+      },
+      "session": 1,
+      "stop_reason": "",
+      "suspensions": 0,
+      "wall_seconds": 5.817847
+    },
+    "provisional_lag_seconds": {
+      "count": 1,
+      "max": 0.8836598,
+      "p50": 0.8836598,
+      "p95": 0.8836598
+    },
+    "speech_utterances": 1,
+    "stale_provisionals_delivered": 0,
+    "success": true,
+    "transcript": "那我专业是那个ISM，Information Systems Management。\n",
+    "utterances": [
+      {
+        "audio_end": 4.6,
+        "audio_start": 0.0,
+        "boundary": "silence",
+        "completion": "eos",
+        "final_inference_seconds": 1.1783172,
+        "final_text": "那我专业是那个ISM，Information Systems Management。",
+        "finalization_delay": 1.2175749,
+        "first_caption_lag": 2.8736598,
+        "id": 1,
+        "incomplete": false,
+        "provisional_count": 1,
+        "provisional_lags": [
+          0.8836598
+        ]
+      }
+    ]
+  },
+  "memory_after_load": {
+    "peak_pagefile_bytes": 17826398208,
+    "peak_working_set_bytes": 2954670080,
+    "private_bytes": 16502571008,
+    "working_set_bytes": 1535549440
+  },
+  "mode": "simulate-live",
+  "model_load_seconds": 16.9156246,
+  "options": {
+    "adapter": 0,
+    "adapter_selector": "0",
+    "large_model": true,
+    "overload_backlog": 20.0,
+    "provider": "directml",
+    "provisional": true,
+    "provisional_after": 2.0,
+    "provisional_interval": 2.0,
+    "resume_backlog": 2.0,
+    "retained_limit": 60.0,
+    "slow_inference": 0.0,
+    "suspend_backlog": 4.0,
+    "threads": 6,
+    "variant": "fp32"
+  },
+  "source": {
+    "audio_seconds": 4.03,
+    "file": "D:\\asr_win\\regression\\mixed-0009.wav",
+    "pace": 1.0,
+    "source": {
+      "bits": 16,
+      "channels": 1,
+      "format": "pcm",
+      "sample_rate": 16000
+    }
+  },
+  "success": true
+}

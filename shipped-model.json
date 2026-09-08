@@ -9,6 +9,25 @@
   "decision": "reports/variant-evaluation.json",
   "previous_proof": "reports/proof-1.7b",
   "default_provider": "cpu",
+  "minimum_dedicated_video_memory_bytes": 8000000000,
+  "directml": {
+    "validated": false,
+    "validated_adapter": null,
+    "memory_rule": "an adapter is eligible for a model when its dedicated video memory is at least max(1.5 x the model's graph bytes, the model's minimum_dedicated_video_memory_bytes); the minimums come from the peak GPU local memory measured in reports/directml.json",
+    "large_model": {
+      "minimum_dedicated_video_memory_bytes": 16000000000,
+      "name": "1.7b",
+      "configuration": "Qwen3-ASR-1.7B FP32 graphs with FP16 embedding storage",
+      "model_dir": "models/qwen3-asr-1.7b-fp32",
+      "variant": "fp32",
+      "threads": 6,
+      "onnx_lock_key": "onnx",
+      "reference_lock_key": "reference",
+      "reference_dir": "reference-model",
+      "regression_manifest": "regression/manifest-1.7b.json",
+      "evaluation_reference_dir": "evaluation/reference-1.7b"
+    }
+  },
   "report_root": "reports",
   "threads": 4,
   "note": "Chosen by scripts/evaluate_variants.py on the held-out set per the plan's smaller-configuration rule: 1.7B FP32 missed the p95 4 s provisional-lag target on CPU (about 140 ms per token, 15.25 GiB peak), 1.7B int4 was rejected (+2.0 pp Mandarin CER), 0.6B FP32 was accepted (no category worse than the 1.7B baseline, no new silence failures) and meets the target. The 1.7B FP32 proof is archived under reports/proof-1.7b and reports/current-1.7b; the 2026-09-07 late-night resume audit (separate Codex session, DirectML probe on the RX 9060 XT, self-test) is summarized in docs/RESUME-AUDIT.md. Switching back to 1.7B only requires editing this file, re-running model_manifest.py, the proof scripts and package.py."

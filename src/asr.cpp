@@ -29,6 +29,12 @@ Engine::Engine(const fs::path& model, EngineOptions options):model_(model),optio
   for (auto pair:std::vector<std::pair<std::string,std::string>>{{"audio_pad_token_id","<|audio_pad|>"},{"asr_text_token_id","<asr_text>"},{"im_end_token_id","<|im_end|>"}})
     if (tokenizer_->TokenToId(pair.second)!=config_.at("special_tokens").at(pair.first).get<int>()) throw std::runtime_error("Tokenizer special-token mismatch");
   mel_=std::make_unique<MelExtractor>(model/"mel_filters.bin");
+  if (options_.directml) {
+    auto all=compute_adapters();
+    if (options_.adapter<0 || options_.adapter>=static_cast<int>(all.size())) throw std::runtime_error("DirectML adapter "+std::to_string(options_.adapter)+" is not present: "+std::to_string(all.size())+" adapters enumerated (see --adapters)");
+    adapter_=all[static_cast<size_t>(options_.adapter)];
+    if (adapter_.software) throw std::runtime_error("Adapter "+std::to_string(options_.adapter)+" ("+adapter_.name+") is a software renderer and cannot run DirectML inference (see --adapters)");
+  }
   Ort::SessionOptions so;
   so.SetIntraOpNumThreads(options_.threads);
   so.SetInterOpNumThreads(1);
@@ -36,7 +42,18 @@ Engine::Engine(const fs::path& model, EngineOptions options):model_(model),optio
   so.SetGraphOptimizationLevel(GraphOptimizationLevel::ORT_ENABLE_BASIC);
   so.AddConfigEntry("session.intra_op.allow_spinning","0");
   if (!options_.profile.empty()) { fs::create_directories(options_.profile); so.EnableProfiling((options_.profile/"encoder").c_str()); }
-  if (options_.directml) { so.DisableMemPattern(); Ort::ThrowOnError(OrtSessionOptionsAppendExecutionProvider_DML(so,options_.adapter)); }
+  if (options_.directml) {
+    so.DisableMemPattern(); Ort::ThrowOnError(OrtSessionOptionsAppendExecutionProvider_DML(so,options_.adapter));
+    // The provider takes a DXGI index; confirm that the device it created is the adapter we enumerated under that index.
+    const OrtDmlApi* dml=nullptr; Ort::ThrowOnError(Ort::GetApi().GetExecutionProviderApi("DML",ORT_API_VERSION,reinterpret_cast<const void**>(&dml)));
+    IDMLDevice* device=nullptr; Ort::ThrowOnError(dml->GetDMLDevice(so,&device));  // borrowed from the provider factory: not released here
+    if (!device) throw std::runtime_error("DirectML provider did not expose its device");
+    ComPtr<ID3D12Device> d3d; check(device->GetParentDevice(IID_PPV_ARGS(&d3d)),"Query the DirectML parent device");
+    auto bound=format_luid(d3d->GetAdapterLuid());
+    if (bound!=adapter_.luid) throw std::runtime_error("DirectML session is bound to adapter LUID "+bound+" but adapter "+std::to_string(options_.adapter)+" ("+adapter_.name+") has LUID "+adapter_.luid);
+    luid_confirmed_=true;
+    report("Using GPU: "+adapter_.name);
+  }
   if (options_.memory_mode!="default" && options_.memory_mode!="no-prepack" && options_.memory_mode!="shared-prepack") throw std::runtime_error("Unknown memory mode");
   report("Loading encoder"); encoder_=std::make_unique<Ort::Session>(env_,(model/"encoder.onnx").c_str(),so);
   // Both decoder graphs reference the same external weights. Sharing one pre-packed weights container
@@ -61,9 +78,26 @@ std::vector<float> Engine::embedding(int token) const {
   else memcpy(v.data(),static_cast<const float*>(embeddings_->data())+base,hidden_*4);
   return v;
 }
+void Engine::warm_up() {
+  if (!options_.directml || warm_up_seconds_>=0) return;
+  auto started=Clock::now();
+  try { std::vector<float> silence(16000,0.f); transcribe(silence,{},nullptr,8); } catch (const std::exception& e) { warm_up_error_=e.what(); }
+  warm_up_seconds_=seconds(started);
+  report("GPU warm-up done");
+}
+Json Engine::gpu_memory() const {
+  if (!options_.directml) return Json();
+  return {{"adapter_index",options_.adapter},{"adapter_luid",adapter_.luid},{"current",gpu_memory_usage(options_.adapter)},{"peak_local_usage_bytes",gpu_peak_local_}};
+}
 Json Engine::inspect() const {
-  Json j={{"runtime",Ort::GetVersionString()},{"provider",options_.directml?"DirectML (experimental)":"CPU"},{"threads",options_.threads},{"memory_mode",options_.memory_mode},{"assets_verified",options_.verify_assets},{"variant",options_.variant},
-          {"model_directory",utf8(model_.filename().wstring())},{"model_hidden_size",hidden_},{"adapter_index",options_.directml?Json(options_.adapter):Json()},
+  const bool dml=options_.directml;
+  Json j={{"runtime",Ort::GetVersionString()},{"provider",dml?(ASRWIN_DIRECTML_VALIDATED?"DirectML":"DirectML (experimental)"):"CPU"},{"directml_validated",bool(ASRWIN_DIRECTML_VALIDATED)},
+          {"threads",options_.threads},{"memory_mode",options_.memory_mode},{"assets_verified",options_.verify_assets},{"variant",options_.variant},{"large_model",options_.large_model},
+          {"model_directory",utf8(model_.filename().wstring())},{"model_hidden_size",hidden_},{"adapter_index",dml?Json(options_.adapter):Json()},
+          {"adapter_name",dml?Json(adapter_.name):Json()},{"adapter_luid",dml?Json(adapter_.luid):Json()},{"adapter_driver_version",dml?Json(adapter_.driver_version):Json()},
+          {"adapter_vendor_id",dml?Json(adapter_.vendor_id):Json()},{"adapter_device_id",dml?Json(adapter_.device_id):Json()},
+          {"adapter_dedicated_video_memory_bytes",dml?Json(adapter_.dedicated_video_memory_bytes):Json()},{"adapter_luid_confirmed",dml?Json(luid_confirmed_):Json()},
+          {"warm_up_seconds",warm_up_seconds_>=0?Json(warm_up_seconds_):Json()},{"warm_up_error",warm_up_error_.empty()?Json():Json(warm_up_error_)},
           {"prefix_ids",prefix_},{"suffix_ids",suffix_},{"eos_ids",eos_},{"embedding_dtype",half_?"float16":"float32"},{"prefill_format",prefill_ids_?"input_ids":"input_embeds"}};
   if (fs::exists(model_/"manifest.json")) {
     auto manifest=Json::parse(read_text(model_/"manifest.json"));j["model_manifest_sha256"]=sha256_file(model_/"manifest.json");
@@ -173,6 +207,7 @@ Transcript Engine::transcribe(std::span<const float> audio, const fs::path& trac
   r.detail["audio_seconds"]=audio.size()/16000.0; r.detail["rtf"]=seconds(total)/(audio.size()/16000.0);
   r.detail["tokens"]=r.tokens; r.detail["raw_output"]=r.raw; r.detail["text"]=r.text; r.detail["completion"]=r.completion;
   r.detail["cache_steps"]=cache_steps; r.detail["memory"]=memory_usage();
+  if (options_.directml) { auto g=gpu_memory_usage(options_.adapter); if (g.is_object()) gpu_peak_local_=std::max(gpu_peak_local_,g["local_usage_bytes"].get<uint64_t>()); r.detail["gpu_memory"]=g; }
   if (!trace.empty()) write_json(trace/"result.json",r.detail);
   return r;
 }

@@ -23,16 +23,21 @@ The reference environment is separate from the application. Create `.venv` with 
 .venv\Scripts\python.exe scripts/test_fixture_frontend.py         # mel + speech gate on the 24 fixtures
 .venv\Scripts\python.exe scripts/test_speech_gate.py
 .venv\Scripts\python.exe scripts/test_cli_failures.py
-.venv\Scripts\python.exe scripts/reference.py --threads 8         # official-model references and traces
+.venv\Scripts\python.exe scripts/reference.py --threads 8         # official-model references and traces of the shipped model
 python scripts/check_publisher_hashes.py
 python scripts/model_manifest.py                                  # freeze model asset hashes
-build\Release\AsrWin.exe --verify regression\manifest.json --model models\qwen3-asr-1.7b-fp32 --report reports\verification.json --trace traces\native
+build\Release\AsrWin.exe --self-test regression\mandarin-0003.wav
+build\Release\AsrWin.exe --adapters --model models\qwen3-asr-0.6b-fp32 --large-model-dir models\qwen3-asr-1.7b-fp32 --report reports\adapters.json
+build\Release\AsrWin.exe --verify regression\manifest.json --model models\qwen3-asr-0.6b-fp32 --report reports\verification.json --trace traces\native
 .venv\Scripts\python.exe scripts/compare_traces.py <fixture-id> --report reports\stages\<fixture-id>.json   # for every fixture
 .venv\Scripts\python.exe scripts/encoder_diff.py --fixture mandarin-0000 --report reports\encoder-diff-mandarin-0000.json
 .venv\Scripts\python.exe scripts/test_boundaries.py               # window edges, 15 s limit, repeated sessions
+.venv\Scripts\python.exe scripts/test_validator_failures.py
 .venv\Scripts\python.exe scripts/memory_modes.py                  # decoder weight-sharing configurations
 .venv\Scripts\python.exe scripts/benchmark_threads.py             # CPU thread budget
-build\Release\AsrWin.exe --benchmark regression\english-0002.wav --simulate-live --model models\qwen3-asr-1.7b-fp32 --report reports\live-english-0002.json
+build\Release\AsrWin.exe --benchmark regression\english-0002.wav --simulate-live --model models\qwen3-asr-0.6b-fp32 --report reports\live-english-0002.json   # also mandarin-0002, mandarin-0003, mixed-0009
+build\Release\AsrWin.exe --benchmark traces\live\playlist-1x.wav --simulate-live --slow-inference 3 --model models\qwen3-asr-0.6b-fp32 --report reports\live-slow3-test.json
+build\Release\AsrWin.exe --benchmark traces\live\playlist-1x.wav --simulate-live --slow-inference 12 --model models\qwen3-asr-0.6b-fp32 --report reports\live-overload-test.json
 .venv\Scripts\python.exe scripts/acquire_heldout.py               # held-out evaluation set (disjoint from regression/)
 .venv\Scripts\python.exe scripts/reference.py --threads 8 --manifest evaluation/manifest.json
 python scripts/acquire_0_6b.py                                    # 0.6B ONNX export (shipped); acquire_reference_0_6b.py fetches its official checkpoint
@@ -41,6 +46,21 @@ python scripts/acquire_0_6b.py                                    # 0.6B ONNX ex
 .venv\Scripts\python.exe scripts/gui_test.py --seconds 60         # interface driven through Win32 messages while ffplay renders fixtures
 .venv\Scripts\python.exe scripts/live_capture_test.py --playlist playlist-1x --name 3min-load2 --load 2
 .venv\Scripts\python.exe scripts/live_capture_test.py --playlist playlist-60 --name 60min-load2 --load 2
+# DirectML evidence (shipped model): regression + traces, stage comparison, simulated live runs, then the interface and loopback tests on the GPU
+.venv\Scripts\python.exe scripts/directml_proof.py --adapter default --models default
+.venv\Scripts\python.exe scripts/gui_test.py --seconds 60 --provider directml
+.venv\Scripts\python.exe scripts/live_capture_test.py --provider directml --adapter default --playlist playlist-1x --name 3min-load2-directml --load 2
+.venv\Scripts\python.exe scripts/live_capture_test.py --provider directml --adapter default --playlist playlist-60 --name 60min-load2-directml --load 2
+# DirectML evidence (large model): references, oracle traces, regression + stages + live, interface, loopback, held-out token identity
+python scripts/prepare_large_model_references.py                  # regression/manifest-1.7b.json, evaluation/manifest-1.7b.json from reports/proof-1.7b
+python scripts/model_manifest.py --model-key large
+.venv\Scripts\python.exe scripts/reference.py --threads 8 --model-key large                       # oracle traces of the 1.7B model (traces/reference-1.7b)
+.venv\Scripts\python.exe scripts/directml_proof.py --adapter default --models large
+.venv\Scripts\python.exe scripts/gui_test.py --seconds 60 --provider directml --large-model
+.venv\Scripts\python.exe scripts/live_capture_test.py --provider directml --adapter default --large-model --playlist playlist-1x --name 3min-load2-directml-1.7b --load 2
+.venv\Scripts\python.exe scripts/live_capture_test.py --provider directml --adapter default --large-model --playlist playlist-60 --name 60min-load2-directml-1.7b --load 2
+.venv\Scripts\python.exe scripts/evaluate_variants.py --variants fp32,1.7b-directml --reuse --adapter default
+.venv\Scripts\python.exe scripts/directml_proof.py --skip-verify --skip-stages --skip-live          # aggregate everything into reports/directml.json; exit 0 = all criteria met
 .venv\Scripts\python.exe scripts/proof_report.py                  # docs/PROOF.md, docs/BENCHMARK.md, docs/COMPATIBILITY.md
 python scripts/package.py --version 0.1.0-tc1                     # dist/ folder, archive, reports/package.json
 build\Release\AsrWin.exe --check-package                          # run inside the extracted package folder
@@ -52,6 +72,6 @@ The reference oracle applies the official encoder window mask that the pinned ea
 
 ## Executable modes
 
-The application resolves model assets relative to its executable unless the development-only `--model` path override is supplied. Missing model graphs, weights or manifest entries fail explicitly. `--provider directml` is rejected unless `--experimental-directml` is present (benchmark experiments only); the interface always uses the CPU provider. `--skip-asset-check` and `--memory-mode` exist for development benchmarks.
+The application resolves model assets relative to its executable unless the development-only `--model` (and `--large-model-dir`) path overrides are supplied. Missing model graphs, weights or manifest entries fail explicitly. DirectML is gated by `shipped-model.json` → `directml.validated`, compiled in as `ASRWIN_DIRECTML_VALIDATED`: while it is false, `--provider directml` is rejected unless `--experimental-directml` and an explicit `--adapter N` are given, and the interface shows GPU items only when started with `--experimental-directml`; once it is true, `--provider directml [--adapter default|N]` and the interface's compute list are ordinary features and the flag is a no-op. The flag may only be set to true from a passing `reports/directml.json` (`scripts/directml_proof.py`). `--adapters` lists the DXGI adapters with their eligibility; `--skip-adapter-check`, `--skip-asset-check` and `--memory-mode` exist for development benchmarks. Control IDs of the interface are mirrored positionally by `scripts/gui_test.py`, so new controls are only ever appended to the enum in `src/gui.cpp`.
 
 Starting `AsrWin.exe` without arguments opens the capture interface (a console window flashes briefly when launched from Explorer because the executable keeps the console subsystem for its command-line modes).

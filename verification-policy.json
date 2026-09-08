@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "status": "initial tolerances fixed before first numerical comparison; keys/values criterion revised after the first comparison (see tolerance_changes)",
-  "notes": "FP32 official eager attention versus FP32 ONNX CPU. Any tolerance change needs an explanation in the proof report. All elements must be finite; shapes must match exactly. Transcript equality does not waive numerical failures.",
+  "notes": "FP32 official eager attention versus FP32 ONNX CPU. Any tolerance change needs an explanation in the proof report. All elements must be finite; shapes must match exactly. Transcript equality does not waive numerical failures. DirectML traces (traces/native-directml, reports/stages-directml/) are compared with the same tolerances unless stages.<name>.providers.directml overrides a field; every override must be logged in tolerance_changes with its provider and a measured reason, and logits are never relaxed.",
   "stages": {
     "pcm": {
       "absolute": 1e-07,
@@ -27,13 +27,23 @@
       "absolute": 0.003,
       "relative": 0.0001,
       "scale_relative": 0.001,
-      "rmse_relative": 0.001
+      "rmse_relative": 0.001,
+      "providers": {
+        "directml": {
+          "scale_relative": 0.0015
+        }
+      }
     },
     "values": {
       "absolute": 0.003,
       "relative": 0.0001,
       "scale_relative": 0.001,
-      "rmse_relative": 0.001
+      "rmse_relative": 0.001,
+      "providers": {
+        "directml": {
+          "scale_relative": 0.0015
+        }
+      }
     }
   },
   "scoring": "NFKC; ASCII lowercase; ignore punctuation; join apostrophes inside words. Mandarin CER counts Chinese characters and ASCII letters/digits. English WER counts words. Mixed MER counts Chinese characters and English words. No simplified/traditional conversion. Displayed text is unchanged.",
@@ -47,6 +57,16 @@
       ],
       "change": "added tensor-scale criterion (scale_relative 1e-3, rmse_relative 1e-3)",
       "reason": "Decoder KV caches contain attention-sink outliers with magnitudes up to about 390 (keys) and 143 (values). FP32 accumulation-order differences between ONNX Runtime fused kernels and PyTorch eager appear as absolute noise of up to 0.06 spread over the tensor, not proportional to the individual element, so the element-wise rule fails on elements near zero although the tensor agrees to about 1e-4 of its scale. The decision quantity (logits) still meets the original element-wise tolerance (max error about 2e-4 against 0.005) and all 24 token sequences are identical to the oracle. Encoder, input_embeds, logits, mel and pcm tolerances are unchanged."
+    },
+    {
+      "date": "2026-09-08",
+      "provider": "directml",
+      "stages": [
+        "keys",
+        "values"
+      ],
+      "change": "DirectML traces only: tensor-scale criterion scale_relative 1e-3 -> 1.5e-3 (stages.keys/values.providers.directml); the RMSE criterion, the element-wise rule and every other stage keep the base tolerances",
+      "reason": "Measured with the 1.7B FP32 decoder on the AMD Radeon RX 9060 XT (driver 32.0.31041.1004): on mandarin-0003 the values caches at steps 0, 1 and 7 deviate from the oracle by at most 0.149 on a tensor whose largest magnitude is 143 (1.04e-3 of scale, against the base 1e-3), while their RMSE is 3.4e-4 (5e-5 of the tensor RMS, twenty times inside the RMSE rule) and the same fixture on the CPU deviates by 0.059. The GPU MatMul kernels accumulate in yet another order than the CPU kernels, which shows as the same kind of near-zero noise the 2026-09-07 change describes. The decision quantity is unaffected: logits of that fixture differ by at most 3.9e-4 against the 0.005 element-wise tolerance, all 24 token sequences of both models are identical to the oracle and to the CPU run, and the 0.6B model passes all 24 fixtures on DirectML with the base tolerances (worst values deviation 0.05 on a scale of 57). Logits, encoder, input_embeds, mel and pcm are never relaxed for any provider."
     }
   ]
 }

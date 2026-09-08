@@ -1,0 +1,23 @@
+Verifying model assets...
+Using GPU: AMD Radeon RX 9060 XT...
+Loading encoder...
+[0;93m2026-09-08 14:26:21.4419102 [W:onnxruntime:, session_state.cc:1327 onnxruntime::VerifyEachNodeIsAssignedToAnEp] Some nodes were not assigned to the preferred execution providers which may or may not have an negative impact on performance. e.g. ORT explicitly assigns shape related ops to CPU to improve perf.[m
+[0;93m2026-09-08 14:26:21.4423109 [W:onnxruntime:, session_state.cc:1329 onnxruntime::VerifyEachNodeIsAssignedToAnEp] Rerunning with verbose output on a non-minimal build will show node assignments.[m
+Loading decoder prefill...
+[0;93m2026-09-08 14:26:21.6880374 [W:onnxruntime:, session_state.cc:1327 onnxruntime::VerifyEachNodeIsAssignedToAnEp] Some nodes were not assigned to the preferred execution providers which may or may not have an negative impact on performance. e.g. ORT explicitly assigns shape related ops to CPU to improve perf.[m
+[0;93m2026-09-08 14:26:21.6884135 [W:onnxruntime:, session_state.cc:1329 onnxruntime::VerifyEachNodeIsAssignedToAnEp] Rerunning with verbose output on a non-minimal build will show node assignments.[m
+Loading cached decoder...
+[0;93m2026-09-08 14:26:22.9553234 [W:onnxruntime:, session_state.cc:1327 onnxruntime::VerifyEachNodeIsAssignedToAnEp] Some nodes were not assigned to the preferred execution providers which may or may not have an negative impact on performance. e.g. ORT explicitly assigns shape related ops to CPU to improve perf.[m
+[0;93m2026-09-08 14:26:22.9556888 [W:onnxruntime:, session_state.cc:1329 onnxruntime::VerifyEachNodeIsAssignedToAnEp] Rerunning with verbose output on a non-minimal build will show node assignments.[m
+Model ready...
+GPU warm-up done...
+[0.00s] status: Listening
+[3.10s] provisional #1 r1 [0.62-2.62s] lag 0.48s backlog 0.00s eos: 适当使用博客，可以使学。
+[5.27s] provisional #1 r2 [0.62-4.62s] lag 0.65s backlog 0.00s eos: 适当使用博客，可以使学生变得更善于分析和进行。
+[7.48s] provisional #1 r3 [0.62-6.62s] lag 0.85s backlog 0.00s eos: 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料。
+[9.74s] provisional #1 r4 [0.62-8.62s] lag 1.11s backlog 0.00s eos: 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章。
+[12.14s] provisional #1 r5 [0.62-10.62s] lag 1.52s backlog 0.00s eos: 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场。
+[14.37s] provisional #1 r6 [0.62-12.62s] lag 1.74s backlog 0.00s eos: 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题。
+[17.60s] final #1 silence [0.62-15.36s] lag 2.24s backlog 0.00s eos: 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。
+[17.60s] stopped: Input exhausted
+finals 1, provisional lag p95 1.7427968 s, first-caption p95 2.4799577 s, finalization p95 2.2410253 s, max backlog 1.0560961 s, peak working set 1603293184 bytes

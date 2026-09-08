@@ -7,7 +7,7 @@ import json
 import statistics
 from pathlib import Path
 from bootstrap import ROOT
-from shipped import CONFIG, MODEL_DIR, remote
+from shipped import CONFIG, MODEL_DIR, MODELS, DIRECTML_VALIDATED, remote
 REPORTS = ROOT / CONFIG.get('report_root','reports')
 
 def load(rel):
@@ -48,6 +48,27 @@ memory = load('reports/memory.json')
 package = load('reports/package.json')
 environment = load('reports/environment.json')
 directml = load('reports/directml.json')
+dml_ok = bool(directml and directml.get('success'))
+dml_adapter = (directml or {}).get('adapter') or {}
+adapters = load('reports/adapters.json')
+large_model = MODELS.get('large')
+large_manifest = load(large_model['model_dir'] + '/manifest.json') if large_model else None
+def provider_label(report):
+    engine = (report or {}).get('engine', {})
+    label = engine.get('provider', 'CPU')
+    return f"{label} ({engine['adapter_name']})" if engine.get('adapter_name') else label
+def gpu_list():
+    """Hardware adapters with driver versions, vendor-agnostic: from --adapters when available, else WMI names."""
+    if adapters:
+        seen = []
+        for a in adapters['adapters']:
+            if a.get('software') or a.get('duplicate_of') is not None: continue
+            entry = f"{a['name']} {a.get('driver_version', '')}".strip()
+            if entry not in seen: seen.append(entry)
+        return seen
+    if environment:
+        return [f"{g['Name']} {g.get('DriverVersion', '')}".strip() for g in environment['graphics'] if not any(x in g['Name'] for x in ('Basic Render', 'Virtual', 'Remote Display'))]
+    return []
 live = {p.stem: json.loads(p.read_text('utf-8')) for p in sorted(REPORTS.glob('live-*.json')) if 'overload' not in p.stem and 'slow' not in p.stem}
 fault = load('reports/live-overload-test.json')
 captures = {p.stem: json.loads(p.read_text('utf-8')) for p in sorted(REPORTS.glob('capture-*.json')) if not p.stem.endswith('-scored')}
@@ -80,6 +101,9 @@ w('')
 w('`mel_filters.bin` and `prompt_reference.json` are generated from the official `Qwen3ASRProcessor` (`scripts/reference.py --prepare-only`). Publisher-supplied LFS hashes for the ONNX and safetensors assets were checked by `scripts/check_publisher_hashes.py` (`reports/publisher-hashes.json`).')
 w('')
 w(f"Shipped configuration: **{CONFIG['configuration']}** (`{CONFIG['model_dir']}`). {CONFIG.get('note', '')}")
+if large_manifest:
+    w('')
+    w(f"Optional large model, selectable on a DirectML adapter only (`--large-model` or the compute list of the interface): **{large_manifest['configuration']}** (`{large_model['model_dir']}`, {sum(i['bytes'] for i in large_manifest['files']):,} bytes, model manifest `{large_model['model_dir']}/manifest.json`). Its regression references are `{large_model['regression_manifest']}`.")
 w(f"Evidence collection: `{CONFIG.get('report_root','reports')}`. Historical reports remain in the archived model collections; see `docs/RESUME-AUDIT.md` for which checks were rerun after fixes.")
 w('')
 if previous:
@@ -118,10 +142,14 @@ w('Tolerances (`verification-policy.json`):')
 w('')
 if policy:
     w('| Stage | absolute | relative (per element) | scale-relative (× max|ref|) | RMSE-relative (× RMS ref) |'); w('|---|---|---|---|---|')
-    for k, v in policy['stages'].items(): w(f"| {k} | {v['absolute']} | {v['relative']} | {v.get('scale_relative', '-')} | {v.get('rmse_relative', '-')} |")
+    for k, v in policy['stages'].items():
+        w(f"| {k} | {v['absolute']} | {v['relative']} | {v.get('scale_relative', '-')} | {v.get('rmse_relative', '-')} |")
+        for provider, override in v.get('providers', {}).items():
+            merged = {**{x: y for x, y in v.items() if x != 'providers'}, **override}
+            w(f"| {k} ({provider} traces) | {merged['absolute']} | {merged['relative']} | {merged.get('scale_relative', '-')} | {merged.get('rmse_relative', '-')} |")
     w(''); w(policy.get('criteria', ''))
     for change in policy.get('tolerance_changes', []):
-        w(''); w(f"Tolerance change ({change['date']}, {', '.join(change['stages'])}): {change['change']}. Reason: {change['reason']}")
+        w(''); w(f"Tolerance change ({change['date']}, {', '.join(change['stages'])}{', ' + change['provider'] + ' traces only' if change.get('provider') else ''}): {change['change']}. Reason: {change['reason']}")
 w('')
 if verification:
     w('### Regression set (24 fixtures, `reports/verification.json`)')
@@ -199,26 +227,36 @@ if variants:
             w(''); w('Scoring normalization does not convert numerals, so a different rendering of the same number (Arabic digits versus Chinese numerals) counts as character edits against the human transcript; the rule above is applied as written.')
     shipped = model_manifest
     if shipped: w(f"Shipped configuration (model manifest): {shipped.get('configuration')}.")
+w('')
 if directml:
-    w(''); w(f"- DirectML: {directml.get('summary', 'see reports/directml.json')}")
+    w(f"- DirectML (`reports/directml.json`, {'validated' if dml_ok else 'evidence run failed'}): {directml.get('summary', 'see reports/directml.json')}")
+    for name, m in directml.get('models', {}).items():
+        w(''); w(f"  Criteria for {name} on {dml_adapter.get('name')} (driver {dml_adapter.get('driver_version')}):"); w('')
+        w('  | Criterion | Result | Detail |'); w('  |---|---|---|')
+        for cname, c in m['criteria'].items():
+            detail = {k: v for k, v in c.items() if k not in ('success', 'runs', 'decision', 'report', 'report_dir', 'accuracy', 'gpu_memory') and not isinstance(v, (dict, list))}
+            w(f"  | {cname.replace('_', ' ')} | {'pass' if c['success'] else 'FAIL'} | {'; '.join(f'{k} {fmt(v, 3) if isinstance(v, float) else v}' for k, v in detail.items())} |")
+    if not dml_ok: w(''); w(f"  DirectML therefore remains opt-in/experimental in this build (failed criteria: {directml.get('failed_criteria')}).")
+elif DIRECTML_VALIDATED:
+    w('- DirectML: marked validated in `shipped-model.json` but `reports/directml.json` is missing — not measured.')
 else:
-    w(''); w('- DirectML: not enabled. `--provider directml` is rejected unless `--experimental-directml` is given for benchmark experiments; the interface always uses the CPU provider.')
+    w('- DirectML: not validated in this build. `--provider directml` is rejected unless `--experimental-directml` and an explicit `--adapter N` are given (command-line experiments); the interface offers the CPU only unless started with `--experimental-directml`.')
 w('')
 w('## 5. Live pipeline measurements')
 w('')
 if live:
     w('Simulated live runs replay a fixture through the capture ring, resampler, speech gate and scheduler in real time (`--benchmark file --simulate-live`).'); w('')
-    w('| Run | Audio s | Finals | Provisional lag p50 / p95 / max s | First caption p95 s | Finalization p95 s | Max backlog s | Peak working set | Result |'); w('|---|---|---|---|---|---|---|---|---|')
+    w('| Run | Provider | Audio s | Finals | Provisional lag p50 / p95 / max s | First caption p95 s | Finalization p95 s | Max backlog s | Peak working set | Result |'); w('|---|---|---|---|---|---|---|---|---|---|')
     for name, r in live.items():
         s = r['live']; p = s['provisional_lag_seconds']
-        w(f"| {name} | {fmt(r['source'].get('audio_seconds'), 1)} | {s['final_count']} | {fmt(p['p50'], 2)} / {fmt(p['p95'], 2)} / {fmt(p['max'], 2)} | {fmt(s['first_caption_lag_seconds']['p95'], 2)} | {fmt(s['finalization_delay_seconds']['p95'], 2)} | {fmt(s['pipeline']['max_backlog_seconds'], 2)} | {gib(s['pipeline']['memory']['peak_working_set_bytes'])} | {'PASS' if r['success'] else 'FAIL'} |")
+        w(f"| {name} | {provider_label(r)}{' (large model)' if r.get('engine', {}).get('large_model') else ''} | {fmt(r['source'].get('audio_seconds'), 1)} | {s['final_count']} | {fmt(p['p50'], 2)} / {fmt(p['p95'], 2)} / {fmt(p['max'], 2)} | {fmt(s['first_caption_lag_seconds']['p95'], 2)} | {fmt(s['finalization_delay_seconds']['p95'], 2)} | {fmt(s['pipeline']['max_backlog_seconds'], 2)} | {gib(s['pipeline']['memory']['peak_working_set_bytes'])} | {'PASS' if r['success'] else 'FAIL'} |")
 if captures:
     w(''); w('Loopback captures use the real WASAPI path on the reference PC while a player renders audio to the selected endpoint (`--capture`).'); w('')
-    w('| Run | Device | Duration s | Finals | Provisional lag p95 s | First caption p95 s | Finalization p95 s | Max backlog s | Discontinuities | Dropped frames | CPU load | Peak working set | Result |'); w('|---|---|---|---|---|---|---|---|---|---|---|---|---|')
+    w('| Run | Provider | Device | Duration s | Finals | Provisional lag p95 s | First caption p95 s | Finalization p95 s | Max backlog s | Discontinuities | Dropped frames | CPU load | Peak working set | Result |'); w('|---|---|---|---|---|---|---|---|---|---|---|---|---|---|')
     for name, r in captures.items():
         s = r['live']; c = s['pipeline'].get('capture', {})
         cpu = s['pipeline']['process_cpu_seconds'] / max(1e-9, s['pipeline']['wall_seconds'])
-        w(f"| {name} | {r['source'].get('device')} | {fmt(s['pipeline']['wall_seconds'], 0)} | {s['final_count']} | {fmt(s['provisional_lag_seconds']['p95'], 2)} | {fmt(s['first_caption_lag_seconds']['p95'], 2)} | {fmt(s['finalization_delay_seconds']['p95'], 2)} | {fmt(s['pipeline']['max_backlog_seconds'], 2)} | {c.get('discontinuities')} | {c.get('dropped_frames')} | {cpu:.2f} cores | {gib(s['pipeline']['memory']['peak_working_set_bytes'])} | {'PASS' if r['success'] else 'FAIL'} |")
+        w(f"| {name} | {provider_label(r)}{' (large model)' if r.get('engine', {}).get('large_model') else ''} | {r['source'].get('device')} | {fmt(s['pipeline']['wall_seconds'], 0)} | {s['final_count']} | {fmt(s['provisional_lag_seconds']['p95'], 2)} | {fmt(s['first_caption_lag_seconds']['p95'], 2)} | {fmt(s['finalization_delay_seconds']['p95'], 2)} | {fmt(s['pipeline']['max_backlog_seconds'], 2)} | {c.get('discontinuities')} | {c.get('dropped_frames')} | {cpu:.2f} cores | {gib(s['pipeline']['memory']['peak_working_set_bytes'])} | {'PASS' if r['success'] else 'FAIL'} |")
 scored = {p.stem.replace('-scored', ''): json.loads(p.read_text('utf-8')) for p in sorted((ROOT / 'reports').glob('capture-*-scored.json'))}
 if scored:
     w(''); w('Caption accuracy of the loopback captures, finals assigned to played clips by time overlap (pooled edit rates; Mandarin characters, English words, mixed characters+words):'); w('')
@@ -227,11 +265,12 @@ if scored:
         sm = r['summary']
         cell = lambda cat: f"{fmt(sm[cat]['oracle_error_rate'], 3)} / {fmt(sm[cat]['human_error_rate'], 3)}" if cat in sm else 'n/a'
         w(f"| {name} | {r.get('background_load_processes')} busy processes | {cell('mandarin')} | {cell('english')} | {cell('mixed')} | {sum(v['clips_without_caption'] for v in sm.values())} of {sum(v['clips'] for v in sm.values())} |")
-gui = load('reports/gui-test.json')
-if gui:
-    w(''); w(f"Interface test (`scripts/gui_test.py`, Win32 messages against the running window): {'PASS' if gui['success'] else 'FAIL'} — " + '; '.join(f"{s['step']}: {'ok' if s['success'] else 'FAIL'}" for s in gui['steps']) + '.')
+for gui_name, gui_label in [('reports/gui-test.json', 'CPU'), ('reports/gui-test-directml.json', 'DirectML'), ('reports/gui-test-directml-1.7b.json', 'DirectML, large model')]:
+    gui = load(gui_name)
+    if not gui: continue
+    w(''); w(f"Interface test, {gui_label} (`scripts/gui_test.py`, Win32 messages against the running window): {'PASS' if gui['success'] else 'FAIL'} — " + '; '.join(f"{s['step']}: {'ok' if s['success'] else 'FAIL'}" for s in gui['steps']) + '.')
     detail = {s['step']: s for s in gui['steps']}
-    if 'model loads' in detail: w(f"Model load in the interface: {detail['model loads'].get('load_seconds')} s; first provisional caption {detail.get('first provisional caption appeared', {}).get('seconds_after_playback_start')} s after playback started (first clip starts at {detail.get('first provisional caption appeared', {}).get('first_clip_start')} s).")
+    if 'model loads' in detail: w(f"Model load in the interface: {detail['model loads'].get('load_seconds')} s" + (f"; reload on the GPU item \"{detail['model reloads on GPU'].get('item')}\": {detail['model reloads on GPU'].get('reload_seconds')} s" if 'model reloads on GPU' in detail else '') + f"; first provisional caption {detail.get('first provisional caption appeared', {}).get('seconds_after_playback_start')} s after playback started (first clip starts at {detail.get('first provisional caption appeared', {}).get('first_clip_start')} s).")
 if fault:
     fs = fault['live']; fp = fs['pipeline']
     slow = load('reports/live-slow3-test.json')
@@ -274,7 +313,12 @@ w('')
 w('Remaining gaps:')
 w('')
 w('- Clean-Windows verification on external machines has not been performed; the package is a test candidate and no clean-install or real-time support claim is made.')
-w('- DirectML is disabled: it has not passed regression and sustained-load tests on any adapter/driver combination.')
+if dml_ok:
+    w(f"- DirectML is validated only on {dml_adapter.get('name')} (driver {dml_adapter.get('driver_version')}) on the reference PC; every other adapter, driver and vendor is untested, and the CPU remains the default provider.")
+elif directml:
+    w(f"- DirectML is not validated: the evidence run failed ({directml.get('failed_criteria')}); it stays reachable only through the experimental command-line flags.")
+else:
+    w('- DirectML is not validated: no evidence run (`scripts/directml_proof.py`) has been recorded for this build.')
 w('- Sustained live measurements exist only for the reference PC; see `docs/COMPATIBILITY.md`.')
 (ROOT / 'docs/PROOF.md').write_text('\n'.join(out) + '\n', encoding='utf-8')
 
@@ -283,7 +327,8 @@ b = bench.append
 b('# Benchmark report (reference PC)')
 b('')
 if environment:
-    b(f"Measured on {environment['cpu']['Name'].strip()} ({environment['cpu']['NumberOfCores']} cores / {environment['cpu']['NumberOfLogicalProcessors']} threads), {environment['os']['TotalVisibleMemorySize'] // 1024 // 1024} GiB RAM, {environment['os']['Caption']} build {environment['os']['BuildNumber']}. GPU: {', '.join(g['Name'] for g in environment['graphics'] if 'Radeon' in g['Name'])} (unused; CPU provider).")
+    gpu_note = f"DirectML validated on {dml_adapter.get('name')} driver {dml_adapter.get('driver_version')}; CPU is the default provider" if dml_ok else 'present, unused by the CPU provider; DirectML not validated'
+    b(f"Measured on {environment['cpu']['Name'].strip()} ({environment['cpu']['NumberOfCores']} cores / {environment['cpu']['NumberOfLogicalProcessors']} threads), {environment['os']['TotalVisibleMemorySize'] // 1024 // 1024} GiB RAM, {environment['os']['Caption']} build {environment['os']['BuildNumber']}. GPU: {', '.join(gpu_list()) or 'n/a'} ({gpu_note}).")
     b('')
 if verification:
     rows = [r['observed'] for r in verification['fixtures'] if r.get('observed') and categories.get(r['id']) != 'non-speech']
@@ -292,6 +337,30 @@ if verification:
         b(f"- Speech fixtures: mean RTF {statistics.mean(r['rtf'] for r in rows):.3f}, max RTF {max(r['rtf'] for r in rows):.3f}; mean encoder {statistics.mean(r['encoder_seconds'] for r in rows):.3f} s, mean prefill {statistics.mean(r['prefill_seconds'] for r in rows):.3f} s, mean decode {statistics.mean(r['decode_seconds'] / max(1, len(r['tokens'])) * 1000 for r in rows):.1f} ms/token.")
         b(f"- Model load {fmt(verification.get('model_load_seconds'), 1)} s (includes SHA-256 of {sum(i['bytes'] for i in model_manifest['files']) / 1e9:.1f} GB of assets).")
         b('')
+if directml and directml.get('models'):
+    b(f"## CPU versus DirectML (`--verify`, 24 fixtures{'' if dml_ok else ' — not validated'})"); b('')
+    b(f"Adapter: {dml_adapter.get('name')} (driver {dml_adapter.get('driver_version')}, DXGI index {dml_adapter.get('directml_index')}, {gib(dml_adapter.get('dedicated_video_memory_bytes'))} dedicated). Numbers from `reports/directml.json`; the CPU rows are the CPU baselines it compares against."); b('')
+    b('| Model | Provider | Threads | Passed | Tokens = oracle | Total inference s | Decode ms/token | Mean encoder s | Mean prefill s | Mean RTF (speech) | Model load s | Peak working set | Max private bytes | Peak GPU local memory |'); b('|---|---|---|---|---|---|---|---|---|---|---|---|---|---|')
+    for name, m in directml['models'].items():
+        f = m['measurements'].get('file', {})
+        for label, r in (('CPU', f.get('cpu')), ('DirectML', f.get('directml'))):
+            if not r: continue
+            gpu_peak = (r.get('gpu_memory') or {}).get('peak_local_usage_bytes')
+            b(f"| {name} | {label} | {r['engine'].get('threads')} | {r['passed']}/24 | {r['tokens_exact']}/24 | {fmt(r['total_seconds'], 2)} | {fmt(r['decode_ms_per_token'], 1)} | {fmt(r['mean_encoder_seconds'], 3)} | {fmt(r['mean_prefill_seconds'], 3)} | {fmt(r['mean_rtf_speech'], 3)} | {fmt(r['model_load_seconds'], 1)} | {gib(r['peak_working_set_bytes'])} | {gib(r['max_private_bytes'])} | {gib(gpu_peak) if gpu_peak else '-'} |")
+        g = m['criteria'].get('end_to_end_gain', {})
+        b(''); b(f"- {name}: end-to-end file-transcription gain {fmt((g.get('gain_all_fixtures') or 0) * 100, 1)} % (speech fixtures {fmt((g.get('gain_speech') or 0) * 100, 1)} %), minimum required {fmt(g.get('minimum', 0) * 100, 0)} %; tokens identical to the CPU run: {fmt(m['criteria'].get('tokens_identical_to_cpu', {}).get('success'))}; numerical stages within tolerance: {m['criteria'].get('stages_within_tolerance', {}).get('passed')}/24.")
+        runs = m['criteria'].get('live_runs_pass', {}).get('runs', {})
+        if runs:
+            b(''); b('| Simulated live run | CPU provisional p95 s | DirectML provisional p95 s | CPU first caption p95 s | DirectML first caption p95 s | CPU finalization p95 s | DirectML finalization p95 s | GPU warm-up s |'); b('|---|---|---|---|---|---|---|---|')
+            for fixture, run in runs.items():
+                c = run.get('cpu') or {}; d = run.get('directml') or {}
+                b(f"| {name} {fixture} | {fmt(c.get('provisional_p95'), 2)} | {fmt(d.get('provisional_p95'), 2)} | {fmt(c.get('first_caption_p95'), 2)} | {fmt(d.get('first_caption_p95'), 2)} | {fmt(c.get('finalization_p95'), 2)} | {fmt(d.get('finalization_p95'), 2)} | {fmt(run.get('warm_up_seconds'), 2)} |")
+        s = m['criteria'].get('sustained_load', {})
+        if s.get('present'):
+            b(''); b(f"- {name} sustained loopback ({s.get('report')}): {fmt(s.get('wall_seconds'), 0)} s, {s.get('final_count')} finals, provisional lag p95 {fmt(s.get('provisional_p95'), 2)} s, finalization p95 {fmt(s.get('finalization_p95'), 2)} s, max backlog {fmt(s.get('max_backlog'), 2)} s, {s.get('suspensions')} suspensions, audio loss {'no' if s.get('no_audio_loss') else 'yes'}, peak working set {gib(s.get('peak_working_set_bytes'))}, private {gib(s.get('private_bytes'))}, peak GPU local memory {gib((s.get('gpu_memory') or {}).get('peak_local_usage_bytes')) if (s.get('gpu_memory') or {}).get('peak_local_usage_bytes') else 'n/a'} — {'PASS' if s.get('success') else 'FAIL'}.")
+        else:
+            b(''); b(f"- {name} sustained loopback on DirectML: not measured.")
+    b('')
 if threads:
     b('## Thread budget'); b('')
     b('| Threads | Mean RTF | Decode ms/token | Prefill s | Encoder s |'); b('|---|---|---|---|---|')
@@ -324,14 +393,26 @@ c('')
 c('| Windows build / edition | Architecture | CPU | RAM | GPU / driver | Provider | Tested how | Result |')
 c('|---|---|---|---|---|---|---|---|')
 if environment:
-    gpus = '; '.join(f"{g['Name']} {g['DriverVersion']}" for g in environment['graphics'] if 'Radeon' in g['Name'])
-    tested = ['transcription proof (`--verify`, 24 fixtures)'] + (['boundary/session cases'] if boundaries else []) + ([f'{len(live)} simulated live runs'] if live else []) + ([f'{len(captures)} WASAPI loopback captures'] if captures else []) + (['interface test'] if load('reports/gui-test.json') else [])
+    gpus = '; '.join(gpu_list())
+    cpu_live = [n for n, r in live.items() if not str(r.get('engine', {}).get('provider', 'CPU')).startswith('DirectML')]
+    cpu_captures = [n for n, r in captures.items() if not str(r.get('engine', {}).get('provider', 'CPU')).startswith('DirectML')]
+    tested = ['transcription proof (`--verify`, 24 fixtures)'] + (['boundary/session cases'] if boundaries else []) + ([f'{len(cpu_live)} simulated live runs'] if cpu_live else []) + ([f'{len(cpu_captures)} WASAPI loopback captures'] if cpu_captures else []) + (['interface test'] if load('reports/gui-test.json') else [])
     result = 'proof passed' if verification and verification.get('success') and len(stages)==24 and all(s.get('success') for s in stages.values()) and boundaries and boundaries.get('success') else 'proof incomplete'
-    c(f"| {environment['os']['Caption']} {environment['os']['Version']} (build {environment['os']['BuildNumber']}) — development host, not a clean install | x64 | {environment['cpu']['Name'].strip()} | {environment['os']['TotalVisibleMemorySize'] // 1024 // 1024} GiB | {gpus} (present, unused) | CPU | {', '.join(tested)} | {result}; live measurements in docs/BENCHMARK.md |")
+    c(f"| {environment['os']['Caption']} {environment['os']['Version']} (build {environment['os']['BuildNumber']}) — development host, not a clean install | x64 | {environment['cpu']['Name'].strip()} | {environment['os']['TotalVisibleMemorySize'] // 1024 // 1024} GiB | {gpus} ({'DirectML validated, see below' if dml_ok else 'present, unused'}) | CPU | {', '.join(tested)} | {result}; live measurements in docs/BENCHMARK.md |")
+    if directml:
+        for name, m in directml.get('models', {}).items():
+            crit = m['criteria']
+            dml_tested = [f"24-fixture regression ({crit.get('regression_24_pass', {}).get('passed')}/24)", f"stage comparison ({crit.get('stages_within_tolerance', {}).get('passed')}/24)",
+                          f"{sum(1 for r in crit.get('live_runs_pass', {}).get('runs', {}).values() if r.get('directml'))} simulated live runs"] + (['60-minute loopback capture'] if crit.get('sustained_load', {}).get('present') else []) \
+                        + (['interface test'] if load('reports/gui-test-directml.json' if name == CONFIG['name'] else f'reports/gui-test-directml-{name}.json') else [])
+            c(f"| {environment['os']['Caption']} {environment['os']['Version']} (build {environment['os']['BuildNumber']}) — development host | x64 | {environment['cpu']['Name'].strip()} | {environment['os']['TotalVisibleMemorySize'] // 1024 // 1024} GiB | {dml_adapter.get('name')} driver {dml_adapter.get('driver_version')} | DirectML ({name}{', large model' if name != CONFIG['name'] else ''}) | {', '.join(dml_tested)} | {'validated on this adapter/driver only' if m.get('success') else 'evidence incomplete: ' + ', '.join(k for k, v in crit.items() if not v['success'])} |")
 c('| Windows 10 22H2 x64 | x64 | any | ≥16 GB | any | CPU | **not tested** | untested |')
 c('| Windows 11 24H2 x64 (clean install, standard user, offline) | x64 | any | ≥16 GB | any | CPU | **not tested** — pending external clean-machine run | untested |')
 c('| Windows N editions without Media Feature Pack | x64 | any | any | any | CPU | excluded (Windows Audio Resampler requires Media Foundation) | unsupported |')
-c('| Any | x64 | any | any | any | DirectML | not enabled in this version | unsupported |')
+if dml_ok:
+    c('| Any | x64 | any | any | any GPU, driver or vendor other than the adapter listed above | DirectML | **not tested** | untested (the compute list still offers eligible adapters; CPU remains available) |')
+else:
+    c('| Any | x64 | any | any | any | DirectML | not validated in this version (experimental command line only) | unsupported |')
 c('')
 c('## What "tested" covered on the development host')
 c('')
@@ -343,13 +424,13 @@ c('## Not yet covered')
 c('')
 c('- Clean Windows 10 22H2 / Windows 11 24H2 machines without developer tools or Visual C++ redistributables (release gate), including paths with spaces and Chinese characters on such machines.')
 c('- Device removal / default-device change during a long live session (the handling exists but was not exercised by an automated test).')
-c('- Any GPU acceleration.')
+c(f"- GPU acceleration on any adapter, driver or vendor other than the one listed as tested{' (' + str(dml_adapter.get('name')) + ')' if dml_ok else ''}." if dml_ok else '- Any GPU acceleration (DirectML is not validated in this build).')
 (ROOT / 'docs/COMPATIBILITY.md').write_text('\n'.join(compat) + '\n', encoding='utf-8')
 print('Wrote docs/PROOF.md, docs/BENCHMARK.md and docs/COMPATIBILITY.md')
 if REPORTS != ROOT/'reports':
     for name in ['PROOF.md','BENCHMARK.md','COMPATIBILITY.md']:
         path=ROOT/'docs'/name
         text=path.read_text('utf-8')
-        for item in ['verification.json','stages/','boundaries.json','tokenizer.json','preprocessing.json','fixture-frontend.json','speech-gate.json','cli-failures.json','benchmark-threads.json','memory.json','encoder-diff-mandarin-0000.json','variant-evaluation.json','reference-global-attention/','gui-test.json','directml.json']:
+        for item in ['verification.json','stages/','boundaries.json','tokenizer.json','preprocessing.json','fixture-frontend.json','speech-gate.json','cli-failures.json','benchmark-threads.json','memory.json','encoder-diff-mandarin-0000.json','variant-evaluation.json','reference-global-attention/','gui-test.json','gui-test-directml.json','directml.json','verification-directml.json','stages-directml/','adapters.json']:
             text=text.replace('reports/'+item,CONFIG['report_root']+'/'+item)
         path.write_text(text,encoding='utf-8')

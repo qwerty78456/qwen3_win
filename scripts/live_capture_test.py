@@ -17,7 +17,7 @@ import time
 import unicodedata
 from pathlib import Path
 from bootstrap import ROOT
-from shipped import MODEL_DIR, VARIANT
+from shipped import MODEL_DIR, VARIANT, DIRECTML_VALIDATED, model_config
 
 def tokens(text, characters):
     text = unicodedata.normalize('NFKC', text)
@@ -66,9 +66,12 @@ def main():
     parser.add_argument('--rescore', action='store_true', help='score an existing reports/capture-<name>.json without capturing again')
     parser.add_argument('--player-device', default='', help='SDL audio device name for ffplay (default: system default endpoint)')
     parser.add_argument('--provider',choices=['cpu','directml'],default='cpu')
-    parser.add_argument('--adapter',type=int,default=0)
+    parser.add_argument('--adapter',default='default',help="DirectML adapter: 'default' or a DXGI index (see AsrWin.exe --adapters)")
+    parser.add_argument('--large-model',action='store_true',help='capture with the large (GPU-only) model from shipped-model.json')
     parser.add_argument('--report-dir',type=Path,default=ROOT/'reports')
     args = parser.parse_args()
+    model_dir = ROOT / model_config('large')['model_dir'] if args.large_model else MODEL_DIR
+    if args.large_model and args.provider != 'directml': raise SystemExit('The large model is measured on DirectML only')
     playlist = ROOT / 'traces/live' / f'{args.playlist}.wav'
     schedule = json.loads((ROOT / 'traces/live' / f'{args.playlist}.json').read_text('utf-8'))
     duration = schedule['duration_seconds'] + args.extra_seconds
@@ -78,9 +81,12 @@ def main():
     started_line = None
     if not args.rescore:
         provider_args=['--provider',args.provider]
-        if args.provider=='directml':provider_args+=['--experimental-directml','--adapter',str(args.adapter)]
-        capture = subprocess.Popen([str(exe), *provider_args, '--capture', '--device', args.device, '--duration', str(duration), '--model', str(MODEL_DIR),
-                                    '--variant', args.variant, '--report', str(report), '--transcript', str(ROOT / 'traces/live' / f'{args.name}.txt')],
+        if args.provider=='directml':
+            provider_args+=['--adapter',str(args.adapter)]
+            if not DIRECTML_VALIDATED: provider_args.append('--experimental-directml')
+        if args.large_model: provider_args.append('--large-model')
+        capture = subprocess.Popen([str(exe), *provider_args, '--capture', '--device', args.device, '--duration', str(duration), '--model', str(model_dir),
+                                    '--variant', 'fp32' if args.large_model else args.variant, '--report', str(report), '--transcript', str(ROOT / 'traces/live' / f'{args.name}.txt')],
                                    stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, encoding='utf-8', errors='replace')
         # Wait for the model to load and capture to start before playing.
         for line in capture.stdout:
@@ -143,7 +149,11 @@ def main():
             summary[cat] = {'clips': len(rows), 'human_error_rate': sum(r['human_edits'] for r in rows) / max(1, sum(r['human_units'] for r in rows)),
                             'oracle_error_rate': sum(r['oracle_edits'] for r in rows) / max(1, sum(r['oracle_units'] for r in rows)),
                             'clips_without_caption': sum(1 for r in rows if not r['finals'])}
+    engine = body.get('engine', {})
     result = {'name': args.name, 'playlist': args.playlist, 'device': body['source'].get('device'), 'player_device': args.player_device or 'default', 'background_load_processes': args.load,
+              'provider': args.provider, 'engine_provider': engine.get('provider'), 'adapter_index': engine.get('adapter_index'), 'adapter_name': engine.get('adapter_name'),
+              'adapter_luid': engine.get('adapter_luid'), 'adapter_driver_version': engine.get('adapter_driver_version'), 'large_model': bool(engine.get('large_model')),
+              'model_directory': engine.get('model_directory'), 'gpu_memory': body.get('gpu_memory'),
               'capture_started': started_line, 'alignment_offset_seconds': offset, 'clips': scored, 'summary': summary,
               'live': {k: v for k, v in body['live'].items() if k not in ('events', 'utterances', 'transcript')}, 'success': body.get('success')}
     (args.report_dir / f'capture-{args.name}-scored.json').write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')

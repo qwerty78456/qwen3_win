@@ -32,6 +32,8 @@ fs::path executable_dir();
 Json memory_usage();
 std::string sha256_file(const fs::path& path);
 void verify_files(const fs::path& model_dir, const std::string& variant="fp32");
+uint64_t model_weight_bytes(const fs::path& model_dir, const std::string& variant="fp32");  // graph + weight assets from manifest.json (embeddings excluded)
+std::string model_short_name(const fs::path& model_dir);  // first word of the manifest configuration, e.g. "Qwen3-ASR-0.6B"
 Json verify_package(const fs::path& directory);
 class MappedFile {
  public:

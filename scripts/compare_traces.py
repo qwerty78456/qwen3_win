@@ -1,20 +1,34 @@
-"""Strict independent comparison. Missing stages and mismatches exit nonzero."""
+"""Strict independent comparison. Missing stages and mismatches exit nonzero.
+
+`--provider directml` compares `traces/native-directml/<fixture>` (from `--verify ... --provider directml --trace`)
+against the same oracle traces; a stage may carry a provider-specific tolerance override under
+`stages.<name>.providers.<provider>` in verification-policy.json (every override is logged in tolerance_changes).
+`--model-key large` selects the large model's oracle (`traces/reference-<name>`) and trace directories.
+"""
 import argparse
 import json
 import hashlib
 from pathlib import Path
 import numpy as np
 from bootstrap import ROOT
+from shipped import model_config
 
 def main():
     p=argparse.ArgumentParser()
     p.add_argument('fixture')
     p.add_argument('--report',type=Path)
+    p.add_argument('--provider',choices=['cpu','directml'],default='cpu')
+    p.add_argument('--model-key',default='default',choices=['default','large'])
     args=p.parse_args()
-    reference=ROOT/'traces/reference'/args.fixture
-    native=ROOT/'traces/native'/args.fixture
+    cfg=model_config(args.model_key); suffix=cfg['suffix']; psuffix='' if args.provider=='cpu' else '-'+args.provider
+    reference=ROOT/('traces/reference'+suffix)/args.fixture
+    native=ROOT/('traces/native'+psuffix+suffix)/args.fixture
     policy=json.loads((ROOT/'verification-policy.json').read_text('utf-8'))
-    result={'fixture':args.fixture,'success':True,'stages':{}}
+    def limit_for(key):
+        base={k:v for k,v in policy['stages'][key].items() if k!='providers'}
+        override=policy['stages'][key].get('providers',{}).get(args.provider)
+        return ({**base,**override},'providers.'+args.provider) if override else (base,'base')
+    result={'fixture':args.fixture,'provider':args.provider,'model':cfg['name'],'native_traces':native.relative_to(ROOT).as_posix(),'reference_traces':reference.relative_to(ROOT).as_posix(),'success':True,'stages':{}}
     def compare(a,b,limit):
         if a.shape!=b.shape or not a.size or not np.isfinite(a).all() or not np.isfinite(b).all(): return {'success':False}
         err=np.abs(a-b); maximum=float(err.max()); rmse=float(np.sqrt(np.mean(err.astype(np.float64)**2)))
@@ -45,8 +59,8 @@ def main():
             a=np.fromfile(reference/(name+'.f32'),dtype='<f4')
             b=np.fromfile(native/(name+'.f32'),dtype='<f4')
             key=name if name=='input_embeds' else name.split('_')[0]
-            limit=policy['stages'][key]
-            item={'reference_elements':int(a.size),'native_elements':int(b.size),'tolerance':limit,'success':False}
+            limit,source=limit_for(key)
+            item={'reference_elements':int(a.size),'native_elements':int(b.size),'tolerance':limit,'tolerance_source':source,'success':False}
             if a.shape==b.shape and a.size and np.isfinite(a).all() and np.isfinite(b).all():
                 error=np.abs(a-b)
                 failures=error > limit['absolute']+limit['relative']*np.abs(a)
@@ -64,7 +78,7 @@ def main():
         # amplified by the decoder. Diagnose this explicitly using an official decoder
         # run on the identical native encoder tensor. Never relax logits or token checks.
         failed=[k for k,v in result['stages'].items() if not v['success']]
-        local=ROOT/'traces/decoder-reference'/args.fixture
+        local=ROOT/('traces/decoder-reference'+suffix)/args.fixture
         if failed and all(k.startswith(('keys_','values_')) for k in failed) and (local/'provenance.json').exists():
             proof=json.loads((local/'provenance.json').read_text('utf-8'))
             digest=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
@@ -74,7 +88,7 @@ def main():
                 if name.startswith(('keys_','values_','logits_')):
                     path=local/(name+'.f32')
                     if not path.exists() or proof['files'].get(path.name)!=digest(path): bound=False; continue
-                    isolated[name]=compare(np.fromfile(path,dtype='<f4'),np.fromfile(native/path.name,dtype='<f4'),policy['stages'][name.split('_')[0]])
+                    isolated[name]=compare(np.fromfile(path,dtype='<f4'),np.fromfile(native/path.name,dtype='<f4'),limit_for(name.split('_')[0])[0])
             result['decoder_input_isolation']={'provenance_bound':bound,'stages':isolated,
                 'explanation':'Small encoder differences propagate into KV caches. The official decoder on the same encoder tensor passes the original tolerances; end-to-end logits, tokens and transcripts still agree.',
                 'evidence':'reports/resume-audit/noise-isolation.json'}
@@ -82,7 +96,7 @@ def main():
             result['decoder_input_isolation']['success']=bool(bound and isolated and all(v['success'] for v in isolated.values()) and result['prompt_exact'] and result['tokens_exact'] and result['cache_shapes_exact'] and result['completion_match'])
     except Exception as e:
         result.update(success=False,error=str(e))
-    path=args.report or ROOT/'reports/stages'/(args.fixture+'.json')
+    path=args.report or ROOT/('reports/stages'+psuffix+suffix)/(args.fixture+'.json')
     path.parent.mkdir(parents=True,exist_ok=True)
     path.write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(json.dumps(result,ensure_ascii=False,indent=2))

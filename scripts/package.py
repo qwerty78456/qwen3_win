@@ -14,13 +14,14 @@ import zipfile
 import re
 from pathlib import Path
 from bootstrap import ROOT, sha256
-from shipped import CONFIG
+from shipped import CONFIG, MODELS
 
 BUILD = ROOT / 'build/Release'
 RUNTIME = ['AsrWin.exe', 'onnxruntime.dll', 'onnxruntime_providers_shared.dll', 'DirectML.dll',
            'msvcp140.dll', 'msvcp140_1.dll', 'msvcp140_2.dll', 'msvcp140_atomic_wait.dll', 'msvcp140_codecvt_ids.dll',
            'vcruntime140.dll', 'vcruntime140_1.dll', 'vcruntime140_threads.dll', 'concrt140.dll', 'vccorlib140.dll']
 MODEL = CONFIG['model_dir']
+SHIPPED_MODELS = [MODELS['default']] + ([MODELS['large']] if 'large' in MODELS else [])  # the large model is GPU-only (--large-model)
 
 def copy(src, dst):
     if not src.is_file():
@@ -47,10 +48,16 @@ def main():
     for file in RUNTIME:
         copy(BUILD / file, folder / file)
     model_manifest = json.loads((ROOT / MODEL / 'manifest.json').read_text('utf-8'))
-    copy(ROOT / MODEL / 'manifest.json', folder / MODEL / 'manifest.json')
-    for item in model_manifest['files']:
-        copy(ROOT / MODEL / item['path'], folder / MODEL / item['path'])
-    copy(ROOT / MODEL / 'README.md', folder / MODEL / 'MODEL-CARD.md')
+    shipped_models = []
+    for cfg in SHIPPED_MODELS:
+        directory = cfg['model_dir']
+        manifest = json.loads((ROOT / directory / 'manifest.json').read_text('utf-8'))
+        copy(ROOT / directory / 'manifest.json', folder / directory / 'manifest.json')
+        for item in manifest['files']:
+            copy(ROOT / directory / item['path'], folder / directory / item['path'])
+        copy(ROOT / directory / 'README.md', folder / directory / 'MODEL-CARD.md')
+        shipped_models.append({'name': cfg['name'], 'configuration': manifest['configuration'], 'model_dir': directory, 'variant': manifest['variant'],
+                               'gpu_only': cfg is not SHIPPED_MODELS[0], 'bytes': sum(i['bytes'] for i in manifest['files'])})
     for rel in ['THIRD_PARTY_NOTICES.md', 'verification-policy.json', 'dependencies.lock.json', 'remote-assets.lock.json', 'native-dependency.lock.json', 'shipped-model.json',
                 'docs/PACKAGE-README.md', 'docs/PROOF.md', 'docs/BENCHMARK.md', 'docs/COMPATIBILITY.md', 'docs/PACKAGING.md', 'docs/RESUME-AUDIT.md', 'docs/CLEAN-WINDOWS-TEST.md']:
         target = folder / ('README.md' if rel == 'docs/PACKAGE-README.md' else rel)
@@ -62,6 +69,11 @@ def main():
         if file.is_file():
             copy(file, regression / file.name)
     shutil.copytree(ROOT / 'regression/reference', regression / 'reference')
+    for cfg in SHIPPED_MODELS[1:]:  # official-model references of the large model (regression/reference-<name>)
+        extra = ROOT / 'regression' / ('reference' + cfg['suffix'])
+        if not extra.is_dir() or not (ROOT / cfg['regression_manifest']).is_file():
+            raise RuntimeError(f'Missing references for {cfg["name"]}: run scripts/prepare_large_model_references.py')
+        shutil.copytree(extra, regression / extra.name)
     docs = {'README.md': 'docs/PACKAGE-README.md', 'docs/PROOF.md': 'docs/PROOF.md', 'docs/BENCHMARK.md': 'docs/BENCHMARK.md', 'docs/COMPATIBILITY.md': 'docs/COMPATIBILITY.md'}
     def inventory():
         files = []
@@ -71,13 +83,14 @@ def main():
         return files
     def write_manifest(files):
         manifest = {'schema': 1, 'package': name, 'version': args.version, 'status': 'test candidate; clean-install and sustained-live gates not yet passed externally',
-                    'model': model_manifest['configuration'], 'runtime': model_manifest['runtime'], 'files': files}
+                    'model': model_manifest['configuration'], 'models': shipped_models, 'default_provider': CONFIG.get('default_provider', 'cpu'),
+                    'directml_validated': bool(CONFIG.get('directml', {}).get('validated')), 'runtime': model_manifest['runtime'], 'files': files}
         (folder / 'package-manifest.json').write_text(json.dumps(manifest, indent=2) + '\n', encoding='utf-8')
         return sum(f['bytes'] for f in files) + (folder / 'package-manifest.json').stat().st_size
     # Pass 1: full inventory and sizes, so the proof report can state the package size and file count.
     files = inventory()
     extracted = write_manifest(files)
-    report = {'package': name, 'files': len(files) + 1, 'extracted_bytes': extracted, 'folder': str(folder.relative_to(ROOT))}
+    report = {'package': name, 'files': len(files) + 1, 'extracted_bytes': extracted, 'folder': str(folder.relative_to(ROOT)), 'models': shipped_models}
     (ROOT / 'reports').mkdir(exist_ok=True)
     (ROOT / 'reports/package.json').write_text(json.dumps(report, indent=2) + '\n', encoding='utf-8')
     if not args.no_docs_refresh:

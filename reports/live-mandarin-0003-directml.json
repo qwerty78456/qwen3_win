@@ -1,0 +1,441 @@
+{
+  "engine": {
+    "adapter_dedicated_video_memory_bytes": 16974905344,
+    "adapter_device_id": 30096,
+    "adapter_driver_version": "32.0.31041.1004",
+    "adapter_index": 0,
+    "adapter_luid": "0x0000000000015569",
+    "adapter_luid_confirmed": true,
+    "adapter_name": "AMD Radeon RX 9060 XT",
+    "adapter_vendor_id": 4098,
+    "assets_verified": true,
+    "configuration": "Qwen3-ASR-0.6B FP32 graphs with FP16 embedding storage",
+    "directml_validated": false,
+    "embedding_dtype": "float16",
+    "encoder": [
+      {
+        "dtype": 1,
+        "name": "mel",
+        "shape": [
+          1,
+          128,
+          -1
+        ]
+      }
+    ],
+    "eos_ids": [
+      151643,
+      151645
+    ],
+    "large_model": false,
+    "memory_mode": "shared-prepack",
+    "model_directory": "qwen3-asr-0.6b-fp32",
+    "model_hidden_size": 1024,
+    "model_manifest_sha256": "de01cc5a9e9b468d9c0d55312da457974ccb75931078566352f5e7750f835ff8",
+    "prefill": [
+      {
+        "dtype": 7,
+        "name": "input_ids",
+        "shape": [
+          -1,
+          -1
+        ]
+      },
+      {
+        "dtype": 7,
+        "name": "position_ids",
+        "shape": [
+          -1,
+          -1
+        ]
+      },
+      {
+        "dtype": 1,
+        "name": "audio_features",
+        "shape": [
+          -1,
+          -1,
+          1024
+        ]
+      },
+      {
+        "dtype": 7,
+        "name": "audio_offset",
+        "shape": [
+          1
+        ]
+      }
+    ],
+    "prefill_format": "input_ids",
+    "prefix_ids": [
+      151644,
+      8948,
+      198,
+      151645,
+      198,
+      151644,
+      872,
+      198,
+      151669
+    ],
+    "provider": "DirectML (experimental)",
+    "reference_model": {
+      "repo": "Qwen/Qwen3-ASR-0.6B",
+      "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0"
+    },
+    "runtime": "1.24.4",
+    "step": [
+      {
+        "dtype": 1,
+        "name": "input_embeds",
+        "shape": [
+          -1,
+          1,
+          1024
+        ]
+      },
+      {
+        "dtype": 7,
+        "name": "position_ids",
+        "shape": [
+          -1,
+          1
+        ]
+      },
+      {
+        "dtype": 1,
+        "name": "past_keys",
+        "shape": [
+          28,
+          -1,
+          8,
+          -1,
+          128
+        ]
+      },
+      {
+        "dtype": 1,
+        "name": "past_values",
+        "shape": [
+          28,
+          -1,
+          8,
+          -1,
+          128
+        ]
+      }
+    ],
+    "suffix_ids": [
+      151670,
+      151645,
+      198,
+      151644,
+      77091,
+      198
+    ],
+    "threads": 4,
+    "variant": "fp32",
+    "warm_up_error": null,
+    "warm_up_seconds": 0.4726933
+  },
+  "gpu_memory": {
+    "adapter_index": 0,
+    "adapter_luid": "0x0000000000015569",
+    "current": {
+      "local_budget_bytes": 16165400576,
+      "local_usage_bytes": 7725780992,
+      "nonlocal_budget_bytes": 15898988544,
+      "nonlocal_usage_bytes": 483885056
+    },
+    "peak_local_usage_bytes": 7725780992
+  },
+  "live": {
+    "clean_stop": true,
+    "duplicate_finals": 0,
+    "errors": 0,
+    "events": [
+      {
+        "audio_end": 0.0,
+        "audio_start": 0.0,
+        "backlog_seconds": 0.0,
+        "boundary": "",
+        "completion": "",
+        "incomplete": false,
+        "inference_seconds": 0.0,
+        "kind": "status",
+        "lag_seconds": 0.0,
+        "revision": 0,
+        "since_start_seconds": 0.0,
+        "status": "Listening",
+        "t": 0.0023779,
+        "text": "",
+        "utterance": 0
+      },
+      {
+        "audio_end": 2.62,
+        "audio_start": 0.62,
+        "backlog_seconds": 0.0,
+        "boundary": "",
+        "completion": "eos",
+        "incomplete": false,
+        "inference_seconds": 0.4833624,
+        "kind": "provisional",
+        "lag_seconds": 0.4799577,
+        "revision": 1,
+        "since_start_seconds": 2.4799577,
+        "status": "",
+        "t": 3.1024833,
+        "text": "适当使用博客，可以使学。",
+        "utterance": 1
+      },
+      {
+        "audio_end": 4.62,
+        "audio_start": 0.62,
+        "backlog_seconds": 0.0,
+        "boundary": "",
+        "completion": "eos",
+        "incomplete": false,
+        "inference_seconds": 0.6521075,
+        "kind": "provisional",
+        "lag_seconds": 0.6518422,
+        "revision": 2,
+        "since_start_seconds": 4.6518422,
+        "status": "",
+        "t": 5.2743679,
+        "text": "适当使用博客，可以使学生变得更善于分析和进行。",
+        "utterance": 1
+      },
+      {
+        "audio_end": 6.62,
+        "audio_start": 0.62,
+        "backlog_seconds": 0.0,
+        "boundary": "",
+        "completion": "eos",
+        "incomplete": false,
+        "inference_seconds": 0.8580706,
+        "kind": "provisional",
+        "lag_seconds": 0.8539875,
+        "revision": 3,
+        "since_start_seconds": 6.8539875,
+        "status": "",
+        "t": 7.4765149,
+        "text": "适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料。",
+        "utterance": 1
+      },
+      {
+        "audio_end": 8.62,
+        "audio_start": 0.62,
+        "backlog_seconds": 0.0,
+        "boundary": "",
+        "completion": "eos",
+        "incomplete": false,
+        "inference_seconds": 1.1184375,
+        "kind": "provisional",
+        "lag_seconds": 1.1141175,
+        "revision": 4,
+        "since_start_seconds": 9.1141175,
+        "status": "",
+        "t": 9.736646,
+        "text": "适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章。",
+        "utterance": 1
+      },
+      {
+        "audio_end": 10.62,
+        "audio_start": 0.62,
+        "backlog_seconds": 0.0,
+        "boundary": "",
+        "completion": "eos",
+        "incomplete": false,
+        "inference_seconds": 1.5232542,
+        "kind": "provisional",
+        "lag_seconds": 1.5173743,
+        "revision": 5,
+        "since_start_seconds": 11.5173743,
+        "status": "",
+        "t": 12.139902,
+        "text": "适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场。",
+        "utterance": 1
+      },
+      {
+        "audio_end": 12.62,
+        "audio_start": 0.62,
+        "backlog_seconds": 0.0,
+        "boundary": "",
+        "completion": "eos",
+        "incomplete": false,
+        "inference_seconds": 1.7496625,
+        "kind": "provisional",
+        "lag_seconds": 1.7427968,
+        "revision": 6,
+        "since_start_seconds": 13.7427968,
+        "status": "",
+        "t": 14.3653234,
+        "text": "适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题。",
+        "utterance": 1
+      },
+      {
+        "audio_end": 15.36,
+        "audio_start": 0.62,
+        "backlog_seconds": 0.0,
+        "boundary": "silence",
+        "completion": "eos",
+        "incomplete": false,
+        "inference_seconds": 2.2206924,
+        "kind": "final",
+        "lag_seconds": 2.2410253,
+        "revision": 0,
+        "since_start_seconds": 16.9810253,
+        "status": "",
+        "t": 17.6035599,
+        "text": "适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。",
+        "utterance": 1
+      },
+      {
+        "audio_end": 0.0,
+        "audio_start": 0.0,
+        "backlog_seconds": 0.0,
+        "boundary": "",
+        "completion": "",
+        "incomplete": false,
+        "inference_seconds": 0.0,
+        "kind": "stopped",
+        "lag_seconds": 0.0,
+        "revision": 0,
+        "since_start_seconds": 0.0,
+        "status": "Input exhausted",
+        "t": 17.6038025,
+        "text": "",
+        "utterance": 0
+      }
+    ],
+    "final_count": 1,
+    "finalization_delay_seconds": {
+      "count": 1,
+      "max": 2.2410253,
+      "p50": 2.2410253,
+      "p95": 2.2410253
+    },
+    "first_caption_lag_seconds": {
+      "count": 1,
+      "max": 2.4799577,
+      "p50": 2.4799577,
+      "p95": 2.4799577
+    },
+    "incomplete_finals": 0,
+    "no_audio_loss": true,
+    "overload_stop": false,
+    "pipeline": {
+      "audio_seconds_processed": 16.42,
+      "backlog_definition": "age of the oldest unfinished utterance since its audio ended (queued or decoding)",
+      "capture": {
+        "channels": 1,
+        "frames": 262720,
+        "late_packets": 0,
+        "max_late_seconds": 0.0,
+        "overflow_events": 0,
+        "pace": 1.0,
+        "packets": 1642,
+        "ring_capacity_frames": 32000,
+        "ring_peak_used_frames": 320,
+        "sample_rate": 16000,
+        "source": "wav-replay",
+        "tail_silence_seconds": 1.0
+      },
+      "error": "",
+      "finals": 1,
+      "lag_clock": "producer sample timestamps (WASAPI QPC for device capture)",
+      "max_backlog_seconds": 1.0560961,
+      "max_queued_audio_seconds": 14.74,
+      "memory": {
+        "peak_pagefile_bytes": 8818753536,
+        "peak_working_set_bytes": 1603293184,
+        "private_bytes": 8688676864,
+        "working_set_bytes": 1042350080
+      },
+      "process_cpu_seconds": 5.875,
+      "provisionals": 6,
+      "provisionals_cancelled": 1,
+      "provisionals_skipped": 0,
+      "retained_peak_seconds": 28.740000000000002,
+      "segmenter": {
+        "energy_gated_positive_frames": 690,
+        "longest_start_run_frames": 5,
+        "peak_frame_rms": 0.10634870336545157,
+        "vad_positive_frames": 690
+      },
+      "session": 1,
+      "stop_reason": "",
+      "suspensions": 0,
+      "wall_seconds": 17.6014729
+    },
+    "provisional_lag_seconds": {
+      "count": 6,
+      "max": 1.7427968,
+      "p50": 0.8539875,
+      "p95": 1.7427968
+    },
+    "speech_utterances": 1,
+    "stale_provisionals_delivered": 0,
+    "success": true,
+    "transcript": "适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。\n",
+    "utterances": [
+      {
+        "audio_end": 15.36,
+        "audio_start": 0.62,
+        "boundary": "silence",
+        "completion": "eos",
+        "final_inference_seconds": 2.2206924,
+        "final_text": "适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。",
+        "finalization_delay": 2.2410253,
+        "first_caption_lag": 2.4799577,
+        "id": 1,
+        "incomplete": false,
+        "provisional_count": 6,
+        "provisional_lags": [
+          0.4799577,
+          0.6518422,
+          0.8539875,
+          1.1141175,
+          1.5173743,
+          1.7427968
+        ]
+      }
+    ]
+  },
+  "memory_after_load": {
+    "peak_pagefile_bytes": 7058821120,
+    "peak_working_set_bytes": 1603293184,
+    "private_bytes": 6351237120,
+    "working_set_bytes": 276951040
+  },
+  "mode": "simulate-live",
+  "model_load_seconds": 6.167833,
+  "options": {
+    "adapter": 0,
+    "adapter_selector": "0",
+    "large_model": false,
+    "overload_backlog": 20.0,
+    "provider": "directml",
+    "provisional": true,
+    "provisional_after": 2.0,
+    "provisional_interval": 2.0,
+    "resume_backlog": 2.0,
+    "retained_limit": 60.0,
+    "slow_inference": 0.0,
+    "suspend_backlog": 4.0,
+    "threads": 4,
+    "variant": "fp32"
+  },
+  "source": {
+    "audio_seconds": 15.42,
+    "file": "D:\\asr_win\\regression\\mandarin-0003.wav",
+    "pace": 1.0,
+    "source": {
+      "bits": 16,
+      "channels": 1,
+      "format": "pcm",
+      "sample_rate": 16000
+    }
+  },
+  "success": true
+}

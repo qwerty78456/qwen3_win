@@ -1,0 +1,203 @@
+{
+  "text": "OK，福建。",
+  "raw_output": "language Chinese<asr_text>OK，福建。<|im_end|>",
+  "tokens": [
+    11528,
+    8453,
+    151704,
+    3925,
+    3837,
+    102359,
+    1773,
+    151645
+  ],
+  "completion": "eos",
+  "prompt_ids": [
+    151644,
+    8948,
+    198,
+    151645,
+    198,
+    151644,
+    872,
+    198,
+    151669,
+    151676,
+    151676,
+    151676,
+    151676,
+    151676,
+    151676,
+    151676,
+    151676,
+    151676,
+    151676,
+    151676,
+    151676,
+    151676,
+    151676,
+    151670,
+    151645,
+    198,
+    151644,
+    77091,
+    198
+  ],
+  "cache_steps": [
+    {
+      "step": 0,
+      "keys": [
+        28,
+        1,
+        8,
+        29,
+        128
+      ],
+      "values": [
+        28,
+        1,
+        8,
+        29,
+        128
+      ],
+      "next_token": 11528
+    },
+    {
+      "step": 1,
+      "keys": [
+        28,
+        1,
+        8,
+        30,
+        128
+      ],
+      "values": [
+        28,
+        1,
+        8,
+        30,
+        128
+      ],
+      "next_token": 8453
+    },
+    {
+      "step": 2,
+      "keys": [
+        28,
+        1,
+        8,
+        31,
+        128
+      ],
+      "values": [
+        28,
+        1,
+        8,
+        31,
+        128
+      ],
+      "next_token": 151704
+    },
+    {
+      "step": 3,
+      "keys": [
+        28,
+        1,
+        8,
+        32,
+        128
+      ],
+      "values": [
+        28,
+        1,
+        8,
+        32,
+        128
+      ],
+      "next_token": 3925
+    },
+    {
+      "step": 4,
+      "keys": [
+        28,
+        1,
+        8,
+        33,
+        128
+      ],
+      "values": [
+        28,
+        1,
+        8,
+        33,
+        128
+      ],
+      "next_token": 3837
+    },
+    {
+      "step": 5,
+      "keys": [
+        28,
+        1,
+        8,
+        34,
+        128
+      ],
+      "values": [
+        28,
+        1,
+        8,
+        34,
+        128
+      ],
+      "next_token": 102359
+    },
+    {
+      "step": 6,
+      "keys": [
+        28,
+        1,
+        8,
+        35,
+        128
+      ],
+      "values": [
+        28,
+        1,
+        8,
+        35,
+        128
+      ],
+      "next_token": 1773
+    },
+    {
+      "step": 7,
+      "keys": [
+        28,
+        1,
+        8,
+        36,
+        128
+      ],
+      "values": [
+        28,
+        1,
+        8,
+        36,
+        128
+      ],
+      "next_token": 151645
+    }
+  ],
+  "elapsed_seconds": 2.0347725999999966,
+  "model_load_seconds": 1.7125690000029863,
+  "audio_seconds": 1.02,
+  "dtype": "float32",
+  "attention": "eager",
+  "encoder_attention": "windowed (official _prepare_attention_mask applied, n_window_infer=800)",
+  "threads": 8,
+  "reference_source_revision": "7c6daf77a2421100f5fb066495372c00129d39ff",
+  "reference_model_repo": "Qwen/Qwen3-ASR-1.7B",
+  "reference_model_revision": "7278e1e70fe206f11671096ffdd38061171dd6e5",
+  "torch_version": "2.10.0+cpu"
+}

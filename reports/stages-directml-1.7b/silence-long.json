@@ -1,0 +1,188 @@
+{
+  "fixture": "silence-long",
+  "provider": "directml",
+  "model": "1.7b",
+  "native_traces": "traces/native-directml-1.7b/silence-long",
+  "reference_traces": "traces/reference-1.7b/silence-long",
+  "success": true,
+  "stages": {
+    "pcm": {
+      "reference_elements": 240000,
+      "native_elements": 240000,
+      "tolerance": {
+        "absolute": 1e-07,
+        "relative": 0.0
+      },
+      "tolerance_source": "base",
+      "success": true,
+      "max_absolute_error": 0.0,
+      "rmse": 0.0,
+      "reference_max_abs": 0.0,
+      "reference_rms": 0.0,
+      "failed_elements": 0,
+      "elementwise_success": true
+    },
+    "mel": {
+      "reference_elements": 192000,
+      "native_elements": 192000,
+      "tolerance": {
+        "absolute": 0.0001,
+        "relative": 0.0001
+      },
+      "tolerance_source": "base",
+      "success": true,
+      "max_absolute_error": 0.0,
+      "rmse": 0.0,
+      "reference_max_abs": 1.5,
+      "reference_rms": 1.5,
+      "failed_elements": 0,
+      "elementwise_success": true
+    },
+    "encoder": {
+      "reference_elements": 399360,
+      "native_elements": 399360,
+      "tolerance": {
+        "absolute": 0.002,
+        "relative": 0.0001
+      },
+      "tolerance_source": "base",
+      "success": true,
+      "max_absolute_error": 4.0605664253234863e-07,
+      "rmse": 4.9430474262218834e-08,
+      "reference_max_abs": 0.15884271264076233,
+      "reference_rms": 0.026919731815856062,
+      "failed_elements": 0,
+      "elementwise_success": true
+    },
+    "input_embeds": {
+      "reference_elements": 430080,
+      "native_elements": 430080,
+      "tolerance": {
+        "absolute": 0.002,
+        "relative": 0.0001
+      },
+      "tolerance_source": "base",
+      "success": true,
+      "max_absolute_error": 4.0605664253234863e-07,
+      "rmse": 4.763239684983502e-08,
+      "reference_max_abs": 0.15884271264076233,
+      "reference_rms": 0.026847026426021364,
+      "failed_elements": 0,
+      "elementwise_success": true
+    },
+    "logits_0": {
+      "reference_elements": 151936,
+      "native_elements": 151936,
+      "tolerance": {
+        "absolute": 0.005,
+        "relative": 0.0001
+      },
+      "tolerance_source": "base",
+      "success": true,
+      "max_absolute_error": 0.00013446807861328125,
+      "rmse": 2.572563052005044e-05,
+      "reference_max_abs": 39.84803009033203,
+      "reference_rms": 5.015547339251456,
+      "failed_elements": 0,
+      "elementwise_success": true
+    },
+    "keys_0": {
+      "reference_elements": 6021120,
+      "native_elements": 6021120,
+      "tolerance": {
+        "absolute": 0.003,
+        "relative": 0.0001,
+        "scale_relative": 0.0015,
+        "rmse_relative": 0.001
+      },
+      "tolerance_source": "providers.directml",
+      "success": true,
+      "max_absolute_error": 0.002061128616333008,
+      "rmse": 1.7042272990795497e-05,
+      "reference_max_abs": 389.9102783203125,
+      "reference_rms": 5.5305159988115165,
+      "failed_elements": 0,
+      "elementwise_success": true,
+      "tensor_scale_success": true
+    },
+    "values_0": {
+      "reference_elements": 6021120,
+      "native_elements": 6021120,
+      "tolerance": {
+        "absolute": 0.003,
+        "relative": 0.0001,
+        "scale_relative": 0.0015,
+        "rmse_relative": 0.001
+      },
+      "tolerance_source": "providers.directml",
+      "success": true,
+      "max_absolute_error": 0.0035552978515625,
+      "rmse": 7.062505878307976e-05,
+      "reference_max_abs": 140.91741943359375,
+      "reference_rms": 5.891418630700726,
+      "failed_elements": 0,
+      "elementwise_success": true,
+      "tensor_scale_success": true
+    },
+    "logits_1": {
+      "reference_elements": 151936,
+      "native_elements": 151936,
+      "tolerance": {
+        "absolute": 0.005,
+        "relative": 0.0001
+      },
+      "tolerance_source": "base",
+      "success": true,
+      "max_absolute_error": 0.0001621246337890625,
+      "rmse": 3.287622887873489e-05,
+      "reference_max_abs": 35.19179916381836,
+      "reference_rms": 5.4291789793180225,
+      "failed_elements": 0,
+      "elementwise_success": true
+    },
+    "keys_1": {
+      "reference_elements": 6049792,
+      "native_elements": 6049792,
+      "tolerance": {
+        "absolute": 0.003,
+        "relative": 0.0001,
+        "scale_relative": 0.0015,
+        "rmse_relative": 0.001
+      },
+      "tolerance_source": "providers.directml",
+      "success": true,
+      "max_absolute_error": 0.002061128616333008,
+      "rmse": 1.7015369774387087e-05,
+      "reference_max_abs": 389.9102783203125,
+      "reference_rms": 5.529461024613047,
+      "failed_elements": 0,
+      "elementwise_success": true,
+      "tensor_scale_success": true
+    },
+    "values_1": {
+      "reference_elements": 6049792,
+      "native_elements": 6049792,
+      "tolerance": {
+        "absolute": 0.003,
+        "relative": 0.0001,
+        "scale_relative": 0.0015,
+        "rmse_relative": 0.001
+      },
+      "tolerance_source": "providers.directml",
+      "success": true,
+      "max_absolute_error": 0.0035552978515625,
+      "rmse": 7.051767949235498e-05,
+      "reference_max_abs": 140.91741943359375,
+      "reference_rms": 5.897225477070929,
+      "failed_elements": 0,
+      "elementwise_success": true,
+      "tensor_scale_success": true
+    }
+  },
+  "prompt_exact": true,
+  "tokens_exact": true,
+  "completion_match": true,
+  "token_differences": [],
+  "cache_shapes_exact": true,
+  "end_to_end_success": true
+}

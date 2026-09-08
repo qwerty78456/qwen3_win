@@ -1,6 +1,7 @@
 #include "asr.hpp"
 #include "audio.hpp"
 #include "capture.hpp"
+#include "compute.hpp"
 #include "diagnostics.hpp"
 #include "gui.hpp"
 #include "pipeline.hpp"
@@ -81,13 +82,21 @@ int wmain(int argc, wchar_t** argv) {
     SetConsoleOutputCP(CP_UTF8);
     fs::path default_model = executable_dir() / ASRWIN_MODEL_DIR;
     fs::path model = default_model, input, trace, verification, transcript_path;
-    EngineOptions options; options.verify_distribution=true; PipelineOptions live;
+    EngineOptions options; options.verify_distribution=true; options.directml=std::string(ASRWIN_DEFAULT_PROVIDER)=="directml"; PipelineOptions live;
     bool inspect=false, preprocess=false, tokenize=false, diagnostic=false, segment=false, encode=false, simulate=false, capture=false, devices=false, gui=false, gui_explicit=false, experimental=false, check_package=false;
-    std::string token_text; std::wstring device_selector; double pace=1.0, duration=60, tail=1.0; int repeat=1; fs::path interleave,self_test_input; bool adapter_explicit=false;
+    bool adapters=false, skip_adapter_check=false, large_model=false, no_settings=false, provider_explicit=false, threads_explicit=false, model_explicit=false;
+    std::string token_text; std::wstring device_selector, adapter_selector; double pace=1.0, duration=60, tail=1.0; int repeat=1; fs::path interleave,self_test_input,settings_path,large_model_dir;
+    if (std::string(ASRWIN_LARGE_MODEL_DIR).size()) large_model_dir=executable_dir()/ASRWIN_LARGE_MODEL_DIR;
     for (int i=1;i<argc;++i) {
       std::wstring arg=argv[i];
       auto value=[&]() -> std::wstring { if (++i>=argc) throw std::runtime_error("Missing argument value"); return argv[i]; };
-      if (arg==L"--model") { model=value(); options.verify_distribution=false; }
+      if (arg==L"--model") { model=value(); options.verify_distribution=false; model_explicit=true; }
+      else if (arg==L"--large-model") large_model=true;
+      else if (arg==L"--large-model-dir") { large_model_dir=value(); options.verify_distribution=false; }  // development only: unpackaged large model
+      else if (arg==L"--adapters") adapters=true;
+      else if (arg==L"--skip-adapter-check") skip_adapter_check=true;  // experiments only: bypass the video-memory rule
+      else if (arg==L"--settings") settings_path=value();
+      else if (arg==L"--no-settings") no_settings=true;
       else if (arg==L"--self-test") self_test_input=value();
       else if (arg==L"--benchmark") input=value();
       else if (arg==L"--preprocess") { input=value(); preprocess=true; }
@@ -98,7 +107,7 @@ int wmain(int argc, wchar_t** argv) {
       else if (arg==L"--report") report=value();
       else if (arg==L"--trace") trace=value();
       else if (arg==L"--profile") options.profile=value();
-      else if (arg==L"--threads") options.threads=std::stoi(value());
+      else if (arg==L"--threads") { options.threads=std::stoi(value()); threads_explicit=true; }
       else if (arg==L"--max-tokens") options.max_tokens=std::stoi(value());
       else if (arg==L"--inspect") inspect=true;
       else if (arg==L"--diagnostics") diagnostic=true;
@@ -121,34 +130,56 @@ int wmain(int argc, wchar_t** argv) {
       else if (arg==L"--variant") options.variant=utf8(value());
       else if (arg==L"--skip-asset-check") options.verify_assets=false;  // development benchmarks only
       else if (arg==L"--slow-inference") options.slow_inference=std::stod(value());  // fault injection for live tests
-      else if (arg==L"--adapter") { options.adapter=std::stoi(value()); adapter_explicit=true; }
-      else if (arg==L"--provider") { auto p=value(); if (p==L"cpu") options.directml=false; else if (p==L"directml") options.directml=true; else throw std::runtime_error("Unknown provider"); }
+      else if (arg==L"--adapter") adapter_selector=value();
+      else if (arg==L"--provider") { auto p=value(); provider_explicit=true; if (p==L"cpu") options.directml=false; else if (p==L"directml") options.directml=true; else throw std::runtime_error("Unknown provider; use --provider cpu|directml"); }
       else if (arg==L"--help") {
         std::cout << "AsrWin — offline Mandarin/English playback captions (test candidate)\n"
-          "  (no arguments)                       open the capture interface\n"
-          "  --benchmark input.wav [--provider cpu] [--report results.json] [--trace dir]\n"
+          "  (no arguments)                       open the capture interface (add --provider directml [--adapter N] [--large-model] to preselect the GPU)\n"
+          "  --benchmark input.wav [--provider cpu|directml] [--report results.json] [--trace dir]\n"
           "  --benchmark input.wav --simulate-live [--pace 1.0] [--no-provisional] --report live.json\n"
           "  --capture [--device default|name|id] --duration 60 [--report live.json] [--transcript out.txt]\n"
           "  --verify regression\\manifest.json --report verification.json [--trace dir]\n"
-          "  --devices | --inspect | --diagnostics | --preprocess input.wav | --segment input.wav | --tokenize text\n"
-          "Options: --model dir  --threads 4  --max-tokens 512  --variant fp32|int4  --provider cpu|directml\n";
+          "  --devices | --adapters | --inspect | --diagnostics | --preprocess input.wav | --segment input.wav | --tokenize text\n"
+          "Options: --model dir  --threads 4  --max-tokens 512  --variant fp32|int4  --provider cpu|directml  --adapter default|N  --large-model\n"
+#if ASRWIN_DIRECTML_VALIDATED
+          "DirectML: --provider directml runs on the first eligible GPU (see --adapters); --large-model selects the larger shipped model (GPU only).\n";
+#else
+          "DirectML is not validated in this build: --provider directml needs --experimental-directml and an explicit --adapter N.\n";
+#endif
         return 0;
       } else throw std::runtime_error("Unknown argument: "+utf8(arg));
     }
-    bool action = !self_test_input.empty() || !input.empty() || !verification.empty() || inspect || diagnostic || devices || tokenize || preprocess || segment || check_package || capture || simulate;
-    int modes=int(!self_test_input.empty())+int(!input.empty())+int(!verification.empty())+int(inspect)+int(diagnostic)+int(devices)+int(tokenize)+int(check_package)+int(capture);
+    bool action = !self_test_input.empty() || !input.empty() || !verification.empty() || inspect || diagnostic || devices || adapters || tokenize || preprocess || segment || check_package || capture || simulate;
+    int modes=int(!self_test_input.empty())+int(!input.empty())+int(!verification.empty())+int(inspect)+int(diagnostic)+int(devices)+int(adapters)+int(tokenize)+int(check_package)+int(capture);
     if (modes>1 || (gui_explicit && action) || (simulate && input.empty())) throw std::runtime_error("Select exactly one action; --simulate-live requires --benchmark input.wav");
     if (gui_explicit || !action) gui = true;
+    if (large_model) {
+      if (large_model_dir.empty()) throw std::runtime_error("This build has no large model configured (shipped-model.json directml.large_model)");
+      if (!model_explicit) model=large_model_dir;  // --model dir (development) still names the directory; --large-model then only sets threads and the report flag
+      if (!threads_explicit) options.threads=ASRWIN_LARGE_MODEL_THREADS;
+      options.large_model=true;
+      if (gui && !options.directml) throw std::runtime_error("The large model runs on DirectML only; add --provider directml");
+    }
     if (options.threads<1 || options.threads>16 || options.max_tokens<1 || options.max_tokens>1024) throw std::runtime_error("Invalid thread/token limit");
     if (!std::isfinite(duration) || duration<=0 || duration>86400 || !std::isfinite(pace) || pace<0 || pace>100 ||
         !std::isfinite(tail) || tail<0 || tail>60 || !std::isfinite(options.slow_inference) || options.slow_inference<0 || options.slow_inference>300 ||
-        live.provisional_max_tokens<1 || live.provisional_max_tokens>1024 || options.adapter<0)
-      throw std::runtime_error("Invalid duration, replay pace, tail, inference delay, provisional token limit or adapter");
-    if (options.directml && (!experimental || !adapter_explicit || gui))
-      throw std::runtime_error("DirectML is unvalidated; use --experimental-directml with an explicit adapter for command-line experiments. The interface uses CPU until GPU validation is complete.");
+        live.provisional_max_tokens<1 || live.provisional_max_tokens>1024)
+      throw std::runtime_error("Invalid duration, replay pace, tail, inference delay or provisional token limit");
+    if (options.directml) {
+      if (!ASRWIN_DIRECTML_VALIDATED && !experimental)
+        throw std::runtime_error("DirectML is not validated in this build; use --experimental-directml with an explicit --adapter N for command-line experiments (see --adapters). The interface offers CPU only unless started with --experimental-directml.");
+      if (!ASRWIN_DIRECTML_VALIDATED && !gui && adapter_selector.empty())
+        throw std::runtime_error("DirectML is not validated in this build; --experimental-directml requires an explicit --adapter N (see --adapters)");
+      if (ASRWIN_DIRECTML_VALIDATED && experimental) std::cerr<<"note: --experimental-directml is accepted but no longer required\n";
+      if (!gui && !adapters) options.adapter=resolve_adapter(adapter_selector,ModelMemory{large_model?"large":"default",model_weight_bytes(model,options.variant),large_model?ASRWIN_LARGE_MODEL_MIN_VRAM_BYTES:ASRWIN_MIN_VRAM_BYTES},skip_adapter_check,large_model?"the large model":"the shipped model").index;
+    }
     if (gui) {
       DWORD owners[2]; if (GetConsoleProcessList(owners,2)<=1) FreeConsole();  // launched from Explorer: no console needed
-      return run_gui(GetModuleHandleW(nullptr),GuiOptions{model,options.threads,options.max_tokens,options.variant,options.directml,options.verify_distribution});
+      GuiOptions g; g.model=model_explicit || !large_model?model:default_model; g.threads=large_model && !threads_explicit?ASRWIN_THREADS:options.threads; g.max_tokens=options.max_tokens; g.variant=options.variant; g.directml=options.directml; g.verify_distribution=options.verify_distribution;
+      g.adapter_selector=adapter_selector; g.skip_adapter_check=skip_adapter_check; g.experimental=experimental; g.large_model=large_model;
+      g.large_model_dir=large_model_dir; g.large_model_threads=ASRWIN_LARGE_MODEL_THREADS; g.settings_path=settings_path; g.use_settings=!no_settings;
+      g.provider_from_cli=provider_explicit || large_model || !adapter_selector.empty();
+      return run_gui(GetModuleHandleW(nullptr),g);
     }
     ComScope com;
     if (!self_test_input.empty()) { auto result=self_test(self_test_input); if (!report.empty()) write_json(report,result); std::cout<<result.dump(2)<<'\n'; return result["success"].get<bool>()?0:2; }
@@ -162,6 +193,13 @@ int wmain(int argc, wchar_t** argv) {
     if (devices) {
       Json result=Json::array();
       for (auto& d:render_devices()) result.push_back({{"id",utf8(d.id)},{"name",utf8(d.name)},{"default",d.is_default}});
+      std::cout<<result.dump(2)<<'\n'; if (!report.empty()) write_json(report,result); return 0;
+    }
+    if (adapters) {
+      std::vector<ModelMemory> models;
+      try { models.push_back({large_model?"large":"default",model_weight_bytes(model,options.variant),large_model?ASRWIN_LARGE_MODEL_MIN_VRAM_BYTES:ASRWIN_MIN_VRAM_BYTES}); } catch (...) {}
+      if (!large_model && !large_model_dir.empty()) { try { models.push_back({"large",model_weight_bytes(large_model_dir,"fp32"),ASRWIN_LARGE_MODEL_MIN_VRAM_BYTES}); } catch (...) {} }
+      auto result=describe_adapters(models,skip_adapter_check);
       std::cout<<result.dump(2)<<'\n'; if (!report.empty()) write_json(report,result); return 0;
     }
     if (tokenize) {
@@ -246,6 +284,7 @@ int wmain(int argc, wchar_t** argv) {
         std::cout<<id<<": "<<(row["success"].get<bool>()?"PASS":"FAIL")<<std::endl;
         result["fixtures"].push_back(std::move(row));
         result["success"]=success;
+        if (options.directml) result["gpu_memory"]=engine.gpu_memory();
         result["proof_complete"]=false;  // numerical stage comparison, silence gate and boundary tests are separate proof evidence
         if (!report.empty()) write_json(report,result);
       }
@@ -254,6 +293,7 @@ int wmain(int argc, wchar_t** argv) {
       return success?0:2;
     }
     if (simulate || capture) {
+      if (options.directml) { engine.warm_up(); result["engine"]=engine.inspect(); }
       LiveCollector collector;
       LivePipeline pipeline(engine,[&](const CaptionEvent& e){ collector.on(e); },live);
       std::unique_ptr<AudioSource> source;
@@ -275,7 +315,9 @@ int wmain(int argc, wchar_t** argv) {
         pipeline.stop("Duration elapsed");
       }
       collector.wait_stopped(); pipeline.wait();
-      result["mode"]=simulate?"simulate-live":"capture"; result["source"]=source_info; result["live"]=collector.summary(); result["options"]={{"provisional",live.provisional},{"provisional_after",live.provisional_after},{"provisional_interval",live.provisional_interval},{"suspend_backlog",live.suspend_backlog},{"resume_backlog",live.resume_backlog},{"overload_backlog",live.overload_backlog},{"retained_limit",live.retained_limit},{"slow_inference",options.slow_inference},{"threads",options.threads},{"variant",options.variant}};
+      result["mode"]=simulate?"simulate-live":"capture"; result["source"]=source_info; result["live"]=collector.summary(); result["options"]={{"provisional",live.provisional},{"provisional_after",live.provisional_after},{"provisional_interval",live.provisional_interval},{"suspend_backlog",live.suspend_backlog},{"resume_backlog",live.resume_backlog},{"overload_backlog",live.overload_backlog},{"retained_limit",live.retained_limit},{"slow_inference",options.slow_inference},{"threads",options.threads},{"variant",options.variant},
+        {"provider",options.directml?"directml":"cpu"},{"adapter",options.directml?Json(options.adapter):Json()},{"adapter_selector",utf8(adapter_selector)},{"large_model",options.large_model}};
+      if (options.directml) result["gpu_memory"]=engine.gpu_memory();
       result["success"]=result["live"]["success"];
       if (!transcript_path.empty()) { std::ofstream f(transcript_path,std::ios::binary); f.write("\xEF\xBB\xBF",3); auto text=result["live"]["transcript"].get<std::string>(); f.write(text.data(),text.size()); if (!f) throw std::runtime_error("Cannot write transcript: "+utf8(transcript_path.wstring())); }
       if (!report.empty()) write_json(report,result);
@@ -302,6 +344,7 @@ int wmain(int argc, wchar_t** argv) {
       result["total_elapsed_seconds"]=result["model_load_seconds"].get<double>()+conversion+transcription.detail.at("total_seconds").get<double>();
       result["source"]=audio.source; result["file"]=utf8(input.wstring()); result["success"]=transcription.completion=="eos" && identical;
       result["profiles"]=engine.finish_profiling();
+      if (options.directml) result["gpu_memory"]=engine.gpu_memory();
       std::cout<<transcription.text<<'\n';
       if (!report.empty()) write_json(report,result);
       return result["success"].get<bool>()?0:2;

@@ -1,0 +1,36 @@
+Verifying model assets...
+Using GPU: AMD Radeon RX 9060 XT...
+Loading encoder...
+[0;93m2026-09-08 15:37:08.2438040 [W:onnxruntime:, session_state.cc:1327 onnxruntime::VerifyEachNodeIsAssignedToAnEp] Some nodes were not assigned to the preferred execution providers which may or may not have an negative impact on performance. e.g. ORT explicitly assigns shape related ops to CPU to improve perf.[m
+[0;93m2026-09-08 15:37:08.2451024 [W:onnxruntime:, session_state.cc:1329 onnxruntime::VerifyEachNodeIsAssignedToAnEp] Rerunning with verbose output on a non-minimal build will show node assignments.[m
+Loading decoder prefill...
+[0;93m2026-09-08 15:37:08.6017506 [W:onnxruntime:, session_state.cc:1327 onnxruntime::VerifyEachNodeIsAssignedToAnEp] Some nodes were not assigned to the preferred execution providers which may or may not have an negative impact on performance. e.g. ORT explicitly assigns shape related ops to CPU to improve perf.[m
+[0;93m2026-09-08 15:37:08.6024580 [W:onnxruntime:, session_state.cc:1329 onnxruntime::VerifyEachNodeIsAssignedToAnEp] Rerunning with verbose output on a non-minimal build will show node assignments.[m
+Loading cached decoder...
+[0;93m2026-09-08 15:37:11.7641366 [W:onnxruntime:, session_state.cc:1327 onnxruntime::VerifyEachNodeIsAssignedToAnEp] Some nodes were not assigned to the preferred execution providers which may or may not have an negative impact on performance. e.g. ORT explicitly assigns shape related ops to CPU to improve perf.[m
+[0;93m2026-09-08 15:37:11.7645054 [W:onnxruntime:, session_state.cc:1329 onnxruntime::VerifyEachNodeIsAssignedToAnEp] Rerunning with verbose output on a non-minimal build will show node assignments.[m
+Model ready...
+mandarin-0000: PASS
+mandarin-0001: PASS
+mandarin-0002: PASS
+mandarin-0003: PASS
+mandarin-0004: PASS
+mandarin-0005: PASS
+english-0000: PASS
+english-0001: PASS
+english-0002: PASS
+english-0003: PASS
+english-0004: PASS
+english-0005: PASS
+mixed-0004: PASS
+mixed-0009: PASS
+mixed-0028: PASS
+mixed-0055: PASS
+mixed-0066: PASS
+mixed-0068: PASS
+silence-short: PASS
+silence: PASS
+silence-long: PASS
+low-noise: PASS
+tone: PASS
+clicks: PASS

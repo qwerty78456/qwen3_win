@@ -1,0 +1,312 @@
+{
+  "name": "3min-load2-directml",
+  "playlist": "playlist-1x",
+  "device": "Speakers (Steam Streaming Speakers)",
+  "player_device": "Speakers (Steam Streaming Speakers)",
+  "background_load_processes": 2,
+  "provider": "directml",
+  "engine_provider": "DirectML (experimental)",
+  "adapter_index": 0,
+  "adapter_name": "AMD Radeon RX 9060 XT",
+  "adapter_luid": "0x0000000000015569",
+  "adapter_driver_version": "32.0.31041.1004",
+  "large_model": false,
+  "model_directory": "qwen3-asr-0.6b-fp32",
+  "gpu_memory": {
+    "adapter_index": 0,
+    "adapter_luid": "0x0000000000015569",
+    "current": {
+      "local_budget_bytes": 16165400576,
+      "local_usage_bytes": 7749570560,
+      "nonlocal_budget_bytes": 15898988544,
+      "nonlocal_usage_bytes": 482836480
+    },
+    "peak_local_usage_bytes": 7749570560
+  },
+  "capture_started": "Capturing playback from: Speakers (Steam Streaming Speakers) for 176.31 s",
+  "alignment_offset_seconds": 1.2999999999999972,
+  "clips": [
+    {
+      "id": "mandarin-0000",
+      "category": "mandarin",
+      "finals": 2,
+      "hypothesis": "这并不是告别。 这是一个篇章的结束，也是新篇章的开始。",
+      "human_edits": 0,
+      "human_units": 23,
+      "oracle_edits": 0,
+      "oracle_units": 23
+    },
+    {
+      "id": "mandarin-0001",
+      "category": "mandarin",
+      "finals": 1,
+      "hypothesis": "钙、钾等元素属于金属，银和金等元素，当然也是金属。",
+      "human_edits": 0,
+      "human_units": 21,
+      "oracle_edits": 0,
+      "oracle_units": 21
+    },
+    {
+      "id": "mandarin-0002",
+      "category": "mandarin",
+      "finals": 1,
+      "hypothesis": "桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。",
+      "human_edits": 12,
+      "human_units": 37,
+      "oracle_edits": 0,
+      "oracle_units": 37
+    },
+    {
+      "id": "mandarin-0003",
+      "category": "mandarin",
+      "finals": 1,
+      "hypothesis": "适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。",
+      "human_edits": 11,
+      "human_units": 83,
+      "oracle_edits": 0,
+      "oracle_units": 82
+    },
+    {
+      "id": "mandarin-0004",
+      "category": "mandarin",
+      "finals": 1,
+      "hypothesis": "科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。",
+      "human_edits": 0,
+      "human_units": 31,
+      "oracle_edits": 0,
+      "oracle_units": 31
+    },
+    {
+      "id": "mandarin-0005",
+      "category": "mandarin",
+      "finals": 1,
+      "hypothesis": "大多数现代科研望远镜都是巨型设施，位于大体大气条件优良的偏远地区。",
+      "human_edits": 2,
+      "human_units": 29,
+      "oracle_edits": 1,
+      "oracle_units": 31
+    },
+    {
+      "id": "english-0000",
+      "category": "english",
+      "finals": 1,
+      "hypothesis": "However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years.",
+      "human_edits": 1,
+      "human_units": 19,
+      "oracle_edits": 0,
+      "oracle_units": 19
+    },
+    {
+      "id": "english-0001",
+      "category": "english",
+      "finals": 1,
+      "hypothesis": "All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence.",
+      "human_edits": 2,
+      "human_units": 21,
+      "oracle_edits": 0,
+      "oracle_units": 21
+    },
+    {
+      "id": "english-0002",
+      "category": "english",
+      "finals": 1,
+      "hypothesis": "To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous, to foreigners after a glowing account of its splendourous recorded by Lord Byron.",
+      "human_edits": 1,
+      "human_units": 33,
+      "oracle_edits": 0,
+      "oracle_units": 33
+    },
+    {
+      "id": "english-0003",
+      "category": "english",
+      "finals": 1,
+      "hypothesis": "The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is.",
+      "human_edits": 1,
+      "human_units": 15,
+      "oracle_edits": 0,
+      "oracle_units": 14
+    },
+    {
+      "id": "english-0004",
+      "category": "english",
+      "finals": 1,
+      "hypothesis": "Many people don't think about them as dinosaurs because they have feathers and can fly.",
+      "human_edits": 0,
+      "human_units": 15,
+      "oracle_edits": 0,
+      "oracle_units": 15
+    },
+    {
+      "id": "english-0005",
+      "category": "english",
+      "finals": 1,
+      "hypothesis": "The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others.",
+      "human_edits": 0,
+      "human_units": 20,
+      "oracle_edits": 0,
+      "oracle_units": 20
+    },
+    {
+      "id": "mixed-0004",
+      "category": "mixed",
+      "finals": 1,
+      "hypothesis": "So it was the.",
+      "human_edits": 4,
+      "human_units": 4,
+      "oracle_edits": 2,
+      "oracle_units": 3
+    },
+    {
+      "id": "mixed-0009",
+      "category": "mixed",
+      "finals": 1,
+      "hypothesis": "那我专业是那个ISM Information Systems Management。",
+      "human_edits": 4,
+      "human_units": 13,
+      "oracle_edits": 0,
+      "oracle_units": 11
+    },
+    {
+      "id": "mixed-0028",
+      "category": "mixed",
+      "finals": 1,
+      "hypothesis": "OK，附件。",
+      "human_edits": 2,
+      "human_units": 3,
+      "oracle_edits": 0,
+      "oracle_units": 3
+    },
+    {
+      "id": "mixed-0055",
+      "category": "mixed",
+      "finals": 1,
+      "hypothesis": "嗯，运动啊，男生一般不都喜欢运动。",
+      "human_edits": 1,
+      "human_units": 14,
+      "oracle_edits": 0,
+      "oracle_units": 14
+    },
+    {
+      "id": "mixed-0066",
+      "category": "mixed",
+      "finals": 1,
+      "hypothesis": "哦，这么technical的。",
+      "human_edits": 1,
+      "human_units": 4,
+      "oracle_edits": 0,
+      "oracle_units": 5
+    },
+    {
+      "id": "mixed-0068",
+      "category": "mixed",
+      "finals": 1,
+      "hypothesis": "Computer language.",
+      "human_edits": 2,
+      "human_units": 3,
+      "oracle_edits": 0,
+      "oracle_units": 2
+    }
+  ],
+  "summary": {
+    "mandarin": {
+      "clips": 6,
+      "human_error_rate": 0.11160714285714286,
+      "oracle_error_rate": 0.0044444444444444444,
+      "clips_without_caption": 0
+    },
+    "english": {
+      "clips": 6,
+      "human_error_rate": 0.04065040650406504,
+      "oracle_error_rate": 0.0,
+      "clips_without_caption": 0
+    },
+    "mixed": {
+      "clips": 6,
+      "human_error_rate": 0.34146341463414637,
+      "oracle_error_rate": 0.05263157894736842,
+      "clips_without_caption": 0
+    }
+  },
+  "live": {
+    "clean_stop": true,
+    "duplicate_finals": 0,
+    "errors": 0,
+    "final_count": 20,
+    "finalization_delay_seconds": {
+      "count": 20,
+      "max": 2.272856501,
+      "p50": 0.818518601,
+      "p95": 1.7872986
+    },
+    "first_caption_lag_seconds": {
+      "count": 19,
+      "max": 2.5950378,
+      "p50": 2.326116099,
+      "p95": 2.5950378
+    },
+    "incomplete_finals": 0,
+    "no_audio_loss": true,
+    "overload_stop": false,
+    "pipeline": {
+      "audio_seconds_processed": 176.34,
+      "backlog_definition": "age of the oldest unfinished utterance since its audio ended (queued or decoding)",
+      "capture": {
+        "channels": 2,
+        "default_device": false,
+        "device": "Speakers (Steam Streaming Speakers)",
+        "device_buffer_frames": 4800,
+        "device_gap_frames": 0,
+        "device_id": "{0.0.0.00000000}.{31c5e3aa-d034-4f95-8158-a7cf626d5959}",
+        "device_position_resets": 0,
+        "discontinuities": 1,
+        "dropped_frames": 0,
+        "failure": "",
+        "frames": 8464320,
+        "mix_format": "float32",
+        "overflow_events": 0,
+        "packets": 17634,
+        "ring_capacity_frames": 96000,
+        "ring_peak_used_frames": 1440,
+        "sample_rate": 48000,
+        "silent_packets": 0,
+        "timestamp_errors": 0
+      },
+      "error": "",
+      "finals": 20,
+      "lag_clock": "producer sample timestamps (WASAPI QPC for device capture)",
+      "max_backlog_seconds": 2.264193601,
+      "max_queued_audio_seconds": 15.0,
+      "memory": {
+        "peak_pagefile_bytes": 8884244480,
+        "peak_working_set_bytes": 1591480320,
+        "private_bytes": 8679739392,
+        "working_set_bytes": 978313216
+      },
+      "process_cpu_seconds": 47.5625,
+      "provisionals": 49,
+      "provisionals_cancelled": 9,
+      "provisionals_skipped": 0,
+      "retained_peak_seconds": 29.0,
+      "segmenter": {
+        "energy_gated_positive_frames": 5351,
+        "longest_start_run_frames": 5,
+        "peak_frame_rms": 0.2044611191902526,
+        "vad_positive_frames": 5540
+      },
+      "session": 1,
+      "stop_reason": "Duration elapsed",
+      "suspensions": 0,
+      "wall_seconds": 176.320638
+    },
+    "provisional_lag_seconds": {
+      "count": 49,
+      "max": 1.642821201,
+      "p50": 0.5596538,
+      "p95": 1.242480801
+    },
+    "speech_utterances": 19,
+    "stale_provisionals_delivered": 0,
+    "success": true
+  },
+  "success": true
+}

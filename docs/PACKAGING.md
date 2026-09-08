@@ -11,7 +11,8 @@ Everything below runs on the development machine. The output folder contains no 
 | `DirectML.dll` | Microsoft.AI.DirectML 1.15.4 | `native-dependency.lock.json` |
 | `msvcp140*.dll`, `vcruntime140*.dll`, `concrt140.dll`, `vccorlib140.dll` | VC 14.51.36231 x64 CRT redistributable directory of the build toolchain | `scripts/build.ps1` (fails if the pinned version is absent) |
 | `models/<shipped>/*` (see `shipped-model.json`) | the pinned ONNX export named in `shipped-model.json` (`onnx_lock_key` in `remote-assets.lock.json`), plus `mel_filters.bin`, `prompt_reference.json` and `manifest.json` generated from the official processor | `remote-assets.lock.json`, `shipped-model.json`, the model folder's `manifest.json` |
-| `regression/*` | 24 frozen fixtures, human transcripts and official-model references | `regression/manifest.json` |
+| `models/<large>/*` (`shipped-model.json` → `directml.large_model`) | the optional GPU-only model (`scripts/model_manifest.py --model-key large`) | same, `directml.large_model.onnx_lock_key` |
+| `regression/*` | 24 frozen fixtures, human transcripts and official-model references of the shipped model and of the large model (`reference-1.7b/`, `manifest-1.7b.json`, installed by `scripts/prepare_large_model_references.py`) | `regression/manifest.json`, `regression/manifest-1.7b.json` |
 | `licenses/*`, `THIRD_PARTY_NOTICES.md` | `scripts/collect_licenses.py` | source tree |
 
 ## Steps
@@ -23,7 +24,9 @@ python scripts/collect_licenses.py     # notices for every compiled or shipped c
 powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build.ps1
 .venv\Scripts\python.exe scripts/reference.py --prepare-only   # mel_filters.bin, prompt_reference.json into the shipped model folder
 python scripts/model_manifest.py       # freeze the shipped model's asset hashes (fails on incomplete downloads)
-python scripts/package.py --version 0.1.0-tc2
+python scripts/model_manifest.py --model-key large   # the optional GPU-only model
+python scripts/prepare_large_model_references.py     # its regression/evaluation references and manifests
+python scripts/package.py --version 0.1.0-tc3
 ```
 
 `scripts/package.py` copies the runtime files from `build/Release`, the model files listed in the model manifest, the regression set, notices and documentation into `dist/AsrWin-<version>-win-x64/`, writes `package-manifest.json` with the size and SHA-256 of every file, produces `dist/AsrWin-<version>-win-x64.zip` (deflate) and records extracted and compressed sizes in `reports/package.json`.
@@ -36,7 +39,7 @@ AsrWin.exe --check-package
 
 `--check-package` reads `package-manifest.json` next to the executable and verifies every listed file by size and SHA-256. It returns nonzero and names the first missing or corrupt file. The model manifest is additionally verified every time the model loads.
 
-Default model loading also checks the package manifest. Development builds require an explicit `--model` path; there is no search of the working directory or parent development folders. The chosen model directory and CPU thread budget are compiled from `shipped-model.json`.
+Default model loading also checks the package manifest (which must list both model manifests). Development builds require an explicit `--model` path; there is no search of the working directory or parent development folders. The chosen model directory, CPU thread budget, default provider, DirectML validation flag and the large model's directory and thread budget are compiled from `shipped-model.json`. The only file the application writes on its own is the interface's compute-choice settings file in `%LOCALAPPDATA%\AsrWin`, outside the package folder.
 
 The packager refuses to replace an existing version unless `--replace` is supplied and verifies the resolved destination stays inside `dist`. It publishes measured sizes and the archive hash in `AsrWin-<version>-win-x64-release-info.json` beside the ZIP.
 

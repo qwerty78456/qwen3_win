@@ -1,5 +1,9 @@
 {
   "fixture": "_validator-self-test",
+  "provider": "cpu",
+  "model": "0.6b",
+  "native_traces": "traces/native/_validator-self-test",
+  "reference_traces": "traces/reference/_validator-self-test",
   "success": true,
   "stages": {
     "pcm": {
@@ -9,6 +13,7 @@
         "absolute": 1e-07,
         "relative": 0.0
       },
+      "tolerance_source": "base",
       "success": true,
       "max_absolute_error": 0.0,
       "rmse": 0.0,
@@ -24,6 +29,7 @@
         "absolute": 0.0001,
         "relative": 0.0001
       },
+      "tolerance_source": "base",
       "success": true,
       "max_absolute_error": 0.0,
       "rmse": 0.0,
@@ -39,6 +45,7 @@
         "absolute": 0.002,
         "relative": 0.0001
       },
+      "tolerance_source": "base",
       "success": true,
       "max_absolute_error": 0.0,
       "rmse": 0.0,
@@ -54,6 +61,7 @@
         "absolute": 0.002,
         "relative": 0.0001
       },
+      "tolerance_source": "base",
       "success": true,
       "max_absolute_error": 0.0,
       "rmse": 0.0,
@@ -69,6 +77,7 @@
         "absolute": 0.005,
         "relative": 0.0001
       },
+      "tolerance_source": "base",
       "success": true,
       "max_absolute_error": 0.0,
       "rmse": 0.0,
@@ -86,6 +95,7 @@
         "scale_relative": 0.001,
         "rmse_relative": 0.001
       },
+      "tolerance_source": "base",
       "success": true,
       "max_absolute_error": 0.0,
       "rmse": 0.0,
@@ -104,6 +114,7 @@
         "scale_relative": 0.001,
         "rmse_relative": 0.001
       },
+      "tolerance_source": "base",
       "success": true,
       "max_absolute_error": 0.0,
       "rmse": 0.0,

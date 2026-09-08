@@ -1,5 +1,7 @@
 {
   "success": true,
+  "directml_validated": false,
+  "adapters_listed": 4,
   "cases": [
     {
       "case": "empty",
@@ -8,6 +10,7 @@
         "error": "Expected RIFF PCM/float WAV",
         "success": false
       },
+      "expected_error_fragment": null,
       "success": true
     },
     {
@@ -17,6 +20,7 @@
         "error": "RIFF length does not match WAV file length",
         "success": false
       },
+      "expected_error_fragment": null,
       "success": true
     },
     {
@@ -26,6 +30,7 @@
         "error": "RIFF length does not match WAV file length",
         "success": false
       },
+      "expected_error_fragment": null,
       "success": true
     },
     {
@@ -35,6 +40,7 @@
         "error": "Unsupported WAV sample format",
         "success": false
       },
+      "expected_error_fragment": null,
       "success": true
     },
     {
@@ -44,6 +50,7 @@
         "error": "Unsupported WAV sample format",
         "success": false
       },
+      "expected_error_fragment": null,
       "success": true
     },
     {
@@ -53,6 +60,7 @@
         "error": "Non-finite audio sample",
         "success": false
       },
+      "expected_error_fragment": null,
       "success": true
     },
     {
@@ -62,6 +70,7 @@
         "error": "WAV must contain integer PCM or float32",
         "success": false
       },
+      "expected_error_fragment": null,
       "success": true
     },
     {
@@ -71,15 +80,97 @@
         "error": "Cannot open D:\\asr_win\\traces\\cli-failures\\missing\\manifest.json",
         "success": false
       },
+      "expected_error_fragment": null,
       "success": true
     },
     {
       "case": "unvalidated-directml",
       "exit_code": 1,
       "report": {
-        "error": "DirectML is unvalidated; use --experimental-directml with an explicit adapter for command-line experiments. The interface uses CPU until GPU validation is complete.",
+        "error": "DirectML is not validated in this build; use --experimental-directml with an explicit --adapter N for command-line experiments (see --adapters). The interface offers CPU only unless started with --experimental-directml.",
         "success": false
       },
+      "expected_error_fragment": "not validated",
+      "success": true
+    },
+    {
+      "case": "directml-no-adapter",
+      "exit_code": 1,
+      "report": {
+        "error": "DirectML is not validated in this build; --experimental-directml requires an explicit --adapter N (see --adapters)",
+        "success": false
+      },
+      "expected_error_fragment": "explicit --adapter",
+      "success": true
+    },
+    {
+      "case": "unknown-provider",
+      "exit_code": 1,
+      "report": {
+        "error": "Unknown provider; use --provider cpu|directml",
+        "success": false
+      },
+      "expected_error_fragment": "provider",
+      "success": true
+    },
+    {
+      "case": "directml-negative-adapter",
+      "exit_code": 1,
+      "report": {
+        "error": "Adapter index must not be negative (see --adapters)",
+        "success": false
+      },
+      "expected_error_fragment": "negative",
+      "success": true
+    },
+    {
+      "case": "directml-bad-adapter",
+      "exit_code": 1,
+      "report": {
+        "error": "Adapter index 99 does not exist: 4 adapters enumerated (see --adapters)",
+        "success": false
+      },
+      "expected_error_fragment": "does not exist",
+      "success": true
+    },
+    {
+      "case": "directml-bad-adapter-word",
+      "exit_code": 1,
+      "report": {
+        "error": "Invalid --adapter value: expected 'default' or a DXGI adapter index (see --adapters)",
+        "success": false
+      },
+      "expected_error_fragment": "invalid --adapter",
+      "success": true
+    },
+    {
+      "case": "directml-software-adapter",
+      "exit_code": 1,
+      "report": {
+        "error": "Adapter 3 (Microsoft Basic Render Driver) is a software renderer and cannot run DirectML inference (see --adapters)",
+        "success": false
+      },
+      "expected_error_fragment": "software renderer",
+      "success": true
+    },
+    {
+      "case": "directml-low-memory-adapter",
+      "exit_code": 1,
+      "report": {
+        "error": "Adapter 1 (AMD Radeon(TM) Graphics) has 509 MB of dedicated video memory; the shipped model needs at least 8,000 MB (graphs 3,752 MB x 1.5, configured minimum 8,000 MB); use --skip-adapter-check to override for experiments",
+        "success": false
+      },
+      "expected_error_fragment": "dedicated video memory",
+      "success": true
+    },
+    {
+      "case": "large-model-cpu-interface",
+      "exit_code": 1,
+      "report": {
+        "error": "The large model runs on DirectML only; add --provider directml",
+        "success": false
+      },
+      "expected_error_fragment": "DirectML only",
       "success": true
     },
     {
@@ -89,6 +180,7 @@
         "error": "Invalid thread/token limit",
         "success": false
       },
+      "expected_error_fragment": null,
       "success": true
     },
     {
@@ -98,6 +190,7 @@
         "error": "Invalid thread/token limit",
         "success": false
       },
+      "expected_error_fragment": null,
       "success": true
     },
     {
@@ -107,51 +200,47 @@
         "error": "Unknown argument: --does-not-exist",
         "success": false
       },
+      "expected_error_fragment": null,
       "success": true
     },
     {
       "case": "nan-duration",
       "exit_code": 1,
       "report": {
-        "error": "Invalid duration, replay pace, tail, inference delay, provisional token limit or adapter",
+        "error": "Invalid duration, replay pace, tail, inference delay or provisional token limit",
         "success": false
       },
+      "expected_error_fragment": null,
       "success": true
     },
     {
       "case": "negative-pace",
       "exit_code": 1,
       "report": {
-        "error": "Invalid duration, replay pace, tail, inference delay, provisional token limit or adapter",
+        "error": "Invalid duration, replay pace, tail, inference delay or provisional token limit",
         "success": false
       },
+      "expected_error_fragment": null,
       "success": true
     },
     {
       "case": "infinite-tail",
       "exit_code": 1,
       "report": {
-        "error": "Invalid duration, replay pace, tail, inference delay, provisional token limit or adapter",
+        "error": "Invalid duration, replay pace, tail, inference delay or provisional token limit",
         "success": false
       },
+      "expected_error_fragment": null,
       "success": true
     },
     {
       "case": "invalid-provisional-tokens",
       "exit_code": 1,
       "report": {
-        "error": "Invalid duration, replay pace, tail, inference delay, provisional token limit or adapter",
+        "error": "Invalid duration, replay pace, tail, inference delay or provisional token limit",
         "success": false
       },
-      "success": true
-    },
-    {
-      "case": "directml-no-adapter",
-      "exit_code": 1,
-      "report": {
-        "error": "DirectML is unvalidated; use --experimental-directml with an explicit adapter for command-line experiments. The interface uses CPU until GPU validation is complete.",
-        "success": false
-      },
+      "expected_error_fragment": null,
       "success": true
     },
     {
@@ -161,6 +250,7 @@
         "error": "Cannot open D:\\asr_win\\build\\Release\\package-manifest.json",
         "success": false
       },
+      "expected_error_fragment": null,
       "success": true
     }
   ]

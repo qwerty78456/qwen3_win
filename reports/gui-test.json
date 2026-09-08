@@ -1,5 +1,8 @@
 {
   "success": true,
+  "provider": "cpu",
+  "large_model": false,
+  "directml_validated": false,
   "steps": [
     {
       "step": "window appears",
@@ -16,6 +19,13 @@
       "success": true
     },
     {
+      "step": "compute list",
+      "success": true,
+      "items": [
+        "CPU — Qwen3-ASR-0.6B (4 threads)"
+      ]
+    },
+    {
       "step": "start disabled while loading",
       "success": true,
       "status": "Loading model: Verifying model assets…"
@@ -23,7 +33,7 @@
     {
       "step": "model loads",
       "success": true,
-      "status": "Ready. Select a playback device and press Start.",
+      "status": "Ready (CPU — Qwen3-ASR-0.6B (4 threads)). Select a playback device and press Start.",
       "load_seconds": 6.5
     },
     {
@@ -35,7 +45,8 @@
       "success": true,
       "status": "Listening: 2 - VG279QE5A (2- AMD High Definition Audio Device)",
       "stop_enabled": true,
-      "start_enabled": false
+      "start_enabled": false,
+      "compute_enabled": false
     },
     {
       "step": "first provisional caption appeared",
@@ -54,13 +65,13 @@
     {
       "step": "final captions appeared",
       "success": true,
-      "seconds_after_playback_start": 6.76
+      "seconds_after_playback_start": 6.77
     },
     {
       "step": "stopped after Stop",
       "success": true,
       "status": "Stopped: Stop requested",
-      "stop_seconds": 0.25,
+      "stop_seconds": 0.5,
       "statuses_seen": [
         "Listening"
       ]

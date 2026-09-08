@@ -52,11 +52,24 @@ std::string sha256_file(const fs::path& path) {
  unsigned char digest[32]; if(BCryptFinishHash(hash,digest,32,0)<0) throw std::runtime_error("SHA256 failed");
  std::ostringstream s;for(auto c:digest)s<<std::hex<<std::setw(2)<<std::setfill('0')<<static_cast<int>(c);return s.str();
 }
+static std::vector<std::string> graph_files(const std::string& variant) {
+ if(variant=="int4") return {"encoder.onnx","decoder_init.int4.onnx","decoder_step.int4.onnx","decoder_weights.int4.data"};
+ return {"encoder.onnx","decoder_init.onnx","decoder_step.onnx","decoder_weights.data"};
+}
+uint64_t model_weight_bytes(const fs::path& dir, const std::string& variant) {
+ auto manifest=Json::parse(read_text(dir/"manifest.json")); auto graphs=graph_files(variant); uint64_t total=0;
+ for(const auto& item:manifest.at("files")) if(std::find(graphs.begin(),graphs.end(),item.at("path").get<std::string>())!=graphs.end()) total+=item.at("bytes").get<uint64_t>();
+ if(!total) throw std::runtime_error("Model manifest lists no graph assets for variant "+variant);
+ return total;
+}
+std::string model_short_name(const fs::path& dir) {
+ try { auto configuration=Json::parse(read_text(dir/"manifest.json")).at("configuration").get<std::string>(); auto space=configuration.find(' '); return space==std::string::npos?configuration:configuration.substr(0,space); }
+ catch(...) { return utf8(dir.filename().wstring()); }
+}
 void verify_files(const fs::path& dir, const std::string& variant) {
  auto manifest=Json::parse(read_text(dir/"manifest.json"));
- std::vector<std::string> required_files={"config.json","tokenizer.json","prompt_reference.json","mel_filters.bin","encoder.onnx","embed_tokens.bin"};
- if(variant=="int4") required_files.insert(required_files.end(),{"decoder_init.int4.onnx","decoder_step.int4.onnx","decoder_weights.int4.data"});
- else required_files.insert(required_files.end(),{"decoder_init.onnx","decoder_step.onnx","decoder_weights.data"});
+ std::vector<std::string> required_files={"config.json","tokenizer.json","prompt_reference.json","mel_filters.bin","embed_tokens.bin"};
+ for(const auto& graph:graph_files(variant)) required_files.push_back(graph);
  for(const auto& required:required_files){
   bool found=false;for(const auto& item:manifest.at("files"))if(item.at("path")==required)found=true;
   if(!found)throw std::runtime_error("Model manifest omits required asset: "+required);
@@ -77,8 +90,10 @@ Json verify_package(const fs::path& dir) {
   if(!fs::is_regular_file(p) || fs::file_size(p)!=item.at("bytes").get<uint64_t>() || sha256_file(p)!=item.at("sha256").get<std::string>())
    throw std::runtime_error("Missing or corrupt package file: "+rel);
  }
- for(const std::string required:{"AsrWin.exe","onnxruntime.dll","onnxruntime_providers_shared.dll","DirectML.dll","msvcp140.dll","vcruntime140.dll","shipped-model.json",ASRWIN_MODEL_DIR "/manifest.json"})
-  if(!paths.count(required))throw std::runtime_error("Package manifest omits required file: "+required);
+ std::vector<std::string> required={"AsrWin.exe","onnxruntime.dll","onnxruntime_providers_shared.dll","DirectML.dll","msvcp140.dll","vcruntime140.dll","shipped-model.json",ASRWIN_MODEL_DIR "/manifest.json"};
+ if(std::string(ASRWIN_LARGE_MODEL_DIR).size()) required.push_back(ASRWIN_LARGE_MODEL_DIR "/manifest.json");
+ for(const auto& file:required)
+  if(!paths.count(file))throw std::runtime_error("Package manifest omits required file: "+file);
  return {{"package",manifest.at("package")},{"version",manifest.at("version")},{"verified_files",paths.size()},{"success",true}};
 }
 }
