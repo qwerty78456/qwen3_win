@@ -1,0 +1,27 @@
+{
+  "fixture": "_validator-self-test",
+  "success": false,
+  "stages": {
+    "pcm": {
+      "reference_elements": 8,
+      "native_elements": 8,
+      "tolerance": {
+        "absolute": 1e-07,
+        "relative": 0.0
+      },
+      "success": true,
+      "max_absolute_error": 0.0,
+      "rmse": 0.0,
+      "reference_max_abs": 0.0,
+      "reference_rms": 0.0,
+      "failed_elements": 0,
+      "elementwise_success": true
+    }
+  },
+  "prompt_exact": true,
+  "tokens_exact": true,
+  "completion_match": true,
+  "token_differences": [],
+  "cache_shapes_exact": true,
+  "error": "[Errno 2] No such file or directory: 'D:\\\\asr_win\\\\traces\\\\native\\\\_validator-self-test\\\\mel.f32'"
+}

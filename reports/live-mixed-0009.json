@@ -1,6 +1,8 @@
 {
   "engine": {
-    "assets_verified": false,
+    "adapter_index": null,
+    "assets_verified": true,
+    "configuration": "Qwen3-ASR-0.6B FP32 graphs with FP16 embedding storage",
     "embedding_dtype": "float16",
     "encoder": [
       {
@@ -18,6 +20,9 @@
       151645
     ],
     "memory_mode": "shared-prepack",
+    "model_directory": "qwen3-asr-0.6b-fp32",
+    "model_hidden_size": 1024,
+    "model_manifest_sha256": "de01cc5a9e9b468d9c0d55312da457974ccb75931078566352f5e7750f835ff8",
     "prefill": [
       {
         "dtype": 7,
@@ -65,6 +70,10 @@
       151669
     ],
     "provider": "CPU",
+    "reference_model": {
+      "repo": "Qwen/Qwen3-ASR-0.6B",
+      "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0"
+    },
     "runtime": "1.24.4",
     "step": [
       {
@@ -120,6 +129,7 @@
   },
   "live": {
     "clean_stop": true,
+    "duplicate_finals": 0,
     "errors": 0,
     "events": [
       {
@@ -135,7 +145,7 @@
         "revision": 0,
         "since_start_seconds": 0.0,
         "status": "Listening",
-        "t": 0.0008244,
+        "t": 0.0008751,
         "text": "",
         "utterance": 0
       },
@@ -146,49 +156,15 @@
         "boundary": "",
         "completion": "eos",
         "incomplete": false,
-        "inference_seconds": 0.6668048,
+        "inference_seconds": 0.6725988,
         "kind": "provisional",
-        "lag_seconds": 0.6668267,
+        "lag_seconds": 0.6704277,
         "revision": 1,
-        "since_start_seconds": 2.6634327,
+        "since_start_seconds": 2.6604277,
         "status": "",
-        "t": 2.6643946,
+        "t": 2.6714057,
         "text": "那我最爱是那个ISM。",
         "utterance": 1
-      },
-      {
-        "audio_end": 0.0,
-        "audio_start": 0.0,
-        "backlog_seconds": 0.0,
-        "boundary": "",
-        "completion": "",
-        "incomplete": false,
-        "inference_seconds": 0.0,
-        "kind": "status",
-        "lag_seconds": 0.0,
-        "revision": 0,
-        "since_start_seconds": 0.0,
-        "status": "Catching up: finalized-work backlog 5 s",
-        "t": 4.6001978,
-        "text": "",
-        "utterance": 0
-      },
-      {
-        "audio_end": 0.0,
-        "audio_start": 0.0,
-        "backlog_seconds": 0.0,
-        "boundary": "",
-        "completion": "",
-        "incomplete": false,
-        "inference_seconds": 0.0,
-        "kind": "status",
-        "lag_seconds": 0.0,
-        "revision": 0,
-        "since_start_seconds": 0.0,
-        "status": "Listening",
-        "t": 5.5283948,
-        "text": "",
-        "utterance": 0
       },
       {
         "audio_end": 4.6,
@@ -197,13 +173,13 @@
         "boundary": "silence",
         "completion": "eos",
         "incomplete": false,
-        "inference_seconds": 0.9140122,
+        "inference_seconds": 0.8890819,
         "kind": "final",
-        "lag_seconds": 0.9280995,
+        "lag_seconds": 0.8869478,
         "revision": 0,
-        "since_start_seconds": 5.5274333,
+        "since_start_seconds": 5.4769478,
         "status": "",
-        "t": 5.5284254,
+        "t": 5.4879272,
         "text": "那我专业是那个ISM Information Systems Management。",
         "utterance": 1
       },
@@ -220,7 +196,7 @@
         "revision": 0,
         "since_start_seconds": 0.0,
         "status": "Input exhausted",
-        "t": 5.528459,
+        "t": 5.4881264,
         "text": "",
         "utterance": 0
       }
@@ -228,20 +204,22 @@
     "final_count": 1,
     "finalization_delay_seconds": {
       "count": 1,
-      "max": 0.9280995,
-      "p50": 0.9280995,
-      "p95": 0.9280995
+      "max": 0.8869478,
+      "p50": 0.8869478,
+      "p95": 0.8869478
     },
     "first_caption_lag_seconds": {
       "count": 1,
-      "max": 2.6634327,
-      "p50": 2.6634327,
-      "p95": 2.6634327
+      "max": 2.6604277,
+      "p50": 2.6604277,
+      "p95": 2.6604277
     },
     "incomplete_finals": 0,
     "no_audio_loss": true,
+    "overload_stop": false,
     "pipeline": {
       "audio_seconds_processed": 5.03,
+      "backlog_definition": "age of the oldest unfinished utterance since its audio ended (queued or decoding)",
       "capture": {
         "channels": 1,
         "frames": 80480,
@@ -258,18 +236,20 @@
       },
       "error": "",
       "finals": 1,
-      "max_backlog_seconds": 4.6,
+      "lag_clock": "producer sample timestamps (WASAPI QPC for device capture)",
+      "max_backlog_seconds": 0.4264232,
+      "max_queued_audio_seconds": 4.6,
       "memory": {
-        "peak_pagefile_bytes": 6179000320,
-        "peak_working_set_bytes": 6226345984,
-        "private_bytes": 6178934784,
-        "working_set_bytes": 5892644864
+        "peak_pagefile_bytes": 6178873344,
+        "peak_working_set_bytes": 6226534400,
+        "private_bytes": 6177558528,
+        "working_set_bytes": 5891715072
       },
-      "process_cpu_seconds": 11.5625,
+      "process_cpu_seconds": 7.6875,
       "provisionals": 1,
       "provisionals_cancelled": 1,
       "provisionals_skipped": 0,
-      "retained_peak_seconds": 4.6,
+      "retained_peak_seconds": 8.6,
       "segmenter": {
         "energy_gated_positive_frames": 193,
         "longest_start_run_frames": 5,
@@ -278,16 +258,17 @@
       },
       "session": 1,
       "stop_reason": "",
-      "suspensions": 1,
-      "wall_seconds": 5.5276947
+      "suspensions": 0,
+      "wall_seconds": 5.4872942
     },
     "provisional_lag_seconds": {
       "count": 1,
-      "max": 0.6668267,
-      "p50": 0.6668267,
-      "p95": 0.6668267
+      "max": 0.6704277,
+      "p50": 0.6704277,
+      "p95": 0.6704277
     },
     "speech_utterances": 1,
+    "stale_provisionals_delivered": 0,
     "success": true,
     "transcript": "那我专业是那个ISM Information Systems Management。\n",
     "utterances": [
@@ -296,27 +277,27 @@
         "audio_start": 0.0,
         "boundary": "silence",
         "completion": "eos",
-        "final_inference_seconds": 0.9140122,
+        "final_inference_seconds": 0.8890819,
         "final_text": "那我专业是那个ISM Information Systems Management。",
-        "finalization_delay": 0.9280995,
-        "first_caption_lag": 2.6634327,
+        "finalization_delay": 0.8869478,
+        "first_caption_lag": 2.6604277,
         "id": 1,
         "incomplete": false,
         "provisional_count": 1,
         "provisional_lags": [
-          0.6668267
+          0.6704277
         ]
       }
     ]
   },
   "memory_after_load": {
-    "peak_pagefile_bytes": 5604708352,
-    "peak_working_set_bytes": 6226345984,
-    "private_bytes": 5603438592,
-    "working_set_bytes": 5604048896
+    "peak_pagefile_bytes": 5607231488,
+    "peak_working_set_bytes": 6226534400,
+    "private_bytes": 5603012608,
+    "working_set_bytes": 5604237312
   },
   "mode": "simulate-live",
-  "model_load_seconds": 4.991403,
+  "model_load_seconds": 6.7214479,
   "options": {
     "overload_backlog": 20.0,
     "provisional": true,
@@ -324,7 +305,10 @@
     "provisional_interval": 2.0,
     "resume_backlog": 2.0,
     "retained_limit": 60.0,
-    "suspend_backlog": 4.0
+    "slow_inference": 0.0,
+    "suspend_backlog": 4.0,
+    "threads": 4,
+    "variant": "fp32"
   },
   "source": {
     "audio_seconds": 4.03,

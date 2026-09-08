@@ -1,0 +1,40 @@
+{
+  "success": true,
+  "cases": [
+    {
+      "name": "valid",
+      "exit_code": 0,
+      "success": true
+    },
+    {
+      "name": "missing-stage",
+      "exit_code": 1,
+      "success": true
+    },
+    {
+      "name": "nonfinite",
+      "exit_code": 1,
+      "success": true
+    },
+    {
+      "name": "numerical-divergence",
+      "exit_code": 1,
+      "success": true
+    },
+    {
+      "name": "token-mismatch",
+      "exit_code": 1,
+      "success": true
+    },
+    {
+      "name": "incomplete-generation",
+      "exit_code": 1,
+      "success": true
+    },
+    {
+      "name": "prompt-mismatch",
+      "exit_code": 1,
+      "success": true
+    }
+  ]
+}

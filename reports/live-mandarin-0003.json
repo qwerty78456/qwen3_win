@@ -1,6 +1,8 @@
 {
   "engine": {
-    "assets_verified": false,
+    "adapter_index": null,
+    "assets_verified": true,
+    "configuration": "Qwen3-ASR-0.6B FP32 graphs with FP16 embedding storage",
     "embedding_dtype": "float16",
     "encoder": [
       {
@@ -18,6 +20,9 @@
       151645
     ],
     "memory_mode": "shared-prepack",
+    "model_directory": "qwen3-asr-0.6b-fp32",
+    "model_hidden_size": 1024,
+    "model_manifest_sha256": "de01cc5a9e9b468d9c0d55312da457974ccb75931078566352f5e7750f835ff8",
     "prefill": [
       {
         "dtype": 7,
@@ -65,6 +70,10 @@
       151669
     ],
     "provider": "CPU",
+    "reference_model": {
+      "repo": "Qwen/Qwen3-ASR-0.6B",
+      "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0"
+    },
     "runtime": "1.24.4",
     "step": [
       {
@@ -120,6 +129,7 @@
   },
   "live": {
     "clean_stop": true,
+    "duplicate_finals": 0,
     "errors": 0,
     "events": [
       {
@@ -135,7 +145,7 @@
         "revision": 0,
         "since_start_seconds": 0.0,
         "status": "Listening",
-        "t": 0.0026808,
+        "t": 0.0029943,
         "text": "",
         "utterance": 0
       },
@@ -146,13 +156,13 @@
         "boundary": "",
         "completion": "eos",
         "incomplete": false,
-        "inference_seconds": 0.6683116,
+        "inference_seconds": 0.6624808,
         "kind": "provisional",
-        "lag_seconds": 0.668332,
+        "lag_seconds": 0.6570399,
         "revision": 1,
-        "since_start_seconds": 2.6551024,
+        "since_start_seconds": 2.6570399,
         "status": "",
-        "t": 3.2836602,
+        "t": 3.2801657,
         "text": "适当使用博客，可以使学。",
         "utterance": 1
       },
@@ -163,13 +173,13 @@
         "boundary": "",
         "completion": "eos",
         "incomplete": false,
-        "inference_seconds": 0.9846408,
+        "inference_seconds": 0.9586855,
         "kind": "provisional",
-        "lag_seconds": 0.9846604,
+        "lag_seconds": 0.9514135,
         "revision": 2,
-        "since_start_seconds": 4.9704917,
+        "since_start_seconds": 4.9514135,
         "status": "",
-        "t": 5.5990498,
+        "t": 5.5745396,
         "text": "适当使用博客，可以使学生变得更善于分析和进行。",
         "utterance": 1
       },
@@ -180,13 +190,13 @@
         "boundary": "",
         "completion": "eos",
         "incomplete": false,
-        "inference_seconds": 1.4440267,
+        "inference_seconds": 1.4104369,
         "kind": "provisional",
-        "lag_seconds": 1.4440444,
+        "lag_seconds": 1.4058342,
         "revision": 3,
-        "since_start_seconds": 7.4371477,
+        "since_start_seconds": 7.4058342,
         "status": "",
-        "t": 8.0657054,
+        "t": 8.02896,
         "text": "适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料。",
         "utterance": 1
       },
@@ -197,66 +207,15 @@
         "boundary": "",
         "completion": "eos",
         "incomplete": false,
-        "inference_seconds": 1.8603054,
+        "inference_seconds": 1.8129433,
         "kind": "provisional",
-        "lag_seconds": 1.8603362,
+        "lag_seconds": 1.8045883,
         "revision": 4,
-        "since_start_seconds": 9.8456478,
+        "since_start_seconds": 9.8145883,
         "status": "",
-        "t": 10.4742059,
+        "t": 10.4377142,
         "text": "适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章。",
         "utterance": 1
-      },
-      {
-        "audio_end": 10.62,
-        "audio_start": 0.62,
-        "backlog_seconds": 0.0,
-        "boundary": "",
-        "completion": "eos",
-        "incomplete": false,
-        "inference_seconds": 2.5522337,
-        "kind": "provisional",
-        "lag_seconds": 2.5522572,
-        "revision": 5,
-        "since_start_seconds": 12.5365289,
-        "status": "",
-        "t": 13.1650878,
-        "text": "适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场。",
-        "utterance": 1
-      },
-      {
-        "audio_end": 0.0,
-        "audio_start": 0.0,
-        "backlog_seconds": 0.0,
-        "boundary": "",
-        "completion": "",
-        "incomplete": false,
-        "inference_seconds": 0.0,
-        "kind": "status",
-        "lag_seconds": 0.0,
-        "revision": 0,
-        "since_start_seconds": 0.0,
-        "status": "Catching up: finalized-work backlog 15 s",
-        "t": 15.3576763,
-        "text": "",
-        "utterance": 0
-      },
-      {
-        "audio_end": 0.0,
-        "audio_start": 0.0,
-        "backlog_seconds": 0.0,
-        "boundary": "",
-        "completion": "",
-        "incomplete": false,
-        "inference_seconds": 0.0,
-        "kind": "status",
-        "lag_seconds": 0.0,
-        "revision": 0,
-        "since_start_seconds": 0.0,
-        "status": "Listening",
-        "t": 18.9748625,
-        "text": "",
-        "utterance": 0
       },
       {
         "audio_end": 15.36,
@@ -265,13 +224,13 @@
         "boundary": "silence",
         "completion": "eos",
         "incomplete": false,
-        "inference_seconds": 3.588191,
+        "inference_seconds": 3.490758,
         "kind": "final",
-        "lag_seconds": 3.617102,
+        "lag_seconds": 3.4955493,
         "revision": 0,
-        "since_start_seconds": 18.3463045,
+        "since_start_seconds": 18.2355493,
         "status": "",
-        "t": 18.974894,
+        "t": 18.8586762,
         "text": "适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。",
         "utterance": 1
       },
@@ -288,7 +247,7 @@
         "revision": 0,
         "since_start_seconds": 0.0,
         "status": "Input exhausted",
-        "t": 18.975103,
+        "t": 18.8590268,
         "text": "",
         "utterance": 0
       }
@@ -296,20 +255,22 @@
     "final_count": 1,
     "finalization_delay_seconds": {
       "count": 1,
-      "max": 3.617102,
-      "p50": 3.617102,
-      "p95": 3.617102
+      "max": 3.4955493,
+      "p50": 3.4955493,
+      "p95": 3.4955493
     },
     "first_caption_lag_seconds": {
       "count": 1,
-      "max": 2.6551024,
-      "p50": 2.6551024,
-      "p95": 2.6551024
+      "max": 2.6570399,
+      "p50": 2.6570399,
+      "p95": 2.6570399
     },
     "incomplete_finals": 0,
     "no_audio_loss": true,
+    "overload_stop": false,
     "pipeline": {
       "audio_seconds_processed": 16.42,
+      "backlog_definition": "age of the oldest unfinished utterance since its audio ended (queued or decoding)",
       "capture": {
         "channels": 1,
         "frames": 262720,
@@ -326,18 +287,20 @@
       },
       "error": "",
       "finals": 1,
-      "max_backlog_seconds": 14.74,
+      "lag_clock": "producer sample timestamps (WASAPI QPC for device capture)",
+      "max_backlog_seconds": 1.0522707,
+      "max_queued_audio_seconds": 14.74,
       "memory": {
-        "peak_pagefile_bytes": 6740312064,
-        "peak_working_set_bytes": 6477438976,
-        "private_bytes": 6731358208,
-        "working_set_bytes": 6471667712
+        "peak_pagefile_bytes": 6738378752,
+        "peak_working_set_bytes": 6476914688,
+        "private_bytes": 6731640832,
+        "working_set_bytes": 6471815168
       },
-      "process_cpu_seconds": 49.40625,
-      "provisionals": 5,
-      "provisionals_cancelled": 1,
+      "process_cpu_seconds": 45.421875,
+      "provisionals": 4,
+      "provisionals_cancelled": 2,
       "provisionals_skipped": 1,
-      "retained_peak_seconds": 28.72,
+      "retained_peak_seconds": 40.72,
       "segmenter": {
         "energy_gated_positive_frames": 690,
         "longest_start_run_frames": 5,
@@ -346,16 +309,17 @@
       },
       "session": 1,
       "stop_reason": "",
-      "suspensions": 1,
-      "wall_seconds": 18.972484
+      "suspensions": 0,
+      "wall_seconds": 18.8560838
     },
     "provisional_lag_seconds": {
-      "count": 5,
-      "max": 2.5522572,
-      "p50": 1.4440444,
-      "p95": 2.5522572
+      "count": 4,
+      "max": 1.8045883,
+      "p50": 0.9514135,
+      "p95": 1.8045883
     },
     "speech_utterances": 1,
+    "stale_provisionals_delivered": 0,
     "success": true,
     "transcript": "适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。\n",
     "utterances": [
@@ -364,31 +328,30 @@
         "audio_start": 0.62,
         "boundary": "silence",
         "completion": "eos",
-        "final_inference_seconds": 3.588191,
+        "final_inference_seconds": 3.490758,
         "final_text": "适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。",
-        "finalization_delay": 3.617102,
-        "first_caption_lag": 2.6551024,
+        "finalization_delay": 3.4955493,
+        "first_caption_lag": 2.6570399,
         "id": 1,
         "incomplete": false,
-        "provisional_count": 5,
+        "provisional_count": 4,
         "provisional_lags": [
-          0.668332,
-          0.9846604,
-          1.4440444,
-          1.8603362,
-          2.5522572
+          0.6570399,
+          0.9514135,
+          1.4058342,
+          1.8045883
         ]
       }
     ]
   },
   "memory_after_load": {
-    "peak_pagefile_bytes": 5604081664,
-    "peak_working_set_bytes": 6226071552,
-    "private_bytes": 5602820096,
-    "working_set_bytes": 5603774464
+    "peak_pagefile_bytes": 5607161856,
+    "peak_working_set_bytes": 6226305024,
+    "private_bytes": 5602910208,
+    "working_set_bytes": 5604007936
   },
   "mode": "simulate-live",
-  "model_load_seconds": 4.9898523,
+  "model_load_seconds": 6.7077517,
   "options": {
     "overload_backlog": 20.0,
     "provisional": true,
@@ -396,7 +359,10 @@
     "provisional_interval": 2.0,
     "resume_backlog": 2.0,
     "retained_limit": 60.0,
-    "suspend_backlog": 4.0
+    "slow_inference": 0.0,
+    "suspend_backlog": 4.0,
+    "threads": 4,
+    "variant": "fp32"
   },
   "source": {
     "audio_seconds": 15.42,

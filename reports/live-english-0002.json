@@ -1,6 +1,8 @@
 {
   "engine": {
-    "assets_verified": false,
+    "adapter_index": null,
+    "assets_verified": true,
+    "configuration": "Qwen3-ASR-0.6B FP32 graphs with FP16 embedding storage",
     "embedding_dtype": "float16",
     "encoder": [
       {
@@ -18,6 +20,9 @@
       151645
     ],
     "memory_mode": "shared-prepack",
+    "model_directory": "qwen3-asr-0.6b-fp32",
+    "model_hidden_size": 1024,
+    "model_manifest_sha256": "de01cc5a9e9b468d9c0d55312da457974ccb75931078566352f5e7750f835ff8",
     "prefill": [
       {
         "dtype": 7,
@@ -65,6 +70,10 @@
       151669
     ],
     "provider": "CPU",
+    "reference_model": {
+      "repo": "Qwen/Qwen3-ASR-0.6B",
+      "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0"
+    },
     "runtime": "1.24.4",
     "step": [
       {
@@ -120,6 +129,7 @@
   },
   "live": {
     "clean_stop": true,
+    "duplicate_finals": 0,
     "errors": 0,
     "events": [
       {
@@ -135,7 +145,7 @@
         "revision": 0,
         "since_start_seconds": 0.0,
         "status": "Listening",
-        "t": 0.0020355,
+        "t": 0.0021016,
         "text": "",
         "utterance": 0
       },
@@ -146,13 +156,13 @@
         "boundary": "silence",
         "completion": "eos",
         "incomplete": false,
-        "inference_seconds": 0.7330796,
+        "inference_seconds": 0.7092394,
         "kind": "final",
-        "lag_seconds": 0.733085,
+        "lag_seconds": 0.7027441,
         "revision": 0,
-        "since_start_seconds": 2.4947218,
+        "since_start_seconds": 2.4527441,
         "status": "",
-        "t": 2.7104778,
+        "t": 2.68495,
         "text": "To the north and within easy reach.",
         "utterance": 1
       },
@@ -163,13 +173,13 @@
         "boundary": "",
         "completion": "eos",
         "incomplete": false,
-        "inference_seconds": 0.6705383,
+        "inference_seconds": 0.6621427,
         "kind": "provisional",
-        "lag_seconds": 0.6705525,
+        "lag_seconds": 0.6557253,
         "revision": 1,
-        "since_start_seconds": 2.6654563,
+        "since_start_seconds": 2.6557253,
         "status": "",
-        "t": 4.6428484,
+        "t": 4.6379299,
         "text": "Is a romantic and fascinating town.",
         "utterance": 3
       },
@@ -180,13 +190,13 @@
         "boundary": "silence",
         "completion": "eos",
         "incomplete": false,
-        "inference_seconds": 0.9820509,
+        "inference_seconds": 0.9741664,
         "kind": "final",
-        "lag_seconds": 0.9820605,
+        "lag_seconds": 0.9673562,
         "revision": 0,
-        "since_start_seconds": 4.4461171,
+        "since_start_seconds": 4.4273562,
         "status": "",
-        "t": 6.4235099,
+        "t": 6.4095622,
         "text": "Is a romantic and fascinating town of Sintra and which was",
         "utterance": 3
       },
@@ -197,13 +207,13 @@
         "boundary": "",
         "completion": "eos",
         "incomplete": false,
-        "inference_seconds": 0.6177605,
+        "inference_seconds": 0.5990384,
         "kind": "provisional",
-        "lag_seconds": 0.6177893,
+        "lag_seconds": 0.5937299,
         "revision": 2,
-        "since_start_seconds": 2.6259489,
+        "since_start_seconds": 2.5937299,
         "status": "",
-        "t": 8.2983328,
+        "t": 8.2859342,
         "text": "Famous to foreigners after.",
         "utterance": 5
       },
@@ -214,49 +224,15 @@
         "boundary": "",
         "completion": "eos",
         "incomplete": false,
-        "inference_seconds": 1.1988012,
+        "inference_seconds": 1.2107874,
         "kind": "provisional",
-        "lag_seconds": 1.1988204,
+        "lag_seconds": 1.2020967,
         "revision": 3,
-        "since_start_seconds": 5.2000582,
+        "since_start_seconds": 5.1920967,
         "status": "",
-        "t": 10.8724417,
+        "t": 10.8843017,
         "text": "Famous, to foreigners after a glowing account of its splendorous record.",
         "utterance": 5
-      },
-      {
-        "audio_end": 0.0,
-        "audio_start": 0.0,
-        "backlog_seconds": 0.0,
-        "boundary": "",
-        "completion": "",
-        "incomplete": false,
-        "inference_seconds": 0.0,
-        "kind": "status",
-        "lag_seconds": 0.0,
-        "revision": 0,
-        "since_start_seconds": 0.0,
-        "status": "Catching up: finalized-work backlog 6 s",
-        "t": 11.282219,
-        "text": "",
-        "utterance": 0
-      },
-      {
-        "audio_end": 0.0,
-        "audio_start": 0.0,
-        "backlog_seconds": 0.0,
-        "boundary": "",
-        "completion": "",
-        "incomplete": false,
-        "inference_seconds": 0.0,
-        "kind": "status",
-        "lag_seconds": 0.0,
-        "revision": 0,
-        "since_start_seconds": 0.0,
-        "status": "Listening",
-        "t": 12.766747,
-        "text": "",
-        "utterance": 0
       },
       {
         "audio_end": 11.28,
@@ -265,13 +241,13 @@
         "boundary": "silence",
         "completion": "eos",
         "incomplete": false,
-        "inference_seconds": 1.4844493,
+        "inference_seconds": 1.4491815,
         "kind": "final",
-        "lag_seconds": 1.4844563,
+        "lag_seconds": 1.4423404,
         "revision": 0,
-        "since_start_seconds": 7.0943628,
+        "since_start_seconds": 7.0323404,
         "status": "",
-        "t": 12.7667785,
+        "t": 12.724546,
         "text": "Famous, to foreigners after a glowing account of its splendourous recorded by Lord Byron.",
         "utterance": 5
       },
@@ -288,7 +264,7 @@
         "revision": 0,
         "since_start_seconds": 0.0,
         "status": "Input exhausted",
-        "t": 12.7668114,
+        "t": 12.7247896,
         "text": "",
         "utterance": 0
       }
@@ -296,20 +272,22 @@
     "final_count": 3,
     "finalization_delay_seconds": {
       "count": 3,
-      "max": 1.4844563,
-      "p50": 0.9820605,
-      "p95": 1.4844563
+      "max": 1.4423404,
+      "p50": 0.9673562,
+      "p95": 1.4423404
     },
     "first_caption_lag_seconds": {
       "count": 3,
-      "max": 2.6654563,
-      "p50": 2.6259489,
-      "p95": 2.6654563
+      "max": 2.6557253,
+      "p50": 2.5937299,
+      "p95": 2.6557253
     },
     "incomplete_finals": 0,
     "no_audio_loss": true,
+    "overload_stop": false,
     "pipeline": {
       "audio_seconds_processed": 12.46,
+      "backlog_definition": "age of the oldest unfinished utterance since its audio ended (queued or decoding)",
       "capture": {
         "channels": 1,
         "frames": 199360,
@@ -326,18 +304,20 @@
       },
       "error": "",
       "finals": 3,
-      "max_backlog_seconds": 5.6,
+      "lag_clock": "producer sample timestamps (WASAPI QPC for device capture)",
+      "max_backlog_seconds": 1.1764262,
+      "max_queued_audio_seconds": 5.6,
       "memory": {
-        "peak_pagefile_bytes": 6179512320,
-        "peak_working_set_bytes": 6226169856,
-        "private_bytes": 6179442688,
-        "working_set_bytes": 6002311168
+        "peak_pagefile_bytes": 6179868672,
+        "peak_working_set_bytes": 6226407424,
+        "private_bytes": 6174441472,
+        "working_set_bytes": 5998379008
       },
-      "process_cpu_seconds": 23.96875,
+      "process_cpu_seconds": 19.78125,
       "provisionals": 3,
       "provisionals_cancelled": 0,
       "provisionals_skipped": 0,
-      "retained_peak_seconds": 5.6,
+      "retained_peak_seconds": 9.18,
       "segmenter": {
         "energy_gated_positive_frames": 262,
         "longest_start_run_frames": 5,
@@ -346,16 +326,17 @@
       },
       "session": 1,
       "stop_reason": "",
-      "suspensions": 1,
-      "wall_seconds": 12.7648295
+      "suspensions": 0,
+      "wall_seconds": 12.7227555
     },
     "provisional_lag_seconds": {
       "count": 3,
-      "max": 1.1988204,
-      "p50": 0.6705525,
-      "p95": 1.1988204
+      "max": 1.2020967,
+      "p50": 0.6557253,
+      "p95": 1.2020967
     },
     "speech_utterances": 3,
+    "stale_provisionals_delivered": 0,
     "success": true,
     "transcript": "To the north and within easy reach.\nIs a romantic and fascinating town of Sintra and which was\nFamous, to foreigners after a glowing account of its splendourous recorded by Lord Byron.\n",
     "utterances": [
@@ -364,10 +345,10 @@
         "audio_start": 0.22,
         "boundary": "silence",
         "completion": "eos",
-        "final_inference_seconds": 0.7330796,
+        "final_inference_seconds": 0.7092394,
         "final_text": "To the north and within easy reach.",
-        "finalization_delay": 0.733085,
-        "first_caption_lag": 2.4947218,
+        "finalization_delay": 0.7027441,
+        "first_caption_lag": 2.4527441,
         "id": 1,
         "incomplete": false,
         "provisional_count": 0,
@@ -378,15 +359,15 @@
         "audio_start": 1.98,
         "boundary": "silence",
         "completion": "eos",
-        "final_inference_seconds": 0.9820509,
+        "final_inference_seconds": 0.9741664,
         "final_text": "Is a romantic and fascinating town of Sintra and which was",
-        "finalization_delay": 0.9820605,
-        "first_caption_lag": 2.6654563,
+        "finalization_delay": 0.9673562,
+        "first_caption_lag": 2.6557253,
         "id": 3,
         "incomplete": false,
         "provisional_count": 1,
         "provisional_lags": [
-          0.6705525
+          0.6557253
         ]
       },
       {
@@ -394,28 +375,28 @@
         "audio_start": 5.68,
         "boundary": "silence",
         "completion": "eos",
-        "final_inference_seconds": 1.4844493,
+        "final_inference_seconds": 1.4491815,
         "final_text": "Famous, to foreigners after a glowing account of its splendourous recorded by Lord Byron.",
-        "finalization_delay": 1.4844563,
-        "first_caption_lag": 2.6259489,
+        "finalization_delay": 1.4423404,
+        "first_caption_lag": 2.5937299,
         "id": 5,
         "incomplete": false,
         "provisional_count": 2,
         "provisional_lags": [
-          0.6177893,
-          1.1988204
+          0.5937299,
+          1.2020967
         ]
       }
     ]
   },
   "memory_after_load": {
-    "peak_pagefile_bytes": 5604302848,
-    "peak_working_set_bytes": 6226169856,
-    "private_bytes": 5603069952,
-    "working_set_bytes": 5603872768
+    "peak_pagefile_bytes": 5607276544,
+    "peak_working_set_bytes": 6226407424,
+    "private_bytes": 5603024896,
+    "working_set_bytes": 5604110336
   },
   "mode": "simulate-live",
-  "model_load_seconds": 4.5760505,
+  "model_load_seconds": 6.8847228,
   "options": {
     "overload_backlog": 20.0,
     "provisional": true,
@@ -423,7 +404,10 @@
     "provisional_interval": 2.0,
     "resume_backlog": 2.0,
     "retained_limit": 60.0,
-    "suspend_backlog": 4.0
+    "slow_inference": 0.0,
+    "suspend_backlog": 4.0,
+    "threads": 4,
+    "variant": "fp32"
   },
   "source": {
     "audio_seconds": 11.46,

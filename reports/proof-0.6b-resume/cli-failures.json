@@ -1,0 +1,113 @@
+{
+  "success": true,
+  "cases": [
+    {
+      "case": "empty",
+      "exit_code": 1,
+      "report": {
+        "error": "Expected RIFF PCM/float WAV",
+        "success": false
+      },
+      "success": true
+    },
+    {
+      "case": "truncated-header",
+      "exit_code": 1,
+      "report": {
+        "error": "RIFF length does not match WAV file length",
+        "success": false
+      },
+      "success": true
+    },
+    {
+      "case": "truncated-data",
+      "exit_code": 1,
+      "report": {
+        "error": "RIFF length does not match WAV file length",
+        "success": false
+      },
+      "success": true
+    },
+    {
+      "case": "missing-format",
+      "exit_code": 1,
+      "report": {
+        "error": "Unsupported WAV sample format",
+        "success": false
+      },
+      "success": true
+    },
+    {
+      "case": "odd-pcm-length",
+      "exit_code": 1,
+      "report": {
+        "error": "Unsupported WAV sample format",
+        "success": false
+      },
+      "success": true
+    },
+    {
+      "case": "nan-float",
+      "exit_code": 1,
+      "report": {
+        "error": "Non-finite audio sample",
+        "success": false
+      },
+      "success": true
+    },
+    {
+      "case": "unsupported-a-law",
+      "exit_code": 1,
+      "report": {
+        "error": "WAV must contain integer PCM or float32",
+        "success": false
+      },
+      "success": true
+    },
+    {
+      "case": "missing-model",
+      "exit_code": 1,
+      "report": {
+        "error": "Cannot open D:\\asr_win\\traces\\cli-failures\\missing\\manifest.json",
+        "success": false
+      },
+      "success": true
+    },
+    {
+      "case": "unvalidated-directml",
+      "exit_code": 1,
+      "report": {
+        "error": "DirectML is disabled until CPU correctness and acceleration gates pass; add --experimental-directml for benchmark experiments only",
+        "success": false
+      },
+      "success": true
+    },
+    {
+      "case": "invalid-threads",
+      "exit_code": 1,
+      "report": {
+        "error": "Invalid thread/token limit",
+        "success": false
+      },
+      "success": true
+    },
+    {
+      "case": "invalid-token-limit",
+      "exit_code": 1,
+      "report": {
+        "error": "Invalid thread/token limit",
+        "success": false
+      },
+      "success": true
+    },
+    {
+      "case": "unknown-option",
+      "exit_code": 1,
+      "report": {
+        "error": "Unknown argument: --does-not-exist",
+        "success": false
+      },
+      "success": true
+    }
+  ]
+}

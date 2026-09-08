@@ -74,15 +74,21 @@ std::wstring default_render_device() {
 }
 
 RawRing::RawRing(uint32_t channels, uint32_t capacity_frames, uint32_t reserve_frames)
-  :data_(size_t(channels)*capacity_frames),channels_(channels),capacity_(capacity_frames),reserve_(reserve_frames) {
+  :data_(size_t(channels)*capacity_frames),times_(capacity_frames),flags_(capacity_frames),formats_(capacity_frames),channels_(channels),capacity_(capacity_frames),reserve_(reserve_frames) {
   if (!channels || !capacity_frames || reserve_frames>=capacity_frames) throw std::runtime_error("Invalid capture ring geometry");
 }
-bool RawRing::push(const float* interleaved, uint32_t frames) {
+bool RawRing::push(const float* interleaved, uint32_t frames, Clock::time_point end_time, uint32_t rate, DWORD flags) {
+  return push_bytes(reinterpret_cast<const BYTE*>(interleaved),frames,32,true,end_time,rate,flags);
+}
+bool RawRing::push_bytes(const BYTE* interleaved, uint32_t frames, uint32_t bits, bool floating, Clock::time_point end_time, uint32_t rate, DWORD flags) {
   size_t head=head_.load(std::memory_order_relaxed), tail=tail_.load(std::memory_order_acquire);
   if (head-tail+frames>capacity_) return false;
   for (uint32_t i=0;i<frames;++i) {
     size_t slot=((head+i)%capacity_)*channels_;
-    memcpy(data_.data()+slot,interleaved+size_t(i)*channels_,channels_*sizeof(float));
+    if (!(flags&AUDCLNT_BUFFERFLAGS_SILENT)) memcpy(data_.data()+slot,interleaved+size_t(i)*channels_*(bits/8),channels_*(bits/8));
+    times_[(head+i)%capacity_]=end_time-std::chrono::duration_cast<Clock::duration>(std::chrono::duration<double>((frames-i-1)/double(rate)));
+    flags_[(head+i)%capacity_]=flags;
+    formats_[(head+i)%capacity_]=bits|(floating?0x100:0);
   }
   head_.store(head+frames,std::memory_order_release);
   size_t used=head+frames-tail, peak=peak_.load(std::memory_order_relaxed);
@@ -90,13 +96,26 @@ bool RawRing::push(const float* interleaved, uint32_t frames) {
   cv_.notify_one();
   return true;
 }
-size_t RawRing::pop(std::vector<float>& out, size_t max_frames) {
+size_t RawRing::pop(std::vector<float>& out, size_t max_frames, Clock::time_point* end_time, DWORD* flags) {
   size_t head=head_.load(std::memory_order_acquire), tail=tail_.load(std::memory_order_relaxed);
   size_t frames=std::min(max_frames,head-tail);
   for (size_t i=0;i<frames;++i) {
     size_t slot=((tail+i)%capacity_)*channels_;
-    out.insert(out.end(),data_.begin()+slot,data_.begin()+slot+channels_);
+    uint32_t format=formats_[(tail+i)%capacity_], bits=format&0xff;
+    const BYTE* data=reinterpret_cast<const BYTE*>(data_.data()+slot);
+    for (uint32_t c=0;c<channels_;++c) {
+      const BYTE* v=data+c*(bits/8);float sample=0;
+      if (!(flags_[(tail+i)%capacity_]&AUDCLNT_BUFFERFLAGS_SILENT)) {
+        if (format&0x100) memcpy(&sample,v,sizeof(sample));
+        else if (bits==16) sample=static_cast<int16_t>(v[0]|v[1]<<8)/32768.f;
+        else if (bits==24) { int32_t q=int32_t(v[0])|int32_t(v[1])<<8|int32_t(v[2])<<16;if(q&0x800000)q|=~0xffffff;sample=q/8388608.f; }
+        else { int32_t value;memcpy(&value,v,4);sample=value/2147483648.f; }
+      }
+      out.push_back(sample);
+    }
+    if (flags) *flags|=flags_[(tail+i)%capacity_];
   }
+  if (frames && end_time) *end_time=times_[(tail+frames-1)%capacity_];
   tail_.store(tail+frames,std::memory_order_release);
   return frames;
 }
@@ -135,7 +154,6 @@ LoopbackCapture::LoopbackCapture(const std::wstring& device_id, CaptureEvents ev
   check(render_client_->GetService(IID_PPV_ARGS(&render_)),"Open silent render service");
   // Two seconds of raw audio; one full device buffer stays reserved so the packet in hand always fits.
   ring_=std::make_unique<RawRing>(channels_,rate_*2,buffer_frames_);
-  scratch_.resize(size_t(buffer_frames_)*channels_);
   auto* watcher=new Notifications(id_,capturing_default_,[this](const std::wstring& reason){ if (events_.device_lost) events_.device_lost(reason); });
   notifications_.Attach(watcher);
   check(enumerator_->RegisterEndpointNotificationCallback(notifications_.Get()),"Watch playback devices");
@@ -143,6 +161,7 @@ LoopbackCapture::LoopbackCapture(const std::wstring& device_id, CaptureEvents ev
 LoopbackCapture::~LoopbackCapture() {
   stop();
   if (notifications_) enumerator_->UnregisterEndpointNotificationCallback(notifications_.Get());
+  if (thread_.joinable()) thread_.join();
   for (HANDLE h:{capture_event_,render_event_,stop_event_}) if (h) CloseHandle(h);
 }
 void LoopbackCapture::start() {
@@ -155,7 +174,6 @@ void LoopbackCapture::start() {
 void LoopbackCapture::stop() {
   if (!started_.load()) { finished_=true; return; }
   if (!stop_requested_.exchange(true)) SetEvent(stop_event_);
-  if (thread_.joinable() && thread_.get_id()!=std::this_thread::get_id()) thread_.join();
 }
 void LoopbackCapture::read_packets() {
   for (;;) {
@@ -166,20 +184,26 @@ void LoopbackCapture::read_packets() {
     hr=capture_->GetBuffer(&data,&frames,&flags,&position,&qpc);
     if (hr==AUDCLNT_S_BUFFER_EMPTY) return;
     if (FAILED(hr)) { std::ostringstream m; m<<"Loopback buffer read failed (device lost?) hr=0x"<<std::hex<<static_cast<unsigned long>(hr); throw std::runtime_error(m.str()); }
-    if (frames>scratch_.size()/channels_) scratch_.resize(size_t(frames)*channels_);
-    if (flags&AUDCLNT_BUFFERFLAGS_SILENT) { ++silent_packets_; std::fill(scratch_.begin(),scratch_.begin()+size_t(frames)*channels_,0.f); }
-    else if (float_format_) memcpy(scratch_.data(),data,size_t(frames)*channels_*4);
-    else {
-      size_t n=size_t(frames)*channels_, bytes=bits_/8;
-      for (size_t i=0;i<n;++i) { const BYTE* v=data+i*bytes;
-        if (bits_==16) scratch_[i]=static_cast<int16_t>(v[0]|v[1]<<8)/32768.f;
-        else if (bits_==24) { int32_t q=int32_t(v[0])|int32_t(v[1])<<8|int32_t(v[2])<<16; if (q&0x800000) q|=~0xffffff; scratch_[i]=q/8388608.f; }
-        else scratch_[i]=static_cast<int32_t>(uint32_t(v[0])|uint32_t(v[1])<<8|uint32_t(v[2])<<16|uint32_t(v[3])<<24)/2147483648.f; }
+    if (frames>buffer_frames_) {
+      capture_->ReleaseBuffer(frames); dropped_frames_+=frames;
+      throw std::runtime_error("Capture packet exceeds preallocated device capacity");
     }
+    if (flags&AUDCLNT_BUFFERFLAGS_SILENT) ++silent_packets_;
     if (flags&AUDCLNT_BUFFERFLAGS_DATA_DISCONTINUITY) ++discontinuities_;
     if (flags&AUDCLNT_BUFFERFLAGS_TIMESTAMP_ERROR) ++timestamp_errors_;
-    bool stored=ring_->push(scratch_.data(),frames);
-    capture_->ReleaseBuffer(frames);
+    if (have_position_) {
+      if (position>expected_position_) device_gap_frames_+=position-expected_position_;
+      else if (position<expected_position_) ++position_resets_;
+    }
+    expected_position_=position+frames; have_position_=true;
+    auto packet_end=Clock::now();
+    if (!(flags&AUDCLNT_BUFFERFLAGS_TIMESTAMP_ERROR)) {
+      LARGE_INTEGER counter{},frequency{}; QueryPerformanceCounter(&counter); QueryPerformanceFrequency(&frequency);
+      double delta=qpc/1e7-counter.QuadPart/double(frequency.QuadPart)+frames/double(rate_);
+      packet_end+=std::chrono::duration_cast<Clock::duration>(std::chrono::duration<double>(delta));
+    }
+    bool stored=ring_->push_bytes(data,frames,bits_,float_format_,packet_end,rate_,flags);
+    check(capture_->ReleaseBuffer(frames),"Release loopback packet");
     ++packets_;
     if (!stored) { dropped_frames_+=frames; ++overflow_events_; stop_requested_=true; if (events_.overflow) events_.overflow(); return; }
     frames_+=frames;
@@ -219,6 +243,7 @@ Json LoopbackCapture::statistics() const {
           {"ring_capacity_frames",ring_?ring_->capacity_frames():0},{"ring_peak_used_frames",ring_?ring_->peak_used_frames():0},
           {"packets",packets_.load()},{"frames",frames_.load()},{"silent_packets",silent_packets_.load()},
           {"discontinuities",discontinuities_.load()},{"timestamp_errors",timestamp_errors_.load()},
+          {"device_gap_frames",device_gap_frames_.load()},{"device_position_resets",position_resets_.load()},
           {"dropped_frames",dropped_frames_.load()},{"overflow_events",overflow_events_.load()},{"failure",failure}};
 }
 }

@@ -11,6 +11,7 @@ import json
 import shutil
 import time
 import zipfile
+import re
 from pathlib import Path
 from bootstrap import ROOT, sha256
 from shipped import CONFIG
@@ -32,11 +33,15 @@ def main():
     parser.add_argument('--version', default='0.1.0-tc1')
     parser.add_argument('--no-archive', action='store_true')
     parser.add_argument('--no-docs-refresh', action='store_true', help='do not regenerate docs/ from the reports before hashing')
+    parser.add_argument('--replace',action='store_true',help='replace this exact existing version inside dist')
     args = parser.parse_args()
+    if not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9._-]{0,60}',args.version): raise ValueError('Invalid package version')
     name = f'AsrWin-{args.version}-win-x64'
     dist = ROOT / 'dist'
     folder = dist / name
     if folder.exists():
+        if not args.replace: raise RuntimeError('Package version already exists; choose a new version or use --replace')
+        if folder.resolve().parent != dist.resolve() or not folder.resolve().is_relative_to(ROOT.resolve()): raise RuntimeError('Unsafe package replacement path')
         shutil.rmtree(folder)
     folder.mkdir(parents=True)
     for file in RUNTIME:
@@ -47,7 +52,7 @@ def main():
         copy(ROOT / MODEL / item['path'], folder / MODEL / item['path'])
     copy(ROOT / MODEL / 'README.md', folder / MODEL / 'MODEL-CARD.md')
     for rel in ['THIRD_PARTY_NOTICES.md', 'verification-policy.json', 'dependencies.lock.json', 'remote-assets.lock.json', 'native-dependency.lock.json', 'shipped-model.json',
-                'docs/PACKAGE-README.md', 'docs/PROOF.md', 'docs/BENCHMARK.md', 'docs/COMPATIBILITY.md', 'docs/PACKAGING.md']:
+                'docs/PACKAGE-README.md', 'docs/PROOF.md', 'docs/BENCHMARK.md', 'docs/COMPATIBILITY.md', 'docs/PACKAGING.md', 'docs/RESUME-AUDIT.md', 'docs/CLEAN-WINDOWS-TEST.md']:
         target = folder / ('README.md' if rel == 'docs/PACKAGE-README.md' else rel)
         copy(ROOT / rel, target)
     shutil.copytree(ROOT / 'licenses', folder / 'licenses')
@@ -98,6 +103,7 @@ def main():
         report.update(archive=str(archive.relative_to(ROOT)), compressed_bytes=archive.stat().st_size,
                       archive_sha256=sha256(archive), archive_seconds=time.perf_counter() - started, compression='zip deflate level 6')
     (ROOT / 'reports/package.json').write_text(json.dumps(report, indent=2) + '\n', encoding='utf-8')
+    (dist / f'{name}-release-info.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
     print(json.dumps(report, indent=2))
 
 if __name__ == '__main__':

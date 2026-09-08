@@ -1,0 +1,6 @@
+[0.05s] status: Listening
+[9.98s] status: Catching up: finalized-work backlog 4 s
+[25.99s] status: Stopping: Overload: finalized-work backlog exceeded 20 s
+[70.21s] stopped: Overload: finalized-work backlog exceeded 20 s
+finals 4, provisional lag p95 0.0 s, first-caption p95 42.911533 s, finalization p95 44.2046666 s, max backlog 31.8041995 s, peak working set 6226296832 bytes
+EXIT=2

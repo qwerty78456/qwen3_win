@@ -1,0 +1,414 @@
+{
+  "engine": {
+    "assets_verified": true,
+    "embedding_dtype": "float16",
+    "encoder": [
+      {
+        "dtype": 1,
+        "name": "mel",
+        "shape": [
+          1,
+          128,
+          -1
+        ]
+      }
+    ],
+    "eos_ids": [
+      151643,
+      151645
+    ],
+    "memory_mode": "shared-prepack",
+    "prefill": [
+      {
+        "dtype": 7,
+        "name": "input_ids",
+        "shape": [
+          -1,
+          -1
+        ]
+      },
+      {
+        "dtype": 7,
+        "name": "position_ids",
+        "shape": [
+          -1,
+          -1
+        ]
+      },
+      {
+        "dtype": 1,
+        "name": "audio_features",
+        "shape": [
+          -1,
+          -1,
+          1024
+        ]
+      },
+      {
+        "dtype": 7,
+        "name": "audio_offset",
+        "shape": [
+          1
+        ]
+      }
+    ],
+    "prefill_format": "input_ids",
+    "prefix_ids": [
+      151644,
+      8948,
+      198,
+      151645,
+      198,
+      151644,
+      872,
+      198,
+      151669
+    ],
+    "provider": "CPU",
+    "runtime": "1.24.4",
+    "step": [
+      {
+        "dtype": 1,
+        "name": "input_embeds",
+        "shape": [
+          -1,
+          1,
+          1024
+        ]
+      },
+      {
+        "dtype": 7,
+        "name": "position_ids",
+        "shape": [
+          -1,
+          1
+        ]
+      },
+      {
+        "dtype": 1,
+        "name": "past_keys",
+        "shape": [
+          28,
+          -1,
+          8,
+          -1,
+          128
+        ]
+      },
+      {
+        "dtype": 1,
+        "name": "past_values",
+        "shape": [
+          28,
+          -1,
+          8,
+          -1,
+          128
+        ]
+      }
+    ],
+    "suffix_ids": [
+      151670,
+      151645,
+      198,
+      151644,
+      77091,
+      198
+    ],
+    "threads": 4,
+    "variant": "fp32"
+  },
+  "live": {
+    "clean_stop": true,
+    "duplicate_finals": 0,
+    "errors": 0,
+    "events": [
+      {
+        "audio_end": 0.0,
+        "audio_start": 0.0,
+        "backlog_seconds": 0.0,
+        "boundary": "",
+        "completion": "",
+        "incomplete": false,
+        "inference_seconds": 0.0,
+        "kind": "status",
+        "lag_seconds": 0.0,
+        "revision": 0,
+        "since_start_seconds": 0.0,
+        "status": "Listening",
+        "t": 0.0020216,
+        "text": "",
+        "utterance": 0
+      },
+      {
+        "audio_end": 1.98,
+        "audio_start": 0.22,
+        "backlog_seconds": 0.0,
+        "boundary": "silence",
+        "completion": "eos",
+        "incomplete": false,
+        "inference_seconds": 0.7777617,
+        "kind": "final",
+        "lag_seconds": 0.7777729,
+        "revision": 0,
+        "since_start_seconds": 2.5311982,
+        "status": "",
+        "t": 2.7567585,
+        "text": "To the north and within easy reach.",
+        "utterance": 1
+      },
+      {
+        "audio_end": 3.98,
+        "audio_start": 1.98,
+        "backlog_seconds": 0.0,
+        "boundary": "",
+        "completion": "eos",
+        "incomplete": false,
+        "inference_seconds": 0.734337,
+        "kind": "provisional",
+        "lag_seconds": 0.7343564,
+        "revision": 1,
+        "since_start_seconds": 2.7307419,
+        "status": "",
+        "t": 4.7097245,
+        "text": "Is a romantic and fascinating town.",
+        "utterance": 3
+      },
+      {
+        "audio_end": 5.44,
+        "audio_start": 1.98,
+        "backlog_seconds": 0.0,
+        "boundary": "silence",
+        "completion": "eos",
+        "incomplete": false,
+        "inference_seconds": 1.062744,
+        "kind": "final",
+        "lag_seconds": 1.062758,
+        "revision": 0,
+        "since_start_seconds": 4.5233703,
+        "status": "",
+        "t": 6.5023551,
+        "text": "Is a romantic and fascinating town of Sintra and which was",
+        "utterance": 3
+      },
+      {
+        "audio_end": 7.68,
+        "audio_start": 5.68,
+        "backlog_seconds": 0.0,
+        "boundary": "",
+        "completion": "eos",
+        "incomplete": false,
+        "inference_seconds": 0.6684234,
+        "kind": "provisional",
+        "lag_seconds": 0.6684484,
+        "revision": 2,
+        "since_start_seconds": 2.6678614,
+        "status": "",
+        "t": 8.3442353,
+        "text": "Famous to foreigners after.",
+        "utterance": 5
+      },
+      {
+        "audio_end": 9.68,
+        "audio_start": 5.68,
+        "backlog_seconds": 0.0,
+        "boundary": "",
+        "completion": "eos",
+        "incomplete": false,
+        "inference_seconds": 1.2889432,
+        "kind": "provisional",
+        "lag_seconds": 1.2889673,
+        "revision": 3,
+        "since_start_seconds": 5.2971841,
+        "status": "",
+        "t": 10.973558,
+        "text": "Famous, to foreigners after a glowing account of its splendorous record.",
+        "utterance": 5
+      },
+      {
+        "audio_end": 11.28,
+        "audio_start": 5.68,
+        "backlog_seconds": 0.0,
+        "boundary": "silence",
+        "completion": "eos",
+        "incomplete": false,
+        "inference_seconds": 1.6122867,
+        "kind": "final",
+        "lag_seconds": 1.612297,
+        "revision": 0,
+        "since_start_seconds": 7.2198657,
+        "status": "",
+        "t": 12.8962413,
+        "text": "Famous, to foreigners after a glowing account of its splendourous recorded by Lord Byron.",
+        "utterance": 5
+      },
+      {
+        "audio_end": 0.0,
+        "audio_start": 0.0,
+        "backlog_seconds": 0.0,
+        "boundary": "",
+        "completion": "",
+        "incomplete": false,
+        "inference_seconds": 0.0,
+        "kind": "stopped",
+        "lag_seconds": 0.0,
+        "revision": 0,
+        "since_start_seconds": 0.0,
+        "status": "Input exhausted",
+        "t": 12.8963045,
+        "text": "",
+        "utterance": 0
+      }
+    ],
+    "final_count": 3,
+    "finalization_delay_seconds": {
+      "count": 3,
+      "max": 1.612297,
+      "p50": 1.062758,
+      "p95": 1.612297
+    },
+    "first_caption_lag_seconds": {
+      "count": 3,
+      "max": 2.7307419,
+      "p50": 2.6678614,
+      "p95": 2.7307419
+    },
+    "incomplete_finals": 0,
+    "no_audio_loss": true,
+    "overload_stop": false,
+    "pipeline": {
+      "audio_seconds_processed": 12.46,
+      "backlog_definition": "age of the oldest unfinished utterance since its audio ended (queued or decoding)",
+      "capture": {
+        "channels": 1,
+        "frames": 199360,
+        "late_packets": 0,
+        "max_late_seconds": 0.0,
+        "overflow_events": 0,
+        "pace": 1.0,
+        "packets": 1246,
+        "ring_capacity_frames": 32000,
+        "ring_peak_used_frames": 320,
+        "sample_rate": 16000,
+        "source": "wav-replay",
+        "tail_silence_seconds": 1.0
+      },
+      "error": "",
+      "finals": 3,
+      "max_backlog_seconds": 1.170953,
+      "max_queued_audio_seconds": 5.6,
+      "memory": {
+        "peak_pagefile_bytes": 6179565568,
+        "peak_working_set_bytes": 6226931712,
+        "private_bytes": 6179491840,
+        "working_set_bytes": 6002900992
+      },
+      "process_cpu_seconds": 28.390625,
+      "provisionals": 3,
+      "provisionals_cancelled": 0,
+      "provisionals_skipped": 0,
+      "retained_peak_seconds": 5.6,
+      "segmenter": {
+        "energy_gated_positive_frames": 262,
+        "longest_start_run_frames": 5,
+        "peak_frame_rms": 0.002770654829579946,
+        "vad_positive_frames": 284
+      },
+      "session": 1,
+      "stop_reason": "",
+      "suspensions": 0,
+      "wall_seconds": 12.8943403
+    },
+    "provisional_lag_seconds": {
+      "count": 3,
+      "max": 1.2889673,
+      "p50": 0.7343564,
+      "p95": 1.2889673
+    },
+    "speech_utterances": 3,
+    "stale_provisionals_delivered": 0,
+    "success": true,
+    "transcript": "To the north and within easy reach.\nIs a romantic and fascinating town of Sintra and which was\nFamous, to foreigners after a glowing account of its splendourous recorded by Lord Byron.\n",
+    "utterances": [
+      {
+        "audio_end": 1.98,
+        "audio_start": 0.22,
+        "boundary": "silence",
+        "completion": "eos",
+        "final_inference_seconds": 0.7777617,
+        "final_text": "To the north and within easy reach.",
+        "finalization_delay": 0.7777729,
+        "first_caption_lag": 2.5311982,
+        "id": 1,
+        "incomplete": false,
+        "provisional_count": 0,
+        "provisional_lags": []
+      },
+      {
+        "audio_end": 5.44,
+        "audio_start": 1.98,
+        "boundary": "silence",
+        "completion": "eos",
+        "final_inference_seconds": 1.062744,
+        "final_text": "Is a romantic and fascinating town of Sintra and which was",
+        "finalization_delay": 1.062758,
+        "first_caption_lag": 2.7307419,
+        "id": 3,
+        "incomplete": false,
+        "provisional_count": 1,
+        "provisional_lags": [
+          0.7343564
+        ]
+      },
+      {
+        "audio_end": 11.28,
+        "audio_start": 5.68,
+        "boundary": "silence",
+        "completion": "eos",
+        "final_inference_seconds": 1.6122867,
+        "final_text": "Famous, to foreigners after a glowing account of its splendourous recorded by Lord Byron.",
+        "finalization_delay": 1.612297,
+        "first_caption_lag": 2.6678614,
+        "id": 5,
+        "incomplete": false,
+        "provisional_count": 2,
+        "provisional_lags": [
+          0.6684484,
+          1.2889673
+        ]
+      }
+    ]
+  },
+  "memory_after_load": {
+    "peak_pagefile_bytes": 5604401152,
+    "peak_working_set_bytes": 6226931712,
+    "private_bytes": 5603172352,
+    "working_set_bytes": 5604638720
+  },
+  "mode": "simulate-live",
+  "model_load_seconds": 6.7608479,
+  "options": {
+    "overload_backlog": 20.0,
+    "provisional": true,
+    "provisional_after": 2.0,
+    "provisional_interval": 2.0,
+    "resume_backlog": 2.0,
+    "retained_limit": 60.0,
+    "slow_inference": 0.0,
+    "suspend_backlog": 4.0,
+    "threads": 4,
+    "variant": "fp32"
+  },
+  "source": {
+    "audio_seconds": 11.46,
+    "file": "regression/english-0002.wav",
+    "pace": 1.0,
+    "source": {
+      "bits": 16,
+      "channels": 1,
+      "format": "pcm",
+      "sample_rate": 16000
+    }
+  },
+  "success": true
+}

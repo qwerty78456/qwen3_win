@@ -1,0 +1,133 @@
+== rebuild ==
+  AsrWin.vcxproj -> D:\asr_win\build\Release\AsrWin.exe
+== endpoint (Steam Streaming Speakers, verified in the earlier trial: 0 clips without caption) ==
+60-minute endpoint: Steam Streaming Speakers
+== capture 3min (named endpoint: Steam Streaming Speakers) ==
+  },
+  "success": true,
+  "stop_reason": "Duration elapsed",
+  "provisional_lag_p95": 1.7697731,
+  "first_caption_p95": 3.1328655,
+  "finalization_p95": 2.8703992,
+  "max_backlog": 3.6502274
+}
+capture3steam EXIT=0
+== boundaries (0.6B) ==
+Generating official references for ['short-1sample', 'short-half-second', 'window-799-frames', 'window-800-frames', 'window-801-frames', 'window-1600-frames', 'limit-15s', 'limit-15s-padded']
+short-1sample PASS 13 tokens; 
+short-half-second PASS 13 tokens; Like.
+window-799-frames PASS 104 tokens; To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing.
+window-800-frames PASS 104 tokens; To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing.
+window-801-frames PASS 105 tokens; To the north, and within easy reach, is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing.
+window-1600-frames PASS 201 tokens; 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。
+limit-15s PASS 195 tokens; 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。
+limit-15s-padded PASS 195 tokens; Many people don't think about them as dinosaurs because they have feathers and can fly.
+repeat-interleaved PASS
+boundaries: PASS
+boundaries EXIT=0
+== overload / slow inference ==
+[150.10s] status: Catching up: finalized-work backlog 4 s
+[154.95s] status: Listening
+[158.36s] status: Catching up: finalized-work backlog 4 s
+[158.96s] status: Listening
+[161.01s] status: Catching up: finalized-work backlog 4 s
+[162.54s] status: Listening
+[165.51s] status: Catching up: finalized-work backlog 4 s
+[166.55s] status: Listening
+[168.59s] status: Catching up: finalized-work backlog 4 s
+[173.79s] status: Listening
+[173.79s] stopped: Input exhausted
+finals 20, provisional lag p95 6.9037164 s, first-caption p95 13.2731637 s, finalization p95 7.4204607 s, max backlog 7.5595798 s, peak working set 6506708992 bytes
+overload EXIT=0
+== simulate-live ==
+finals 3, provisional lag p95 1.2889673 s, first-caption p95 2.7307419 s, finalization p95 1.612297 s, max backlog 1.170953 s, peak working set 6226931712 bytes
+live english-0002 EXIT=0
+finals 1, provisional lag p95 2.8617924 s, first-caption p95 2.7364527 s, finalization p95 4.049374 s, max backlog 1.0575528 s, peak working set 6477205504 bytes
+live mandarin-0003 EXIT=0
+finals 1, provisional lag p95 0.7336978 s, first-caption p95 2.7324876 s, finalization p95 1.0381129 s, max backlog 0.4375311 s, peak working set 6226411520 bytes
+live mixed-0009 EXIT=0
+finals 2, provisional lag p95 1.5789649 s, first-caption p95 2.790711 s, finalization p95 2.4946372 s, max backlog 2.4801196 s, peak working set 6226960384 bytes
+live mandarin-0002 EXIT=0
+== gui test ==
+provisional area cleared after stop OK {}
+start enabled again OK {}
+finals match oracle text for fully played clips OK {'pooled_error_rate': 0.0, 'exact_line_matches': 3, 'expected': 4, 'lines': ['这并不是告别。', '这是一个篇章的结束，也是新篇章的开始。', '钙、钾等元素属于金属，银和金等元素，当然也是金属。', '桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。', '适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。', '科学家们可以得。']}
+save enabled with transcript OK {}
+window closes cleanly OK {'exit_code': 0}
+gui-test PASS
+gui EXIT=0
+== capture 3min (default endpoint) ==
+      "clips_without_caption": 0
+    },
+    "english": {
+      "clips": 6,
+      "human_error_rate": 0.04065040650406504,
+      "oracle_error_rate": 0.0,
+      "clips_without_caption": 0
+    },
+    "mixed": {
+      "clips": 6,
+      "human_error_rate": 0.34146341463414637,
+      "oracle_error_rate": 0.05263157894736842,
+      "clips_without_caption": 0
+    }
+  },
+  "success": true,
+  "stop_reason": "Duration elapsed",
+  "provisional_lag_p95": 1.9570657,
+  "first_caption_p95": 3.1345437,
+  "finalization_p95": 2.7700967,
+  "max_backlog": 3.810086
+}
+capture3 EXIT=0
+== capture 60min (Steam Streaming Speakers) ==
+      "clips_without_caption": 0
+    },
+    "english": {
+      "clips": 126,
+      "human_error_rate": 19.86178861788618,
+      "oracle_error_rate": 20.0,
+      "clips_without_caption": 0
+    },
+    "mixed": {
+      "clips": 126,
+      "human_error_rate": 19.26829268292683,
+      "oracle_error_rate": 20.57894736842105,
+      "clips_without_caption": 0
+    }
+  },
+  "success": true,
+  "stop_reason": "Duration elapsed",
+  "provisional_lag_p95": 2.0111702,
+  "first_caption_p95": 3.1241506,
+  "finalization_p95": 3.4551568,
+  "max_backlog": 3.8602066
+}
+capture60 EXIT=0
+== manifest + publisher hashes ==
+Model manifest frozen: 4075536036 bytes
+Traceback (most recent call last):
+  File "D:\asr_win\scripts\check_publisher_hashes.py", line 13, in <module>
+    if not passed: raise RuntimeError('Publisher hash mismatch: '+str(file))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Publisher hash mismatch: D:\asr_win\models\qwen3-asr-0.6b-fp32\README.md
+== package ==
+Wrote docs/PROOF.md, docs/BENCHMARK.md and docs/COMPATIBILITY.md
+{
+  "package": "AsrWin-0.1.0-tc1-win-x64",
+  "files": 253,
+  "extracted_bytes": 4124683503,
+  "folder": "dist\\AsrWin-0.1.0-tc1-win-x64",
+  "archive": "dist\\AsrWin-0.1.0-tc1-win-x64.zip",
+  "compressed_bytes": 1967536260,
+  "archive_sha256": "74933850776d1435acb3bf4af82e2ed972972e9f69ce941a0bae30ac7ce1f37c",
+  "archive_seconds": 57.261356399998476,
+  "compression": "zip deflate level 6"
+}
+package EXIT=0
+== check-package ==
+Package OK: 252 files verified against package-manifest.json
+check EXIT=0
+== proof report ==
+Wrote docs/PROOF.md, docs/BENCHMARK.md and docs/COMPATIBILITY.md
+CHAIN_H_DONE

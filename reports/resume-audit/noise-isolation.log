@@ -1,0 +1,166 @@
+The tokenizer you are loading from 'D:\asr_win\reference-model-0.6b' with an incorrect regex pattern: https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503/discussions/84#69121093e8b480e709447d5e. This will lead to incorrect tokenization. You should set the `fix_mistral_regex=True` flag when loading this tokenizer to fix this issue.
+`torch_dtype` is deprecated! Use `dtype` instead!
+The following generation flags are not valid and may be ignored: ['temperature']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+{
+  "fixture": "low-noise",
+  "model": "Qwen/Qwen3-ASR-0.6B",
+  "threads": 4,
+  "comparisons": [
+    {
+      "mode": "official",
+      "tokens": [
+        11528,
+        2240,
+        151704,
+        151645
+      ],
+      "stages": {
+        "encoder": {
+          "original_reference": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "native": {
+            "max_abs": 0.0001894347369670868,
+            "rmse": 8.521926588545302e-06
+          }
+        },
+        "logits_0": {
+          "original_reference": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "native": {
+            "max_abs": 0.0004391670227050781,
+            "rmse": 8.573800463278909e-05
+          }
+        },
+        "keys_0": {
+          "original_reference": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "native": {
+            "max_abs": 0.181243896484375,
+            "rmse": 0.001050989242658145
+          }
+        },
+        "values_0": {
+          "original_reference": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "native": {
+            "max_abs": 0.20424175262451172,
+            "rmse": 0.002116363608085282
+          }
+        }
+      }
+    },
+    {
+      "mode": "native_mel",
+      "tokens": [
+        11528,
+        2240,
+        151704,
+        151645
+      ],
+      "stages": {
+        "encoder": {
+          "original_reference": {
+            "max_abs": 2.446398138999939e-05,
+            "rmse": 1.0972044821361174e-06
+          },
+          "native": {
+            "max_abs": 0.0001649707555770874,
+            "rmse": 7.42600244146358e-06
+          }
+        },
+        "logits_0": {
+          "original_reference": {
+            "max_abs": 0.00010371208190917969,
+            "rmse": 2.9409095296522293e-05
+          },
+          "native": {
+            "max_abs": 0.000371396541595459,
+            "rmse": 7.321451342267205e-05
+          }
+        },
+        "keys_0": {
+          "original_reference": {
+            "max_abs": 0.023284912109375,
+            "rmse": 0.0001353456613631292
+          },
+          "native": {
+            "max_abs": 0.157958984375,
+            "rmse": 0.0009162791342807679
+          }
+        },
+        "values_0": {
+          "original_reference": {
+            "max_abs": 0.026227951049804688,
+            "rmse": 0.0002723566431443306
+          },
+          "native": {
+            "max_abs": 0.17801380157470703,
+            "rmse": 0.0018446065656433476
+          }
+        }
+      }
+    },
+    {
+      "mode": "native_encoder",
+      "tokens": [
+        11528,
+        2240,
+        151704,
+        151645
+      ],
+      "stages": {
+        "encoder": {
+          "original_reference": {
+            "max_abs": 0.0001894347369670868,
+            "rmse": 8.521926588545302e-06
+          },
+          "native": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          }
+        },
+        "logits_0": {
+          "original_reference": {
+            "max_abs": 0.00039505958557128906,
+            "rmse": 7.892043374913199e-05
+          },
+          "native": {
+            "max_abs": 0.00010347366333007812,
+            "rmse": 2.3344795947955253e-05
+          }
+        },
+        "keys_0": {
+          "original_reference": {
+            "max_abs": 0.181060791015625,
+            "rmse": 0.001050974492951683
+          },
+          "native": {
+            "max_abs": 0.0011577606201171875,
+            "rmse": 9.451159039611623e-06
+          }
+        },
+        "values_0": {
+          "original_reference": {
+            "max_abs": 0.20429134368896484,
+            "rmse": 0.0021165556519668603
+          },
+          "native": {
+            "max_abs": 0.0004086494445800781,
+            "rmse": 2.352689169070319e-05
+          }
+        }
+      }
+    }
+  ]
+}

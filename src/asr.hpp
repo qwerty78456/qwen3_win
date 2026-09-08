@@ -7,11 +7,13 @@
 #include <tokenizers_cpp.h>
 namespace asrwin {
 struct EngineOptions {
-  int threads=4;  // chosen by scripts/benchmark_threads.py for the shipped configuration
+  int threads=ASRWIN_THREADS;  // selected for the configured model
   int max_tokens=512;
   bool directml=false;
   int adapter=0;
   bool verify_assets=true;
+  bool verify_distribution=false;
+  fs::path profile;
   std::string memory_mode="shared-prepack";  // default | no-prepack | shared-prepack (decoder sessions share pre-packed weights)
   std::string variant="fp32";                // fp32 | int4 (decoder graphs; the encoder is FP32 in both)
   double slow_inference=0;                   // development fault injection: extra seconds per generation
@@ -29,6 +31,7 @@ class Engine {
   Transcript transcribe(std::span<const float> audio, const fs::path& trace={},
                         const std::atomic<bool>* cancel=nullptr, int max_tokens=0);
   Json inspect() const;
+  Json finish_profiling();
   const EngineOptions& options() const { return options_; }
  private:
   fs::path model_;

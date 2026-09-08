@@ -1,0 +1,66 @@
+{
+  "exit_code": 0,
+  "timed_out": false,
+  "wall_seconds": 36.60058250000293,
+  "adapter": {
+    "dedicated_video_memory_bytes": 16974905344,
+    "device_id": 30096,
+    "directml_index": 0,
+    "name": "AMD Radeon RX 9060 XT",
+    "software": false,
+    "vendor_id": 4098
+  },
+  "cpu_regression_pass": true,
+  "enabled_for_live": false,
+  "profile_placement": {
+    "decoder_init_2026-09-07_23-48-38.json": {
+      "providers": {
+        "DmlExecutionProvider": {
+          "calls": 1533,
+          "total_us": 414565,
+          "unique_nodes": 1533
+        },
+        "CPUExecutionProvider": {
+          "calls": 15,
+          "total_us": 2278,
+          "unique_nodes": 15
+        }
+      },
+      "copy_events": 19,
+      "copy_duration_us": 4588
+    },
+    "decoder_step_2026-09-07_23-48-42.json": {
+      "providers": {
+        "DmlExecutionProvider": {
+          "calls": 64411,
+          "total_us": 1685146,
+          "unique_nodes": 1571
+        },
+        "CPUExecutionProvider": {
+          "calls": 492,
+          "total_us": 5895,
+          "unique_nodes": 12
+        }
+      },
+      "copy_events": 451,
+      "copy_duration_us": 92706
+    },
+    "encoder_2026-09-07_23-48-38.json": {
+      "providers": {
+        "DmlExecutionProvider": {
+          "calls": 637,
+          "total_us": 660606,
+          "unique_nodes": 637
+        },
+        "CPUExecutionProvider": {
+          "calls": 28,
+          "total_us": 316,
+          "unique_nodes": 28
+        }
+      },
+      "copy_events": 1,
+      "copy_duration_us": 414
+    }
+  },
+  "success": true
+}

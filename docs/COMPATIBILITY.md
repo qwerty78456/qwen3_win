@@ -4,7 +4,7 @@ Only configurations listed as tested were actually exercised. Everything else is
 
 | Windows build / edition | Architecture | CPU | RAM | GPU / driver | Provider | Tested how | Result |
 |---|---|---|---|---|---|---|---|
-| Microsoft Windows 11 IoT Enterprise LTSC 10.0.26100 (build 26100) — development host, not a clean install | x64 | AMD Ryzen 7 9800X3D 8-Core Processor | 31 GiB | AMD Radeon(TM) Graphics 32.0.21045.5002; AMD Radeon RX 9060 XT 32.0.31041.1004 (present, unused) | CPU | transcription proof (`--verify`, 24 fixtures), boundary/session cases, 4 simulated live runs, 2 WASAPI loopback captures, interface test | proof passed; live measurements in docs/BENCHMARK.md |
+| Microsoft Windows 11 IoT Enterprise LTSC 10.0.26100 (build 26100) — development host, not a clean install | x64 | AMD Ryzen 7 9800X3D 8-Core Processor | 31 GiB | AMD Radeon(TM) Graphics 32.0.21045.5002; AMD Radeon RX 9060 XT 32.0.31041.1004 (present, unused) | CPU | transcription proof (`--verify`, 24 fixtures), boundary/session cases, 4 simulated live runs, 3 WASAPI loopback captures, interface test | proof incomplete; live measurements in docs/BENCHMARK.md |
 | Windows 10 22H2 x64 | x64 | any | ≥16 GB | any | CPU | **not tested** | untested |
 | Windows 11 24H2 x64 (clean install, standard user, offline) | x64 | any | ≥16 GB | any | CPU | **not tested** — pending external clean-machine run | untested |
 | Windows N editions without Media Feature Pack | x64 | any | any | any | CPU | excluded (Windows Audio Resampler requires Media Foundation) | unsupported |

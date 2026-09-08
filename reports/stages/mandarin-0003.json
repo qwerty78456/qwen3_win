@@ -218,6 +218,8 @@
   },
   "prompt_exact": true,
   "tokens_exact": true,
+  "completion_match": true,
   "token_differences": [],
-  "cache_shapes_exact": true
+  "cache_shapes_exact": true,
+  "end_to_end_success": true
 }

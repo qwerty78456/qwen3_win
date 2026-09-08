@@ -4,6 +4,7 @@
 #include <thread>
 namespace asrwin {
 Engine::Engine(const fs::path& model, EngineOptions options):model_(model),options_(std::move(options)) {
+  if (options_.verify_distribution) { report("Verifying portable package"); verify_package(executable_dir()); }
   if (options_.variant!="fp32" && options_.variant!="int4") throw std::runtime_error("Unknown model variant");
   if (options_.verify_assets) { report("Verifying model assets"); verify_files(model,options_.variant); }
   const std::string suffix=options_.variant=="int4"?".int4.onnx":".onnx";
@@ -34,6 +35,7 @@ Engine::Engine(const fs::path& model, EngineOptions options):model_(model),optio
   so.SetExecutionMode(ExecutionMode::ORT_SEQUENTIAL);
   so.SetGraphOptimizationLevel(GraphOptimizationLevel::ORT_ENABLE_BASIC);
   so.AddConfigEntry("session.intra_op.allow_spinning","0");
+  if (!options_.profile.empty()) { fs::create_directories(options_.profile); so.EnableProfiling((options_.profile/"encoder").c_str()); }
   if (options_.directml) { so.DisableMemPattern(); Ort::ThrowOnError(OrtSessionOptionsAppendExecutionProvider_DML(so,options_.adapter)); }
   if (options_.memory_mode!="default" && options_.memory_mode!="no-prepack" && options_.memory_mode!="shared-prepack") throw std::runtime_error("Unknown memory mode");
   report("Loading encoder"); encoder_=std::make_unique<Ort::Session>(env_,(model/"encoder.onnx").c_str(),so);
@@ -41,7 +43,10 @@ Engine::Engine(const fs::path& model, EngineOptions options):model_(model),optio
   // keeps a single packed copy for MatMul kernels instead of one per session.
   if (options_.memory_mode=="no-prepack") so.AddConfigEntry("session.disable_prepacking","1");
   if (options_.memory_mode=="shared-prepack") prepacked_=std::make_unique<Ort::PrepackedWeightsContainer>();
-  auto decoder_session=[&](const fs::path& path){ return prepacked_?std::make_unique<Ort::Session>(env_,path.c_str(),so,*prepacked_):std::make_unique<Ort::Session>(env_,path.c_str(),so); };
+  auto decoder_session=[&](const fs::path& path){
+    if (!options_.profile.empty()) so.EnableProfiling((options_.profile/path.stem()).c_str());
+    return prepacked_?std::make_unique<Ort::Session>(env_,path.c_str(),so,*prepacked_):std::make_unique<Ort::Session>(env_,path.c_str(),so);
+  };
   report("Loading decoder prefill"); init_=decoder_session(model/("decoder_init"+suffix));
   { Ort::AllocatorWithDefaultOptions allocator; auto name=init_->GetInputNameAllocated(0,allocator);
     prefill_ids_=std::string(name.get())=="input_ids";
@@ -58,13 +63,27 @@ std::vector<float> Engine::embedding(int token) const {
 }
 Json Engine::inspect() const {
   Json j={{"runtime",Ort::GetVersionString()},{"provider",options_.directml?"DirectML (experimental)":"CPU"},{"threads",options_.threads},{"memory_mode",options_.memory_mode},{"assets_verified",options_.verify_assets},{"variant",options_.variant},
+          {"model_directory",utf8(model_.filename().wstring())},{"model_hidden_size",hidden_},{"adapter_index",options_.directml?Json(options_.adapter):Json()},
           {"prefix_ids",prefix_},{"suffix_ids",suffix_},{"eos_ids",eos_},{"embedding_dtype",half_?"float16":"float32"},{"prefill_format",prefill_ids_?"input_ids":"input_embeds"}};
+  if (fs::exists(model_/"manifest.json")) {
+    auto manifest=Json::parse(read_text(model_/"manifest.json"));j["model_manifest_sha256"]=sha256_file(model_/"manifest.json");
+    j["reference_model"]=manifest.at("reference_model");j["configuration"]=manifest.at("configuration");
+  }
   Ort::AllocatorWithDefaultOptions allocator;
   for (auto [name,s]:std::vector<std::pair<std::string,Ort::Session*>>{{"encoder",encoder_.get()},{"prefill",init_.get()},{"step",step_.get()}}) {
     j[name]=Json::array();
-    for (size_t i=0;i<s->GetInputCount();++i) { auto n=s->GetInputNameAllocated(i,allocator); auto ti=s->GetInputTypeInfo(i).GetTensorTypeAndShapeInfo(); j[name].push_back({{"name",n.get()},{"shape",ti.GetShape()},{"dtype",int(ti.GetElementType())}}); }
+    for (size_t i=0;i<s->GetInputCount();++i) { auto n=s->GetInputNameAllocated(i,allocator); auto type=s->GetInputTypeInfo(i); auto ti=type.GetTensorTypeAndShapeInfo(); j[name].push_back({{"name",n.get()},{"shape",ti.GetShape()},{"dtype",int(ti.GetElementType())}}); }
   }
   return j;
+}
+Json Engine::finish_profiling() {
+  Json result=Json::array();
+  if (options_.profile.empty()) return result;
+  Ort::AllocatorWithDefaultOptions allocator;
+  for (auto* session:{encoder_.get(),init_.get(),step_.get()}) {
+    auto path=session->EndProfilingAllocated(allocator);result.push_back(path.get());
+  }
+  options_.profile.clear();return result;
 }
 Transcript Engine::transcribe(std::span<const float> audio, const fs::path& trace, const std::atomic<bool>* cancel, int max_tokens) {
   if (max_tokens<=0) max_tokens=options_.max_tokens;
@@ -147,7 +166,7 @@ Transcript Engine::transcribe(std::span<const float> audio, const fs::path& trac
   r.raw=tokenizer_->Decode(r.tokens);
   auto start=r.raw.find("<asr_text>");
   if (start!=std::string::npos) r.text=r.raw.substr(start+10);
-  else if (r.completion=="cancelled" || r.raw.find("<|im_end|>")==0 || r.raw.find("<|endoftext|>")==0) r.text="";
+  else if (r.completion=="cancelled" || r.completion=="token_limit" || r.raw.find("<|im_end|>")==0 || r.raw.find("<|endoftext|>")==0) r.text="";
   else throw std::runtime_error("ASR output missing <asr_text> delimiter");
   for (auto marker:{"<|im_end|>","<|endoftext|>"}) if (auto p=r.text.find(marker); p!=std::string::npos) r.text.erase(p);
   r.detail["decode_seconds"]=decode_time; r.detail["total_seconds"]=seconds(total);

@@ -1,0 +1,26 @@
+{
+  "cases": [
+    {
+      "name": "ring wrap, timestamps, reserved capacity and rejected packet preserves accepted audio",
+      "success": true
+    },
+    {
+      "name": "raw PCM packet conversion is deferred; silent packet can have no data",
+      "success": true
+    },
+    {
+      "name": "Unicode roundtrip and mixed normalization",
+      "success": true
+    },
+    {
+      "name": "stop, drain and restart the same pipeline without stale or duplicate finals",
+      "success": true
+    },
+    {
+      "name": "forced 15 s splits preserve adjacent finalized audio",
+      "success": true
+    }
+  ],
+  "scope": "Native queue, lifecycle and Unicode tests; synthetic decoder, no model correctness claim",
+  "success": true
+}

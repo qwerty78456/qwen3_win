@@ -1,0 +1,273 @@
+[
+  {
+    "graph": "decoder_init.onnx",
+    "opsets": [
+      {
+        "domain": "",
+        "version": 18
+      },
+      {
+        "domain": "ai.onnx.ml",
+        "version": 5
+      },
+      {
+        "domain": "ai.onnx.training",
+        "version": 1
+      },
+      {
+        "domain": "ai.onnx.preview.training",
+        "version": 1
+      },
+      {
+        "domain": "com.microsoft",
+        "version": 1
+      },
+      {
+        "domain": "com.microsoft.experimental",
+        "version": 1
+      },
+      {
+        "domain": "com.microsoft.nchwc",
+        "version": 1
+      },
+      {
+        "domain": "org.pytorch.aten",
+        "version": 1
+      }
+    ],
+    "inputs": [
+      {
+        "name": "input_ids",
+        "type": "INT64",
+        "shape": [
+          "batch",
+          "seq_len"
+        ]
+      },
+      {
+        "name": "position_ids",
+        "type": "INT64",
+        "shape": [
+          "batch",
+          "seq_len"
+        ]
+      },
+      {
+        "name": "audio_features",
+        "type": "FLOAT",
+        "shape": [
+          "batch",
+          "audio_len",
+          2048
+        ]
+      },
+      {
+        "name": "audio_offset",
+        "type": "INT64",
+        "shape": [
+          1
+        ]
+      }
+    ],
+    "outputs": [
+      {
+        "name": "logits",
+        "type": "FLOAT",
+        "shape": [
+          "batch",
+          "seq_len",
+          151936
+        ]
+      },
+      {
+        "name": "present_keys",
+        "type": "FLOAT",
+        "shape": [
+          28,
+          "batch",
+          8,
+          "seq_len",
+          128
+        ]
+      },
+      {
+        "name": "present_values",
+        "type": "FLOAT",
+        "shape": [
+          28,
+          "batch",
+          8,
+          "seq_len",
+          128
+        ]
+      }
+    ],
+    "operators": {
+      "Shape": 9,
+      "Concat": 66,
+      "Gather": 9,
+      "Squeeze": 1,
+      "Range": 3,
+      "Add": 141,
+      "Unsqueeze": 123,
+      "Expand": 62,
+      "ScatterElements": 3,
+      "Cast": 1,
+      "MatMul": 254,
+      "Transpose": 147,
+      "Slice": 116,
+      "ScatterND": 2,
+      "Sin": 1,
+      "Cos": 1,
+      "Trilu": 1,
+      "SimplifiedLayerNormalization": 113,
+      "Reshape": 168,
+      "Neg": 56,
+      "Mul": 196,
+      "Softmax": 28,
+      "Sigmoid": 28
+    },
+    "weight_types": {
+      "FLOAT": 314,
+      "INT64": 17
+    }
+  },
+  {
+    "graph": "decoder_step.onnx",
+    "opsets": [
+      {
+        "domain": "",
+        "version": 18
+      },
+      {
+        "domain": "ai.onnx.ml",
+        "version": 5
+      },
+      {
+        "domain": "ai.onnx.training",
+        "version": 1
+      },
+      {
+        "domain": "ai.onnx.preview.training",
+        "version": 1
+      },
+      {
+        "domain": "com.microsoft",
+        "version": 1
+      },
+      {
+        "domain": "com.microsoft.experimental",
+        "version": 1
+      },
+      {
+        "domain": "com.microsoft.nchwc",
+        "version": 1
+      },
+      {
+        "domain": "org.pytorch.aten",
+        "version": 1
+      }
+    ],
+    "inputs": [
+      {
+        "name": "input_embeds",
+        "type": "FLOAT",
+        "shape": [
+          "batch",
+          1,
+          2048
+        ]
+      },
+      {
+        "name": "position_ids",
+        "type": "INT64",
+        "shape": [
+          "batch",
+          1
+        ]
+      },
+      {
+        "name": "past_keys",
+        "type": "FLOAT",
+        "shape": [
+          28,
+          "batch",
+          8,
+          "past_seq_len",
+          128
+        ]
+      },
+      {
+        "name": "past_values",
+        "type": "FLOAT",
+        "shape": [
+          28,
+          "batch",
+          8,
+          "past_seq_len",
+          128
+        ]
+      }
+    ],
+    "outputs": [
+      {
+        "name": "logits",
+        "type": "FLOAT",
+        "shape": [
+          "batch",
+          1,
+          151936
+        ]
+      },
+      {
+        "name": "present_keys",
+        "type": "FLOAT",
+        "shape": [
+          28,
+          "batch",
+          8,
+          "past_seq_len + 1",
+          128
+        ]
+      },
+      {
+        "name": "present_values",
+        "type": "FLOAT",
+        "shape": [
+          28,
+          "batch",
+          8,
+          "past_seq_len + 1",
+          128
+        ]
+      }
+    ],
+    "operators": {
+      "Shape": 3,
+      "Concat": 120,
+      "Squeeze": 1,
+      "Add": 113,
+      "Reshape": 169,
+      "Unsqueeze": 118,
+      "Expand": 58,
+      "Cast": 1,
+      "MatMul": 254,
+      "Transpose": 147,
+      "Gather": 61,
+      "Slice": 114,
+      "ScatterND": 2,
+      "ScatterElements": 2,
+      "Sin": 1,
+      "Cos": 1,
+      "SimplifiedLayerNormalization": 113,
+      "Neg": 56,
+      "Mul": 196,
+      "Softmax": 28,
+      "Sigmoid": 28
+    },
+    "weight_types": {
+      "FLOAT": 312,
+      "INT64": 43
+    }
+  }
+]

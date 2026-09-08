@@ -32,6 +32,7 @@ fs::path executable_dir();
 Json memory_usage();
 std::string sha256_file(const fs::path& path);
 void verify_files(const fs::path& model_dir, const std::string& variant="fp32");
+Json verify_package(const fs::path& directory);
 class MappedFile {
  public:
   explicit MappedFile(const fs::path& path);

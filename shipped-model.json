@@ -8,5 +8,8 @@
   "reference_lock_key": "reference_0_6b",
   "decision": "reports/variant-evaluation.json",
   "previous_proof": "reports/proof-1.7b",
-  "note": "Chosen by scripts/evaluate_variants.py on the held-out set: 1.7B int4 rejected (+2.0 pp Mandarin CER), 0.6B FP32 accepted (-0.5 pp Mandarin, 0.0 pp English/mixed, no new silence failures). The 1.7B FP32 proof artifacts are archived under reports/proof-1.7b."
+  "default_provider": "cpu",
+  "report_root": "reports",
+  "threads": 4,
+  "note": "Chosen by scripts/evaluate_variants.py on the held-out set per the plan's smaller-configuration rule: 1.7B FP32 missed the p95 4 s provisional-lag target on CPU (about 140 ms per token, 15.25 GiB peak), 1.7B int4 was rejected (+2.0 pp Mandarin CER), 0.6B FP32 was accepted (no category worse than the 1.7B baseline, no new silence failures) and meets the target. The 1.7B FP32 proof is archived under reports/proof-1.7b and reports/current-1.7b; the 2026-09-07 late-night resume audit (separate Codex session, DirectML probe on the RX 9060 XT, self-test) is summarized in docs/RESUME-AUDIT.md. Switching back to 1.7B only requires editing this file, re-running model_manifest.py, the proof scripts and package.py."
 }

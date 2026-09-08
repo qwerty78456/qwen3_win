@@ -1,0 +1,36 @@
+== verify (0.6B references restored) ==
+11
+verify EXIT=1
+stage FAIL low-noise
+stages pass 23/24
+== rescore captures ==
+"human_error_rate":0.11160714285714286,"oracle_error_rate":0.0,"clips_without_caption":0"human_error_rate":0.04065040650406504,"oracle_error_rate":0.0,"clips_without_caption":0"human_error_rate":0.34146341463414637,"oracle_error_rate":0.05263157894736842,"clips_without_caption":0
+"human_error_rate":0.11160714285714286,"oracle_error_rate":0.0,"clips_without_caption":0"human_error_rate":0.032520325203252036,"oracle_error_rate":0.00819672131147541,"clips_without_caption":0"human_error_rate":0.34146341463414637,"oracle_error_rate":0.05263157894736842,"clips_without_caption":0
+"oracle_error_rate":0.0008465608465608466,"clips_without_caption":0"oracle_error_rate":0.00195160031225605,"clips_without_caption":0"oracle_error_rate":0.05263157894736842,"clips_without_caption":0
+== report + package tc2 (docs refresh) ==
+Traceback (most recent call last):
+  File "D:\asr_win\scripts\proof_report.py", line 129, in <module>
+    w(f"Model load {fmt(verification.get('model_load_seconds'), 1)} s including asset hashing; provider {verification['engine']['provider']}, {verification['engine']['threads']} intra-op threads, ONNX Runtime {verification['engine']['runtime']}.")
+                                                                                                         ~~~~~~~~~~~~^^^^^^^^^^
+KeyError: 'engine'
+KeyError: 'engine'
+Traceback (most recent call last):
+  File "D:\asr_win\scripts\package.py", line 110, in <module>
+    main()
+    ~~~~^^
+  File "D:\asr_win\scripts\package.py", line 86, in main
+    subprocess.run([str(ROOT / '.venv/Scripts/python.exe'), str(ROOT / 'scripts/proof_report.py')], check=True, cwd=str(ROOT / 'scripts'))
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\subprocess.py", line 578, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['D:\\asr_win\\.venv\\Scripts\\python.exe', 'D:\\asr_win\\scripts\\proof_report.py']' returned non-zero exit status 1.
+package EXIT=1
+Package OK: 254 verified files
+check EXIT=0
+Traceback (most recent call last):
+  File "D:\asr_win\scripts\proof_report.py", line 129, in <module>
+    w(f"Model load {fmt(verification.get('model_load_seconds'), 1)} s including asset hashing; provider {verification['engine']['provider']}, {verification['engine']['threads']} intra-op threads, ONNX Runtime {verification['engine']['runtime']}.")
+                                                                                                         ~~~~~~~~~~~~^^^^^^^^^^
+KeyError: 'engine'
+CHAIN_J_DONE

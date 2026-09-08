@@ -1,0 +1,84 @@
+{
+  "acquired_files_pass": true,
+  "files": [
+    {
+      "path": "models/qwen3-asr-1.7b-fp32/decoder_init.int4.onnx",
+      "success": true,
+      "local_sha256": "c638585ada629b3cf65ce9cb068b7b980fccc9454a7f05e2333b8813730c1999",
+      "verification": "publisher LFS SHA-256 and size",
+      "publisher_sha256_verified": true
+    },
+    {
+      "path": "models/qwen3-asr-1.7b-fp32/decoder_init.onnx",
+      "success": true,
+      "local_sha256": "209662efa6ddc74d2bef5dd1ce922409a3896f6fceddb15ab721393059818e39",
+      "verification": "publisher LFS SHA-256 and size",
+      "publisher_sha256_verified": true
+    },
+    {
+      "path": "models/qwen3-asr-1.7b-fp32/decoder_step.int4.onnx",
+      "success": true,
+      "local_sha256": "fa138c025c26f6559e12be51cfbba5204a0b6993a1f3bb1177f80a0a65873bb5",
+      "verification": "publisher LFS SHA-256 and size",
+      "publisher_sha256_verified": true
+    },
+    {
+      "path": "models/qwen3-asr-1.7b-fp32/decoder_step.onnx",
+      "success": true,
+      "local_sha256": "45e90e376cb937d9c772d1c8d2b8330e34a94555b29730389e0fa8ff0ad2e1c0",
+      "verification": "publisher LFS SHA-256 and size",
+      "publisher_sha256_verified": true
+    },
+    {
+      "path": "models/qwen3-asr-1.7b-fp32/decoder_weights.data",
+      "success": true,
+      "local_sha256": "a46ff8cf2ef299a3737f7ebd78f39a8fb2ca273f2807f33f9b2a337ef0ebb4bb",
+      "verification": "publisher LFS SHA-256 and size",
+      "publisher_sha256_verified": true
+    },
+    {
+      "path": "models/qwen3-asr-1.7b-fp32/decoder_weights.int4.data",
+      "success": true,
+      "local_sha256": "3f8d8fb695bcffc20ce8d8e823471e011404420785adf7678aac31057ef67333",
+      "verification": "publisher LFS SHA-256 and size",
+      "publisher_sha256_verified": true
+    },
+    {
+      "path": "models/qwen3-asr-1.7b-fp32/embed_tokens.bin",
+      "success": true,
+      "local_sha256": "1489075dbd08fcd6b87bc69c5feca278014d29fa5693bd4aa61e47c1a3a160d4",
+      "verification": "publisher LFS SHA-256 and size",
+      "publisher_sha256_verified": true
+    },
+    {
+      "path": "models/qwen3-asr-1.7b-fp32/encoder.onnx",
+      "success": true,
+      "local_sha256": "c19ff8d702707693877a509ba1867472b0ad964593b93751091891a143edffec",
+      "verification": "publisher LFS SHA-256 and size",
+      "publisher_sha256_verified": true
+    },
+    {
+      "path": "models/qwen3-asr-1.7b-fp32/tokenizer.json",
+      "success": true,
+      "local_sha256": "bd2a97b55c8f7f9c328c73ee9b9178771037e9f566dfca8e238a063d41cbac92",
+      "verification": "publisher LFS SHA-256 and size",
+      "publisher_sha256_verified": true
+    },
+    {
+      "path": "reference-model/model-00001-of-00002.safetensors",
+      "success": true,
+      "local_sha256": "a4cd1f1a04d90b757dc7f7dd26254e69a013b19e80efe590a83c6a3bde8608d6",
+      "verification": "publisher LFS SHA-256 and size",
+      "publisher_sha256_verified": true
+    },
+    {
+      "path": "reference-model/model-00002-of-00002.safetensors",
+      "success": true,
+      "local_sha256": "6e0b9d9e09e2e0238e7ef3cc8a484ab387e91b90f1900bedf88bc92d7929ccfc",
+      "verification": "publisher LFS SHA-256 and size",
+      "publisher_sha256_verified": true
+    }
+  ],
+  "complete_baseline_acquired": true,
+  "shipped_model_acquired": true
+}

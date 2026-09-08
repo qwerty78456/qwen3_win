@@ -1,0 +1,39 @@
+{
+  "measured_at": "2026-09-07T18:40:28.2714359+07:00",
+  "os": {
+    "Caption": "Microsoft Windows 11 IoT Enterprise LTSC",
+    "Version": "10.0.26100",
+    "BuildNumber": "26100",
+    "OSArchitecture": "64-bit",
+    "TotalVisibleMemorySize": 32625576
+  },
+  "cpu": {
+    "Name": "AMD Ryzen 7 9800X3D 8-Core Processor           ",
+    "NumberOfCores": 8,
+    "NumberOfLogicalProcessors": 16
+  },
+  "graphics": [
+    {
+      "Name": "Parsec Virtual Display Adapter",
+      "DriverVersion": "0.45.0.0",
+      "DriverDate": "2024-01-25T07:00:00+07:00"
+    },
+    {
+      "Name": "AMD Radeon(TM) Graphics",
+      "DriverVersion": "32.0.21045.5002",
+      "DriverDate": "2026-08-17T07:00:00+07:00"
+    },
+    {
+      "Name": "Microsoft Remote Display Adapter",
+      "DriverVersion": "10.0.26100.3624",
+      "DriverDate": "2006-06-21T07:00:00+07:00"
+    },
+    {
+      "Name": "AMD Radeon RX 9060 XT",
+      "DriverVersion": "32.0.31041.1004",
+      "DriverDate": "2026-08-17T07:00:00+07:00"
+    }
+  ],
+  "clean_install_test": "not performed",
+  "sustained_live_test": "not performed"
+}

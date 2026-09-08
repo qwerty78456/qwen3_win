@@ -1,6 +1,8 @@
 {
   "engine": {
-    "assets_verified": false,
+    "adapter_index": null,
+    "assets_verified": true,
+    "configuration": "Qwen3-ASR-0.6B FP32 graphs with FP16 embedding storage",
     "embedding_dtype": "float16",
     "encoder": [
       {
@@ -18,6 +20,9 @@
       151645
     ],
     "memory_mode": "shared-prepack",
+    "model_directory": "qwen3-asr-0.6b-fp32",
+    "model_hidden_size": 1024,
+    "model_manifest_sha256": "de01cc5a9e9b468d9c0d55312da457974ccb75931078566352f5e7750f835ff8",
     "prefill": [
       {
         "dtype": 7,
@@ -65,6 +70,10 @@
       151669
     ],
     "provider": "CPU",
+    "reference_model": {
+      "repo": "Qwen/Qwen3-ASR-0.6B",
+      "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0"
+    },
     "runtime": "1.24.4",
     "step": [
       {
@@ -120,6 +129,7 @@
   },
   "live": {
     "clean_stop": true,
+    "duplicate_finals": 0,
     "errors": 0,
     "events": [
       {
@@ -135,7 +145,7 @@
         "revision": 0,
         "since_start_seconds": 0.0,
         "status": "Listening",
-        "t": 0.00268,
+        "t": 0.0024109,
         "text": "",
         "utterance": 0
       },
@@ -146,13 +156,13 @@
         "boundary": "",
         "completion": "eos",
         "incomplete": false,
-        "inference_seconds": 0.7228087,
+        "inference_seconds": 0.7108804,
         "kind": "provisional",
-        "lag_seconds": 0.7228293,
+        "lag_seconds": 0.7048288,
         "revision": 1,
-        "since_start_seconds": 2.7258616,
+        "since_start_seconds": 2.7048288,
         "status": "",
-        "t": 5.302394,
+        "t": 5.2873195,
         "text": "桥下垂直净空十五米。",
         "utterance": 1
       },
@@ -163,13 +173,13 @@
         "boundary": "",
         "completion": "eos",
         "incomplete": false,
-        "inference_seconds": 1.1389998,
+        "inference_seconds": 1.127808,
         "kind": "provisional",
-        "lag_seconds": 1.1390343,
+        "lag_seconds": 1.123945,
         "revision": 2,
-        "since_start_seconds": 5.1475714,
+        "since_start_seconds": 5.123945,
         "status": "",
-        "t": 7.7241042,
+        "t": 7.706436,
         "text": "桥下垂直净空十五米，该项目于二零一一年。",
         "utterance": 1
       },
@@ -180,64 +190,30 @@
         "boundary": "",
         "completion": "eos",
         "incomplete": false,
-        "inference_seconds": 1.4760148,
+        "inference_seconds": 1.4329546,
         "kind": "provisional",
-        "lag_seconds": 1.4760383,
+        "lag_seconds": 1.4328974,
         "revision": 3,
-        "since_start_seconds": 7.4789714,
+        "since_start_seconds": 7.4328974,
         "status": "",
-        "t": 10.0555047,
+        "t": 10.0153884,
         "text": "桥下垂直净空十五米，该项目于二零一一年八月完工。但",
         "utterance": 1
       },
       {
-        "audio_end": 0.0,
-        "audio_start": 0.0,
-        "backlog_seconds": 0.0,
-        "boundary": "",
-        "completion": "",
-        "incomplete": false,
-        "inference_seconds": 0.0,
-        "kind": "status",
-        "lag_seconds": 0.0,
-        "revision": 0,
-        "since_start_seconds": 0.0,
-        "status": "Catching up: finalized-work backlog 10 s",
-        "t": 12.1455032,
-        "text": "",
-        "utterance": 0
-      },
-      {
-        "audio_end": 0.0,
-        "audio_start": 0.0,
-        "backlog_seconds": 0.0,
-        "boundary": "",
-        "completion": "",
-        "incomplete": false,
-        "inference_seconds": 0.0,
-        "kind": "status",
-        "lag_seconds": 0.0,
-        "revision": 0,
-        "since_start_seconds": 0.0,
-        "status": "Listening",
-        "t": 14.4383566,
-        "text": "",
-        "utterance": 0
-      },
-      {
         "audio_end": 12.14,
         "audio_start": 2.58,
-        "backlog_seconds": 1.56,
+        "backlog_seconds": 0.6997506,
         "boundary": "silence",
         "completion": "eos",
         "incomplete": false,
-        "inference_seconds": 2.2811155,
+        "inference_seconds": 2.2273821,
         "kind": "final",
-        "lag_seconds": 2.292733,
+        "lag_seconds": 2.2597491,
         "revision": 0,
-        "since_start_seconds": 11.8618238,
+        "since_start_seconds": 11.8197491,
         "status": "",
-        "t": 14.4383878,
+        "t": 14.4022417,
         "text": "桥下垂直净空十五米，该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。",
         "utterance": 1
       },
@@ -248,13 +224,13 @@
         "boundary": "silence",
         "completion": "eos",
         "incomplete": false,
-        "inference_seconds": 0.2996489,
+        "inference_seconds": 0.2849425,
         "kind": "final",
-        "lag_seconds": 1.037927,
+        "lag_seconds": 0.9847981,
         "revision": 0,
-        "since_start_seconds": 2.5924993,
+        "since_start_seconds": 2.5447981,
         "status": "",
-        "t": 14.7381248,
+        "t": 14.6872899,
         "text": "",
         "utterance": 3
       },
@@ -271,7 +247,7 @@
         "revision": 0,
         "since_start_seconds": 0.0,
         "status": "Input exhausted",
-        "t": 14.8685175,
+        "t": 14.862505,
         "text": "",
         "utterance": 0
       }
@@ -279,20 +255,22 @@
     "final_count": 2,
     "finalization_delay_seconds": {
       "count": 2,
-      "max": 2.292733,
-      "p50": 1.037927,
-      "p95": 2.292733
+      "max": 2.2597491,
+      "p50": 0.9847981,
+      "p95": 2.2597491
     },
     "first_caption_lag_seconds": {
       "count": 1,
-      "max": 2.7258616,
-      "p50": 2.7258616,
-      "p95": 2.7258616
+      "max": 2.7048288,
+      "p50": 2.7048288,
+      "p95": 2.7048288
     },
     "incomplete_finals": 0,
     "no_audio_loss": true,
+    "overload_stop": false,
     "pipeline": {
       "audio_seconds_processed": 14.86,
+      "backlog_definition": "age of the oldest unfinished utterance since its audio ended (queued or decoding)",
       "capture": {
         "channels": 1,
         "frames": 237760,
@@ -309,18 +287,20 @@
       },
       "error": "",
       "finals": 2,
-      "max_backlog_seconds": 11.120000000000001,
+      "lag_clock": "producer sample timestamps (WASAPI QPC for device capture)",
+      "max_backlog_seconds": 2.2539091,
+      "max_queued_audio_seconds": 9.56,
       "memory": {
-        "peak_pagefile_bytes": 6458818560,
-        "peak_working_set_bytes": 6226120704,
-        "private_bytes": 6455349248,
-        "working_set_bytes": 6222970880
+        "peak_pagefile_bytes": 6459277312,
+        "peak_working_set_bytes": 6226989056,
+        "private_bytes": 6453747712,
+        "working_set_bytes": 6220705792
       },
-      "process_cpu_seconds": 30.140625,
+      "process_cpu_seconds": 25.859375,
       "provisionals": 3,
       "provisionals_cancelled": 1,
       "provisionals_skipped": 0,
-      "retained_peak_seconds": 11.120000000000001,
+      "retained_peak_seconds": 17.560000000000002,
       "segmenter": {
         "energy_gated_positive_frames": 428,
         "longest_start_run_frames": 5,
@@ -329,16 +309,17 @@
       },
       "session": 1,
       "stop_reason": "",
-      "suspensions": 1,
-      "wall_seconds": 14.8659288
+      "suspensions": 0,
+      "wall_seconds": 14.8601389
     },
     "provisional_lag_seconds": {
       "count": 3,
-      "max": 1.4760383,
-      "p50": 1.1390343,
-      "p95": 1.4760383
+      "max": 1.4328974,
+      "p50": 1.123945,
+      "p95": 1.4328974
     },
     "speech_utterances": 1,
+    "stale_provisionals_delivered": 0,
     "success": true,
     "transcript": "桥下垂直净空十五米，该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。\n",
     "utterances": [
@@ -347,17 +328,17 @@
         "audio_start": 2.58,
         "boundary": "silence",
         "completion": "eos",
-        "final_inference_seconds": 2.2811155,
+        "final_inference_seconds": 2.2273821,
         "final_text": "桥下垂直净空十五米，该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。",
-        "finalization_delay": 2.292733,
-        "first_caption_lag": 2.7258616,
+        "finalization_delay": 2.2597491,
+        "first_caption_lag": 2.7048288,
         "id": 1,
         "incomplete": false,
         "provisional_count": 3,
         "provisional_lags": [
-          0.7228293,
-          1.1390343,
-          1.4760383
+          0.7048288,
+          1.123945,
+          1.4328974
         ]
       },
       {
@@ -365,9 +346,9 @@
         "audio_start": 12.14,
         "boundary": "silence",
         "completion": "eos",
-        "final_inference_seconds": 0.2996489,
+        "final_inference_seconds": 0.2849425,
         "final_text": "",
-        "finalization_delay": 1.037927,
+        "finalization_delay": 0.9847981,
         "id": 3,
         "incomplete": false,
         "provisional_count": 0,
@@ -376,13 +357,13 @@
     ]
   },
   "memory_after_load": {
-    "peak_pagefile_bytes": 5603934208,
-    "peak_working_set_bytes": 6225997824,
-    "private_bytes": 5602672640,
-    "working_set_bytes": 5603700736
+    "peak_pagefile_bytes": 5607165952,
+    "peak_working_set_bytes": 6226440192,
+    "private_bytes": 5602942976,
+    "working_set_bytes": 5604143104
   },
   "mode": "simulate-live",
-  "model_load_seconds": 4.1432632,
+  "model_load_seconds": 6.7462351,
   "options": {
     "overload_backlog": 20.0,
     "provisional": true,
@@ -390,7 +371,10 @@
     "provisional_interval": 2.0,
     "resume_backlog": 2.0,
     "retained_limit": 60.0,
-    "suspend_backlog": 4.0
+    "slow_inference": 0.0,
+    "suspend_backlog": 4.0,
+    "threads": 4,
+    "variant": "fp32"
   },
   "source": {
     "audio_seconds": 13.86,

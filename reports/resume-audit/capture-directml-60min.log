@@ -1,0 +1,198 @@
+Verifying model assets...
+Loading encoder...
+[0;93m2026-09-07 23:53:48.6651164 [W:onnxruntime:, session_state.cc:1327 onnxruntime::VerifyEachNodeIsAssignedToAnEp] Some nodes were not assigned to the preferred execution providers which may or may not have an negative impact on performance. e.g. ORT explicitly assigns shape related ops to CPU to improve perf.[m
+[0;93m2026-09-07 23:53:48.6654012 [W:onnxruntime:, session_state.cc:1329 onnxruntime::VerifyEachNodeIsAssignedToAnEp] Rerunning with verbose output on a non-minimal build will show node assignments.[m
+Loading decoder prefill...
+[0;93m2026-09-07 23:53:49.0236686 [W:onnxruntime:, session_state.cc:1327 onnxruntime::VerifyEachNodeIsAssignedToAnEp] Some nodes were not assigned to the preferred execution providers which may or may not have an negative impact on performance. e.g. ORT explicitly assigns shape related ops to CPU to improve perf.[m
+[0;93m2026-09-07 23:53:49.0239244 [W:onnxruntime:, session_state.cc:1329 onnxruntime::VerifyEachNodeIsAssignedToAnEp] Rerunning with verbose output on a non-minimal build will show node assignments.[m
+Loading cached decoder...
+[0;93m2026-09-07 23:53:52.1740321 [W:onnxruntime:, session_state.cc:1327 onnxruntime::VerifyEachNodeIsAssignedToAnEp] Some nodes were not assigned to the preferred execution providers which may or may not have an negative impact on performance. e.g. ORT explicitly assigns shape related ops to CPU to improve perf.[m
+[0;93m2026-09-07 23:53:52.1742932 [W:onnxruntime:, session_state.cc:1329 onnxruntime::VerifyEachNodeIsAssignedToAnEp] Rerunning with verbose output on a non-minimal build will show node assignments.[m
+Model ready...
+[0.04s] status: Listening
+Capturing playback from: Speakers (Steam Streaming Speakers) for 3691.51 s
+[8.83s] final #1 silence [4.88-7.06s] lag 1.72s backlog 0.00s eos: 这并不是告别。
+[9.74s] provisional #3 r2 [7.06-9.06s] lag 0.64s backlog 0.00s eos: 这是一个篇章的结束。
+[13.32s] final #3 silence [7.06-11.20s] lag 2.08s backlog 0.00s eos: 这是一个篇章的结束，也是新篇章的开始。
+[19.36s] provisional #5 r4 [16.50-18.50s] lag 0.81s backlog 0.00s eos: 钙、钾等元素属于金。
+[22.39s] provisional #5 r5 [16.50-20.50s] lag 1.84s backlog 0.00s eos: 钙、钾等元素属于金属，银和金等元素。
+[24.79s] final #5 silence [16.50-22.84s] lag 1.91s backlog 0.00s eos: 钙、钾等元素属于金属，银和金等元素当然也是金属。
+[28.28s] provisional #7 r7 [25.94-27.94s] lag 0.29s backlog 0.00s eos:
+[30.79s] provisional #7 r8 [25.94-29.94s] lag 0.81s backlog 0.00s eos: 桥下垂直净空。
+[41.68s] final #7 silence [25.94-37.96s] lag 3.67s backlog 2.11s eos: 桥下垂直净空十五米。该项目于2011年8月完工，但直到2017年3月才开始通车。
+[42.13s] final #9 silence [37.96-39.52s] lag 2.57s backlog 0.00s eos:
+[44.08s] provisional #11 r13 [41.48-43.48s] lag 0.55s backlog 0.00s eos: 适当使用博客。
+[46.55s] provisional #11 r14 [41.48-45.48s] lag 1.02s backlog 0.00s eos: 适当使用博客，可以使学生变得更善。
+[49.16s] provisional #11 r15 [41.48-47.48s] lag 1.63s backlog 0.00s eos: 适当使用博客，可以使学生变得更善于分析和进行思辨。通过积极回
+[60.53s] status: Catching up: finalized-work backlog 4 s
+[61.53s] status: Listening
+[61.53s] final #11 utterance_limit [41.48-56.48s] lag 5.00s backlog 0.00s eos: 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work 2002。
+[61.86s] provisional #13 r20 [59.52-61.52s] lag 0.29s backlog 0.00s eos:
+[64.38s] provisional #13 r21 [59.52-63.52s] lag 0.81s backlog 0.00s eos: 科学家们可以得出结论。
+[66.84s] provisional #13 r22 [59.52-65.52s] lag 1.27s backlog 0.00s eos: 科学家们可以得出结论：暗物质对其他暗。
+[71.01s] final #13 silence [59.52-68.92s] lag 2.05s backlog 0.00s eos: 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。
+[76.48s] provisional #15 r24 [74.14-76.14s] lag 0.30s backlog 0.00s eos:
+[78.78s] provisional #15 r25 [74.14-78.14s] lag 0.59s backlog 0.00s eos: 大多数现代。
+[81.25s] provisional #15 r26 [74.14-80.14s] lag 1.06s backlog 0.00s eos: 大多数现代科研望远镜都是巨型。
+[83.58s] provisional #15 r27 [74.14-82.14s] lag 1.39s backlog 0.00s eos: 大多数现代科研望远镜都是巨型设施，位于大。
+[86.03s] provisional #15 r28 [74.14-84.14s] lag 1.85s backlog 0.00s eos: 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的。
+[89.48s] final #15 silence [74.14-87.28s] lag 2.15s backlog 0.00s eos: 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。
+[92.01s] provisional #17 r30 [89.54-91.54s] lag 0.42s backlog 0.00s eos: However.
+[94.60s] provisional #17 r31 [89.54-93.54s] lag 1.02s backlog 0.00s eos: However, due to the slow communication channels.
+[97.02s] provisional #17 r32 [89.54-95.54s] lag 1.43s backlog 0.00s eos: However, due to the slow communication channels, styles in the West.
+[101.86s] final #17 silence [89.54-99.18s] lag 2.63s backlog 0.00s eos: However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years.
+[104.89s] provisional #19 r34 [102.22-104.22s] lag 0.62s backlog 0.00s eos: All nouns alongside the.
+[107.36s] provisional #19 r35 [102.22-106.22s] lag 1.09s backlog 0.00s eos: All nouns alongside the world say for you always.
+[110.06s] provisional #19 r36 [102.22-108.22s] lag 1.79s backlog 0.00s eos: All nouns, alongside the words "say" for you, always begin with a capital letter.
+[114.31s] final #19 silence [102.22-111.76s] lag 2.51s backlog 0.00s eos: All nouns, alongside the words say for you, always begin with a capital letter, even in the middle of a sentence.
+[116.29s] provisional #21 r38 [113.26-115.26s] lag 0.98s backlog 0.00s eos: To the north and within easy reach is the.
+[118.78s] provisional #21 r39 [113.26-117.26s] lag 1.47s backlog 0.00s eos: To the north and within easy reach is the romantic and fascinating town of.
+[128.18s] final #21 silence [113.26-124.50s] lag 3.63s backlog 0.00s eos: To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendours recorded by Lord Byron.
+[129.55s] provisional #23 r43 [126.74-128.74s] lag 0.77s backlog 0.00s eos: The cabbage juice changes color depending on
+[132.23s] provisional #23 r44 [126.74-130.74s] lag 1.45s backlog 0.00s eos: The cabbage juice changes color depending on how acidic, basic, alkaline.
+[134.02s] final #23 silence [126.74-132.24s] lag 1.74s backlog 0.00s eos: The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is.
+[137.34s] provisional #25 r45 [134.32-136.32s] lag 0.97s backlog 0.00s eos: Many people don't think about them as dinosaurs.
+[140.44s] final #25 silence [134.32-138.70s] lag 1.69s backlog 0.00s eos: Many people don't think about them as dinosaurs because they have feathers and can fly.
+[143.70s] provisional #27 r47 [140.56-142.56s] lag 1.10s backlog 0.00s eos: The hospital has followed.
+[145.67s] provisional #27 r48 [140.56-144.56s] lag 1.06s backlog 0.00s eos: The hospital has followed protocol for infection control.
+[148.32s] provisional #27 r49 [140.56-146.56s] lag 1.71s backlog 0.00s eos: The hospital has followed protocol for infection control, including separating the patients.
+[150.52s] provisional #27 r50 [140.56-148.56s] lag 1.91s backlog 0.00s eos: The hospital has followed protocol for infection control, including separating the patient from others to prevent.
+[155.29s] final #27 silence [140.56-152.72s] lag 2.53s backlog 0.00s eos: The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others.
+[156.95s] final #29 silence [154.00-156.08s] lag 0.82s backlog 0.00s eos: So it was the.
+[160.00s] provisional #31 r54 [157.18-159.18s] lag 0.78s backlog 0.00s eos: 那我专业是那个ISS。
+[163.42s] final #31 silence [157.18-161.98s] lag 1.40s backlog 0.00s eos: No, 我专业是那个ISM Information Systems Management。
+[165.94s] final #33 silence [163.20-165.14s] lag 0.75s backlog 0.00s eos: OK，附件。
+[169.04s] provisional #35 r56 [166.22-168.22s] lag 0.77s backlog 0.00s eos: 嗯，运动啊，难。
+[171.45s] final #35 silence [166.22-170.14s] lag 1.27s backlog 0.00s eos: 嗯，运动啊，男生一般不都喜欢运动。
+[174.68s] final #37 silence [171.22-173.72s] lag 0.91s backlog 0.00s eos: 哦，这么technical的。
+[178.00s] final #39 silence [174.80-177.18s] lag 0.78s backlog 0.00s eos: Computer language.
+[182.77s] provisional #41 r59 [180.18-182.18s] lag 0.55s backlog 0.00s eos: 这并不是告别。
+[185.19s] provisional #41 r60 [180.18-184.18s] lag 0.97s backlog 0.00s eos: 这并不是告别，这是一个篇章的结束。
+[188.23s] final #41 silence [180.18-186.70s] lag 1.48s backlog 0.00s eos: 这并不是告别，这是一个篇章的结束，也是新篇章的开始。
+[194.62s] provisional #43 r62 [191.80-193.80s] lag 0.78s backlog 0.00s eos: 钙、钾等元素属于金。
+[197.13s] provisional #43 r63 [191.80-195.80s] lag 1.28s backlog 0.00s eos: 钙、钾等元素属于金属，银和金等元素。
+[199.82s] final #43 silence [191.80-198.16s] lag 1.61s backlog 0.00s eos: 钙、钾等元素属于金属，银和金等元素当然也是金属。
+[203.57s] provisional #45 r65 [201.24-203.24s] lag 0.29s backlog 0.00s eos:
+[206.19s] provisional #45 r66 [201.24-205.24s] lag 0.90s backlog 0.00s eos: 桥下垂直净空。
+[208.57s] provisional #45 r67 [201.24-207.24s] lag 1.28s backlog 0.00s eos: 桥下垂直净空十五米。该项目于二零。
+[210.98s] provisional #45 r68 [201.24-209.24s] lag 1.69s backlog 0.00s eos: 桥下垂直净空十五米。该项目于二零一一年八月完工。
+[216.43s] final #45 silence [201.24-213.26s] lag 3.12s backlog 1.56s eos: 桥下垂直净空十五米。该项目于2011年8月完工，但直到2017年3月才开始通车。
+[216.82s] final #47 silence [213.46-214.82s] lag 1.95s backlog 0.00s eos:
+[219.38s] provisional #49 r71 [216.80-218.80s] lag 0.53s backlog 0.00s eos: 适当使用博客。
+[221.81s] provisional #49 r72 [216.80-220.80s] lag 0.96s backlog 0.00s eos: 适当使用博客，可以使学生变得更善。
+[224.38s] provisional #49 r73 [216.80-222.80s] lag 1.53s backlog 0.00s eos: 适当使用博客，可以使学生变得更善于分析和进行思辨。通过积极回
+[226.80s] provisional #49 r74 [216.80-224.80s] lag 1.95s backlog 0.00s eos: 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他
+[235.85s] status: Catching up: finalized-work backlog 4 s
+[236.70s] status: Listening
+[236.70s] final #49 utterance_limit [216.80-231.80s] lag 4.85s backlog 0.00s eos: 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work 2002。
+[237.09s] provisional #51 r78 [234.56-236.68s] lag 0.36s backlog 0.00s eos:
+[239.45s] provisional #51 r79 [234.56-238.68s] lag 0.72s backlog 0.00s eos: 科学家们可以得出。
+[241.87s] provisional #51 r80 [234.56-240.68s] lag 1.14s backlog 0.00s eos: 科学家们可以得出结论：暗物质对其他。
+[246.14s] final #51 silence [234.56-244.22s] lag 1.87s backlog 0.00s eos: 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。
+[251.63s] provisional #53 r82 [249.30-251.30s] lag 0.28s backlog 0.00s eos:
+[253.91s] provisional #53 r83 [249.30-253.30s] lag 0.56s backlog 0.00s eos: 大多数现代。
+[256.33s] provisional #53 r84 [249.30-255.30s] lag 0.99s backlog 0.00s eos: 大多数现代科研望远镜都是巨型。
+[261.28s] provisional #53 r86 [249.30-259.30s] lag 1.94s backlog 0.00s eos: 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良。
+[264.79s] final #53 silence [249.30-262.60s] lag 2.14s backlog 0.00s eos: 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。
+[267.31s] provisional #55 r88 [264.86-266.86s] lag 0.40s backlog 0.00s eos: However.
+[269.87s] provisional #55 r89 [264.86-268.86s] lag 0.96s backlog 0.00s eos: However, due to the slow communication channels.
+[272.23s] provisional #55 r90 [264.86-270.86s] lag 1.32s backlog 0.00s eos: However, due to the slow communication channels, styles in the West.
+[277.03s] final #55 silence [264.86-274.54s] lag 2.45s backlog 0.00s eos: However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years.
+[280.16s] provisional #57 r92 [277.52-279.52s] lag 0.59s backlog 0.00s eos: All nouns alongside the.
+[282.59s] provisional #57 r93 [277.52-281.52s] lag 1.02s backlog 0.00s eos: All nouns alongside the world say for you always.
+[285.21s] provisional #57 r94 [277.52-283.52s] lag 1.64s backlog 0.00s eos: All nouns, alongside the words "say" for you, always begin with a capital letter.
+[289.41s] final #57 silence [277.52-287.06s] lag 2.31s backlog 0.00s eos: All nouns, alongside the words say for you, always begin with a capital letter, even in the middle of a sentence.
+[291.50s] provisional #59 r96 [288.56-290.56s] lag 0.89s backlog 0.00s eos: To the north and within easy reach is the.
+[293.94s] provisional #59 r97 [288.56-292.56s] lag 1.33s backlog 0.00s eos: To the north and within easy reach is the romantic and fascinating town of.
+[296.51s] provisional #59 r98 [288.56-294.56s] lag 1.91s backlog 0.00s eos: To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous.
+[303.37s] final #59 silence [288.56-299.82s] lag 3.51s backlog 0.00s eos: To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendours recorded by Lord Byron.
+[304.80s] provisional #61 r101 [302.06-304.06s] lag 0.70s backlog 0.00s eos: The cabbage juice changes color depending on
+[307.47s] provisional #61 r102 [302.06-306.06s] lag 1.37s backlog 0.00s eos: The cabbage juice changes color depending on how acidic, basic, alkaline.
+[309.19s] final #61 silence [302.06-307.56s] lag 1.59s backlog 0.00s eos: The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is.
+[312.55s] provisional #63 r103 [309.62-311.62s] lag 0.88s backlog 0.00s eos: Many people don't think about them as dinosaurs.
+[316.21s] final #63 silence [309.62-314.06s] lag 2.10s backlog 0.00s eos: Many people don't think about them as dinosaurs because they have feathers and can fly.
+[318.54s] provisional #65 r105 [315.88-317.88s] lag 0.62s backlog 0.00s eos: The hospital has followed.
+[320.92s] provisional #65 r106 [315.88-319.88s] lag 0.99s backlog 0.00s eos: The hospital has followed protocol for infection control.
+[323.89s] provisional #65 r107 [315.88-321.88s] lag 1.96s backlog 0.00s eos: The hospital has followed protocol for infection control, including separating the patient.
+[325.69s] provisional #65 r108 [315.88-323.88s] lag 1.77s backlog 0.00s eos: The hospital has followed protocol for infection control, including separating the patient from others to prevent.
+[330.38s] final #65 silence [315.88-328.04s] lag 2.29s backlog 0.00s eos: The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others.
+[332.19s] final #67 silence [329.12-331.40s] lag 0.74s backlog 0.00s eos: So it was the.
+[335.25s] provisional #69 r112 [332.48-334.48s] lag 0.72s backlog 0.00s eos: 那我专业是那个IS。
+[338.47s] final #69 silence [332.48-337.28s] lag 1.14s backlog 0.00s eos: 那我专业是那个ISM，Information Systems Management。
+[341.17s] final #71 silence [338.50-340.44s] lag 0.68s backlog 0.00s eos: OK，福建。
+[344.28s] provisional #73 r114 [341.52-343.52s] lag 0.71s backlog 0.00s eos: 嗯，运动啊，难。
+[346.63s] final #73 silence [341.52-345.44s] lag 1.15s backlog 0.00s eos: 嗯，运动啊，男生一般不都喜欢运动？
+[349.91s] final #75 silence [346.52-349.04s] lag 0.82s backlog 0.00s eos: 哦，这么technical的。
+[353.13s] final #77 silence [350.12-352.48s] lag 0.60s backlog 0.00s eos: Computer languages.
+[358.07s] provisional #79 r117 [355.50-357.50s] lag 0.53s backlog 0.00s eos: 这并不是告别。
+[360.50s] provisional #79 r118 [355.50-359.50s] lag 0.96s backlog 0.00s eos: 这并不是告别，这是一个篇章的结束。
+[363.33s] final #79 silence [355.50-361.80s] lag 1.48s backlog 0.00s eos: 这并不是告别，这是一个篇章的结束，也是新篇章的开始。
+[369.95s] provisional #81 r120 [367.12-369.12s] lag 0.78s backlog 0.00s eos: 钙、钾等元素属于金。
+[372.46s] provisional #81 r121 [367.12-371.12s] lag 1.30s backlog 0.00s eos: 钙、钾等元素属于金属，银和金等元素。
+[375.16s] final #81 silence [367.12-373.46s] lag 1.66s backlog 0.00s eos: 钙、钾等元素属于金属，银和金等元素当然也是金属。
+[378.89s] provisional #83 r123 [376.56-378.56s] lag 0.28s backlog 0.00s eos:
+[381.37s] provisional #83 r124 [376.56-380.56s] lag 0.76s backlog 0.00s eos: 桥下垂直净空。
+[383.85s] provisional #83 r125 [376.56-382.56s] lag 1.25s backlog 0.00s eos: 桥下垂直净空十五米。该项目于二零。
+[386.27s] provisional #83 r126 [376.56-384.56s] lag 1.67s backlog 0.00s eos: 桥下垂直净空十五米。该项目于二零一一年八月完工。
+[391.65s] final #83 silence [376.56-388.58s] lag 3.02s backlog 1.46s eos: 桥下垂直净空十五米。该项目于2011年8月完工，但直到2017年3月才开始通车。
+[392.03s] final #85 silence [388.58-390.14s] lag 1.84s backlog 0.00s eos:
+[394.67s] provisional #87 r129 [392.10-394.10s] lag 0.52s backlog 0.00s eos: 适当使用博客。
+[397.12s] provisional #87 r130 [392.10-396.10s] lag 0.97s backlog 0.00s eos: 适当使用博客，可以使学生变得更善。
+[399.67s] provisional #87 r131 [392.10-398.10s] lag 1.53s backlog 0.00s eos: 适当使用博客，可以使学生变得更善于分析和进行思辨。通过积极回
+[402.05s] provisional #87 r132 [392.10-400.10s] lag 1.91s backlog 0.00s eos: 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他
+[411.15s] status: Catching up: finalized-work backlog 4 s
+[411.61s] status: Listening
+[411.61s] final #87 utterance_limit [392.10-407.10s] lag 4.46s backlog 0.00s eos: 适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work 2002。
+[413.10s] provisional #89 r136 [410.02-412.02s] lag 1.03s backlog 0.00s eos: The first two were released in 1998.
+[414.83s] provisional #89 r137 [410.02-414.02s] lag 0.77s backlog 0.00s eos: 科学家们可以得出结论。
+[417.18s] provisional #89 r138 [410.02-416.02s] lag 1.12s backlog 0.00s eos: 科学家们可以得出结论：暗物质对其他。
+[421.43s] final #89 silence [410.02-419.54s] lag 1.84s backlog 0.00s eos: 科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。
+[427.07s] provisional #91 r140 [424.74-426.74s] lag 0.29s backlog 0.00s eos:
+[429.36s] provisional #91 r141 [424.74-428.74s] lag 0.57s backlog 0.00s eos: 大多数现代。
+[431.77s] provisional #91 r142 [424.74-430.74s] lag 0.98s backlog 0.00s eos: 大多数现代科研望远镜都是巨型。
+[434.09s] provisional #91 r143 [424.74-432.74s] lag 1.31s backlog 0.00s eos: 大多数现代科研望远镜都是巨型设施，位于大。
+[436.54s] provisional #91 r144 [424.74-434.74s] lag 1.75s backlog 0.00s eos: 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的。
+[440.02s] final #91 silence [424.74-437.90s] lag 2.08s backlog 0.00s eos: 大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。
+[442.61s] provisional #93 r146 [440.16-442.16s] lag 0.40s backlog 0.00s eos: However.
+[445.16s] provisional #93 r147 [440.16-444.16s] lag 0.95s backlog 0.00s eos: However, due to the slow communication channels.
+[447.52s] provisional #93 r148 [440.16-446.16s] lag 1.31s backlog 0.00s eos: However, due to the slow communication channels, styles in the West.
+[452.28s] final #93 silence [440.16-449.80s] lag 2.43s backlog 0.00s eos: However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years.
+[455.47s] provisional #95 r150 [452.84-454.84s] lag 0.59s backlog 0.00s eos: All nouns alongside the.
+[457.90s] provisional #95 r151 [452.84-456.84s] lag 1.01s backlog 0.00s eos: All nouns alongside the world say for you always.
+[460.53s] provisional #95 r152 [452.84-458.84s] lag 1.64s backlog 0.00s eos: All nouns, alongside the words "say" for you, always begin with a capital letter.
+[464.77s] final #95 silence [452.84-462.36s] lag 2.37s backlog 0.00s eos: All nouns, alongside the words say for you, always begin with a capital letter, even in the middle of a sentence.
+[466.83s] provisional #97 r154 [463.88-465.88s] lag 0.90s backlog 0.00s eos: To the north and within easy reach is the.
+[469.27s] provisional #97 r155 [463.88-467.88s] lag 1.34s backlog 0.00s eos: To the north and within easy reach is the romantic and fascinating town of.
+[471.83s] provisional #97 r156 [463.88-469.88s] lag 1.90s backlog 0.00s eos: To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous.
+[479.17s] status: Catching up: finalized-work backlog 4 s
+[479.17s] status: Listening
+[479.17s] final #97 silence [463.88-475.12s] lag 4.01s backlog 0.00s eos: To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendours recorded by Lord Byron.
+[480.18s] provisional #99 r159 [477.36-479.36s] lag 0.77s backlog 0.00s eos: The cabbage juice changes color depending on
+[484.65s] final #99 silence [477.36-482.86s] lag 1.74s backlog 0.00s eos: The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is.
+[487.93s] provisional #101 r161 [484.94-486.94s] lag 0.95s backlog 0.00s eos: Many people don't think about them as dinosaurs.
+[491.06s] final #101 silence [484.94-489.32s] lag 1.69s backlog 0.00s eos: Many people don't think about them as dinosaurs because they have feathers and can fly.
+[494.36s] provisional #103 r163 [491.18-493.18s] lag 1.13s backlog 0.00s eos: The hospital has followed.
+[496.23s] provisional #103 r164 [491.18-495.18s] lag 1.01s backlog 0.00s eos: The hospital has followed protocol for infection control.
+[498.63s] provisional #103 r165 [491.18-497.18s] lag 1.41s backlog 0.00s eos: The hospital has followed protocol for infection control, including separating the patients.
+[500.98s] provisional #103 r166 [491.18-499.18s] lag 1.75s backlog 0.00s eos: The hospital has followed protocol for infection control, including separating the patient from others to prevent.
+[505.61s] final #103 silence [491.18-503.34s] lag 2.22s backlog 0.00s eos: The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others.
+[507.51s] final #105 silence [504.62-506.70s] lag 0.76s backlog 0.00s eos: So it was the.
+[510.56s] provisional #107 r170 [507.80-509.80s] lag 0.71s backlog 0.00s eos: 那我专业是那个ISS。
+[513.80s] final #107 silence [507.80-512.60s] lag 1.15s backlog 0.00s eos: 那我专业是那个ISM，Information Systems Management。
+[516.48s] final #109 silence [513.82-515.76s] lag 0.68s backlog 0.00s eos: OK，附件。
+[519.61s] provisional #111 r172 [516.84-518.84s] lag 0.72s backlog 0.00s eos: 嗯，运动啊，难。
+[522.04s] final #111 silence [516.84-520.76s] lag 1.23s backlog 0.00s eos: 嗯，运动啊，男生一般不都喜欢运动？
+[525.45s] final #113 silence [521.84-524.34s] lag 1.07s backlog 0.00s eos: 哦，这么technical的。
+[528.49s] final #115 silence [525.42-527.80s] lag 0.64s backlog 0.00s eos: Computer language.
+[533.37s] provisional #117 r175 [530.80-532.80s] lag 0.52s backlog 0.00s eos: 这并不是告别。
+[535.83s] provisional #117 r176 [530.80-534.80s] lag 0.99s backlog 0.00s eos: 这并不是告别，这是一个篇章的结束。
+[538.82s] final #117 silence [530.80-537.32s] lag 1.46s backlog 0.00s eos: 这并不是告别，这是一个篇章的结束，也是新篇章的开始。
+[545.24s] provisional #119 r178 [542.42-544.42s] lag 0.78s backlog 0.00s eos: 钙、钾等元素属于金。
+[547.75s] provisional #119 r179 [542.42-546.42s] lag 1.28s backlog 0.00s eos: 钙、钾等元素属于金属，银和金等元素。
+[550.45s] final #119 silence [542.42-548.78s] lag 1.62s backlog 0.00s eos: 钙、钾等元素属于金属，银和金等元素当然也是金属。
+[554.20s] provisional #121 r181 [551.86-553.86s] lag 0.29s backlog 0.00s eos:
+[556.81s] provisional #121 r182 [551.86-555.86s] lag 0.90s backlog 0.00s eos: 桥下垂直净空。
+[559.22s] provisional #121 r183 [551.86-557.86s] lag 1.32s backlog 0.00s eos: 桥下垂直净空十五米。该项目于二零。
+[561.63s] provisional #121 r184 [551.86-559.86s] lag 1.72s backlog 0.00s eos: 桥下垂直净空十五米。该项目于二零一一年八月完工。
+[566.98s] final #121 silence [551.86-563.88s] lag 3.06s backlog 1.50s eos: 桥下垂直净空十五米。该项目于2011年8月完工，但直到2017年3月才开始通车。
+[567.37s] final #123 silence [564.08-565.44s] lag 1.88s backlog 0.00s eos:

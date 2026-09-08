@@ -19,13 +19,11 @@ Everything below runs on the development machine. The output folder contains no 
 ```powershell
 python scripts/bootstrap.py            # pinned sources, ONNX Runtime package, 1.7B model assets (resumable)
 python scripts/native_deps.py          # pinned DirectML package, nlohmann/json
-python scripts/acquire_0_6b.py         # pinned 0.6B ONNX export (the shipped configuration)
-python scripts/acquire_reference_0_6b.py   # pinned official 0.6B checkpoint (oracle, build-time only)
 python scripts/collect_licenses.py     # notices for every compiled or shipped component
 powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build.ps1
 .venv\Scripts\python.exe scripts/reference.py --prepare-only   # mel_filters.bin, prompt_reference.json into the shipped model folder
 python scripts/model_manifest.py       # freeze the shipped model's asset hashes (fails on incomplete downloads)
-python scripts/package.py --version 0.1.0-tc1
+python scripts/package.py --version 0.1.0-tc2
 ```
 
 `scripts/package.py` copies the runtime files from `build/Release`, the model files listed in the model manifest, the regression set, notices and documentation into `dist/AsrWin-<version>-win-x64/`, writes `package-manifest.json` with the size and SHA-256 of every file, produces `dist/AsrWin-<version>-win-x64.zip` (deflate) and records extracted and compressed sizes in `reports/package.json`.
@@ -37,6 +35,10 @@ AsrWin.exe --check-package
 ```
 
 `--check-package` reads `package-manifest.json` next to the executable and verifies every listed file by size and SHA-256. It returns nonzero and names the first missing or corrupt file. The model manifest is additionally verified every time the model loads.
+
+Default model loading also checks the package manifest. Development builds require an explicit `--model` path; there is no search of the working directory or parent development folders. The chosen model directory and CPU thread budget are compiled from `shipped-model.json`.
+
+The packager refuses to replace an existing version unless `--replace` is supplied and verifies the resolved destination stays inside `dist`. It publishes measured sizes and the archive hash in `AsrWin-<version>-win-x64-release-info.json` beside the ZIP.
 
 ## What the package must not contain
 

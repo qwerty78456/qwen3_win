@@ -6,6 +6,7 @@
 #include "pipeline.hpp"
 #include "scoring.hpp"
 #include "segmenter.hpp"
+#include "self_test.hpp"
 #include <iomanip>
 #include <iostream>
 #include <map>
@@ -78,14 +79,16 @@ int wmain(int argc, wchar_t** argv) {
   fs::path report;
   try {
     SetConsoleOutputCP(CP_UTF8);
-    fs::path model=executable_dir()/"models/qwen3-asr-0.6b-fp32", input, trace, verification, transcript_path;
-    EngineOptions options; PipelineOptions live;
-    bool inspect=false, preprocess=false, tokenize=false, diagnostic=false, segment=false, encode=false, simulate=false, capture=false, devices=false, gui=argc==1, experimental=false, check_package=false;
-    std::string token_text; std::wstring device_selector; double pace=1.0, duration=60, tail=1.0; int repeat=1; fs::path interleave;
+    fs::path default_model = executable_dir() / ASRWIN_MODEL_DIR;
+    fs::path model = default_model, input, trace, verification, transcript_path;
+    EngineOptions options; options.verify_distribution=true; PipelineOptions live;
+    bool inspect=false, preprocess=false, tokenize=false, diagnostic=false, segment=false, encode=false, simulate=false, capture=false, devices=false, gui=false, gui_explicit=false, experimental=false, check_package=false;
+    std::string token_text; std::wstring device_selector; double pace=1.0, duration=60, tail=1.0; int repeat=1; fs::path interleave,self_test_input; bool adapter_explicit=false;
     for (int i=1;i<argc;++i) {
       std::wstring arg=argv[i];
       auto value=[&]() -> std::wstring { if (++i>=argc) throw std::runtime_error("Missing argument value"); return argv[i]; };
-      if (arg==L"--model") model=value();
+      if (arg==L"--model") { model=value(); options.verify_distribution=false; }
+      else if (arg==L"--self-test") self_test_input=value();
       else if (arg==L"--benchmark") input=value();
       else if (arg==L"--preprocess") { input=value(); preprocess=true; }
       else if (arg==L"--encode") { input=value(); preprocess=true; encode=true; }
@@ -94,12 +97,13 @@ int wmain(int argc, wchar_t** argv) {
       else if (arg==L"--verify") verification=value();
       else if (arg==L"--report") report=value();
       else if (arg==L"--trace") trace=value();
+      else if (arg==L"--profile") options.profile=value();
       else if (arg==L"--threads") options.threads=std::stoi(value());
       else if (arg==L"--max-tokens") options.max_tokens=std::stoi(value());
       else if (arg==L"--inspect") inspect=true;
       else if (arg==L"--diagnostics") diagnostic=true;
       else if (arg==L"--devices") devices=true;
-      else if (arg==L"--gui") gui=true;
+      else if (arg==L"--gui") { gui=true; gui_explicit=true; }
       else if (arg==L"--check-package") check_package=true;
       else if (arg==L"--simulate-live") simulate=true;
       else if (arg==L"--capture") capture=true;
@@ -117,7 +121,7 @@ int wmain(int argc, wchar_t** argv) {
       else if (arg==L"--variant") options.variant=utf8(value());
       else if (arg==L"--skip-asset-check") options.verify_assets=false;  // development benchmarks only
       else if (arg==L"--slow-inference") options.slow_inference=std::stod(value());  // fault injection for live tests
-      else if (arg==L"--adapter") options.adapter=std::stoi(value());
+      else if (arg==L"--adapter") { options.adapter=std::stoi(value()); adapter_explicit=true; }
       else if (arg==L"--provider") { auto p=value(); if (p==L"cpu") options.directml=false; else if (p==L"directml") options.directml=true; else throw std::runtime_error("Unknown provider"); }
       else if (arg==L"--help") {
         std::cout << "AsrWin — offline Mandarin/English playback captions (test candidate)\n"
@@ -127,36 +131,32 @@ int wmain(int argc, wchar_t** argv) {
           "  --capture [--device default|name|id] --duration 60 [--report live.json] [--transcript out.txt]\n"
           "  --verify regression\\manifest.json --report verification.json [--trace dir]\n"
           "  --devices | --inspect | --diagnostics | --preprocess input.wav | --segment input.wav | --tokenize text\n"
-          "Options: --model dir  --threads 4  --max-tokens 512  --variant fp32|int4  --provider cpu|directml (directml needs --experimental-directml)\n";
+          "Options: --model dir  --threads 4  --max-tokens 512  --variant fp32|int4  --provider cpu|directml\n";
         return 0;
       } else throw std::runtime_error("Unknown argument: "+utf8(arg));
     }
+    bool action = !self_test_input.empty() || !input.empty() || !verification.empty() || inspect || diagnostic || devices || tokenize || preprocess || segment || check_package || capture || simulate;
+    int modes=int(!self_test_input.empty())+int(!input.empty())+int(!verification.empty())+int(inspect)+int(diagnostic)+int(devices)+int(tokenize)+int(check_package)+int(capture);
+    if (modes>1 || (gui_explicit && action) || (simulate && input.empty())) throw std::runtime_error("Select exactly one action; --simulate-live requires --benchmark input.wav");
+    if (gui_explicit || !action) gui = true;
     if (options.threads<1 || options.threads>16 || options.max_tokens<1 || options.max_tokens>1024) throw std::runtime_error("Invalid thread/token limit");
-    if (options.directml && !experimental) throw std::runtime_error("DirectML is disabled until CPU correctness and acceleration gates pass; add --experimental-directml for benchmark experiments only");
+    if (!std::isfinite(duration) || duration<=0 || duration>86400 || !std::isfinite(pace) || pace<0 || pace>100 ||
+        !std::isfinite(tail) || tail<0 || tail>60 || !std::isfinite(options.slow_inference) || options.slow_inference<0 || options.slow_inference>300 ||
+        live.provisional_max_tokens<1 || live.provisional_max_tokens>1024 || options.adapter<0)
+      throw std::runtime_error("Invalid duration, replay pace, tail, inference delay, provisional token limit or adapter");
+    if (options.directml && (!experimental || !adapter_explicit || gui))
+      throw std::runtime_error("DirectML is unvalidated; use --experimental-directml with an explicit adapter for command-line experiments. The interface uses CPU until GPU validation is complete.");
     if (gui) {
-      if (options.directml) throw std::runtime_error("The interface uses the validated CPU provider only");
       DWORD owners[2]; if (GetConsoleProcessList(owners,2)<=1) FreeConsole();  // launched from Explorer: no console needed
-      return run_gui(GetModuleHandleW(nullptr),GuiOptions{model,options.threads,options.max_tokens,options.variant});
+      return run_gui(GetModuleHandleW(nullptr),GuiOptions{model,options.threads,options.max_tokens,options.variant,options.directml,options.verify_distribution});
     }
     ComScope com;
+    if (!self_test_input.empty()) { auto result=self_test(self_test_input); if (!report.empty()) write_json(report,result); std::cout<<result.dump(2)<<'\n'; return result["success"].get<bool>()?0:2; }
     if (check_package) {
-      auto dir=executable_dir();
-      auto manifest=Json::parse(read_text(dir/"package-manifest.json"));
-      Json result={{"package",manifest.value("package","")},{"version",manifest.value("version","")},{"verified_files",0},{"success",true}};
-      size_t verified=0;
-      for (auto& item:manifest.at("files")) {
-        auto rel=item.at("path").get<std::string>();
-        fs::path relative(wide(rel));
-        if (relative.is_absolute() || rel.find("..")!=std::string::npos) throw std::runtime_error("Invalid package manifest path: "+rel);
-        auto p=dir/relative;
-        bool ok=fs::is_regular_file(p) && fs::file_size(p)==item.at("bytes").get<uint64_t>() && sha256_file(p)==item.at("sha256").get<std::string>();
-        if (!ok) { result["success"]=false; result["first_failure"]=rel; std::cout<<"FAIL "<<rel<<'\n'; break; }
-        ++verified;
-      }
-      result["verified_files"]=verified;
-      if (result["success"].get<bool>()) std::cout<<"Package OK: "<<verified<<" files verified against package-manifest.json\n";
-      if (!report.empty()) write_json(report,result);
-      return result["success"].get<bool>()?0:3;
+      auto checked=verify_package(executable_dir());
+      if (!report.empty()) write_json(report,checked);
+      std::cout<<"Package OK: "<<checked["verified_files"]<<" verified files\n";
+      return 0;
     }
     if (diagnostic) { auto result=diagnostics(); std::cout<<result.dump(2)<<'\n'; if (!report.empty()) write_json(report,result); return 0; }
     if (devices) {
@@ -215,6 +215,13 @@ int wmain(int argc, wchar_t** argv) {
       auto manifest=Json::parse(read_text(verification));
       auto& fixtures=manifest.at("fixtures");
       if (fixtures.size()!=24 || manifest.at("reference_status")!="complete") throw std::runtime_error("Verification requires 24 frozen fixtures with complete official-model references");
+      std::set<std::string> fixture_ids; std::map<std::string,int> categories;
+      for (const auto& fixture:fixtures) {
+        if (!fixture_ids.insert(fixture.at("id").get<std::string>()).second) throw std::runtime_error("Duplicate regression fixture ID");
+        ++categories[fixture.at("category").get<std::string>()];
+      }
+      if (categories!=std::map<std::string,int>{{"mandarin",6},{"english",6},{"mixed",6},{"non-speech",6}})
+        throw std::runtime_error("Regression requires six fixtures in each language/non-speech category");
       result["fixtures"]=Json::array(); bool success=true;
       for (const auto& fixture:fixtures) {
         auto id=fixture.at("id").get<std::string>();
@@ -225,13 +232,15 @@ int wmain(int argc, wchar_t** argv) {
           auto refpath=verification.parent_path()/wide(fixture.at("reference_path").get<std::string>());
           if (sha256_file(refpath)!=fixture.at("reference_sha256")) throw std::runtime_error("Reference hash mismatch");
           auto reference=Json::parse(read_text(refpath));
+          if (reference.at("reference_model_repo")!=result["engine"]["reference_model"]["repo"] || reference.at("reference_model_revision")!=result["engine"]["reference_model"]["revision"])
+            throw std::runtime_error("Reference belongs to a different model revision");
           auto audio=normalize_audio(read_wav(wav));
           auto observed=engine.transcribe(audio.samples,trace.empty()?fs::path{}:trace/wide(id));
           row["observed"]=observed.detail; row["reference"]=reference;
           row["normalized_transcript_match"]=normalized_equal(observed.text,reference.at("text").get<std::string>());
           row["tokens_exact"]=observed.tokens==reference.at("tokens").get<std::vector<int32_t>>();
           row["human_error"]=error_rate(fixture.at("human_text").get<std::string>(),observed.text,fixture.at("category")=="mandarin");
-          row["success"]=observed.completion=="eos" && reference.at("completion")=="eos" && row["normalized_transcript_match"].get<bool>();
+          row["success"]=observed.completion=="eos" && reference.at("completion")=="eos" && row["normalized_transcript_match"].get<bool>() && row["tokens_exact"].get<bool>() && (fixture.at("category")!="non-speech" || observed.text.empty());
         } catch (const std::exception& e) { row["error"]=e.what(); }
         success=success && row["success"].get<bool>();
         std::cout<<id<<": "<<(row["success"].get<bool>()?"PASS":"FAIL")<<std::endl;
@@ -240,6 +249,8 @@ int wmain(int argc, wchar_t** argv) {
         result["proof_complete"]=false;  // numerical stage comparison, silence gate and boundary tests are separate proof evidence
         if (!report.empty()) write_json(report,result);
       }
+      result["profiles"]=engine.finish_profiling();
+      if (!report.empty()) write_json(report,result);
       return success?0:2;
     }
     if (simulate || capture) {
@@ -253,10 +264,10 @@ int wmain(int argc, wchar_t** argv) {
         CaptureEvents events{[p](const std::wstring& r){ p->stop(utf8(r)); },[p]{ p->stop("Capture buffer reached its stop threshold"); },[p](const std::string& e){ p->stop("Capture failed: "+e); }};
         auto loopback=std::make_unique<LoopbackCapture>(resolve_device(device_selector),events);
         source_info={{"device",utf8(loopback->name())},{"device_id",utf8(loopback->id())},{"default_device",loopback->capturing_default()},{"sample_rate",loopback->sample_rate()},{"channels",loopback->channels()},{"duration_seconds",duration}};
-        std::cout<<"Capturing playback from: "<<utf8(loopback->name())<<" for "<<duration<<" s\n";
         source=std::move(loopback);
       }
       pipeline.start(std::move(source),1);
+      if (capture) std::cout<<"Capturing playback from: "<<source_info["device"].get<std::string>()<<" for "<<duration<<" s"<<std::endl;
       if (capture) {
         std::unique_lock<std::mutex> lock(collector.mutex);
         collector.cv.wait_for(lock,std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::duration<double>(duration)),[&]{ return collector.stopped; });
@@ -266,7 +277,7 @@ int wmain(int argc, wchar_t** argv) {
       collector.wait_stopped(); pipeline.wait();
       result["mode"]=simulate?"simulate-live":"capture"; result["source"]=source_info; result["live"]=collector.summary(); result["options"]={{"provisional",live.provisional},{"provisional_after",live.provisional_after},{"provisional_interval",live.provisional_interval},{"suspend_backlog",live.suspend_backlog},{"resume_backlog",live.resume_backlog},{"overload_backlog",live.overload_backlog},{"retained_limit",live.retained_limit},{"slow_inference",options.slow_inference},{"threads",options.threads},{"variant",options.variant}};
       result["success"]=result["live"]["success"];
-      if (!transcript_path.empty()) { std::ofstream f(transcript_path,std::ios::binary); f.write("\xEF\xBB\xBF",3); auto text=result["live"]["transcript"].get<std::string>(); f.write(text.data(),text.size()); }
+      if (!transcript_path.empty()) { std::ofstream f(transcript_path,std::ios::binary); f.write("\xEF\xBB\xBF",3); auto text=result["live"]["transcript"].get<std::string>(); f.write(text.data(),text.size()); if (!f) throw std::runtime_error("Cannot write transcript: "+utf8(transcript_path.wstring())); }
       if (!report.empty()) write_json(report,result);
       auto& s=result["live"];
       std::cout<<"finals "<<s["final_count"]<<", provisional lag p95 "<<s["provisional_lag_seconds"]["p95"]<<" s, first-caption p95 "<<s["first_caption_lag_seconds"]["p95"]<<" s, finalization p95 "<<s["finalization_delay_seconds"]["p95"]<<" s, max backlog "<<s["pipeline"]["max_backlog_seconds"]<<" s, peak working set "<<s["pipeline"]["memory"]["peak_working_set_bytes"]<<" bytes\n";
@@ -290,6 +301,7 @@ int wmain(int argc, wchar_t** argv) {
       result["transcription"]=transcription.detail; result["audio_conversion_seconds"]=conversion;
       result["total_elapsed_seconds"]=result["model_load_seconds"].get<double>()+conversion+transcription.detail.at("total_seconds").get<double>();
       result["source"]=audio.source; result["file"]=utf8(input.wstring()); result["success"]=transcription.completion=="eos" && identical;
+      result["profiles"]=engine.finish_profiling();
       std::cout<<transcription.text<<'\n';
       if (!report.empty()) write_json(report,result);
       return result["success"].get<bool>()?0:2;

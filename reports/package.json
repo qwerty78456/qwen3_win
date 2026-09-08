@@ -1,0 +1,11 @@
+{
+  "package": "AsrWin-0.1.0-tc2-win-x64",
+  "files": 255,
+  "extracted_bytes": 4124742129,
+  "folder": "dist\\AsrWin-0.1.0-tc2-win-x64",
+  "archive": "dist\\AsrWin-0.1.0-tc2-win-x64.zip",
+  "compressed_bytes": 1967563388,
+  "archive_sha256": "0d97c972fecc2a2e7d2edc1d393dfe26fac6c8451e7ab1cba827954dbe6873d2",
+  "archive_seconds": 55.87387139999919,
+  "compression": "zip deflate level 6"
+}

@@ -1,0 +1,29 @@
+Verifying model assets...
+Loading encoder...
+Loading decoder prefill...
+Loading cached decoder...
+Model ready...
+mandarin-0000: PASS
+mandarin-0001: PASS
+mandarin-0002: PASS
+mandarin-0003: PASS
+mandarin-0004: PASS
+mandarin-0005: PASS
+english-0000: PASS
+english-0001: PASS
+english-0002: PASS
+english-0003: PASS
+english-0004: PASS
+english-0005: PASS
+mixed-0004: PASS
+mixed-0009: PASS
+mixed-0028: PASS
+mixed-0055: PASS
+mixed-0066: PASS
+mixed-0068: PASS
+silence-short: PASS
+silence: PASS
+silence-long: PASS
+low-noise: PASS
+tone: PASS
+clicks: PASS

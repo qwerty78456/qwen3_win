@@ -19,6 +19,8 @@ public:
     void consume(std::span<const float> samples);
     void finish();
     std::optional<Utterance> snapshot() const;
+    size_t active_samples() const { return active_.audio.size(); }
+    uint64_t active_id() const { return active_.id; }
     uint64_t accepted_samples() const { return accepted_; }
     Json statistics() const;
 private:

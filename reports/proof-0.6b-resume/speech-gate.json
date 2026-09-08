@@ -1,0 +1,113 @@
+{
+  "success": true,
+  "cases": [
+    {
+      "case": "silence-short",
+      "success": true,
+      "observed": {
+        "detector": {
+          "energy_gated_positive_frames": 0,
+          "longest_start_run_frames": 0,
+          "peak_frame_rms": 0.0,
+          "vad_positive_frames": 0
+        },
+        "frame_ms": 20,
+        "minimum_rms": 0.0001,
+        "segments": [],
+        "source_samples": 8000,
+        "start_voiced_ms": 100,
+        "vad_mode": 2
+      }
+    },
+    {
+      "case": "silence",
+      "success": true,
+      "observed": {
+        "detector": {
+          "energy_gated_positive_frames": 0,
+          "longest_start_run_frames": 0,
+          "peak_frame_rms": 0.0,
+          "vad_positive_frames": 0
+        },
+        "frame_ms": 20,
+        "minimum_rms": 0.0001,
+        "segments": [],
+        "source_samples": 32000,
+        "start_voiced_ms": 100,
+        "vad_mode": 2
+      }
+    },
+    {
+      "case": "silence-long",
+      "success": true,
+      "observed": {
+        "detector": {
+          "energy_gated_positive_frames": 0,
+          "longest_start_run_frames": 0,
+          "peak_frame_rms": 0.0,
+          "vad_positive_frames": 0
+        },
+        "frame_ms": 20,
+        "minimum_rms": 0.0001,
+        "segments": [],
+        "source_samples": 240000,
+        "start_voiced_ms": 100,
+        "vad_mode": 2
+      }
+    },
+    {
+      "case": "low-noise",
+      "success": true,
+      "observed": {
+        "detector": {
+          "energy_gated_positive_frames": 4,
+          "longest_start_run_frames": 4,
+          "peak_frame_rms": 0.0003869840694371914,
+          "vad_positive_frames": 4
+        },
+        "frame_ms": 20,
+        "minimum_rms": 0.0001,
+        "segments": [],
+        "source_samples": 48000,
+        "start_voiced_ms": 100,
+        "vad_mode": 2
+      }
+    },
+    {
+      "case": "tone",
+      "success": true,
+      "observed": {
+        "detector": {
+          "energy_gated_positive_frames": 4,
+          "longest_start_run_frames": 4,
+          "peak_frame_rms": 0.02156678563181409,
+          "vad_positive_frames": 4
+        },
+        "frame_ms": 20,
+        "minimum_rms": 0.0001,
+        "segments": [],
+        "source_samples": 32000,
+        "start_voiced_ms": 100,
+        "vad_mode": 2
+      }
+    },
+    {
+      "case": "clicks",
+      "success": true,
+      "observed": {
+        "detector": {
+          "energy_gated_positive_frames": 8,
+          "longest_start_run_frames": 1,
+          "peak_frame_rms": 0.013030405276392824,
+          "vad_positive_frames": 32
+        },
+        "frame_ms": 20,
+        "minimum_rms": 0.0001,
+        "segments": [],
+        "source_samples": 64000,
+        "start_voiced_ms": 100,
+        "vad_mode": 2
+      }
+    }
+  ]
+}

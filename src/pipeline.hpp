@@ -45,12 +45,14 @@ class FileSource : public AudioSource {
   Audio audio_; double pace_, tail_; RawRing ring_;
   std::thread thread_; std::atomic<bool> stop_{false}, finished_{false}, started_{false};
   std::atomic<uint64_t> packets_{0}, frames_{0}, late_packets_{0}; std::atomic<int> overflow_{0};
-  double max_late_=0;
+  std::atomic<double> max_late_{0};
 };
 class LivePipeline {
  public:
   using Sink=std::function<void(const CaptionEvent&)>;
+  using Decode=std::function<Transcript(std::span<const float>,const std::atomic<bool>*,int)>;
   LivePipeline(Engine& engine, Sink sink, PipelineOptions options={});
+  LivePipeline(Decode decode, Sink sink, PipelineOptions options={});
   ~LivePipeline();
   LivePipeline(const LivePipeline&)=delete;
   LivePipeline& operator=(const LivePipeline&)=delete;
@@ -66,16 +68,19 @@ class LivePipeline {
   void preprocess();
   void work();
   void emit(CaptionEvent e);
-  void record_timeline(uint64_t sample16k);
+  void record_timeline(uint64_t sample16k, Clock::time_point time);
   Clock::time_point capture_time(uint64_t sample16k) const;
-  double backlog_locked() const { return queued_seconds_+in_flight_seconds_; }
+  // Finalized-work backlog = how long the oldest unfinished utterance has been waiting since its audio ended
+  // (queued or being decoded). Independent of utterance length; grows while finalization falls behind.
+  double backlog_locked() const;
   void review_backlog_locked(std::unique_lock<std::mutex>& lock);
-  Engine& engine_; Sink sink_; PipelineOptions options_;
+  Decode decode_; Sink sink_; PipelineOptions options_;
   std::unique_ptr<AudioSource> source_;
   std::thread preprocess_, worker_;
   mutable std::mutex mutex_; std::condition_variable cv_;
   std::deque<Final> finals_; std::optional<Provisional> provisional_;
-  double queued_seconds_=0, in_flight_seconds_=0, max_backlog_=0, retained_peak_=0;
+  std::deque<uint64_t> pending_ends_; std::optional<uint64_t> in_flight_end_;  // end samples of queued / decoding finals
+  double queued_seconds_=0, in_flight_seconds_=0, max_backlog_=0, max_queued_seconds_=0, retained_peak_=0;
   bool suspended_=false, drained_=false;
   uint64_t last_final_queued_=0, revision_=0, session_=0;
   std::map<uint64_t,uint64_t> provisional_progress_;  // utterance -> samples at last provisional request
@@ -83,8 +88,11 @@ class LivePipeline {
   std::string stop_reason_; std::string error_;
   mutable std::mutex timeline_mutex_; std::deque<std::pair<uint64_t,Clock::time_point>> timeline_;
   std::mutex sink_mutex_;
-  uint64_t position16k_=0, finals_done_=0, provisionals_done_=0, provisionals_cancelled_=0, provisionals_skipped_=0, suspensions_=0;
+  std::atomic<uint64_t> position16k_{0};
+  uint64_t finals_done_=0, provisionals_done_=0, provisionals_cancelled_=0, provisionals_skipped_=0, suspensions_=0;
+  Json segmenter_statistics_;
   Clock::time_point started_at_;
+  double cpu_at_start_=0;
   std::unique_ptr<Segmenter> segmenter_;
   Json capture_statistics_;
 };

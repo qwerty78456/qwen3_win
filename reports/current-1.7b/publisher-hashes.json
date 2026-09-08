@@ -1,0 +1,38 @@
+{
+  "acquired_files_pass": true,
+  "files": [
+    {
+      "path": "models/qwen3-asr-1.7b-fp32/decoder_init.onnx",
+      "success": true
+    },
+    {
+      "path": "models/qwen3-asr-1.7b-fp32/decoder_step.onnx",
+      "success": true
+    },
+    {
+      "path": "models/qwen3-asr-1.7b-fp32/decoder_weights.data",
+      "success": true
+    },
+    {
+      "path": "models/qwen3-asr-1.7b-fp32/embed_tokens.bin",
+      "success": true
+    },
+    {
+      "path": "models/qwen3-asr-1.7b-fp32/encoder.onnx",
+      "success": true
+    },
+    {
+      "path": "models/qwen3-asr-1.7b-fp32/tokenizer.json",
+      "success": true
+    },
+    {
+      "path": "reference-model/model-00001-of-00002.safetensors",
+      "success": true
+    },
+    {
+      "path": "reference-model/model-00002-of-00002.safetensors",
+      "success": true
+    }
+  ],
+  "complete_baseline_acquired": true
+}

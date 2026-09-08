@@ -1,0 +1,503 @@
+{
+  "success": true,
+  "fixtures": [
+    {
+      "id": "mandarin-0000",
+      "pcm_exact": true,
+      "mel_shape_exact": true,
+      "segments": [
+        {
+          "boundary": "silence",
+          "end_sample": 62720,
+          "id": 1,
+          "samples": 35200,
+          "start_sample": 27520
+        },
+        {
+          "boundary": "silence",
+          "end_sample": 128960,
+          "id": 3,
+          "samples": 66240,
+          "start_sample": 62720
+        }
+      ],
+      "mel_max_error": 3.24249267578125e-05,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true,
+      "speech_gate_expected": true,
+      "bounded_segments": true,
+      "nonoverlapping_segments": true,
+      "success": true
+    },
+    {
+      "id": "mandarin-0001",
+      "pcm_exact": true,
+      "mel_shape_exact": true,
+      "segments": [
+        {
+          "boundary": "silence",
+          "end_sample": 115840,
+          "id": 1,
+          "samples": 100480,
+          "start_sample": 15360
+        }
+      ],
+      "mel_max_error": 1.8358230590820312e-05,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true,
+      "speech_gate_expected": true,
+      "bounded_segments": true,
+      "nonoverlapping_segments": true,
+      "success": true
+    },
+    {
+      "id": "mandarin-0002",
+      "pcm_exact": true,
+      "mel_shape_exact": true,
+      "segments": [
+        {
+          "boundary": "silence",
+          "end_sample": 194240,
+          "id": 1,
+          "samples": 152960,
+          "start_sample": 41280
+        },
+        {
+          "boundary": "silence",
+          "end_sample": 219200,
+          "id": 3,
+          "samples": 24960,
+          "start_sample": 194240
+        }
+      ],
+      "mel_max_error": 2.0742416381835938e-05,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true,
+      "speech_gate_expected": true,
+      "bounded_segments": true,
+      "nonoverlapping_segments": true,
+      "success": true
+    },
+    {
+      "id": "mandarin-0003",
+      "pcm_exact": true,
+      "mel_shape_exact": true,
+      "segments": [
+        {
+          "boundary": "silence",
+          "end_sample": 245760,
+          "id": 1,
+          "samples": 235840,
+          "start_sample": 9920
+        }
+      ],
+      "mel_max_error": 2.9087066650390625e-05,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true,
+      "speech_gate_expected": true,
+      "bounded_segments": true,
+      "nonoverlapping_segments": true,
+      "success": true
+    },
+    {
+      "id": "mandarin-0004",
+      "pcm_exact": true,
+      "mel_shape_exact": true,
+      "segments": [
+        {
+          "boundary": "silence",
+          "end_sample": 157120,
+          "id": 1,
+          "samples": 117760,
+          "start_sample": 39360
+        }
+      ],
+      "mel_max_error": 1.7881393432617188e-05,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true,
+      "speech_gate_expected": true,
+      "bounded_segments": true,
+      "nonoverlapping_segments": true,
+      "success": true
+    },
+    {
+      "id": "mandarin-0005",
+      "pcm_exact": true,
+      "mel_shape_exact": true,
+      "segments": [
+        {
+          "boundary": "silence",
+          "end_sample": 212480,
+          "id": 1,
+          "samples": 210240,
+          "start_sample": 2240
+        }
+      ],
+      "mel_max_error": 2.5391578674316406e-05,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true,
+      "speech_gate_expected": true,
+      "bounded_segments": true,
+      "nonoverlapping_segments": true,
+      "success": true
+    },
+    {
+      "id": "english-0000",
+      "pcm_exact": true,
+      "mel_shape_exact": true,
+      "segments": [
+        {
+          "boundary": "silence",
+          "end_sample": 69120,
+          "id": 1,
+          "samples": 55040,
+          "start_sample": 14080
+        },
+        {
+          "boundary": "silence",
+          "end_sample": 151040,
+          "id": 3,
+          "samples": 81920,
+          "start_sample": 69120
+        }
+      ],
+      "mel_max_error": 3.0040740966796875e-05,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true,
+      "speech_gate_expected": true,
+      "bounded_segments": true,
+      "nonoverlapping_segments": true,
+      "success": true
+    },
+    {
+      "id": "english-0001",
+      "pcm_exact": true,
+      "mel_shape_exact": true,
+      "segments": [
+        {
+          "boundary": "stop",
+          "end_sample": 140160,
+          "id": 1,
+          "samples": 140160,
+          "start_sample": 0
+        }
+      ],
+      "mel_max_error": 2.205371856689453e-05,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true,
+      "speech_gate_expected": true,
+      "bounded_segments": true,
+      "nonoverlapping_segments": true,
+      "success": true
+    },
+    {
+      "id": "english-0002",
+      "pcm_exact": true,
+      "mel_shape_exact": true,
+      "segments": [
+        {
+          "boundary": "silence",
+          "end_sample": 31680,
+          "id": 1,
+          "samples": 28160,
+          "start_sample": 3520
+        },
+        {
+          "boundary": "silence",
+          "end_sample": 87040,
+          "id": 3,
+          "samples": 55360,
+          "start_sample": 31680
+        },
+        {
+          "boundary": "silence",
+          "end_sample": 180480,
+          "id": 5,
+          "samples": 89600,
+          "start_sample": 90880
+        }
+      ],
+      "mel_max_error": 1.6689300537109375e-05,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true,
+      "speech_gate_expected": true,
+      "bounded_segments": true,
+      "nonoverlapping_segments": true,
+      "success": true
+    },
+    {
+      "id": "english-0003",
+      "pcm_exact": true,
+      "mel_shape_exact": true,
+      "segments": [
+        {
+          "boundary": "silence",
+          "end_sample": 22400,
+          "id": 1,
+          "samples": 17920,
+          "start_sample": 4480
+        },
+        {
+          "boundary": "silence",
+          "end_sample": 83840,
+          "id": 3,
+          "samples": 61440,
+          "start_sample": 22400
+        }
+      ],
+      "mel_max_error": 9.298324584960938e-06,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true,
+      "speech_gate_expected": true,
+      "bounded_segments": true,
+      "nonoverlapping_segments": true,
+      "success": true
+    },
+    {
+      "id": "english-0004",
+      "pcm_exact": true,
+      "mel_shape_exact": true,
+      "segments": [
+        {
+          "boundary": "silence",
+          "end_sample": 43840,
+          "id": 1,
+          "samples": 28480,
+          "start_sample": 15360
+        }
+      ],
+      "mel_max_error": 9.059906005859375e-06,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true,
+      "speech_gate_expected": true,
+      "bounded_segments": true,
+      "nonoverlapping_segments": true,
+      "success": true
+    },
+    {
+      "id": "english-0005",
+      "pcm_exact": true,
+      "mel_shape_exact": true,
+      "segments": [
+        {
+          "boundary": "stop",
+          "end_sample": 182720,
+          "id": 1,
+          "samples": 182720,
+          "start_sample": 0
+        }
+      ],
+      "mel_max_error": 2.372264862060547e-05,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true,
+      "speech_gate_expected": true,
+      "bounded_segments": true,
+      "nonoverlapping_segments": true,
+      "success": true
+    },
+    {
+      "id": "mixed-0004",
+      "pcm_exact": true,
+      "mel_shape_exact": true,
+      "segments": [
+        {
+          "boundary": "stop",
+          "end_sample": 21760,
+          "id": 1,
+          "samples": 21760,
+          "start_sample": 0
+        }
+      ],
+      "mel_max_error": 2.1696090698242188e-05,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true,
+      "speech_gate_expected": true,
+      "bounded_segments": true,
+      "nonoverlapping_segments": true,
+      "success": true
+    },
+    {
+      "id": "mixed-0009",
+      "pcm_exact": true,
+      "mel_shape_exact": true,
+      "segments": [
+        {
+          "boundary": "stop",
+          "end_sample": 64480,
+          "id": 1,
+          "samples": 64480,
+          "start_sample": 0
+        }
+      ],
+      "mel_max_error": 3.4928321838378906e-05,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true,
+      "speech_gate_expected": true,
+      "bounded_segments": true,
+      "nonoverlapping_segments": true,
+      "success": true
+    },
+    {
+      "id": "mixed-0028",
+      "pcm_exact": true,
+      "mel_shape_exact": true,
+      "segments": [
+        {
+          "boundary": "stop",
+          "end_sample": 16320,
+          "id": 1,
+          "samples": 16320,
+          "start_sample": 0
+        }
+      ],
+      "mel_max_error": 6.079673767089844e-06,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true,
+      "speech_gate_expected": true,
+      "bounded_segments": true,
+      "nonoverlapping_segments": true,
+      "success": true
+    },
+    {
+      "id": "mixed-0055",
+      "pcm_exact": true,
+      "mel_shape_exact": true,
+      "segments": [
+        {
+          "boundary": "stop",
+          "end_sample": 48000,
+          "id": 1,
+          "samples": 48000,
+          "start_sample": 0
+        }
+      ],
+      "mel_max_error": 2.3245811462402344e-05,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true,
+      "speech_gate_expected": true,
+      "bounded_segments": true,
+      "nonoverlapping_segments": true,
+      "success": true
+    },
+    {
+      "id": "mixed-0066",
+      "pcm_exact": true,
+      "mel_shape_exact": true,
+      "segments": [
+        {
+          "boundary": "stop",
+          "end_sample": 25439,
+          "id": 1,
+          "samples": 25439,
+          "start_sample": 0
+        }
+      ],
+      "mel_max_error": 1.895427703857422e-05,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true,
+      "speech_gate_expected": true,
+      "bounded_segments": true,
+      "nonoverlapping_segments": true,
+      "success": true
+    },
+    {
+      "id": "mixed-0068",
+      "pcm_exact": true,
+      "mel_shape_exact": true,
+      "segments": [
+        {
+          "boundary": "stop",
+          "end_sample": 23200,
+          "id": 1,
+          "samples": 23200,
+          "start_sample": 0
+        }
+      ],
+      "mel_max_error": 2.0503997802734375e-05,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true,
+      "speech_gate_expected": true,
+      "bounded_segments": true,
+      "nonoverlapping_segments": true,
+      "success": true
+    },
+    {
+      "id": "silence-short",
+      "pcm_exact": true,
+      "mel_shape_exact": true,
+      "segments": [],
+      "mel_max_error": 0.0,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true,
+      "speech_gate_expected": true,
+      "bounded_segments": true,
+      "nonoverlapping_segments": true,
+      "success": true
+    },
+    {
+      "id": "silence",
+      "pcm_exact": true,
+      "mel_shape_exact": true,
+      "segments": [],
+      "mel_max_error": 0.0,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true,
+      "speech_gate_expected": true,
+      "bounded_segments": true,
+      "nonoverlapping_segments": true,
+      "success": true
+    },
+    {
+      "id": "silence-long",
+      "pcm_exact": true,
+      "mel_shape_exact": true,
+      "segments": [],
+      "mel_max_error": 0.0,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true,
+      "speech_gate_expected": true,
+      "bounded_segments": true,
+      "nonoverlapping_segments": true,
+      "success": true
+    },
+    {
+      "id": "low-noise",
+      "pcm_exact": true,
+      "mel_shape_exact": true,
+      "segments": [],
+      "mel_max_error": 3.0994415283203125e-06,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true,
+      "speech_gate_expected": true,
+      "bounded_segments": true,
+      "nonoverlapping_segments": true,
+      "success": true
+    },
+    {
+      "id": "tone",
+      "pcm_exact": true,
+      "mel_shape_exact": true,
+      "segments": [],
+      "mel_max_error": 1.3589859008789062e-05,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true,
+      "speech_gate_expected": true,
+      "bounded_segments": true,
+      "nonoverlapping_segments": true,
+      "success": true
+    },
+    {
+      "id": "clicks",
+      "pcm_exact": true,
+      "mel_shape_exact": true,
+      "segments": [],
+      "mel_max_error": 3.337860107421875e-06,
+      "mel_within_tolerance": true,
+      "audio_tokens_exact": true,
+      "speech_gate_expected": true,
+      "bounded_segments": true,
+      "nonoverlapping_segments": true,
+      "success": true
+    }
+  ]
+}

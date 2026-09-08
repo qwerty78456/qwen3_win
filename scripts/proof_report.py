@@ -8,9 +8,10 @@ import statistics
 from pathlib import Path
 from bootstrap import ROOT
 from shipped import CONFIG, MODEL_DIR, remote
+REPORTS = ROOT / CONFIG.get('report_root','reports')
 
 def load(rel):
-    path = ROOT / rel
+    path = REPORTS / rel[len('reports/'):] if rel.startswith('reports/') and rel!='reports/package.json' else ROOT / rel
     return json.loads(path.read_text('utf-8')) if path.exists() else None
 
 def fmt(value, digits=3):
@@ -30,7 +31,7 @@ def percentile(values, p):
 lock = load('dependencies.lock.json')
 model_manifest = load(CONFIG['model_dir'] + '/manifest.json')
 reference_lock = remote('reference_lock_key')
-previous = load(CONFIG['previous_proof'] + '/summary.json')
+previous = load(CONFIG['previous_proof'] + '/summary.json') if CONFIG.get('previous_proof') else None
 remote = load('remote-assets.lock.json')
 verification = load('reports/verification.json')
 manifest = load('regression/manifest.json')
@@ -47,10 +48,10 @@ memory = load('reports/memory.json')
 package = load('reports/package.json')
 environment = load('reports/environment.json')
 directml = load('reports/directml.json')
-live = {p.stem: json.loads(p.read_text('utf-8')) for p in sorted((ROOT / 'reports').glob('live-*.json')) if 'overload' not in p.stem}
+live = {p.stem: json.loads(p.read_text('utf-8')) for p in sorted(REPORTS.glob('live-*.json')) if 'overload' not in p.stem and 'slow' not in p.stem}
 fault = load('reports/live-overload-test.json')
-captures = {p.stem: json.loads(p.read_text('utf-8')) for p in sorted((ROOT / 'reports').glob('capture-*.json')) if not p.stem.endswith('-scored')}
-stages = {p.stem: json.loads(p.read_text('utf-8')) for p in sorted((ROOT / 'reports/stages').glob('*.json'))} if (ROOT / 'reports/stages').exists() else {}
+captures = {p.stem: json.loads(p.read_text('utf-8')) for p in sorted(REPORTS.glob('capture-*.json')) if not p.stem.endswith('-scored')}
+stages = {p.stem: json.loads(p.read_text('utf-8')) for p in sorted((REPORTS / 'stages').glob('*.json'))}
 categories = {f['id']: f['category'] for f in manifest['fixtures']} if manifest else {}
 
 out = []
@@ -78,7 +79,8 @@ if lock:
 w('')
 w('`mel_filters.bin` and `prompt_reference.json` are generated from the official `Qwen3ASRProcessor` (`scripts/reference.py --prepare-only`). Publisher-supplied LFS hashes for the ONNX and safetensors assets were checked by `scripts/check_publisher_hashes.py` (`reports/publisher-hashes.json`).')
 w('')
-w(f"Shipped configuration: **{CONFIG['configuration']}** (`{CONFIG['model_dir']}`), chosen on the held-out set (section 4). {CONFIG.get('note', '')}")
+w(f"Shipped configuration: **{CONFIG['configuration']}** (`{CONFIG['model_dir']}`). {CONFIG.get('note', '')}")
+w(f"Evidence collection: `{CONFIG.get('report_root','reports')}`. Historical reports remain in the archived model collections; see `docs/RESUME-AUDIT.md` for which checks were rerun after fixes.")
 w('')
 if previous:
     w(f"Archived proof of the previous configuration ({previous.get('configuration')}): {previous.get('summary')} Reports are under `{CONFIG['previous_proof']}/`.")
@@ -97,12 +99,12 @@ if encoder_diff:
     w('|---|---|---|---|')
     for c in encoder_diff['comparisons']:
         w(f"| {c['pair'].replace('_', ' ')} | {c['max_abs']:.2e} | {c['rmse']:.2e} | {c['reference_rms']:.4f} |")
-global_refs = {p.stem: json.loads(p.read_text('utf-8')) for p in (ROOT / 'reports/reference-global-attention').glob('*.json') if p.stem != 'manifest'}
+global_refs = {p.stem: json.loads(p.read_text('utf-8')) for p in (REPORTS / 'reference-global-attention').glob('*.json') if p.stem != 'manifest'}
 if global_refs:
     same = [k for k, v in global_refs.items() if (ROOT / 'regression/reference' / f'{k}.json').exists() and json.loads((ROOT / 'regression/reference' / f'{k}.json').read_text('utf-8'))['text'] == v['text']]
     same_tokens = [k for k, v in global_refs.items() if (ROOT / 'regression/reference' / f'{k}.json').exists() and json.loads((ROOT / 'regression/reference' / f'{k}.json').read_text('utf-8'))['tokens'] == v['tokens']]
     w('')
-    w(f'Windowed and global oracle transcripts are identical on {len(same)} of {len(global_refs)} fixtures; token sequences are identical on {len(same_tokens)} of {len(global_refs)} (the remaining fixtures differ only in the tokenization of the same text).')
+    w(f'Windowed and global oracle transcripts are identical on {len(same)} of {len(global_refs)} fixtures; token sequences are identical on {len(same_tokens)} of {len(global_refs)}. The remaining cases include transcript differences; the window-mask adjustment is part of the documented oracle definition.')
 w('')
 w('## 3. Stage-by-stage verification')
 w('')
@@ -232,14 +234,18 @@ if gui:
     if 'model loads' in detail: w(f"Model load in the interface: {detail['model loads'].get('load_seconds')} s; first provisional caption {detail.get('first provisional caption appeared', {}).get('seconds_after_playback_start')} s after playback started (first clip starts at {detail.get('first provisional caption appeared', {}).get('first_clip_start')} s).")
 if fault:
     fs = fault['live']; fp = fs['pipeline']
-    w(''); w(f"Fault injection (`--simulate-live --slow-inference {fault.get('options', {}).get('slow_inference', '?')}`, every generation delayed): stop reason \"{fp.get('stop_reason')}\", {fp.get('suspensions')} provisional suspensions, max backlog {fmt(fp.get('max_backlog_seconds'), 1)} s, finals delivered {fs['final_count']}, duplicate finals {fs.get('duplicate_finals')}, stale provisionals delivered {fs.get('stale_provisionals_delivered')}, audio loss {'no' if fs.get('no_audio_loss') else 'yes'}. Expected behaviour: provisional decoding suspended above 4 s of backlog, capture stopped visibly above 20 s, remaining audio drained and finalized exactly once.")
+    slow = load('reports/live-slow3-test.json')
+    if slow:
+        ss = slow['live']; spp = ss['pipeline']
+        w(''); w(f"Fault injection, moderate (`--simulate-live --slow-inference {slow.get('options', {}).get('slow_inference', '?')}`): stop reason \"{spp.get('stop_reason')}\", {spp.get('suspensions')} provisional suspensions (\"Catching up\"), max backlog age {fmt(spp.get('max_backlog_seconds'), 1)} s, finals {ss['final_count']}, duplicate finals {ss.get('duplicate_finals')}, stale provisionals delivered {ss.get('stale_provisionals_delivered')} — finalization falls behind, provisional decoding is suspended and resumes, no overload stop is needed.")
+    w(''); w(f"Fault injection, severe (`--simulate-live --slow-inference {fault.get('options', {}).get('slow_inference', '?')}`, every generation delayed): stop reason \"{fp.get('stop_reason')}\", {fp.get('suspensions')} provisional suspensions, max backlog {fmt(fp.get('max_backlog_seconds'), 1)} s, finals delivered {fs['final_count']}, duplicate finals {fs.get('duplicate_finals')}, stale provisionals delivered {fs.get('stale_provisionals_delivered')}, audio loss {'no' if fs.get('no_audio_loss') else 'yes'}. Expected behaviour: provisional decoding suspended above 4 s of backlog, capture stopped visibly above 20 s, remaining audio drained and finalized exactly once.")
 if not live and not captures:
     w('Not measured yet.')
 w('')
 w('## 6. Package')
 w('')
 if package:
-    w(f"`{package['package']}`: {package['files']} files, extracted {gib(package['extracted_bytes'])}, archive {gib(package.get('compressed_bytes'))} (`{package.get('archive')}`, SHA-256 `{package.get('archive_sha256')}`).")
+    w(f"`{package['package']}`: {package['files']} files. Exact extracted/archive sizes and the archive SHA-256 are published in the release-info JSON beside the archive. They are kept outside the ZIP to avoid a self-referential archive hash.")
 else:
     w('Not built yet.')
 w('')
@@ -256,7 +262,7 @@ if runs:
         overload = str(pipe.get('stop_reason', '')).startswith('Overload') or str(pipe.get('stop_reason', '')).startswith('Retained')
         loss = cap.get('dropped_frames', 0) or cap.get('overflow_events', 0)
         peak = pipe['memory']['peak_working_set_bytes']
-        met = p95 <= 4.0 and not overload and not loss and peak <= 16 * 2**30
+        met = r.get('success',False) and sp['provisional_lag_seconds']['count']>0 and p95 <= 4.0 and not overload and not loss and peak <= 16_000_000_000
         w(f"| {name} | {fmt(p95, 2)} | {fmt(overload)} | {fmt(bool(loss))} | {gib(peak)} | {'yes' if met else 'no'} |")
     failing = [name for name, r in runs.items() if r['live']['provisional_lag_seconds']['p95'] > 4.0]
     w('')
@@ -303,7 +309,7 @@ if live or captures:
     b('')
 if package:
     b('## Package size'); b('')
-    b(f"- Extracted {gib(package['extracted_bytes'])}, archive {gib(package.get('compressed_bytes'))} ({package.get('compression')}).")
+    b('- Exact extracted bytes, compressed bytes and SHA-256: see the release-info JSON beside the portable ZIP.');
     b('')
 b('## Acceptance target')
 b('')
@@ -320,7 +326,7 @@ c('|---|---|---|---|---|---|---|---|')
 if environment:
     gpus = '; '.join(f"{g['Name']} {g['DriverVersion']}" for g in environment['graphics'] if 'Radeon' in g['Name'])
     tested = ['transcription proof (`--verify`, 24 fixtures)'] + (['boundary/session cases'] if boundaries else []) + ([f'{len(live)} simulated live runs'] if live else []) + ([f'{len(captures)} WASAPI loopback captures'] if captures else []) + (['interface test'] if load('reports/gui-test.json') else [])
-    result = 'proof passed' if verification and verification.get('success') else 'proof incomplete'
+    result = 'proof passed' if verification and verification.get('success') and len(stages)==24 and all(s.get('success') for s in stages.values()) and boundaries and boundaries.get('success') else 'proof incomplete'
     c(f"| {environment['os']['Caption']} {environment['os']['Version']} (build {environment['os']['BuildNumber']}) — development host, not a clean install | x64 | {environment['cpu']['Name'].strip()} | {environment['os']['TotalVisibleMemorySize'] // 1024 // 1024} GiB | {gpus} (present, unused) | CPU | {', '.join(tested)} | {result}; live measurements in docs/BENCHMARK.md |")
 c('| Windows 10 22H2 x64 | x64 | any | ≥16 GB | any | CPU | **not tested** | untested |')
 c('| Windows 11 24H2 x64 (clean install, standard user, offline) | x64 | any | ≥16 GB | any | CPU | **not tested** — pending external clean-machine run | untested |')
@@ -340,3 +346,10 @@ c('- Device removal / default-device change during a long live session (the hand
 c('- Any GPU acceleration.')
 (ROOT / 'docs/COMPATIBILITY.md').write_text('\n'.join(compat) + '\n', encoding='utf-8')
 print('Wrote docs/PROOF.md, docs/BENCHMARK.md and docs/COMPATIBILITY.md')
+if REPORTS != ROOT/'reports':
+    for name in ['PROOF.md','BENCHMARK.md','COMPATIBILITY.md']:
+        path=ROOT/'docs'/name
+        text=path.read_text('utf-8')
+        for item in ['verification.json','stages/','boundaries.json','tokenizer.json','preprocessing.json','fixture-frontend.json','speech-gate.json','cli-failures.json','benchmark-threads.json','memory.json','encoder-diff-mandarin-0000.json','variant-evaluation.json','reference-global-attention/','gui-test.json','directml.json']:
+            text=text.replace('reports/'+item,CONFIG['report_root']+'/'+item)
+        path.write_text(text,encoding='utf-8')

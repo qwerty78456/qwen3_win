@@ -1,6 +1,6 @@
 {
   "fixture": "window-801-frames",
-  "success": false,
+  "success": true,
   "stages": {
     "pcm": {
       "reference_elements": 128160,
@@ -34,21 +34,33 @@
     },
     "encoder": {
       "reference_elements": 107520,
-      "native_elements": 215040,
+      "native_elements": 107520,
       "tolerance": {
         "absolute": 0.002,
         "relative": 0.0001
       },
-      "success": false
+      "success": true,
+      "max_absolute_error": 5.718320608139038e-07,
+      "rmse": 6.014148296742547e-08,
+      "reference_max_abs": 0.11744518578052521,
+      "reference_rms": 0.01761246377010566,
+      "failed_elements": 0,
+      "elementwise_success": true
     },
     "input_embeds": {
       "reference_elements": 122880,
-      "native_elements": 245760,
+      "native_elements": 122880,
       "tolerance": {
         "absolute": 0.002,
         "relative": 0.0001
       },
-      "success": false
+      "success": true,
+      "max_absolute_error": 5.718320608139038e-07,
+      "rmse": 5.625746296171664e-08,
+      "reference_max_abs": 0.11744518578052521,
+      "reference_rms": 0.018526679634724624,
+      "failed_elements": 0,
+      "elementwise_success": true
     },
     "logits_0": {
       "reference_elements": 151936,
@@ -57,13 +69,13 @@
         "absolute": 0.005,
         "relative": 0.0001
       },
-      "success": false,
-      "max_absolute_error": 22.082109451293945,
-      "rmse": 4.820825898771343,
+      "success": true,
+      "max_absolute_error": 0.00016641616821289062,
+      "rmse": 4.9316876463454026e-05,
       "reference_max_abs": 27.509172439575195,
       "reference_rms": 4.585548838574809,
-      "failed_elements": 151808,
-      "elementwise_success": false
+      "failed_elements": 0,
+      "elementwise_success": true
     },
     "keys_0": {
       "reference_elements": 3440640,
@@ -74,14 +86,14 @@
         "scale_relative": 0.001,
         "rmse_relative": 0.001
       },
-      "success": false,
-      "max_absolute_error": 218.22555541992188,
-      "rmse": 2.751514775702998,
+      "success": true,
+      "max_absolute_error": 0.002285003662109375,
+      "rmse": 9.179578268262789e-06,
       "reference_max_abs": 466.115234375,
       "reference_rms": 6.287123038191192,
-      "failed_elements": 3421279,
-      "elementwise_success": false,
-      "tensor_scale_success": false
+      "failed_elements": 0,
+      "elementwise_success": true,
+      "tensor_scale_success": true
     },
     "values_0": {
       "reference_elements": 3440640,
@@ -92,14 +104,14 @@
         "scale_relative": 0.001,
         "rmse_relative": 0.001
       },
-      "success": false,
-      "max_absolute_error": 147.5911407470703,
-      "rmse": 7.272501697082362,
+      "success": true,
+      "max_absolute_error": 0.0017719268798828125,
+      "rmse": 2.0964999164054494e-05,
       "reference_max_abs": 49.86003875732422,
       "reference_rms": 2.9846050960656774,
-      "failed_elements": 3426315,
-      "elementwise_success": false,
-      "tensor_scale_success": false
+      "failed_elements": 0,
+      "elementwise_success": true,
+      "tensor_scale_success": true
     },
     "logits_1": {
       "reference_elements": 151936,
@@ -108,13 +120,13 @@
         "absolute": 0.005,
         "relative": 0.0001
       },
-      "success": false,
-      "max_absolute_error": 20.476764678955078,
-      "rmse": 4.225069979437354,
+      "success": true,
+      "max_absolute_error": 0.00010347366333007812,
+      "rmse": 2.387337696906332e-05,
       "reference_max_abs": 34.85833740234375,
       "reference_rms": 5.779011099770562,
-      "failed_elements": 151773,
-      "elementwise_success": false
+      "failed_elements": 0,
+      "elementwise_success": true
     },
     "keys_1": {
       "reference_elements": 3469312,
@@ -125,14 +137,14 @@
         "scale_relative": 0.001,
         "rmse_relative": 0.001
       },
-      "success": false,
-      "max_absolute_error": 218.22555541992188,
-      "rmse": 2.7509074896073087,
+      "success": true,
+      "max_absolute_error": 0.002285003662109375,
+      "rmse": 9.152089459849942e-06,
       "reference_max_abs": 466.115234375,
       "reference_rms": 6.288835619741001,
-      "failed_elements": 3449825,
-      "elementwise_success": false,
-      "tensor_scale_success": false
+      "failed_elements": 0,
+      "elementwise_success": true,
+      "tensor_scale_success": true
     },
     "values_1": {
       "reference_elements": 3469312,
@@ -143,14 +155,14 @@
         "scale_relative": 0.001,
         "rmse_relative": 0.001
       },
-      "success": false,
-      "max_absolute_error": 147.5911407470703,
-      "rmse": 7.27064708270133,
+      "success": true,
+      "max_absolute_error": 0.0017719268798828125,
+      "rmse": 2.0900716259422026e-05,
       "reference_max_abs": 49.86003875732422,
       "reference_rms": 2.9856594076264553,
-      "failed_elements": 3454905,
-      "elementwise_success": false,
-      "tensor_scale_success": false
+      "failed_elements": 0,
+      "elementwise_success": true,
+      "tensor_scale_success": true
     },
     "logits_7": {
       "reference_elements": 151936,
@@ -159,13 +171,13 @@
         "absolute": 0.005,
         "relative": 0.0001
       },
-      "success": false,
-      "max_absolute_error": 25.98377227783203,
-      "rmse": 6.42944628055355,
+      "success": true,
+      "max_absolute_error": 8.0108642578125e-05,
+      "rmse": 1.9602686868721967e-05,
       "reference_max_abs": 40.27782440185547,
       "reference_rms": 5.214913593623051,
-      "failed_elements": 151856,
-      "elementwise_success": false
+      "failed_elements": 0,
+      "elementwise_success": true
     },
     "keys_7": {
       "reference_elements": 3641344,
@@ -176,14 +188,14 @@
         "scale_relative": 0.001,
         "rmse_relative": 0.001
       },
-      "success": false,
-      "max_absolute_error": 233.66851806640625,
-      "rmse": 2.747636597278065,
+      "success": true,
+      "max_absolute_error": 0.002285003662109375,
+      "rmse": 8.988270723535963e-06,
       "reference_max_abs": 466.115234375,
       "reference_rms": 6.298913579556819,
-      "failed_elements": 3621078,
-      "elementwise_success": false,
-      "tensor_scale_success": false
+      "failed_elements": 0,
+      "elementwise_success": true,
+      "tensor_scale_success": true
     },
     "values_7": {
       "reference_elements": 3641344,
@@ -194,159 +206,20 @@
         "scale_relative": 0.001,
         "rmse_relative": 0.001
       },
-      "success": false,
-      "max_absolute_error": 147.5911407470703,
-      "rmse": 7.214021719797111,
+      "success": true,
+      "max_absolute_error": 0.0017719268798828125,
+      "rmse": 2.048527169684022e-05,
       "reference_max_abs": 49.86003875732422,
       "reference_rms": 2.966145909851341,
-      "failed_elements": 3626194,
-      "elementwise_success": false,
-      "tensor_scale_success": false
+      "failed_elements": 0,
+      "elementwise_success": true,
+      "tensor_scale_success": true
     }
   },
   "prompt_exact": true,
-  "tokens_exact": false,
-  "token_differences": [
-    {
-      "index": 6,
-      "reference": 11,
-      "native": 323
-    },
-    {
-      "index": 7,
-      "reference": 323,
-      "native": 2878
-    },
-    {
-      "index": 8,
-      "reference": 2878,
-      "native": 4135
-    },
-    {
-      "index": 9,
-      "reference": 4135,
-      "native": 5545
-    },
-    {
-      "index": 10,
-      "reference": 5545,
-      "native": 374
-    },
-    {
-      "index": 11,
-      "reference": 11,
-      "native": 279
-    },
-    {
-      "index": 12,
-      "reference": 374,
-      "native": 23467
-    },
-    {
-      "index": 13,
-      "reference": 279,
-      "native": 323
-    },
-    {
-      "index": 14,
-      "reference": 23467,
-      "native": 26291
-    },
-    {
-      "index": 15,
-      "reference": 323,
-      "native": 6290
-    },
-    {
-      "index": 16,
-      "reference": 26291,
-      "native": 315
-    },
-    {
-      "index": 17,
-      "reference": 6290,
-      "native": 17632
-    },
-    {
-      "index": 18,
-      "reference": 315,
-      "native": 2172
-    },
-    {
-      "index": 19,
-      "reference": 17632,
-      "native": 11
-    },
-    {
-      "index": 20,
-      "reference": 2172,
-      "native": 323
-    },
-    {
-      "index": 21,
-      "reference": 11,
-      "native": 892
-    },
-    {
-      "index": 22,
-      "reference": 323,
-      "native": 572
-    },
-    {
-      "index": 23,
-      "reference": 892,
-      "native": 1865
-    },
-    {
-      "index": 24,
-      "reference": 572,
-      "native": 11245
-    },
-    {
-      "index": 25,
-      "reference": 1865,
-      "native": 311
-    },
-    {
-      "index": 26,
-      "reference": 11245,
-      "native": 47412
-    },
-    {
-      "index": 27,
-      "reference": 311,
-      "native": 1283
-    },
-    {
-      "index": 28,
-      "reference": 47412,
-      "native": 264
-    },
-    {
-      "index": 29,
-      "reference": 1283,
-      "native": 48492
-    },
-    {
-      "index": 30,
-      "reference": 264,
-      "native": 13
-    },
-    {
-      "index": 31,
-      "reference": 48492,
-      "native": 151645
-    },
-    {
-      "index": 32,
-      "reference": 13,
-      "native": null
-    },
-    {
-      "index": 33,
-      "reference": 151645,
-      "native": null
-    }
-  ],
-  "cache_shapes_exact": false
+  "tokens_exact": true,
+  "completion_match": true,
+  "token_differences": [],
+  "cache_shapes_exact": true,
+  "end_to_end_success": true
 }

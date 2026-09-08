@@ -10,6 +10,7 @@ reports/capture-<name>-scored.json.
 import argparse
 import json
 import multiprocessing
+import os
 import re
 import subprocess
 import time
@@ -63,15 +64,22 @@ def main():
     parser.add_argument('--volume', type=int, default=100)
     parser.add_argument('--variant', default=VARIANT)
     parser.add_argument('--rescore', action='store_true', help='score an existing reports/capture-<name>.json without capturing again')
+    parser.add_argument('--player-device', default='', help='SDL audio device name for ffplay (default: system default endpoint)')
+    parser.add_argument('--provider',choices=['cpu','directml'],default='cpu')
+    parser.add_argument('--adapter',type=int,default=0)
+    parser.add_argument('--report-dir',type=Path,default=ROOT/'reports')
     args = parser.parse_args()
     playlist = ROOT / 'traces/live' / f'{args.playlist}.wav'
     schedule = json.loads((ROOT / 'traces/live' / f'{args.playlist}.json').read_text('utf-8'))
     duration = schedule['duration_seconds'] + args.extra_seconds
-    report = ROOT / 'reports' / f'capture-{args.name}.json'
+    args.report_dir.mkdir(parents=True,exist_ok=True)
+    report = args.report_dir / f'capture-{args.name}.json'
     exe = ROOT / 'build/Release/AsrWin.exe'
     started_line = None
     if not args.rescore:
-        capture = subprocess.Popen([str(exe), '--capture', '--device', args.device, '--duration', str(duration), '--model', str(MODEL_DIR),
+        provider_args=['--provider',args.provider]
+        if args.provider=='directml':provider_args+=['--experimental-directml','--adapter',str(args.adapter)]
+        capture = subprocess.Popen([str(exe), *provider_args, '--capture', '--device', args.device, '--duration', str(duration), '--model', str(MODEL_DIR),
                                     '--variant', args.variant, '--report', str(report), '--transcript', str(ROOT / 'traces/live' / f'{args.name}.txt')],
                                    stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, encoding='utf-8', errors='replace')
         # Wait for the model to load and capture to start before playing.
@@ -84,13 +92,16 @@ def main():
         time.sleep(1.0)
         loads = [multiprocessing.Process(target=busy, args=(duration,)) for _ in range(args.load)]
         for p in loads: p.start()
-        player = subprocess.Popen(['ffplay', '-nodisp', '-autoexit', '-loglevel', 'quiet', '-volume', str(args.volume), str(playlist)])
+        env = dict(os.environ)
+        if args.player_device: env['SDL_AUDIO_DEVICE_NAME'] = args.player_device
+        player = subprocess.Popen(['ffplay', '-nodisp', '-autoexit', '-loglevel', 'quiet', '-volume', str(args.volume), str(playlist)], env=env)
         for line in capture.stdout:
             print(line.rstrip(), flush=True)
         capture.wait()
         if player.poll() is None: player.terminate()  # capture ended early (device lost, overload): never leave audio playing
         player.wait()
-        for p in loads: p.join()
+        for p in loads:
+            p.terminate(); p.join()  # background load ends with the capture
     body = json.loads(report.read_text('utf-8'))
     events = body['live']['events']
     finals = [e for e in events if e['kind'] == 'final' and e['text']]
@@ -108,17 +119,17 @@ def main():
             nearest = min(clips, key=lambda c: abs(c['start'] - (f['audio_start'] - offset)))
             deltas.append(f['audio_start'] - nearest['start'])
         deltas.sort(); offset = deltas[len(deltas) // 2]
-    assigned = {clip['id']: [] for clip in clips}
+    assigned = [[] for _ in clips]  # keyed by clip index: repeated playlists reuse fixture ids
     for f in finals:
         if offset is None: break
         best, best_overlap = None, 0.0
-        for clip in clips:
+        for index, clip in enumerate(clips):
             overlap = min(f['audio_end'] - offset, clip['end']) - max(f['audio_start'] - offset, clip['start'])
-            if overlap > best_overlap: best, best_overlap = clip['id'], overlap
-        if best: assigned[best].append(f)
+            if overlap > best_overlap: best, best_overlap = index, overlap
+        if best is not None: assigned[best].append(f)
     scored = []
-    for clip in clips:
-        matches = assigned[clip['id']]
+    for index, clip in enumerate(clips):
+        matches = assigned[index]
         hypothesis = ' '.join(f['text'] for f in matches)
         characters = clip['category'] == 'mandarin'
         ref_h, hyp = tokens(clip['human_text'], characters), tokens(hypothesis, characters)
@@ -132,13 +143,15 @@ def main():
             summary[cat] = {'clips': len(rows), 'human_error_rate': sum(r['human_edits'] for r in rows) / max(1, sum(r['human_units'] for r in rows)),
                             'oracle_error_rate': sum(r['oracle_edits'] for r in rows) / max(1, sum(r['oracle_units'] for r in rows)),
                             'clips_without_caption': sum(1 for r in rows if not r['finals'])}
-    result = {'name': args.name, 'playlist': args.playlist, 'device': body['source'].get('device'), 'background_load_processes': args.load,
+    result = {'name': args.name, 'playlist': args.playlist, 'device': body['source'].get('device'), 'player_device': args.player_device or 'default', 'background_load_processes': args.load,
               'capture_started': started_line, 'alignment_offset_seconds': offset, 'clips': scored, 'summary': summary,
               'live': {k: v for k, v in body['live'].items() if k not in ('events', 'utterances', 'transcript')}, 'success': body.get('success')}
-    (ROOT / 'reports' / f'capture-{args.name}-scored.json').write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    (args.report_dir / f'capture-{args.name}-scored.json').write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     print(json.dumps({'summary': summary, 'success': body.get('success'), 'stop_reason': body['live']['pipeline'].get('stop_reason'),
                       'provisional_lag_p95': body['live']['provisional_lag_seconds']['p95'], 'first_caption_p95': body['live']['first_caption_lag_seconds']['p95'],
                       'finalization_p95': body['live']['finalization_delay_seconds']['p95'], 'max_backlog': body['live']['pipeline']['max_backlog_seconds']}, ensure_ascii=False, indent=2))
+    ctypes.windll.kernel32.SetThreadExecutionState(0x80000000)
+    raise SystemExit(0 if body.get('success') else 2)
 
 if __name__ == '__main__':
     main()

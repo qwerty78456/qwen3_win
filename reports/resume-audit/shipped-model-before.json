@@ -1,0 +1,11 @@
+{
+  "configuration": "Qwen3-ASR-1.7B FP32 graphs with FP16 embedding storage",
+  "name": "1.7b",
+  "model_dir": "models/qwen3-asr-1.7b-fp32",
+  "variant": "fp32",
+  "onnx_lock_key": "onnx",
+  "reference_dir": "reference-model",
+  "reference_lock_key": "reference",
+  "decision": "reports/variant-evaluation.json",
+  "note": "Switched to 1.7B FP32 with DirectML by user request."
+}

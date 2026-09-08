@@ -2,28 +2,29 @@
   "name": "3min-load2",
   "playlist": "playlist-1x",
   "device": "2 - VG279QE5A (2- AMD High Definition Audio Device)",
+  "player_device": "default",
   "background_load_processes": 2,
-  "capture_started": "Capturing playback from: 2 - VG279QE5A (2- AMD High Definition Audio Device) for 176.31 s",
-  "alignment_offset_seconds": 0.9200000000000017,
+  "capture_started": null,
+  "alignment_offset_seconds": 1.2199999999999989,
   "clips": [
     {
       "id": "mandarin-0000",
       "category": "mandarin",
-      "finals": 1,
-      "hypothesis": "科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。这是一个篇章的结束，也是新篇章的开始。",
-      "human_edits": 31,
+      "finals": 2,
+      "hypothesis": "这并不是告别。 这是一个篇章的结束，也是新篇章的开始。",
+      "human_edits": 0,
       "human_units": 23,
-      "oracle_edits": 31,
+      "oracle_edits": 0,
       "oracle_units": 23
     },
     {
       "id": "mandarin-0001",
       "category": "mandarin",
       "finals": 1,
-      "hypothesis": "大多数现代科研望远镜都是聚。银河金等元素，当然也是金属。",
-      "human_edits": 14,
+      "hypothesis": "钙、钾等元素属于金属，银和金等元素，当然也是金属。",
+      "human_edits": 0,
       "human_units": 21,
-      "oracle_edits": 14,
+      "oracle_edits": 0,
       "oracle_units": 21
     },
     {
@@ -60,10 +61,10 @@
       "id": "mandarin-0005",
       "category": "mandarin",
       "finals": 1,
-      "hypothesis": "大多数现代科研望远镜都是巨型设施，位于大体大气条件优良的偏远地区。",
+      "hypothesis": "大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。",
       "human_edits": 2,
       "human_units": 29,
-      "oracle_edits": 1,
+      "oracle_edits": 0,
       "oracle_units": 31
     },
     {
@@ -90,7 +91,7 @@
       "id": "english-0002",
       "category": "english",
       "finals": 1,
-      "hypothesis": "To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous, to foreigners after a glowing account of its splendourous recorded by Lord Byron.",
+      "hypothesis": "To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron.",
       "human_edits": 1,
       "human_units": 33,
       "oracle_edits": 0,
@@ -190,8 +191,8 @@
   "summary": {
     "mandarin": {
       "clips": 6,
-      "human_error_rate": 0.3125,
-      "oracle_error_rate": 0.20444444444444446,
+      "human_error_rate": 0.11160714285714286,
+      "oracle_error_rate": 0.0,
       "clips_without_caption": 0
     },
     "english": {
@@ -209,37 +210,42 @@
   },
   "live": {
     "clean_stop": true,
+    "duplicate_finals": 0,
     "errors": 0,
-    "final_count": 19,
+    "final_count": 20,
     "finalization_delay_seconds": {
-      "count": 19,
-      "max": 3.7520909,
-      "p50": 1.6032455,
-      "p95": 3.7520909
+      "count": 20,
+      "max": 3.645183901,
+      "p50": 1.268443201,
+      "p95": 2.896752
     },
     "first_caption_lag_seconds": {
-      "count": 18,
-      "max": 3.1689529,
-      "p50": 2.5745933,
-      "p95": 3.1689529
+      "count": 19,
+      "max": 3.163519899,
+      "p50": 2.543963301,
+      "p95": 3.163519899
     },
     "incomplete_finals": 0,
     "no_audio_loss": true,
+    "overload_stop": false,
     "pipeline": {
-      "audio_seconds_processed": 176.33,
+      "audio_seconds_processed": 176.32,
+      "backlog_definition": "age of the oldest unfinished utterance since its audio ended (queued or decoding)",
       "capture": {
         "channels": 2,
         "default_device": true,
         "device": "2 - VG279QE5A (2- AMD High Definition Audio Device)",
         "device_buffer_frames": 4800,
+        "device_gap_frames": 0,
         "device_id": "{0.0.0.00000000}.{406c6046-09de-4663-887e-8041094dab78}",
+        "device_position_resets": 0,
         "discontinuities": 1,
         "dropped_frames": 0,
         "failure": "",
-        "frames": 8463840,
+        "frames": 8463360,
         "mix_format": "float32",
         "overflow_events": 0,
-        "packets": 17633,
+        "packets": 17632,
         "ring_capacity_frames": 96000,
         "ring_peak_used_frames": 480,
         "sample_rate": 48000,
@@ -247,37 +253,40 @@
         "timestamp_errors": 0
       },
       "error": "",
-      "finals": 19,
-      "max_backlog_seconds": 15.0,
+      "finals": 20,
+      "lag_clock": "producer sample timestamps (WASAPI QPC for device capture)",
+      "max_backlog_seconds": 3.643598201,
+      "max_queued_audio_seconds": 15.0,
       "memory": {
-        "peak_pagefile_bytes": 6738722816,
-        "peak_working_set_bytes": 6590201856,
-        "private_bytes": 6734745600,
-        "working_set_bytes": 6587412480
+        "peak_pagefile_bytes": 6739968000,
+        "peak_working_set_bytes": 6591631360,
+        "private_bytes": 6731685888,
+        "working_set_bytes": 6583635968
       },
-      "process_cpu_seconds": 323.109375,
-      "provisionals": 46,
-      "provisionals_cancelled": 13,
+      "process_cpu_seconds": 287.890625,
+      "provisionals": 40,
+      "provisionals_cancelled": 16,
       "provisionals_skipped": 2,
-      "retained_peak_seconds": 28.98,
+      "retained_peak_seconds": 40.980000000000004,
       "segmenter": {
-        "energy_gated_positive_frames": 5805,
+        "energy_gated_positive_frames": 5342,
         "longest_start_run_frames": 5,
-        "peak_frame_rms": 0.20446112035411007,
-        "vad_positive_frames": 5996
+        "peak_frame_rms": 0.2057057447594317,
+        "vad_positive_frames": 5530
       },
       "session": 1,
       "stop_reason": "Duration elapsed",
-      "suspensions": 13,
-      "wall_seconds": 176.3244477
+      "suspensions": 0,
+      "wall_seconds": 176.3235519
     },
     "provisional_lag_seconds": {
-      "count": 46,
-      "max": 2.3719515,
-      "p50": 0.9350417,
-      "p95": 1.8279423
+      "count": 40,
+      "max": 1.800922101,
+      "p50": 0.801996301,
+      "p95": 1.663465299
     },
-    "speech_utterances": 18,
+    "speech_utterances": 19,
+    "stale_provisionals_delivered": 0,
     "success": true
   },
   "success": true

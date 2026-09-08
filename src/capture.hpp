@@ -17,8 +17,9 @@ std::wstring default_render_device();
 class RawRing {
  public:
   RawRing(uint32_t channels, uint32_t capacity_frames, uint32_t reserve_frames);
-  bool push(const float* interleaved, uint32_t frames);  // false: packet does not fit at all
-  size_t pop(std::vector<float>& out, size_t max_frames); // appends interleaved frames
+  bool push(const float* interleaved, uint32_t frames, Clock::time_point end_time=Clock::now(), uint32_t rate=16000, DWORD flags=0);
+  bool push_bytes(const BYTE* interleaved, uint32_t frames, uint32_t bits, bool floating, Clock::time_point end_time, uint32_t rate, DWORD flags);
+  size_t pop(std::vector<float>& out, size_t max_frames, Clock::time_point* end_time=nullptr, DWORD* flags=nullptr);
   bool stop_threshold_reached() const { return used_frames()>=capacity_-reserve_; }
   size_t used_frames() const { return head_.load(std::memory_order_acquire)-tail_.load(std::memory_order_acquire); }
   uint32_t channels() const { return channels_; }
@@ -29,6 +30,9 @@ class RawRing {
   template <class Pred> bool wait(Pred ready, std::chrono::milliseconds timeout) { std::unique_lock<std::mutex> lock(mutex_); return cv_.wait_for(lock,timeout,ready); }
  private:
   std::vector<float> data_;
+  std::vector<Clock::time_point> times_;
+  std::vector<DWORD> flags_;
+  std::vector<uint32_t> formats_;
   uint32_t channels_, capacity_, reserve_;
   std::atomic<size_t> head_{0}, tail_{0}, peak_{0};
   std::mutex mutex_;
@@ -89,10 +93,12 @@ class LoopbackCapture : public AudioSource {
   bool capturing_default_=false;
   uint32_t rate_=0, channels_=0, bits_=0, buffer_frames_=0, render_buffer_frames_=0;
   bool float_format_=true;
-  std::vector<float> scratch_;
   std::atomic<bool> stop_requested_{false}, finished_{false}, started_{false};
   std::atomic<uint64_t> packets_{0}, frames_{0}, discontinuities_{0}, silent_packets_{0}, timestamp_errors_{0}, dropped_frames_{0};
   std::atomic<int> overflow_events_{0};
+  uint64_t expected_position_=0;
+  bool have_position_=false;
+  std::atomic<uint64_t> device_gap_frames_{0}, position_resets_{0};
   std::string failure_;
   std::mutex failure_mutex_;
 };

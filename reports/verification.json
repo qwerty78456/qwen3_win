@@ -1,6 +1,8 @@
 {
   "engine": {
-    "assets_verified": false,
+    "adapter_index": null,
+    "assets_verified": true,
+    "configuration": "Qwen3-ASR-0.6B FP32 graphs with FP16 embedding storage",
     "embedding_dtype": "float16",
     "encoder": [
       {
@@ -18,6 +20,9 @@
       151645
     ],
     "memory_mode": "shared-prepack",
+    "model_directory": "qwen3-asr-0.6b-fp32",
+    "model_hidden_size": 1024,
+    "model_manifest_sha256": "de01cc5a9e9b468d9c0d55312da457974ccb75931078566352f5e7750f835ff8",
     "prefill": [
       {
         "dtype": 7,
@@ -65,6 +70,10 @@
       151669
     ],
     "provider": "CPU",
+    "reference_model": {
+      "repo": "Qwen/Qwen3-ASR-0.6B",
+      "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0"
+    },
     "runtime": "1.24.4",
     "step": [
       {
@@ -457,19 +466,19 @@
           }
         ],
         "completion": "eos",
-        "decode_seconds": 0.9785342,
-        "encoder_seconds": 0.1512504,
+        "decode_seconds": 1.0150567,
+        "encoder_seconds": 0.1573151,
         "memory": {
-          "peak_pagefile_bytes": 6508896256,
-          "peak_working_set_bytes": 6226354176,
-          "private_bytes": 6508863488,
-          "working_set_bytes": 6198390784
+          "peak_pagefile_bytes": 6508838912,
+          "peak_working_set_bytes": 6226296832,
+          "private_bytes": 6508810240,
+          "working_set_bytes": 6197841920
         },
         "model_samples": 166080,
-        "prefill_seconds": 0.2178606,
-        "preprocess_seconds": 0.0102685,
+        "prefill_seconds": 0.2302021,
+        "preprocess_seconds": 0.00972,
         "raw_output": "language Chinese<asr_text>这并不是告别，这是一个篇章的结束，也是新篇章的开始。<|im_end|>",
-        "rtf": 0.13459380539499036,
+        "rtf": 0.14001495183044316,
         "text": "这并不是告别，这是一个篇章的结束，也是新篇章的开始。",
         "tokens": [
           11528,
@@ -491,7 +500,7 @@
           1773,
           151645
         ],
-        "total_seconds": 1.397083
+        "total_seconds": 1.4533545
       },
       "reference": {
         "attention": "eager",
@@ -1402,19 +1411,19 @@
           }
         ],
         "completion": "eos",
-        "decode_seconds": 1.1074871000000002,
-        "encoder_seconds": 0.1400458,
+        "decode_seconds": 1.1406186999999997,
+        "encoder_seconds": 0.145168,
         "memory": {
-          "peak_pagefile_bytes": 6513127424,
-          "peak_working_set_bytes": 6250827776,
-          "private_bytes": 6509752320,
-          "working_set_bytes": 6250827776
+          "peak_pagefile_bytes": 6513074176,
+          "peak_working_set_bytes": 6250467328,
+          "private_bytes": 6509699072,
+          "working_set_bytes": 6250467328
         },
         "model_samples": 132480,
-        "prefill_seconds": 0.1734873,
-        "preprocess_seconds": 0.0077432,
+        "prefill_seconds": 0.1783306,
+        "preprocess_seconds": 0.0100709,
         "raw_output": "language Chinese<asr_text>钙、钾等元素属于金属，银和金等元素当然也是金属。<|im_end|>",
-        "rtf": 0.17551041062801934,
+        "rtf": 0.18147131642512077,
         "text": "钙、钾等元素属于金属，银和金等元素当然也是金属。",
         "tokens": [
           11528,
@@ -1439,7 +1448,7 @@
           1773,
           151645
         ],
-        "total_seconds": 1.4532256
+        "total_seconds": 1.502582
       },
       "reference": {
         "attention": "eager",
@@ -2614,19 +2623,19 @@
           }
         ],
         "completion": "eos",
-        "decode_seconds": 1.9542458000000003,
-        "encoder_seconds": 0.1647036,
+        "decode_seconds": 1.9728472999999995,
+        "encoder_seconds": 0.1627318,
         "memory": {
-          "peak_pagefile_bytes": 6514024448,
-          "peak_working_set_bytes": 6330871808,
-          "private_bytes": 6510252032,
-          "working_set_bytes": 6330871808
+          "peak_pagefile_bytes": 6513934336,
+          "peak_working_set_bytes": 6332325888,
+          "private_bytes": 6512107520,
+          "working_set_bytes": 6332325888
         },
         "model_samples": 221760,
-        "prefill_seconds": 0.2942057,
-        "preprocess_seconds": 0.0127971,
+        "prefill_seconds": 0.263929,
+        "preprocess_seconds": 0.013633,
         "raw_output": "language Chinese<asr_text>桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。<|im_end|>",
-        "rtf": 0.18297655844155844,
+        "rtf": 0.18415108946608946,
         "text": "桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。",
         "tokens": [
           11528,
@@ -2664,7 +2673,7 @@
           1773,
           151645
         ],
-        "total_seconds": 2.5360546
+        "total_seconds": 2.5523335
       },
       "reference": {
         "attention": "eager",
@@ -4482,19 +4491,19 @@
           }
         ],
         "completion": "eos",
-        "decode_seconds": 3.153827100000001,
-        "encoder_seconds": 0.1793772,
+        "decode_seconds": 3.1474770000000003,
+        "encoder_seconds": 0.1705718,
         "memory": {
-          "peak_pagefile_bytes": 6789615616,
-          "peak_working_set_bytes": 6482292736,
-          "private_bytes": 6789603328,
-          "working_set_bytes": 6482292736
+          "peak_pagefile_bytes": 6789902336,
+          "peak_working_set_bytes": 6482124800,
+          "private_bytes": 6789853184,
+          "working_set_bytes": 6482124800
         },
         "model_samples": 246720,
-        "prefill_seconds": 0.3056446,
-        "preprocess_seconds": 0.0143435,
+        "prefill_seconds": 0.2979132,
+        "preprocess_seconds": 0.0145452,
         "raw_output": "language Chinese<asr_text>适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。<|im_end|>",
-        "rtf": 0.24657992217898833,
+        "rtf": 0.24735317120622569,
         "text": "适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work二零零二。",
         "tokens": [
           11528,
@@ -4550,7 +4559,7 @@
           1773,
           151645
         ],
-        "total_seconds": 3.8022618
+        "total_seconds": 3.8141855
       },
       "reference": {
         "attention": "eager",
@@ -6209,19 +6218,19 @@
           }
         ],
         "completion": "eos",
-        "decode_seconds": 1.3035523999999998,
-        "encoder_seconds": 0.1679936,
+        "decode_seconds": 1.3270693000000002,
+        "encoder_seconds": 0.162186,
         "memory": {
-          "peak_pagefile_bytes": 6789615616,
-          "peak_working_set_bytes": 6482292736,
-          "private_bytes": 6787530752,
-          "working_set_bytes": 6480269312
+          "peak_pagefile_bytes": 6789902336,
+          "peak_working_set_bytes": 6482132992,
+          "private_bytes": 6787715072,
+          "working_set_bytes": 6480371712
         },
         "model_samples": 206400,
-        "prefill_seconds": 0.2547463,
-        "preprocess_seconds": 0.0124812,
+        "prefill_seconds": 0.2424935,
+        "preprocess_seconds": 0.0120462,
         "raw_output": "language Chinese<asr_text>科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。<|im_end|>",
-        "rtf": 0.14175624031007752,
+        "rtf": 0.14540258914728682,
         "text": "科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。",
         "tokens": [
           11528,
@@ -6248,7 +6257,7 @@
           1773,
           151645
         ],
-        "total_seconds": 1.8286549
+        "total_seconds": 1.8756927
       },
       "reference": {
         "attention": "eager",
@@ -7323,19 +7332,19 @@
           }
         ],
         "completion": "eos",
-        "decode_seconds": 1.3165949,
-        "encoder_seconds": 0.1696927,
+        "decode_seconds": 1.3202573999999998,
+        "encoder_seconds": 0.1581255,
         "memory": {
-          "peak_pagefile_bytes": 6791782400,
-          "peak_working_set_bytes": 6484480000,
-          "private_bytes": 6787543040,
-          "working_set_bytes": 6480506880
+          "peak_pagefile_bytes": 6790238208,
+          "peak_working_set_bytes": 6482907136,
+          "private_bytes": 6788374528,
+          "working_set_bytes": 6481174528
         },
         "model_samples": 219840,
-        "prefill_seconds": 0.2711059,
-        "preprocess_seconds": 0.0127846,
+        "prefill_seconds": 0.2633224,
+        "preprocess_seconds": 0.0129042,
         "raw_output": "language Chinese<asr_text>大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。<|im_end|>",
-        "rtf": 0.13744234352256188,
+        "rtf": 0.13601406841339156,
         "text": "大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。",
         "tokens": [
           11528,
@@ -7362,7 +7371,7 @@
           1773,
           151645
         ],
-        "total_seconds": 1.8884571
+        "total_seconds": 1.8688327
       },
       "reference": {
         "attention": "eager",
@@ -8574,19 +8583,19 @@
           }
         ],
         "completion": "eos",
-        "decode_seconds": 1.6619619999999997,
-        "encoder_seconds": 0.1503804,
+        "decode_seconds": 1.6765364,
+        "encoder_seconds": 0.1433395,
         "memory": {
-          "peak_pagefile_bytes": 6791786496,
-          "peak_working_set_bytes": 6484717568,
-          "private_bytes": 6787551232,
-          "working_set_bytes": 6480617472
+          "peak_pagefile_bytes": 6791061504,
+          "peak_working_set_bytes": 6483791872,
+          "private_bytes": 6786789376,
+          "working_set_bytes": 6479896576
         },
         "model_samples": 168960,
-        "prefill_seconds": 0.2196129,
-        "preprocess_seconds": 0.009709,
+        "prefill_seconds": 0.2007958,
+        "preprocess_seconds": 0.0099487,
         "raw_output": "language English<asr_text>However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years.<|im_end|>",
-        "rtf": 0.1973551325757576,
+        "rtf": 0.1969130208333333,
         "text": "However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years.",
         "tokens": [
           11528,
@@ -8620,7 +8629,7 @@
           13,
           151645
         ],
-        "total_seconds": 2.0840697
+        "total_seconds": 2.0794007
       },
       "reference": {
         "attention": "eager",
@@ -9869,19 +9878,19 @@
           }
         ],
         "completion": "eos",
-        "decode_seconds": 1.4610522000000001,
-        "encoder_seconds": 0.1431217,
+        "decode_seconds": 1.4775542999999995,
+        "encoder_seconds": 0.1342749,
         "memory": {
-          "peak_pagefile_bytes": 6791806976,
-          "peak_working_set_bytes": 6484815872,
-          "private_bytes": 6788538368,
-          "working_set_bytes": 6481629184
+          "peak_pagefile_bytes": 6791061504,
+          "peak_working_set_bytes": 6484103168,
+          "private_bytes": 6788395008,
+          "working_set_bytes": 6481305600
         },
         "model_samples": 140160,
-        "prefill_seconds": 0.1832226,
-        "preprocess_seconds": 0.0082003,
+        "prefill_seconds": 0.1771649,
+        "preprocess_seconds": 0.0082063,
         "raw_output": "language English<asr_text>All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence.<|im_end|>",
-        "rtf": 0.20776592465753424,
+        "rtf": 0.2085640068493151,
         "text": "All nouns alongside the world say for you always begin with a capital letter, even in the middle of a sentence.",
         "tokens": [
           11528,
@@ -9912,7 +9921,7 @@
           13,
           151645
         ],
-        "total_seconds": 1.820029
+        "total_seconds": 1.8270202
       },
       "reference": {
         "attention": "eager",
@@ -11369,19 +11378,19 @@
           }
         ],
         "completion": "eos",
-        "decode_seconds": 2.4782998999999997,
-        "encoder_seconds": 0.1445951,
+        "decode_seconds": 2.4700077,
+        "encoder_seconds": 0.1389517,
         "memory": {
-          "peak_pagefile_bytes": 6792810496,
-          "peak_working_set_bytes": 6485827584,
-          "private_bytes": 6788538368,
-          "working_set_bytes": 6481739776
+          "peak_pagefile_bytes": 6791098368,
+          "peak_working_set_bytes": 6484103168,
+          "private_bytes": 6788239360,
+          "working_set_bytes": 6481371136
         },
         "model_samples": 183360,
-        "prefill_seconds": 0.2401576,
-        "preprocess_seconds": 0.0107001,
+        "prefill_seconds": 0.2181692,
+        "preprocess_seconds": 0.0109338,
         "raw_output": "language English<asr_text>To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron.<|im_end|>",
-        "rtf": 0.25605678883071553,
+        "rtf": 0.2536408115183246,
         "text": "To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendourous recorded by Lord Byron.",
         "tokens": [
           11528,
@@ -11428,7 +11437,7 @@
           13,
           151645
         ],
-        "total_seconds": 2.9344102
+        "total_seconds": 2.9067231
       },
       "reference": {
         "attention": "eager",
@@ -12846,19 +12855,19 @@
           }
         ],
         "completion": "eos",
-        "decode_seconds": 1.1670999999999998,
-        "encoder_seconds": 0.0883977,
+        "decode_seconds": 1.159365,
+        "encoder_seconds": 0.0795681,
         "memory": {
-          "peak_pagefile_bytes": 6792810496,
-          "peak_working_set_bytes": 6485938176,
-          "private_bytes": 6788538368,
-          "working_set_bytes": 6482255872
+          "peak_pagefile_bytes": 6791098368,
+          "peak_working_set_bytes": 6484185088,
+          "private_bytes": 6786838528,
+          "working_set_bytes": 6480506880
         },
         "model_samples": 92160,
-        "prefill_seconds": 0.1331061,
-        "preprocess_seconds": 0.0053266,
+        "prefill_seconds": 0.1275481,
+        "preprocess_seconds": 0.0053131,
         "raw_output": "language English<asr_text>The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is.<|im_end|>",
-        "rtf": 0.24540798611111114,
+        "rtf": 0.2418059375,
         "text": "The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is.",
         "tokens": [
           11528,
@@ -12884,7 +12893,7 @@
           13,
           151645
         ],
-        "total_seconds": 1.4135494
+        "total_seconds": 1.3928016
       },
       "reference": {
         "attention": "eager",
@@ -13811,19 +13820,19 @@
           }
         ],
         "completion": "eos",
-        "decode_seconds": 1.0862478000000002,
-        "encoder_seconds": 0.0863381,
+        "decode_seconds": 1.0832710999999997,
+        "encoder_seconds": 0.0790211,
         "memory": {
-          "peak_pagefile_bytes": 6792810496,
-          "peak_working_set_bytes": 6486454272,
-          "private_bytes": 6788538368,
-          "working_set_bytes": 6482472960
+          "peak_pagefile_bytes": 6791098368,
+          "peak_working_set_bytes": 6484709376,
+          "private_bytes": 6786842624,
+          "working_set_bytes": 6480707584
         },
         "model_samples": 69120,
-        "prefill_seconds": 0.1208618,
-        "preprocess_seconds": 0.0039702,
+        "prefill_seconds": 0.1055817,
+        "preprocess_seconds": 0.0039859,
         "raw_output": "language English<asr_text>Many people don't think about them as dinosaurs because they have feathers and can fly.<|im_end|>",
-        "rtf": 0.3041097222222222,
+        "rtf": 0.29856379629629626,
         "text": "Many people don't think about them as dinosaurs because they have feathers and can fly.",
         "tokens": [
           11528,
@@ -13848,7 +13857,7 @@
           13,
           151645
         ],
-        "total_seconds": 1.3137535
+        "total_seconds": 1.289795
       },
       "reference": {
         "attention": "eager",
@@ -14827,19 +14836,19 @@
           }
         ],
         "completion": "eos",
-        "decode_seconds": 1.4780299000000001,
-        "encoder_seconds": 0.1664763,
+        "decode_seconds": 1.461318,
+        "encoder_seconds": 0.1400258,
         "memory": {
-          "peak_pagefile_bytes": 6792810496,
-          "peak_working_set_bytes": 6486675456,
-          "private_bytes": 6788562944,
-          "working_set_bytes": 6482542592
+          "peak_pagefile_bytes": 6791110656,
+          "peak_working_set_bytes": 6484910080,
+          "private_bytes": 6788317184,
+          "working_set_bytes": 6482219008
         },
         "model_samples": 182720,
-        "prefill_seconds": 0.2346178,
-        "preprocess_seconds": 0.0105068,
+        "prefill_seconds": 0.2129805,
+        "preprocess_seconds": 0.0107511,
         "raw_output": "language English<asr_text>The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others.<|im_end|>",
-        "rtf": 0.17066952714535902,
+        "rtf": 0.16543827495621716,
         "text": "The hospital has followed protocol for infection control, including separating the patient from others to prevent possible infection of others.",
         "tokens": [
           11528,
@@ -14869,7 +14878,7 @@
           13,
           151645
         ],
-        "total_seconds": 1.9490455
+        "total_seconds": 1.8893047
       },
       "reference": {
         "attention": "eager",
@@ -15712,19 +15721,19 @@
           }
         ],
         "completion": "eos",
-        "decode_seconds": 0.3590403,
-        "encoder_seconds": 0.0701885,
+        "decode_seconds": 0.3564994,
+        "encoder_seconds": 0.0597255,
         "memory": {
-          "peak_pagefile_bytes": 6792810496,
-          "peak_working_set_bytes": 6486736896,
-          "private_bytes": 6788562944,
-          "working_set_bytes": 6482685952
+          "peak_pagefile_bytes": 6792536064,
+          "peak_working_set_bytes": 6486417408,
+          "private_bytes": 6788317184,
+          "working_set_bytes": 6482386944
         },
         "model_samples": 21760,
-        "prefill_seconds": 0.0690927,
-        "preprocess_seconds": 0.0013251,
+        "prefill_seconds": 0.071204,
+        "preprocess_seconds": 0.0012711,
         "raw_output": "language English<asr_text>That was the.<|im_end|>",
-        "rtf": 0.3738744117647058,
+        "rtf": 0.36673117647058817,
         "text": "That was the.",
         "tokens": [
           11528,
@@ -15736,7 +15745,7 @@
           13,
           151645
         ],
-        "total_seconds": 0.5084686
+        "total_seconds": 0.4987541
       },
       "reference": {
         "attention": "eager",
@@ -16214,19 +16223,19 @@
           }
         ],
         "completion": "eos",
-        "decode_seconds": 0.6947585,
-        "encoder_seconds": 0.0839481,
+        "decode_seconds": 0.7242961,
+        "encoder_seconds": 0.0822387,
         "memory": {
-          "peak_pagefile_bytes": 6792810496,
-          "peak_working_set_bytes": 6486884352,
-          "private_bytes": 6788562944,
-          "working_set_bytes": 6482722816
+          "peak_pagefile_bytes": 6792581120,
+          "peak_working_set_bytes": 6486585344,
+          "private_bytes": 6788317184,
+          "working_set_bytes": 6482423808
         },
         "model_samples": 64480,
-        "prefill_seconds": 0.1167029,
-        "preprocess_seconds": 0.003717,
+        "prefill_seconds": 0.1041826,
+        "preprocess_seconds": 0.003728,
         "raw_output": "language Chinese<asr_text>那我专业是那个ISM Information Systems Management。<|im_end|>",
-        "rtf": 0.22664816377171215,
+        "rtf": 0.23106163771712157,
         "text": "那我专业是那个ISM Information Systems Management。",
         "tokens": [
           11528,
@@ -16244,7 +16253,7 @@
           1773,
           151645
         ],
-        "total_seconds": 0.9133916
+        "total_seconds": 0.9311779
       },
       "reference": {
         "attention": "eager",
@@ -16763,19 +16772,19 @@
           }
         ],
         "completion": "eos",
-        "decode_seconds": 0.3578807,
-        "encoder_seconds": 0.0661741,
+        "decode_seconds": 0.3569614,
+        "encoder_seconds": 0.0589641,
         "memory": {
-          "peak_pagefile_bytes": 6792818688,
-          "peak_working_set_bytes": 6486929408,
-          "private_bytes": 6788624384,
-          "working_set_bytes": 6482780160
+          "peak_pagefile_bytes": 6792581120,
+          "peak_working_set_bytes": 6486622208,
+          "private_bytes": 6788317184,
+          "working_set_bytes": 6482432000
         },
         "model_samples": 16320,
-        "prefill_seconds": 0.0681218,
-        "preprocess_seconds": 0.0012423,
+        "prefill_seconds": 0.06968,
+        "preprocess_seconds": 0.0009682,
         "raw_output": "language Chinese<asr_text>OK，附件。<|im_end|>",
-        "rtf": 0.49243333333333333,
+        "rtf": 0.48592127450980394,
         "text": "OK，附件。",
         "tokens": [
           11528,
@@ -16787,7 +16796,7 @@
           1773,
           151645
         ],
-        "total_seconds": 0.5022815
+        "total_seconds": 0.4956394
       },
       "reference": {
         "attention": "eager",
@@ -17279,19 +17288,19 @@
           }
         ],
         "completion": "eos",
-        "decode_seconds": 0.7259875,
-        "encoder_seconds": 0.071063,
+        "decode_seconds": 0.7406275,
+        "encoder_seconds": 0.0622671,
         "memory": {
-          "peak_pagefile_bytes": 6792896512,
-          "peak_working_set_bytes": 6486978560,
-          "private_bytes": 6788624384,
-          "working_set_bytes": 6482812928
+          "peak_pagefile_bytes": 6792581120,
+          "peak_working_set_bytes": 6486638592,
+          "private_bytes": 6788321280,
+          "working_set_bytes": 6482489344
         },
         "model_samples": 48000,
-        "prefill_seconds": 0.0897246,
-        "preprocess_seconds": 0.0027519,
+        "prefill_seconds": 0.0919001,
+        "preprocess_seconds": 0.0027705,
         "raw_output": "language Chinese<asr_text>嗯，运动啊，男生一般不都喜欢运动。<|im_end|>",
-        "rtf": 0.3007952333333333,
+        "rtf": 0.3040811,
         "text": "嗯，运动啊，男生一般不都喜欢运动。",
         "tokens": [
           11528,
@@ -17310,7 +17319,7 @@
           1773,
           151645
         ],
-        "total_seconds": 0.9023853
+        "total_seconds": 0.9122428
       },
       "reference": {
         "attention": "eager",
@@ -17870,19 +17879,19 @@
           }
         ],
         "completion": "eos",
-        "decode_seconds": 0.4603354,
-        "encoder_seconds": 0.0652944,
+        "decode_seconds": 0.4695494,
+        "encoder_seconds": 0.0599507,
         "memory": {
-          "peak_pagefile_bytes": 6792896512,
-          "peak_working_set_bytes": 6487011328,
-          "private_bytes": 6788624384,
-          "working_set_bytes": 6482825216
+          "peak_pagefile_bytes": 6792581120,
+          "peak_working_set_bytes": 6486687744,
+          "private_bytes": 6788321280,
+          "working_set_bytes": 6482501632
         },
         "model_samples": 25439,
-        "prefill_seconds": 0.0786646,
-        "preprocess_seconds": 0.0014561,
+        "prefill_seconds": 0.0706457,
+        "preprocess_seconds": 0.0014618,
         "raw_output": "language Chinese<asr_text>哦，这么technical的。<|im_end|>",
-        "rtf": 0.3870315657061992,
+        "rtf": 0.38493142026023036,
         "text": "哦，这么technical的。",
         "tokens": [
           11528,
@@ -17896,7 +17905,7 @@
           1773,
           151645
         ],
-        "total_seconds": 0.6153554
+        "total_seconds": 0.6120164
       },
       "reference": {
         "attention": "eager",
@@ -18289,19 +18298,19 @@
           }
         ],
         "completion": "eos",
-        "decode_seconds": 0.3062485,
-        "encoder_seconds": 0.0636422,
+        "decode_seconds": 0.3082807,
+        "encoder_seconds": 0.0594007,
         "memory": {
-          "peak_pagefile_bytes": 6792896512,
-          "peak_working_set_bytes": 6487023616,
-          "private_bytes": 6788624384,
-          "working_set_bytes": 6482849792
+          "peak_pagefile_bytes": 6792585216,
+          "peak_working_set_bytes": 6486704128,
+          "private_bytes": 6788321280,
+          "working_set_bytes": 6482554880
         },
         "model_samples": 23200,
-        "prefill_seconds": 0.0757936,
-        "preprocess_seconds": 0.0013333,
+        "prefill_seconds": 0.0695767,
+        "preprocess_seconds": 0.0013399,
         "raw_output": "language English<asr_text>Computer language.<|im_end|>",
-        "rtf": 0.3125312413793104,
+        "rtf": 0.3073752413793103,
         "text": "Computer language.",
         "tokens": [
           11528,
@@ -18312,7 +18321,7 @@
           13,
           151645
         ],
-        "total_seconds": 0.4531697
+        "total_seconds": 0.4456935
       },
       "reference": {
         "attention": "eager",
@@ -18592,19 +18601,19 @@
           }
         ],
         "completion": "eos",
-        "decode_seconds": 0.1519303,
-        "encoder_seconds": 0.0565992,
+        "decode_seconds": 0.15480069999999999,
+        "encoder_seconds": 0.0476195,
         "memory": {
-          "peak_pagefile_bytes": 6792896512,
-          "peak_working_set_bytes": 6487048192,
-          "private_bytes": 6788677632,
-          "working_set_bytes": 6482907136
+          "peak_pagefile_bytes": 6792585216,
+          "peak_working_set_bytes": 6486753280,
+          "private_bytes": 6788374528,
+          "working_set_bytes": 6482616320
         },
         "model_samples": 16000,
-        "prefill_seconds": 0.0682474,
-        "preprocess_seconds": 0.0009267,
+        "prefill_seconds": 0.0650996,
+        "preprocess_seconds": 0.0009363,
         "raw_output": "language None<asr_text><|im_end|>",
-        "rtf": 0.5657452,
+        "rtf": 0.5488976,
         "text": "",
         "tokens": [
           11528,
@@ -18612,7 +18621,7 @@
           151704,
           151645
         ],
-        "total_seconds": 0.2828719
+        "total_seconds": 0.2744483
       },
       "reference": {
         "attention": "eager",
@@ -18829,19 +18838,19 @@
           }
         ],
         "completion": "eos",
-        "decode_seconds": 0.1557402,
-        "encoder_seconds": 0.0655134,
+        "decode_seconds": 0.1554816,
+        "encoder_seconds": 0.0596118,
         "memory": {
-          "peak_pagefile_bytes": 6792900608,
-          "peak_working_set_bytes": 6487105536,
-          "private_bytes": 6788677632,
-          "working_set_bytes": 6482907136
+          "peak_pagefile_bytes": 6792605696,
+          "peak_working_set_bytes": 6486814720,
+          "private_bytes": 6788374528,
+          "working_set_bytes": 6482616320
         },
         "model_samples": 32000,
-        "prefill_seconds": 0.0768427,
-        "preprocess_seconds": 0.0018336,
+        "prefill_seconds": 0.0745653,
+        "preprocess_seconds": 0.0018705,
         "raw_output": "language None<asr_text><|im_end|>",
-        "rtf": 0.153762,
+        "rtf": 0.1496812,
         "text": "",
         "tokens": [
           11528,
@@ -18849,7 +18858,7 @@
           151704,
           151645
         ],
-        "total_seconds": 0.3075235
+        "total_seconds": 0.2993617
       },
       "reference": {
         "attention": "eager",
@@ -19079,19 +19088,19 @@
           }
         ],
         "completion": "eos",
-        "decode_seconds": 0.17921320000000002,
-        "encoder_seconds": 0.1893221,
+        "decode_seconds": 0.1823132,
+        "encoder_seconds": 0.1629318,
         "memory": {
-          "peak_pagefile_bytes": 6792933376,
-          "peak_working_set_bytes": 6487105536,
-          "private_bytes": 6789668864,
-          "working_set_bytes": 6483910656
+          "peak_pagefile_bytes": 6793580544,
+          "peak_working_set_bytes": 6487801856,
+          "private_bytes": 6791938048,
+          "working_set_bytes": 6486200320
         },
         "model_samples": 240000,
-        "prefill_seconds": 0.2945072,
-        "preprocess_seconds": 0.0139911,
+        "prefill_seconds": 0.2720421,
+        "preprocess_seconds": 0.0140563,
         "raw_output": "language None<asr_text><|im_end|>",
-        "rtf": 0.05106264666666667,
+        "rtf": 0.048014219999999996,
         "text": "",
         "tokens": [
           11528,
@@ -19099,7 +19108,7 @@
           151704,
           151645
         ],
-        "total_seconds": 0.7659391
+        "total_seconds": 0.7202128
       },
       "reference": {
         "attention": "eager",
@@ -19498,19 +19507,19 @@
           }
         ],
         "completion": "eos",
-        "decode_seconds": 0.1542156,
-        "encoder_seconds": 0.0660067,
+        "decode_seconds": 0.1630188,
+        "encoder_seconds": 0.0614736,
         "memory": {
-          "peak_pagefile_bytes": 6792933376,
-          "peak_working_set_bytes": 6487105536,
-          "private_bytes": 6785957888,
-          "working_set_bytes": 6480109568
+          "peak_pagefile_bytes": 6793580544,
+          "peak_working_set_bytes": 6487801856,
+          "private_bytes": 6786166784,
+          "working_set_bytes": 6479962112
         },
         "model_samples": 48000,
-        "prefill_seconds": 0.0889342,
-        "preprocess_seconds": 0.0027473,
+        "prefill_seconds": 0.0877163,
+        "preprocess_seconds": 0.00277,
         "raw_output": "language None<asr_text><|im_end|>",
-        "rtf": 0.1065676,
+        "rtf": 0.10801576666666667,
         "text": "",
         "tokens": [
           11528,
@@ -19518,7 +19527,7 @@
           151704,
           151645
         ],
-        "total_seconds": 0.3197022
+        "total_seconds": 0.3240469
       },
       "reference": {
         "attention": "eager",
@@ -19761,19 +19770,19 @@
           }
         ],
         "completion": "eos",
-        "decode_seconds": 0.15718759999999998,
-        "encoder_seconds": 0.0641634,
+        "decode_seconds": 0.1553871,
+        "encoder_seconds": 0.0624397,
         "memory": {
-          "peak_pagefile_bytes": 6792933376,
-          "peak_working_set_bytes": 6487105536,
-          "private_bytes": 6785957888,
-          "working_set_bytes": 6480113664
+          "peak_pagefile_bytes": 6793580544,
+          "peak_working_set_bytes": 6487801856,
+          "private_bytes": 6786166784,
+          "working_set_bytes": 6480056320
         },
         "model_samples": 32000,
-        "prefill_seconds": 0.0776309,
-        "preprocess_seconds": 0.0018514,
+        "prefill_seconds": 0.0790358,
+        "preprocess_seconds": 0.0018578,
         "raw_output": "language None<asr_text><|im_end|>",
-        "rtf": 0.15386315,
+        "rtf": 0.15333845,
         "text": "",
         "tokens": [
           11528,
@@ -19781,7 +19790,7 @@
           151704,
           151645
         ],
-        "total_seconds": 0.3077257
+        "total_seconds": 0.3066765
       },
       "reference": {
         "attention": "eager",
@@ -20011,19 +20020,19 @@
           }
         ],
         "completion": "eos",
-        "decode_seconds": 0.1579515,
-        "encoder_seconds": 0.0673821,
+        "decode_seconds": 0.1633523,
+        "encoder_seconds": 0.063666,
         "memory": {
-          "peak_pagefile_bytes": 6792933376,
-          "peak_working_set_bytes": 6487105536,
-          "private_bytes": 6786756608,
-          "working_set_bytes": 6480605184
+          "peak_pagefile_bytes": 6793580544,
+          "peak_working_set_bytes": 6487801856,
+          "private_bytes": 6786166784,
+          "working_set_bytes": 6480220160
         },
         "model_samples": 64000,
-        "prefill_seconds": 0.1104265,
-        "preprocess_seconds": 0.0036868,
+        "prefill_seconds": 0.1049023,
+        "preprocess_seconds": 0.0036849,
         "raw_output": "language None<asr_text><|im_end|>",
-        "rtf": 0.0871568,
+        "rtf": 0.086519825,
         "text": "",
         "tokens": [
           11528,
@@ -20031,7 +20040,7 @@
           151704,
           151645
         ],
-        "total_seconds": 0.3486267
+        "total_seconds": 0.3460787
       },
       "reference": {
         "attention": "eager",
@@ -20203,12 +20212,13 @@
     }
   ],
   "memory_after_load": {
-    "peak_pagefile_bytes": 5604630528,
-    "peak_working_set_bytes": 6226354176,
-    "private_bytes": 5603405824,
-    "working_set_bytes": 5604057088
+    "peak_pagefile_bytes": 5607342080,
+    "peak_working_set_bytes": 6226296832,
+    "private_bytes": 5603106816,
+    "working_set_bytes": 5603999744
   },
-  "model_load_seconds": 3.6798058,
+  "model_load_seconds": 6.8934019,
+  "profiles": [],
   "proof_complete": false,
   "success": true
 }

@@ -1,0 +1,240 @@
+{
+  "audio_conversion_seconds": 0.0005634,
+  "engine": {
+    "adapter_index": null,
+    "assets_verified": true,
+    "embedding_dtype": "float16",
+    "encoder": [
+      {
+        "dtype": 1,
+        "name": "mel",
+        "shape": [
+          1,
+          128,
+          -1
+        ]
+      }
+    ],
+    "eos_ids": [
+      151643,
+      151645
+    ],
+    "memory_mode": "shared-prepack",
+    "model_directory": "qwen3-asr-0.6b-fp32",
+    "model_hidden_size": 1024,
+    "prefill": [
+      {
+        "dtype": 7,
+        "name": "input_ids",
+        "shape": [
+          -1,
+          -1
+        ]
+      },
+      {
+        "dtype": 7,
+        "name": "position_ids",
+        "shape": [
+          -1,
+          -1
+        ]
+      },
+      {
+        "dtype": 1,
+        "name": "audio_features",
+        "shape": [
+          -1,
+          -1,
+          1024
+        ]
+      },
+      {
+        "dtype": 7,
+        "name": "audio_offset",
+        "shape": [
+          1
+        ]
+      }
+    ],
+    "prefill_format": "input_ids",
+    "prefix_ids": [
+      151644,
+      8948,
+      198,
+      151645,
+      198,
+      151644,
+      872,
+      198,
+      151669
+    ],
+    "provider": "CPU",
+    "runtime": "1.24.4",
+    "step": [
+      {
+        "dtype": 1,
+        "name": "input_embeds",
+        "shape": [
+          -1,
+          1,
+          1024
+        ]
+      },
+      {
+        "dtype": 7,
+        "name": "position_ids",
+        "shape": [
+          -1,
+          1
+        ]
+      },
+      {
+        "dtype": 1,
+        "name": "past_keys",
+        "shape": [
+          28,
+          -1,
+          8,
+          -1,
+          128
+        ]
+      },
+      {
+        "dtype": 1,
+        "name": "past_values",
+        "shape": [
+          28,
+          -1,
+          8,
+          -1,
+          128
+        ]
+      }
+    ],
+    "suffix_ids": [
+      151670,
+      151645,
+      198,
+      151644,
+      77091,
+      198
+    ],
+    "threads": 4,
+    "variant": "fp32"
+  },
+  "file": "regression\\low-noise.wav",
+  "memory_after_load": {
+    "peak_pagefile_bytes": 5603549184,
+    "peak_working_set_bytes": 6226046976,
+    "private_bytes": 5602304000,
+    "working_set_bytes": 5603749888
+  },
+  "model_load_seconds": 14.5417759,
+  "source": {
+    "bits": 16,
+    "channels": 1,
+    "format": "pcm",
+    "sample_rate": 16000
+  },
+  "success": true,
+  "total_elapsed_seconds": 14.8889662,
+  "transcription": {
+    "audio_seconds": 3.0,
+    "cache_steps": [
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          54,
+          128
+        ],
+        "next_token": 11528,
+        "step": 0,
+        "values": [
+          28,
+          1,
+          8,
+          54,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          55,
+          128
+        ],
+        "next_token": 2240,
+        "step": 1,
+        "values": [
+          28,
+          1,
+          8,
+          55,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          56,
+          128
+        ],
+        "next_token": 151704,
+        "step": 2,
+        "values": [
+          28,
+          1,
+          8,
+          56,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          57,
+          128
+        ],
+        "next_token": 151645,
+        "step": 3,
+        "values": [
+          28,
+          1,
+          8,
+          57,
+          128
+        ]
+      }
+    ],
+    "completion": "eos",
+    "decode_seconds": 0.1608852,
+    "encoder_seconds": 0.0721379,
+    "memory": {
+      "peak_pagefile_bytes": 5949284352,
+      "peak_working_set_bytes": 6226046976,
+      "private_bytes": 5949272064,
+      "working_set_bytes": 5762109440
+    },
+    "model_samples": 48000,
+    "prefill_seconds": 0.1023388,
+    "preprocess_seconds": 0.0027845,
+    "raw_output": "language None<asr_text><|im_end|>",
+    "rtf": 0.11554323333333333,
+    "text": "",
+    "tokens": [
+      11528,
+      2240,
+      151704,
+      151645
+    ],
+    "total_seconds": 0.3466269
+  }
+}

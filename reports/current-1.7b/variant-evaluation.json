@@ -1,0 +1,276 @@
+{
+  "rule": "candidate accepted when every category increases by at most 1.0 percentage point absolute and no new non-speech fixture produces output",
+  "results": {
+    "fp32": {
+      "variant": "fp32",
+      "model": "models/qwen3-asr-1.7b-fp32",
+      "decoder": "fp32",
+      "exit": 0,
+      "categories": {
+        "mandarin": {
+          "edits": 15,
+          "units": 198,
+          "fixtures": 6,
+          "oracle_transcript_matches": 6,
+          "eos": 6,
+          "error_rate": 0.07575757575757576
+        },
+        "english": {
+          "edits": 5,
+          "units": 141,
+          "fixtures": 6,
+          "oracle_transcript_matches": 6,
+          "eos": 6,
+          "error_rate": 0.03546099290780142
+        },
+        "mixed": {
+          "edits": 16,
+          "units": 68,
+          "fixtures": 6,
+          "oracle_transcript_matches": 6,
+          "eos": 6,
+          "error_rate": 0.23529411764705882
+        }
+      },
+      "silence_failures": [],
+      "mean_rtf": 0.6699825430129305,
+      "model_load_seconds": 10.775859,
+      "peak_working_set_bytes": 16370876416,
+      "report": "reports\\evaluation-fp32.json"
+    },
+    "int4": {
+      "variant": "int4",
+      "model": "models/qwen3-asr-1.7b-fp32",
+      "decoder": "int4",
+      "exit": 0,
+      "categories": {
+        "mandarin": {
+          "edits": 19,
+          "units": 198,
+          "fixtures": 6,
+          "oracle_transcript_matches": 5,
+          "eos": 6,
+          "error_rate": 0.09595959595959595
+        },
+        "english": {
+          "edits": 5,
+          "units": 141,
+          "fixtures": 6,
+          "oracle_transcript_matches": 6,
+          "eos": 6,
+          "error_rate": 0.03546099290780142
+        },
+        "mixed": {
+          "edits": 16,
+          "units": 68,
+          "fixtures": 6,
+          "oracle_transcript_matches": 6,
+          "eos": 6,
+          "error_rate": 0.23529411764705882
+        }
+      },
+      "silence_failures": [],
+      "mean_rtf": 0.2252756209168995,
+      "model_load_seconds": 7.3502811,
+      "peak_working_set_bytes": 4623925248,
+      "report": "reports\\evaluation-int4.json"
+    },
+    "0.6b": {
+      "variant": "0.6b",
+      "model": "models/qwen3-asr-0.6b-fp32",
+      "decoder": "fp32",
+      "exit": 2,
+      "categories": {
+        "mandarin": {
+          "edits": 14,
+          "units": 198,
+          "fixtures": 6,
+          "oracle_transcript_matches": 5,
+          "eos": 6,
+          "error_rate": 0.0707070707070707
+        },
+        "english": {
+          "edits": 5,
+          "units": 141,
+          "fixtures": 6,
+          "oracle_transcript_matches": 6,
+          "eos": 6,
+          "error_rate": 0.03546099290780142
+        },
+        "mixed": {
+          "edits": 16,
+          "units": 68,
+          "fixtures": 6,
+          "oracle_transcript_matches": 3,
+          "eos": 6,
+          "error_rate": 0.23529411764705882
+        }
+      },
+      "silence_failures": [],
+      "mean_rtf": 0.26426967613443364,
+      "model_load_seconds": 3.6823778,
+      "peak_working_set_bytes": 6468009984,
+      "report": "reports\\evaluation-0.6b.json"
+    }
+  },
+  "decisions": {
+    "int4": {
+      "accepted": false,
+      "deltas_percentage_points": {
+        "mandarin": {
+          "baseline": 0.07575757575757576,
+          "candidate": 0.09595959595959595,
+          "delta_pp": 2.0202020202020194
+        },
+        "english": {
+          "baseline": 0.03546099290780142,
+          "candidate": 0.03546099290780142,
+          "delta_pp": 0.0
+        },
+        "mixed": {
+          "baseline": 0.23529411764705882,
+          "candidate": 0.23529411764705882,
+          "delta_pp": 0.0
+        }
+      },
+      "new_silence_failures": [],
+      "fixtures_differing_from_baseline": [
+        {
+          "id": "heldout-mandarin-0006",
+          "baseline_text": "1963年大坝建成后，季节性洪水被控制住了，沉积物不再冲散到河流里。",
+          "candidate_text": "一九六三年大坝建成后，季节性洪水被控制住了，沉积物不再冲散到河流里。",
+          "baseline_edits": 0,
+          "candidate_edits": 4
+        },
+        {
+          "id": "heldout-mandarin-0007",
+          "baseline_text": "它的长下颚上布满了七十多颗剃刀般锋利的牙齿，上颚上还有一排，这意味着任何与它相遇的东西都无路可逃。",
+          "candidate_text": "它的长下颚上布满了七十多颗剃刀般锋利的牙齿，上颚上还有一排。这意味着任何与它相遇的东西都无路可逃。",
+          "baseline_edits": 2,
+          "candidate_edits": 2
+        },
+        {
+          "id": "heldout-mandarin-0008",
+          "baseline_text": "Scoturb四零三路公交汽车定期发车，前往新特拉，在罗卡角停靠。",
+          "candidate_text": "Scoturb 四零三路公交汽车定期发车，前往新特拉，在罗卡角停靠。",
+          "baseline_edits": 12,
+          "candidate_edits": 12
+        },
+        {
+          "id": "heldout-mandarin-0009",
+          "baseline_text": "这里几乎都是沙滩，游泳很安全，大部分地方都有新西兰圣诞树的树荫。",
+          "candidate_text": "这里几乎都是沙滩，游泳很安全。大部分地方都有新西兰圣诞树的树荫。",
+          "baseline_edits": 0,
+          "candidate_edits": 0
+        },
+        {
+          "id": "heldout-english-0007",
+          "baseline_text": "20th-century research has shown that there are two pools of genetic variation, hidden and expressed.",
+          "candidate_text": "20th-century research has shown that there are two pools of genetic variation hidden and expressed.",
+          "baseline_edits": 1,
+          "candidate_edits": 1
+        },
+        {
+          "id": "heldout-mixed-0081",
+          "baseline_text": "所以我上学期也学了Python。",
+          "candidate_text": "所以，我上学期也学了 Python。",
+          "baseline_edits": 0,
+          "candidate_edits": 0
+        },
+        {
+          "id": "heldout-mixed-0098",
+          "baseline_text": "所以就会还是选择回大陆找，不过这学期适应多了。",
+          "candidate_text": "所以就会还是选择回大陆找。不过这学期适应多了。",
+          "baseline_edits": 9,
+          "candidate_edits": 9
+        },
+        {
+          "id": "heldout-mixed-0131",
+          "baseline_text": "也没有很多Girls Night。",
+          "candidate_text": "也没有很多 girls night。",
+          "baseline_edits": 0,
+          "candidate_edits": 0
+        }
+      ]
+    },
+    "0.6b": {
+      "accepted": true,
+      "deltas_percentage_points": {
+        "mandarin": {
+          "baseline": 0.07575757575757576,
+          "candidate": 0.0707070707070707,
+          "delta_pp": -0.5050505050505055
+        },
+        "english": {
+          "baseline": 0.03546099290780142,
+          "candidate": 0.03546099290780142,
+          "delta_pp": 0.0
+        },
+        "mixed": {
+          "baseline": 0.23529411764705882,
+          "candidate": 0.23529411764705882,
+          "delta_pp": 0.0
+        }
+      },
+      "new_silence_failures": [],
+      "fixtures_differing_from_baseline": [
+        {
+          "id": "heldout-mandarin-0006",
+          "baseline_text": "1963年大坝建成后，季节性洪水被控制住了，沉积物不再冲散到河流里。",
+          "candidate_text": "1963年，大坝建成后，季节性洪水被控制住了，沉积物不再冲散到河流里。",
+          "baseline_edits": 0,
+          "candidate_edits": 0
+        },
+        {
+          "id": "heldout-mandarin-0008",
+          "baseline_text": "Scoturb四零三路公交汽车定期发车，前往新特拉，在罗卡角停靠。",
+          "candidate_text": "Scotturb四零三路公交汽车定期发车前往新特拉，在罗卡角停靠。",
+          "baseline_edits": 12,
+          "candidate_edits": 11
+        },
+        {
+          "id": "heldout-mandarin-0009",
+          "baseline_text": "这里几乎都是沙滩，游泳很安全，大部分地方都有新西兰圣诞树的树荫。",
+          "candidate_text": "这里几乎都是沙滩，游泳很安全。大部分地方都有新西兰圣诞树的树荫。",
+          "baseline_edits": 0,
+          "candidate_edits": 0
+        },
+        {
+          "id": "heldout-english-0007",
+          "baseline_text": "20th-century research has shown that there are two pools of genetic variation, hidden and expressed.",
+          "candidate_text": "20th-century research has shown that there are two pools of genetic variation hidden and expressed.",
+          "baseline_edits": 1,
+          "candidate_edits": 1
+        },
+        {
+          "id": "heldout-english-0010",
+          "baseline_text": "For the night between 150 and 200 copies were made, now known as Dunlap broadsides.",
+          "candidate_text": "For the night, between 150 and 200 copies were made, now known as Dunlap broadsides.",
+          "baseline_edits": 1,
+          "candidate_edits": 1
+        },
+        {
+          "id": "heldout-mixed-0080",
+          "baseline_text": "Hmm. Yeah.",
+          "candidate_text": "嗯，对。",
+          "baseline_edits": 1,
+          "candidate_edits": 1
+        },
+        {
+          "id": "heldout-mixed-0098",
+          "baseline_text": "所以就会还是选择回大陆找，不过这学期适应多了。",
+          "candidate_text": "所以就会还是选择回大陆找。不过这学期适应多。",
+          "baseline_edits": 9,
+          "candidate_edits": 8
+        },
+        {
+          "id": "heldout-mixed-0131",
+          "baseline_text": "也没有很多Girls Night。",
+          "candidate_text": "也没有很多 Ghost Night。",
+          "baseline_edits": 0,
+          "candidate_edits": 1
+        }
+      ]
+    }
+  }
+}

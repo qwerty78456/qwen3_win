@@ -1,0 +1,16 @@
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: D:/asr_win/build
+MSBuild version 18.8.2+ce25c0108 for .NET Framework
+
+  Checking File Globs
+  fvad.vcxproj -> D:\asr_win\build\Release\fvad.lib
+  kissfft.vcxproj -> D:\asr_win\build\Release\kissfft.lib
+  tokenizers_cpp.vcxproj -> D:\asr_win\build\Release\tokenizers_cpp.lib
+  gui.cpp
+  main.cpp
+  pipeline.cpp
+  self_test.cpp
+  Generating Code...
+     Creating library D:/asr_win/build/Release/AsrWin.lib and object D:/asr_win/build/Release/AsrWin.exp
+  AsrWin.vcxproj -> D:\asr_win\build\Release\AsrWin.exe

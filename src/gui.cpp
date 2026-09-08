@@ -103,10 +103,11 @@ struct App {
     if (e.session!=session) return;  // stale session
     switch (e.kind) {
       case CaptionEvent::Kind::Status:
+        if (e.status.rfind("Stopping",0)==0) stopping=true;
         if (!stopping || e.status.rfind("Stopping",0)==0) set_status(wide(e.status)+(e.status=="Listening"?L": "+device_name:L""));
         break;
       case CaptionEvent::Kind::Provisional:
-        if (e.utterance<=last_final || finalized.count(e.utterance) || e.revision<last_revision) return;  // stale
+        if (stopping || e.utterance<=last_final || finalized.count(e.utterance) || e.revision<last_revision) return;  // stale
         last_revision=e.revision;
         SetWindowTextW(provisional,wide(e.text+(e.incomplete?"  …":"")).c_str());
         break;
@@ -122,6 +123,7 @@ struct App {
       case CaptionEvent::Kind::Stopped:
         if (pipeline) pipeline->wait();
         last_statistics=e.detail; listening=false; stopping=false;
+        SetWindowTextW(provisional,L"");
         set_status(L"Stopped: "+wide(e.status));
         if (closing) DestroyWindow(window);
         break;
@@ -169,7 +171,8 @@ LRESULT CALLBACK window_proc(HWND h, UINT msg, WPARAM wp, LPARAM lp) {
       app->loader=std::thread([app]{
         auto* result=new Loaded;
         try {
-          EngineOptions o; o.threads=app->options.threads; o.max_tokens=app->options.max_tokens; o.variant=app->options.variant;
+          EngineOptions o; o.threads=app->options.threads; o.max_tokens=app->options.max_tokens; o.variant=app->options.variant; o.directml=app->options.directml;
+          o.verify_distribution=app->options.verify_distribution;
           o.progress=[app](const std::string& m){ PostMessageW(app->window,WM_APP_PROGRESS,0,reinterpret_cast<LPARAM>(new std::wstring(wide(m)))); };
           result->engine=std::make_unique<Engine>(app->options.model,o);
         } catch (const std::exception& e) { result->error=e.what(); }
@@ -182,7 +185,9 @@ LRESULT CALLBACK window_proc(HWND h, UINT msg, WPARAM wp, LPARAM lp) {
       if (app->loader.joinable()) app->loader.join();
       if (result->engine) { app->engine=std::move(result->engine); app->loaded=true; app->set_status(L"Ready. Select a playback device and press Start."); }
       else { app->set_status(L"Error: "+wide(result->error)); MessageBoxW(h,wide(result->error).c_str(),L"AsrWin cannot load the model",MB_ICONERROR|MB_OK); }
-      app->update_buttons(); return 0; }
+      app->update_buttons();
+      if (app->closing) DestroyWindow(h);
+      return 0; }
     case WM_APP_EVENT: { std::unique_ptr<CaptionEvent> e(reinterpret_cast<CaptionEvent*>(lp)); app->on_event(*e); return 0; }
     case WM_COMMAND:
       switch (LOWORD(wp)) {
@@ -198,7 +203,7 @@ LRESULT CALLBACK window_proc(HWND h, UINT msg, WPARAM wp, LPARAM lp) {
     case WM_DPICHANGED: { auto* rc=reinterpret_cast<RECT*>(lp); SetWindowPos(h,nullptr,rc->left,rc->top,rc->right-rc->left,rc->bottom-rc->top,SWP_NOZORDER|SWP_NOACTIVATE); app->fonts(); app->layout(); return 0; }
     case WM_CLOSE:
       if (app->listening) { app->closing=true; app->request_stop("Window closed"); return 0; }
-      if (app->loader.joinable() && !app->loaded) { app->set_status(L"Waiting for model loading to finish before exit…"); app->loader.join(); }
+      if (app->loader.joinable() && !app->loaded) { app->closing=true; app->set_status(L"Waiting for model loading to finish before exit…"); return 0; }
       DestroyWindow(h); return 0;
     case WM_DESTROY: PostQuitMessage(0); return 0;
   }

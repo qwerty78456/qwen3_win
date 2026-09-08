@@ -4,8 +4,8 @@ Measured on AMD Ryzen 7 9800X3D 8-Core Processor (8 cores / 16 threads), 31 GiB 
 
 ## File transcription (`--verify`, 24 fixtures, CPU)
 
-- Speech fixtures: mean RTF 0.250, max RTF 0.492; mean encoder 0.121 s, mean prefill 0.175 s, mean decode 52.5 ms/token.
-- Model load 3.7 s (includes SHA-256 of 4.1 GB of assets).
+- Speech fixtures: mean RTF 0.249, max RTF 0.486; mean encoder 0.114 s, mean prefill 0.166 s, mean decode 53.0 ms/token.
+- Model load 6.9 s (includes SHA-256 of 4.1 GB of assets).
 
 ## Thread budget
 
@@ -29,12 +29,17 @@ Selected: shared-prepack.
 
 ## Live pipeline
 
-- live-english-0002: 3 finals, provisional lag p95 1.20 s (max 1.20 s), first caption p95 2.67 s, finalization p95 1.48 s, max backlog 5.60 s, 1 suspensions, stop reason "", peak working set 5.80 GiB (6.23 GB), CPU 1.88 cores average.
-- live-mandarin-0002: 2 finals, provisional lag p95 1.48 s (max 1.48 s), first caption p95 2.73 s, finalization p95 2.29 s, max backlog 11.12 s, 1 suspensions, stop reason "", peak working set 5.80 GiB (6.23 GB), CPU 2.03 cores average.
-- live-mandarin-0003: 1 finals, provisional lag p95 2.55 s (max 2.55 s), first caption p95 2.66 s, finalization p95 3.62 s, max backlog 14.74 s, 1 suspensions, stop reason "", peak working set 6.03 GiB (6.48 GB), CPU 2.60 cores average.
-- live-mixed-0009: 1 finals, provisional lag p95 0.67 s (max 0.67 s), first caption p95 2.66 s, finalization p95 0.93 s, max backlog 4.60 s, 1 suspensions, stop reason "", peak working set 5.80 GiB (6.23 GB), CPU 2.09 cores average.
-- capture-3min-load2: 19 finals, provisional lag p95 1.83 s (max 2.37 s), first caption p95 3.17 s, finalization p95 3.75 s, max backlog 15.00 s, 13 suspensions, stop reason "Duration elapsed", peak working set 6.14 GiB (6.59 GB), CPU 1.83 cores average.
-- capture-60min-load2: 98 finals, provisional lag p95 4.58 s (max 6.47 s), first caption p95 9.03 s, finalization p95 8.75 s, max backlog 15.00 s, 65 suspensions, stop reason "Capture failed: Loopback packet query failed (device lost?)", peak working set 15.25 GiB (16.37 GB), CPU 4.64 cores average.
+- live-english-0002: 3 finals, provisional lag p95 1.20 s (max 1.20 s), first caption p95 2.66 s, finalization p95 1.44 s, max backlog 1.18 s, 0 suspensions, stop reason "", peak working set 5.80 GiB (6.23 GB), CPU 1.55 cores average.
+- live-mandarin-0002: 2 finals, provisional lag p95 1.43 s (max 1.43 s), first caption p95 2.70 s, finalization p95 2.26 s, max backlog 2.25 s, 0 suspensions, stop reason "", peak working set 5.80 GiB (6.23 GB), CPU 1.74 cores average.
+- live-mandarin-0003: 1 finals, provisional lag p95 1.80 s (max 1.80 s), first caption p95 2.66 s, finalization p95 3.50 s, max backlog 1.05 s, 0 suspensions, stop reason "", peak working set 6.03 GiB (6.48 GB), CPU 2.41 cores average.
+- live-mixed-0009: 1 finals, provisional lag p95 0.67 s (max 0.67 s), first caption p95 2.66 s, finalization p95 0.89 s, max backlog 0.43 s, 0 suspensions, stop reason "", peak working set 5.80 GiB (6.23 GB), CPU 1.40 cores average.
+- capture-3min-load2: 20 finals, provisional lag p95 1.66 s (max 1.80 s), first caption p95 3.16 s, finalization p95 2.90 s, max backlog 3.64 s, 0 suspensions, stop reason "Duration elapsed", peak working set 6.14 GiB (6.59 GB), CPU 1.63 cores average.
+- capture-3min-steam-load2: 20 finals, provisional lag p95 1.66 s (max 1.76 s), first caption p95 3.14 s, finalization p95 2.77 s, max backlog 3.60 s, 0 suspensions, stop reason "Duration elapsed", peak working set 6.14 GiB (6.59 GB), CPU 1.62 cores average.
+- capture-60min-load2: 400 finals, provisional lag p95 1.64 s (max 1.96 s), first caption p95 3.09 s, finalization p95 3.53 s, max backlog 3.70 s, 0 suspensions, stop reason "Duration elapsed", peak working set 6.31 GiB (6.77 GB), CPU 1.66 cores average.
+
+## Package size
+
+- Exact extracted bytes, compressed bytes and SHA-256: see the release-info JSON beside the portable ZIP.
 
 ## Acceptance target
 

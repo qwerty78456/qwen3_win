@@ -1,0 +1,422 @@
+{
+  "engine": {
+    "assets_verified": true,
+    "embedding_dtype": "float16",
+    "encoder": [
+      {
+        "dtype": 1,
+        "name": "mel",
+        "shape": [
+          1,
+          128,
+          -1
+        ]
+      }
+    ],
+    "eos_ids": [
+      151643,
+      151645
+    ],
+    "memory_mode": "shared-prepack",
+    "prefill": [
+      {
+        "dtype": 7,
+        "name": "input_ids",
+        "shape": [
+          -1,
+          -1
+        ]
+      },
+      {
+        "dtype": 7,
+        "name": "position_ids",
+        "shape": [
+          -1,
+          -1
+        ]
+      },
+      {
+        "dtype": 1,
+        "name": "audio_features",
+        "shape": [
+          -1,
+          -1,
+          1024
+        ]
+      },
+      {
+        "dtype": 7,
+        "name": "audio_offset",
+        "shape": [
+          1
+        ]
+      }
+    ],
+    "prefill_format": "input_ids",
+    "prefix_ids": [
+      151644,
+      8948,
+      198,
+      151645,
+      198,
+      151644,
+      872,
+      198,
+      151669
+    ],
+    "provider": "CPU",
+    "runtime": "1.24.4",
+    "step": [
+      {
+        "dtype": 1,
+        "name": "input_embeds",
+        "shape": [
+          -1,
+          1,
+          1024
+        ]
+      },
+      {
+        "dtype": 7,
+        "name": "position_ids",
+        "shape": [
+          -1,
+          1
+        ]
+      },
+      {
+        "dtype": 1,
+        "name": "past_keys",
+        "shape": [
+          28,
+          -1,
+          8,
+          -1,
+          128
+        ]
+      },
+      {
+        "dtype": 1,
+        "name": "past_values",
+        "shape": [
+          28,
+          -1,
+          8,
+          -1,
+          128
+        ]
+      }
+    ],
+    "suffix_ids": [
+      151670,
+      151645,
+      198,
+      151644,
+      77091,
+      198
+    ],
+    "threads": 4,
+    "variant": "fp32"
+  },
+  "live": {
+    "clean_stop": false,
+    "duplicate_finals": 0,
+    "errors": 0,
+    "events": [
+      {
+        "audio_end": 0.0,
+        "audio_start": 0.0,
+        "backlog_seconds": 0.0,
+        "boundary": "",
+        "completion": "",
+        "incomplete": false,
+        "inference_seconds": 0.0,
+        "kind": "status",
+        "lag_seconds": 0.0,
+        "revision": 0,
+        "since_start_seconds": 0.0,
+        "status": "Listening",
+        "t": 0.0498958,
+        "text": "",
+        "utterance": 0
+      },
+      {
+        "audio_end": 0.0,
+        "audio_start": 0.0,
+        "backlog_seconds": 0.0,
+        "boundary": "",
+        "completion": "",
+        "incomplete": false,
+        "inference_seconds": 0.0,
+        "kind": "status",
+        "lag_seconds": 0.0,
+        "revision": 0,
+        "since_start_seconds": 0.0,
+        "status": "Catching up: finalized-work backlog 4 s",
+        "t": 9.9804433,
+        "text": "",
+        "utterance": 0
+      },
+      {
+        "audio_end": 0.0,
+        "audio_start": 0.0,
+        "backlog_seconds": 0.0,
+        "boundary": "",
+        "completion": "",
+        "incomplete": false,
+        "inference_seconds": 0.0,
+        "kind": "status",
+        "lag_seconds": 0.0,
+        "revision": 0,
+        "since_start_seconds": 0.0,
+        "status": "Stopping: Overload: finalized-work backlog exceeded 20 s",
+        "t": 25.9858906,
+        "text": "",
+        "utterance": 0
+      },
+      {
+        "audio_end": 5.92,
+        "audio_start": 3.72,
+        "backlog_seconds": 20.7476454,
+        "boundary": "silence",
+        "completion": "eos",
+        "incomplete": false,
+        "inference_seconds": 12.7640204,
+        "kind": "final",
+        "lag_seconds": 24.8795653,
+        "revision": 0,
+        "since_start_seconds": 27.0856689,
+        "status": "",
+        "t": 30.8544193,
+        "text": "这并不是告别。",
+        "utterance": 1
+      },
+      {
+        "audio_end": 10.06,
+        "audio_start": 5.92,
+        "backlog_seconds": 22.9719341,
+        "boundary": "silence",
+        "completion": "eos",
+        "incomplete": false,
+        "inference_seconds": 13.359179,
+        "kind": "final",
+        "lag_seconds": 34.1069106,
+        "revision": 0,
+        "since_start_seconds": 38.2388362,
+        "status": "",
+        "t": 44.2136914,
+        "text": "这是一个篇章的结束，也是新篇章的开始。",
+        "utterance": 3
+      },
+      {
+        "audio_end": 21.2,
+        "audio_start": 14.84,
+        "backlog_seconds": 31.8041993,
+        "boundary": "silence",
+        "completion": "eos",
+        "incomplete": false,
+        "inference_seconds": 13.5920176,
+        "kind": "final",
+        "lag_seconds": 36.5640393,
+        "revision": 0,
+        "since_start_seconds": 42.911533,
+        "status": "",
+        "t": 57.8057963,
+        "text": "钙、钾等元素属于金属，银和金等元素当然也是金属。",
+        "utterance": 5
+      },
+      {
+        "audio_end": 25.95,
+        "audio_start": 23.78,
+        "backlog_seconds": 0.0,
+        "boundary": "stop",
+        "completion": "eos",
+        "incomplete": false,
+        "inference_seconds": 12.4004141,
+        "kind": "final",
+        "lag_seconds": 44.2046666,
+        "revision": 0,
+        "since_start_seconds": 46.3813978,
+        "status": "",
+        "t": 70.2062647,
+        "text": "",
+        "utterance": 7
+      },
+      {
+        "audio_end": 0.0,
+        "audio_start": 0.0,
+        "backlog_seconds": 0.0,
+        "boundary": "",
+        "completion": "",
+        "incomplete": false,
+        "inference_seconds": 0.0,
+        "kind": "stopped",
+        "lag_seconds": 0.0,
+        "revision": 0,
+        "since_start_seconds": 0.0,
+        "status": "Overload: finalized-work backlog exceeded 20 s",
+        "t": 70.2063384,
+        "text": "",
+        "utterance": 0
+      }
+    ],
+    "final_count": 4,
+    "finalization_delay_seconds": {
+      "count": 4,
+      "max": 44.2046666,
+      "p50": 34.1069106,
+      "p95": 44.2046666
+    },
+    "first_caption_lag_seconds": {
+      "count": 3,
+      "max": 42.911533,
+      "p50": 38.2388362,
+      "p95": 42.911533
+    },
+    "incomplete_finals": 0,
+    "no_audio_loss": true,
+    "overload_stop": true,
+    "pipeline": {
+      "audio_seconds_processed": 25.95,
+      "backlog_definition": "age of the oldest unfinished utterance since its audio ended (queued or decoding)",
+      "capture": {
+        "channels": 1,
+        "frames": 415200,
+        "late_packets": 0,
+        "max_late_seconds": 0.0,
+        "overflow_events": 0,
+        "pace": 1.0,
+        "packets": 2595,
+        "ring_capacity_frames": 32000,
+        "ring_peak_used_frames": 320,
+        "sample_rate": 16000,
+        "source": "wav-replay",
+        "tail_silence_seconds": 1.0
+      },
+      "error": "",
+      "finals": 4,
+      "max_backlog_seconds": 31.8041995,
+      "max_queued_audio_seconds": 12.67,
+      "memory": {
+        "peak_pagefile_bytes": 6189641728,
+        "peak_working_set_bytes": 6226296832,
+        "private_bytes": 6188593152,
+        "working_set_bytes": 6049980416
+      },
+      "process_cpu_seconds": 24.421875,
+      "provisionals": 0,
+      "provisionals_cancelled": 1,
+      "provisionals_skipped": 1,
+      "retained_peak_seconds": 14.86,
+      "segmenter": {
+        "energy_gated_positive_frames": 553,
+        "longest_start_run_frames": 5,
+        "peak_frame_rms": 0.031353788671021655,
+        "vad_positive_frames": 559
+      },
+      "session": 1,
+      "stop_reason": "Overload: finalized-work backlog exceeded 20 s",
+      "suspensions": 1,
+      "wall_seconds": 70.1566003
+    },
+    "provisional_lag_seconds": {
+      "count": 0,
+      "max": 0.0,
+      "p50": 0.0,
+      "p95": 0.0
+    },
+    "speech_utterances": 3,
+    "stale_provisionals_delivered": 0,
+    "success": false,
+    "transcript": "这并不是告别。\n这是一个篇章的结束，也是新篇章的开始。\n钙、钾等元素属于金属，银和金等元素当然也是金属。\n",
+    "utterances": [
+      {
+        "audio_end": 5.92,
+        "audio_start": 3.72,
+        "boundary": "silence",
+        "completion": "eos",
+        "final_inference_seconds": 12.7640204,
+        "final_text": "这并不是告别。",
+        "finalization_delay": 24.8795653,
+        "first_caption_lag": 27.0856689,
+        "id": 1,
+        "incomplete": false,
+        "provisional_count": 0,
+        "provisional_lags": []
+      },
+      {
+        "audio_end": 10.06,
+        "audio_start": 5.92,
+        "boundary": "silence",
+        "completion": "eos",
+        "final_inference_seconds": 13.359179,
+        "final_text": "这是一个篇章的结束，也是新篇章的开始。",
+        "finalization_delay": 34.1069106,
+        "first_caption_lag": 38.2388362,
+        "id": 3,
+        "incomplete": false,
+        "provisional_count": 0,
+        "provisional_lags": []
+      },
+      {
+        "audio_end": 21.2,
+        "audio_start": 14.84,
+        "boundary": "silence",
+        "completion": "eos",
+        "final_inference_seconds": 13.5920176,
+        "final_text": "钙、钾等元素属于金属，银和金等元素当然也是金属。",
+        "finalization_delay": 36.5640393,
+        "first_caption_lag": 42.911533,
+        "id": 5,
+        "incomplete": false,
+        "provisional_count": 0,
+        "provisional_lags": []
+      },
+      {
+        "audio_end": 25.95,
+        "audio_start": 23.78,
+        "boundary": "stop",
+        "completion": "eos",
+        "final_inference_seconds": 12.4004141,
+        "final_text": "",
+        "finalization_delay": 44.2046666,
+        "id": 7,
+        "incomplete": false,
+        "provisional_count": 0,
+        "provisional_lags": []
+      }
+    ]
+  },
+  "memory_after_load": {
+    "peak_pagefile_bytes": 5603766272,
+    "peak_working_set_bytes": 6226296832,
+    "private_bytes": 5602484224,
+    "working_set_bytes": 5603995648
+  },
+  "mode": "simulate-live",
+  "model_load_seconds": 9.0419971,
+  "options": {
+    "overload_backlog": 20.0,
+    "provisional": true,
+    "provisional_after": 2.0,
+    "provisional_interval": 2.0,
+    "resume_backlog": 2.0,
+    "retained_limit": 60.0,
+    "slow_inference": 12.0,
+    "suspend_backlog": 4.0,
+    "threads": 4,
+    "variant": "fp32"
+  },
+  "source": {
+    "audio_seconds": 168.3099375,
+    "file": "traces/live/playlist-1x.wav",
+    "pace": 1.0,
+    "source": {
+      "bits": 16,
+      "channels": 1,
+      "format": "pcm",
+      "sample_rate": 16000
+    }
+  },
+  "success": false
+}

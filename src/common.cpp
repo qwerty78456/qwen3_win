@@ -3,6 +3,8 @@
 #include <psapi.h>
 #include <iomanip>
 #include <sstream>
+#include <thread>
+#include <set>
 namespace asrwin {
 void check(HRESULT hr, const char* operation) {
  if (FAILED(hr)) { std::ostringstream s; s<<operation<<" failed (0x"<<std::hex<<static_cast<unsigned long>(hr)<<")"; throw std::runtime_error(s.str()); }
@@ -20,7 +22,12 @@ std::wstring wide(std::string_view v) {
  std::wstring s(n,L'\0'); MultiByteToWideChar(CP_UTF8,MB_ERR_INVALID_CHARS,v.data(),static_cast<int>(v.size()),s.data(),n); return s;
 }
 std::string read_text(const fs::path& path) { std::ifstream f(path,std::ios::binary); if(!f) throw std::runtime_error("Cannot open "+utf8(path.wstring())); return {std::istreambuf_iterator<char>(f),{}}; }
-void write_json(const fs::path& path,const Json& v) { if(!path.parent_path().empty()) fs::create_directories(path.parent_path()); std::ofstream f(path,std::ios::binary); if(!f || !(f<<v.dump(2)<<'\n')) throw std::runtime_error("Cannot write report"); }
+void write_json(const fs::path& path,const Json& v) {
+ if(!path.parent_path().empty()) fs::create_directories(path.parent_path());
+ auto text=v.dump(2)+'\n';
+ // Reports are rewritten after every fixture; a transient sharing violation (scanner, viewer) must not abort a run.
+ for(int attempt=0;;++attempt){ std::ofstream f(path,std::ios::binary); if(f && (f<<text)) return; if(attempt>=9) throw std::runtime_error("Cannot write report: "+utf8(path.wstring())); std::this_thread::sleep_for(std::chrono::milliseconds(200)); }
+}
 std::vector<float> read_floats(const fs::path& path) { auto bytes=read_text(path); if(bytes.size()%4) throw std::runtime_error("Invalid float asset length"); std::vector<float> v(bytes.size()/4); memcpy(v.data(),bytes.data(),bytes.size()); return v; }
 void write_floats(const fs::path& path,std::span<const float> v) { fs::create_directories(path.parent_path()); std::ofstream f(path,std::ios::binary); f.write(reinterpret_cast<const char*>(v.data()),v.size_bytes()); if(!f) throw std::runtime_error("Cannot write trace"); }
 fs::path executable_dir() { std::vector<wchar_t> v(32768); auto n=GetModuleFileNameW(nullptr,v.data(),static_cast<DWORD>(v.size())); if(!n || n==v.size()) throw std::runtime_error("Cannot locate executable"); return fs::path(std::wstring(v.data(),n)).parent_path(); }
@@ -56,5 +63,22 @@ void verify_files(const fs::path& dir, const std::string& variant) {
  }
  for(auto& item:manifest.at("files")) { auto rel=fs::path(wide(item.at("path").get<std::string>())); if(rel.is_absolute() || rel.string().find("..")!=std::string::npos)throw std::runtime_error("Invalid asset manifest path"); auto p=dir/rel;
  if(!fs::is_regular_file(p) || fs::file_size(p)!=item.at("bytes").get<uint64_t>() || sha256_file(p)!=item.at("sha256").get<std::string>())throw std::runtime_error("Missing or corrupt model asset: "+rel.string()); }
+}
+Json verify_package(const fs::path& dir) {
+ auto manifest=Json::parse(read_text(dir/"package-manifest.json"));
+ auto& files=manifest.at("files");
+ if(!files.is_array() || files.empty())throw std::runtime_error("Package manifest contains no files");
+ std::set<std::string> paths;
+ for(const auto& item:files) {
+  auto rel=item.at("path").get<std::string>();fs::path relative(wide(rel));
+  if(rel.empty() || relative.has_root_path() || rel.find("..")!=std::string::npos || !paths.insert(rel).second)
+   throw std::runtime_error("Invalid or duplicate package manifest path: "+rel);
+  auto p=dir/relative;
+  if(!fs::is_regular_file(p) || fs::file_size(p)!=item.at("bytes").get<uint64_t>() || sha256_file(p)!=item.at("sha256").get<std::string>())
+   throw std::runtime_error("Missing or corrupt package file: "+rel);
+ }
+ for(const std::string required:{"AsrWin.exe","onnxruntime.dll","onnxruntime_providers_shared.dll","DirectML.dll","msvcp140.dll","vcruntime140.dll","shipped-model.json",ASRWIN_MODEL_DIR "/manifest.json"})
+  if(!paths.count(required))throw std::runtime_error("Package manifest omits required file: "+required);
+ return {{"package",manifest.at("package")},{"version",manifest.at("version")},{"verified_files",paths.size()},{"success",true}};
 }
 }

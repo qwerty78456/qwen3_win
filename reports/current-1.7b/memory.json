@@ -1,0 +1,40 @@
+{
+  "fixture": "mandarin-0002",
+  "runs": [
+    {
+      "configuration": "default",
+      "exit": 0,
+      "peak_working_set_bytes": 16370540544,
+      "private_bytes": 16262053888,
+      "model_load_seconds": 32.5549319,
+      "total_seconds": 6.1230396,
+      "rtf": 0.4417779292929293,
+      "tokens_identical": true,
+      "completion": "eos"
+    },
+    {
+      "configuration": "no-prepack",
+      "exit": 0,
+      "peak_working_set_bytes": 15846039552,
+      "private_bytes": 17535533056,
+      "model_load_seconds": 3.3921024,
+      "total_seconds": 12.7272763,
+      "rtf": 0.9182740187590188,
+      "tokens_identical": true,
+      "completion": "eos"
+    },
+    {
+      "configuration": "shared-prepack",
+      "exit": 0,
+      "peak_working_set_bytes": 16370466816,
+      "private_bytes": 16262213632,
+      "model_load_seconds": 13.6039828,
+      "total_seconds": 6.1055174,
+      "rtf": 0.4405137085137086,
+      "tokens_identical": true,
+      "completion": "eos"
+    }
+  ],
+  "selected": "shared-prepack",
+  "reason": "smallest peak working set among configurations with identical tokens and inference time within 10% of the fastest"
+}
