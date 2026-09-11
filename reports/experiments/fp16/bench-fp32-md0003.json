@@ -1,0 +1,1206 @@
+{
+  "audio_conversion_seconds": 0.0026555,
+  "engine": {
+    "adapter_dedicated_video_memory_bytes": 16974905344,
+    "adapter_device_id": 30096,
+    "adapter_driver_version": "32.0.31041.1004",
+    "adapter_index": 0,
+    "adapter_luid": "0x00000000000152C7",
+    "adapter_luid_confirmed": true,
+    "adapter_name": "AMD Radeon RX 9060 XT",
+    "adapter_vendor_id": 4098,
+    "assets_verified": true,
+    "configuration": "Qwen3-ASR-1.7B FP32 graphs with FP16 embedding storage",
+    "directml_validated": false,
+    "embedding_dtype": "float16",
+    "encoder": [
+      {
+        "dtype": 1,
+        "name": "mel",
+        "shape": [
+          1,
+          128,
+          -1
+        ]
+      }
+    ],
+    "eos_ids": [
+      151643,
+      151645
+    ],
+    "large_model": true,
+    "memory_mode": "shared-prepack",
+    "model_directory": "qwen3-asr-1.7b-fp32",
+    "model_hidden_size": 2048,
+    "model_manifest_sha256": "0c21d1a6e9f3b82416c98afe401cd97a46e82ac65d4878ba777bdb6a87c30c29",
+    "prefill": [
+      {
+        "dtype": 7,
+        "name": "input_ids",
+        "shape": [
+          -1,
+          -1
+        ]
+      },
+      {
+        "dtype": 7,
+        "name": "position_ids",
+        "shape": [
+          -1,
+          -1
+        ]
+      },
+      {
+        "dtype": 1,
+        "name": "audio_features",
+        "shape": [
+          -1,
+          -1,
+          2048
+        ]
+      },
+      {
+        "dtype": 7,
+        "name": "audio_offset",
+        "shape": [
+          1
+        ]
+      }
+    ],
+    "prefill_format": "input_ids",
+    "prefix_ids": [
+      151644,
+      8948,
+      198,
+      151645,
+      198,
+      151644,
+      872,
+      198,
+      151669
+    ],
+    "provider": "DirectML (experimental)",
+    "reference_model": {
+      "repo": "Qwen/Qwen3-ASR-1.7B",
+      "revision": "7278e1e70fe206f11671096ffdd38061171dd6e5"
+    },
+    "runtime": "1.24.4",
+    "step": [
+      {
+        "dtype": 1,
+        "name": "input_embeds",
+        "shape": [
+          -1,
+          1,
+          2048
+        ]
+      },
+      {
+        "dtype": 7,
+        "name": "position_ids",
+        "shape": [
+          -1,
+          1
+        ]
+      },
+      {
+        "dtype": 1,
+        "name": "past_keys",
+        "shape": [
+          28,
+          -1,
+          8,
+          -1,
+          128
+        ]
+      },
+      {
+        "dtype": 1,
+        "name": "past_values",
+        "shape": [
+          28,
+          -1,
+          8,
+          -1,
+          128
+        ]
+      }
+    ],
+    "suffix_ids": [
+      151670,
+      151645,
+      198,
+      151644,
+      77091,
+      198
+    ],
+    "threads": 6,
+    "variant": "fp32",
+    "warm_up_error": null,
+    "warm_up_seconds": null
+  },
+  "file": "regression/mandarin-0003.wav",
+  "gpu_memory": {
+    "adapter_index": 0,
+    "adapter_luid": "0x00000000000152C7",
+    "current": {
+      "local_budget_bytes": 15188381688,
+      "local_usage_bytes": 17332449280,
+      "nonlocal_budget_bytes": 15898988544,
+      "nonlocal_usage_bytes": 558481408
+    },
+    "peak_local_usage_bytes": 17332449280
+  },
+  "memory_after_load": {
+    "peak_pagefile_bytes": 17920073728,
+    "peak_working_set_bytes": 3091533824,
+    "private_bytes": 16572129280,
+    "working_set_bytes": 1697583104
+  },
+  "model_load_seconds": 21.4290637,
+  "profiles": [],
+  "source": {
+    "bits": 16,
+    "channels": 1,
+    "format": "pcm",
+    "sample_rate": 16000
+  },
+  "success": true,
+  "total_elapsed_seconds": 27.0084685,
+  "transcription": {
+    "audio_seconds": 15.42,
+    "cache_steps": [
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          216,
+          128
+        ],
+        "next_token": 11528,
+        "step": 0,
+        "values": [
+          28,
+          1,
+          8,
+          216,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          217,
+          128
+        ],
+        "next_token": 8453,
+        "step": 1,
+        "values": [
+          28,
+          1,
+          8,
+          217,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          218,
+          128
+        ],
+        "next_token": 151704,
+        "step": 2,
+        "values": [
+          28,
+          1,
+          8,
+          218,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          219,
+          128
+        ],
+        "next_token": 102618,
+        "step": 3,
+        "values": [
+          28,
+          1,
+          8,
+          219,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          220,
+          128
+        ],
+        "next_token": 37029,
+        "step": 4,
+        "values": [
+          28,
+          1,
+          8,
+          220,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          221,
+          128
+        ],
+        "next_token": 105233,
+        "step": 5,
+        "values": [
+          28,
+          1,
+          8,
+          221,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          222,
+          128
+        ],
+        "next_token": 111898,
+        "step": 6,
+        "values": [
+          28,
+          1,
+          8,
+          222,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          223,
+          128
+        ],
+        "next_token": 99720,
+        "step": 7,
+        "values": [
+          28,
+          1,
+          8,
+          223,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          224,
+          128
+        ],
+        "next_token": 112606,
+        "step": 8,
+        "values": [
+          28,
+          1,
+          8,
+          224,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          225,
+          128
+        ],
+        "next_token": 106614,
+        "step": 9,
+        "values": [
+          28,
+          1,
+          8,
+          225,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          226,
+          128
+        ],
+        "next_token": 101042,
+        "step": 10,
+        "values": [
+          28,
+          1,
+          8,
+          226,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          227,
+          128
+        ],
+        "next_token": 33108,
+        "step": 11,
+        "values": [
+          28,
+          1,
+          8,
+          227,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          228,
+          128
+        ],
+        "next_token": 71817,
+        "step": 12,
+        "values": [
+          28,
+          1,
+          8,
+          228,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          229,
+          128
+        ],
+        "next_token": 90663,
+        "step": 13,
+        "values": [
+          28,
+          1,
+          8,
+          229,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          230,
+          128
+        ],
+        "next_token": 100975,
+        "step": 14,
+        "values": [
+          28,
+          1,
+          8,
+          230,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          231,
+          128
+        ],
+        "next_token": 1773,
+        "step": 15,
+        "values": [
+          28,
+          1,
+          8,
+          231,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          232,
+          128
+        ],
+        "next_token": 67338,
+        "step": 16,
+        "values": [
+          28,
+          1,
+          8,
+          232,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          233,
+          128
+        ],
+        "next_token": 99666,
+        "step": 17,
+        "values": [
+          28,
+          1,
+          8,
+          233,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          234,
+          128
+        ],
+        "next_token": 104843,
+        "step": 18,
+        "values": [
+          28,
+          1,
+          8,
+          234,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          235,
+          128
+        ],
+        "next_token": 71356,
+        "step": 19,
+        "values": [
+          28,
+          1,
+          8,
+          235,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          236,
+          128
+        ],
+        "next_token": 100643,
+        "step": 20,
+        "values": [
+          28,
+          1,
+          8,
+          236,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          237,
+          128
+        ],
+        "next_token": 3837,
+        "step": 21,
+        "values": [
+          28,
+          1,
+          8,
+          237,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          238,
+          128
+        ],
+        "next_token": 109161,
+        "step": 22,
+        "values": [
+          28,
+          1,
+          8,
+          238,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          239,
+          128
+        ],
+        "next_token": 104964,
+        "step": 23,
+        "values": [
+          28,
+          1,
+          8,
+          239,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          240,
+          128
+        ],
+        "next_token": 42411,
+        "step": 24,
+        "values": [
+          28,
+          1,
+          8,
+          240,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          241,
+          128
+        ],
+        "next_token": 103947,
+        "step": 25,
+        "values": [
+          28,
+          1,
+          8,
+          241,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          242,
+          128
+        ],
+        "next_token": 82025,
+        "step": 26,
+        "values": [
+          28,
+          1,
+          8,
+          242,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          243,
+          128
+        ],
+        "next_token": 9370,
+        "step": 27,
+        "values": [
+          28,
+          1,
+          8,
+          243,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          244,
+          128
+        ],
+        "next_token": 102285,
+        "step": 28,
+        "values": [
+          28,
+          1,
+          8,
+          244,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          245,
+          128
+        ],
+        "next_token": 16744,
+        "step": 29,
+        "values": [
+          28,
+          1,
+          8,
+          245,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          246,
+          128
+        ],
+        "next_token": 72881,
+        "step": 30,
+        "values": [
+          28,
+          1,
+          8,
+          246,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          247,
+          128
+        ],
+        "next_token": 99279,
+        "step": 31,
+        "values": [
+          28,
+          1,
+          8,
+          247,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          248,
+          128
+        ],
+        "next_token": 15946,
+        "step": 32,
+        "values": [
+          28,
+          1,
+          8,
+          248,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          249,
+          128
+        ],
+        "next_token": 101958,
+        "step": 33,
+        "values": [
+          28,
+          1,
+          8,
+          249,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          250,
+          128
+        ],
+        "next_token": 100005,
+        "step": 34,
+        "values": [
+          28,
+          1,
+          8,
+          250,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          251,
+          128
+        ],
+        "next_token": 105561,
+        "step": 35,
+        "values": [
+          28,
+          1,
+          8,
+          251,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          252,
+          128
+        ],
+        "next_token": 90395,
+        "step": 36,
+        "values": [
+          28,
+          1,
+          8,
+          252,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          253,
+          128
+        ],
+        "next_token": 100006,
+        "step": 37,
+        "values": [
+          28,
+          1,
+          8,
+          253,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          254,
+          128
+        ],
+        "next_token": 101092,
+        "step": 38,
+        "values": [
+          28,
+          1,
+          8,
+          254,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          255,
+          128
+        ],
+        "next_token": 105149,
+        "step": 39,
+        "values": [
+          28,
+          1,
+          8,
+          255,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          256,
+          128
+        ],
+        "next_token": 86119,
+        "step": 40,
+        "values": [
+          28,
+          1,
+          8,
+          256,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          257,
+          128
+        ],
+        "next_token": 101080,
+        "step": 41,
+        "values": [
+          28,
+          1,
+          8,
+          257,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          258,
+          128
+        ],
+        "next_token": 100005,
+        "step": 42,
+        "values": [
+          28,
+          1,
+          8,
+          258,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          259,
+          128
+        ],
+        "next_token": 101313,
+        "step": 43,
+        "values": [
+          28,
+          1,
+          8,
+          259,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          260,
+          128
+        ],
+        "next_token": 1773,
+        "step": 44,
+        "values": [
+          28,
+          1,
+          8,
+          260,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          261,
+          128
+        ],
+        "next_token": 6776,
+        "step": 45,
+        "values": [
+          28,
+          1,
+          8,
+          261,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          262,
+          128
+        ],
+        "next_token": 220,
+        "step": 46,
+        "values": [
+          28,
+          1,
+          8,
+          262,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          263,
+          128
+        ],
+        "next_token": 17,
+        "step": 47,
+        "values": [
+          28,
+          1,
+          8,
+          263,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          264,
+          128
+        ],
+        "next_token": 15,
+        "step": 48,
+        "values": [
+          28,
+          1,
+          8,
+          264,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          265,
+          128
+        ],
+        "next_token": 15,
+        "step": 49,
+        "values": [
+          28,
+          1,
+          8,
+          265,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          266,
+          128
+        ],
+        "next_token": 17,
+        "step": 50,
+        "values": [
+          28,
+          1,
+          8,
+          266,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          267,
+          128
+        ],
+        "next_token": 1773,
+        "step": 51,
+        "values": [
+          28,
+          1,
+          8,
+          267,
+          128
+        ]
+      },
+      {
+        "keys": [
+          28,
+          1,
+          8,
+          268,
+          128
+        ],
+        "next_token": 151645,
+        "step": 52,
+        "values": [
+          28,
+          1,
+          8,
+          268,
+          128
+        ]
+      }
+    ],
+    "completion": "eos",
+    "decode_seconds": 4.737210900000002,
+    "encoder_seconds": 0.1418251,
+    "gpu_memory": {
+      "local_budget_bytes": 15188381688,
+      "local_usage_bytes": 17332449280,
+      "nonlocal_budget_bytes": 15898988544,
+      "nonlocal_usage_bytes": 558481408
+    },
+    "memory": {
+      "peak_pagefile_bytes": 18382987264,
+      "peak_working_set_bytes": 3424944128,
+      "private_bytes": 18321596416,
+      "working_set_bytes": 3363704832
+    },
+    "model_samples": 246720,
+    "prefill_seconds": 0.4000648,
+    "preprocess_seconds": 0.0144398,
+    "raw_output": "language Chinese<asr_text>适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work 2002。<|im_end|>",
+    "rtf": 0.3616569260700389,
+    "text": "适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work 2002。",
+    "tokens": [
+      11528,
+      8453,
+      151704,
+      102618,
+      37029,
+      105233,
+      111898,
+      99720,
+      112606,
+      106614,
+      101042,
+      33108,
+      71817,
+      90663,
+      100975,
+      1773,
+      67338,
+      99666,
+      104843,
+      71356,
+      100643,
+      3837,
+      109161,
+      104964,
+      42411,
+      103947,
+      82025,
+      9370,
+      102285,
+      16744,
+      72881,
+      99279,
+      15946,
+      101958,
+      100005,
+      105561,
+      90395,
+      100006,
+      101092,
+      105149,
+      86119,
+      101080,
+      100005,
+      101313,
+      1773,
+      6776,
+      220,
+      17,
+      15,
+      15,
+      17,
+      1773,
+      151645
+    ],
+    "total_seconds": 5.5767493
+  }
+}

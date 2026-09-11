@@ -1,0 +1,257 @@
+{
+  "schema": 1,
+  "experiment": "FP16 conversion of the 1.7B model and mixed-precision retries; 24-fixture regression only, no 60-minute sustained-load run",
+  "generated_at": "2026-09-11T02:53:37+00:00",
+  "conversion": {
+    "decoder": "onnxconverter_common convert_float_to_float16(keep_io_types=True, disable_shape_infer=True); shape inference is off because it serialises the 8.1 GB model past the 2 GB protobuf limit",
+    "encoder": "pinned export_encoder_native_fp16.py (autocast trace, FP32 I/O) driven with the model loader scripts/reference.py uses",
+    "converter_defects_patched": [
+      "a Cast node that already existed in the FP32 graph (node__to_copy, from aten::to) keeps to=FLOAT while the converter retypes its output to FLOAT16; ORT then refuses to load the model",
+      "with node_block_list, keep_io_types is broken for a graph output fed by a blocked node: logits is declared FLOAT16 and cast to FLOAT16, so the engine reinterprets the FP16 buffer through GetTensorData<float>() - garbage tokens on the CPU, an out-of-bounds read on DirectML"
+    ],
+    "graph_bytes": {
+      "fp32": 9397745071,
+      "fp16": 4702264984,
+      "fp16-lmhead-fp32": 4702265631,
+      "fp16-mixed": 4702406256
+    }
+  },
+  "runs": {
+    "fp32-cpu": {
+      "description": "FP32 graphs, CPU, 6 threads (archived 1.7B proof)",
+      "report": "reports/proof-1.7b/verification.json",
+      "success": true,
+      "tokens_exact": 24,
+      "fixtures": 24,
+      "fixtures_not_token_exact": [],
+      "normalized_transcript_match": 24,
+      "error_rate": {
+        "mandarin": 0.09375,
+        "english": 0.03252,
+        "mixed": 0.292683
+      },
+      "seconds": {
+        "encoder": 3.708,
+        "prefill": 10.062,
+        "decode": 59.353
+      },
+      "total_inference_seconds": 74.369,
+      "model_load_seconds": 22.4617341,
+      "peak_working_set_bytes": 16369922048,
+      "peak_local_video_memory_bytes": null,
+      "local_video_memory_budget_bytes": null,
+      "adapter_luid": null
+    },
+    "fp32-directml": {
+      "description": "FP32 graphs, DirectML adapter 0",
+      "report": "reports/verification-directml-1.7b.json",
+      "success": true,
+      "tokens_exact": 24,
+      "fixtures": 24,
+      "fixtures_not_token_exact": [],
+      "normalized_transcript_match": 24,
+      "error_rate": {
+        "mandarin": 0.09375,
+        "english": 0.03252,
+        "mixed": 0.292683
+      },
+      "seconds": {
+        "encoder": 2.616,
+        "prefill": 6.046,
+        "decode": 32.743
+      },
+      "total_inference_seconds": 43.292,
+      "model_load_seconds": 18.0048739,
+      "peak_working_set_bytes": 2907893760,
+      "peak_local_video_memory_bytes": 17879412736,
+      "local_video_memory_budget_bytes": 15040892928,
+      "adapter_luid": "0x0000000000015569"
+    },
+    "fp16-cpu": {
+      "description": "FP16 graphs, CPU, 6 threads",
+      "report": "reports/experiments/fp16/verification-cpu-1.7b-fp16.json",
+      "success": true,
+      "tokens_exact": 24,
+      "fixtures": 24,
+      "fixtures_not_token_exact": [],
+      "normalized_transcript_match": 24,
+      "error_rate": {
+        "mandarin": 0.09375,
+        "english": 0.03252,
+        "mixed": 0.292683
+      },
+      "seconds": {
+        "encoder": 7.011,
+        "prefill": 21.833,
+        "decode": 180.441
+      },
+      "total_inference_seconds": 209.532,
+      "model_load_seconds": 5.5272026,
+      "peak_working_set_bytes": 757997568,
+      "peak_local_video_memory_bytes": null,
+      "local_video_memory_budget_bytes": null,
+      "adapter_luid": null
+    },
+    "fp16-directml": {
+      "description": "FP16 graphs, DirectML adapter 0",
+      "report": "reports/experiments/fp16/verification-directml-1.7b-fp16.json",
+      "success": false,
+      "tokens_exact": 22,
+      "fixtures": 24,
+      "fixtures_not_token_exact": [
+        "mandarin-0000",
+        "mandarin-0003"
+      ],
+      "normalized_transcript_match": 24,
+      "error_rate": {
+        "mandarin": 0.09375,
+        "english": 0.03252,
+        "mixed": 0.292683
+      },
+      "seconds": {
+        "encoder": 1.514,
+        "prefill": 3.284,
+        "decode": 18.074
+      },
+      "total_inference_seconds": 23.417,
+      "model_load_seconds": 8.2803967,
+      "peak_working_set_bytes": 1606250496,
+      "peak_local_video_memory_bytes": 9425076224,
+      "local_video_memory_budget_bytes": 16165400576,
+      "adapter_luid": "0x00000000000152C7"
+    },
+    "fp16-decoder-fp32-encoder-directml": {
+      "description": "FP32 encoder + FP16 decoder, DirectML",
+      "report": "reports/experiments/fp16/verification-directml-1.7b-fp16-enc32.json",
+      "success": false,
+      "tokens_exact": 22,
+      "fixtures": 24,
+      "fixtures_not_token_exact": [
+        "mandarin-0000",
+        "mandarin-0003"
+      ],
+      "normalized_transcript_match": 24,
+      "error_rate": {
+        "mandarin": 0.09375,
+        "english": 0.03252,
+        "mixed": 0.292683
+      },
+      "seconds": {
+        "encoder": 2.018,
+        "prefill": 2.934,
+        "decode": 16.486
+      },
+      "total_inference_seconds": 22.009,
+      "model_load_seconds": 9.1105914,
+      "peak_working_set_bytes": 1786175488,
+      "peak_local_video_memory_bytes": 10202255360,
+      "local_video_memory_budget_bytes": 16165400576,
+      "adapter_luid": "0x00000000000152C7"
+    },
+    "fp16-lmhead-fp32-directml": {
+      "description": "FP16 decoder with the lm_head MatMul kept in FP32, DirectML",
+      "report": "reports/experiments/fp16/verification-directml-1.7b-fp16-lmhead32.json",
+      "success": false,
+      "tokens_exact": 22,
+      "fixtures": 24,
+      "fixtures_not_token_exact": [
+        "mandarin-0000",
+        "mandarin-0003"
+      ],
+      "normalized_transcript_match": 24,
+      "error_rate": {
+        "mandarin": 0.09375,
+        "english": 0.03252,
+        "mixed": 0.292683
+      },
+      "seconds": {
+        "encoder": 1.051,
+        "prefill": 3.352,
+        "decode": 18.869
+      },
+      "total_inference_seconds": 23.813,
+      "model_load_seconds": 9.6268247,
+      "peak_working_set_bytes": 2968625152,
+      "peak_local_video_memory_bytes": 10870800384,
+      "local_video_memory_budget_bytes": 16165400576,
+      "adapter_luid": "0x00000000000152C7"
+    },
+    "fp16-mixed-directml": {
+      "description": "FP16 decoder with Softmax, SimplifiedLayerNormalization, Sigmoid and lm_head kept in FP32, DirectML",
+      "report": "reports/experiments/fp16/verification-directml-1.7b-fp16-mixed.json",
+      "success": false,
+      "tokens_exact": 22,
+      "fixtures": 24,
+      "fixtures_not_token_exact": [
+        "mandarin-0000",
+        "mandarin-0003"
+      ],
+      "normalized_transcript_match": 24,
+      "error_rate": {
+        "mandarin": 0.09375,
+        "english": 0.03252,
+        "mixed": 0.292683
+      },
+      "seconds": {
+        "encoder": 1.103,
+        "prefill": 3.575,
+        "decode": 18.579
+      },
+      "total_inference_seconds": 23.753,
+      "model_load_seconds": 9.3458638,
+      "peak_working_set_bytes": 2969165824,
+      "peak_local_video_memory_bytes": 10895384576,
+      "local_video_memory_budget_bytes": 16165400576,
+      "adapter_luid": "0x00000000000152C7"
+    }
+  },
+  "divergence": {
+    "fixtures": [
+      "mandarin-0000",
+      "mandarin-0003"
+    ],
+    "user_visible_difference": "mandarin-0000 emits the identical string through a different token split; mandarin-0003 ends with an ASCII full stop instead of the ideographic one. Every configuration keeps normalized_transcript_match at 24/24 and the same per-category error rates as FP32.",
+    "origin": "FP16 graphs on the CPU reproduce the oracle token sequence exactly (24/24), so the divergence is DirectML computing in FP16, not the conversion. Keeping the lm_head MatMul in FP32 - alone, or together with Softmax, the 113 RMS norms and the SiLU gate - does not change which fixtures diverge, so it originates upstream of the final projection.",
+    "tie_analysis": {
+      "fixture": "mandarin-0003",
+      "traces": "traces/experiments/fp32-md0003 and traces/experiments/fp16-md0003",
+      "finding": "At the diverging step the FP32 top-2 logit gap is 0.055 against a top logit of 32.77 (0.17 %), well inside the FP16 noise (mean absolute logit difference 0.37). At the traced steps with a normal margin (14.7 and 17.3) both providers pick the same token, and the sequences reconverge on the very next token.",
+      "steps": {
+        "step_0": {
+          "argmax_fp32": 11528,
+          "argmax_fp16": 11528,
+          "argmax_identical": true,
+          "top1_minus_top2_fp32": 14.65789,
+          "top1_fp32": 38.178,
+          "top1_minus_top2_fp16": 15.39062,
+          "top1_fp16": 38.594,
+          "logit_abs_diff_max": 3.17599,
+          "logit_abs_diff_mean": 0.42805
+        },
+        "step_1": {
+          "argmax_fp32": 8453,
+          "argmax_fp16": 6364,
+          "argmax_identical": false,
+          "top1_minus_top2_fp32": 0.05501,
+          "top1_fp32": 32.773,
+          "top1_minus_top2_fp16": 0.375,
+          "top1_fp16": 34.344,
+          "logit_abs_diff_max": 2.31269,
+          "logit_abs_diff_mean": 0.373
+        },
+        "step_7": {
+          "argmax_fp32": 99720,
+          "argmax_fp16": 99720,
+          "argmax_identical": true,
+          "top1_minus_top2_fp32": 17.27503,
+          "top1_fp32": 49.969,
+          "top1_minus_top2_fp16": 18.0625,
+          "top1_fp16": 52.031,
+          "logit_abs_diff_max": 2.78209,
+          "logit_abs_diff_mean": 0.51922
+        }
+      }
+    },
+    "gate_impact": "reports/directml.json criteria 'regression_24_pass' and 'tokens_identical_to_cpu' demand 24/24 identical token sequences, so no FP16 variant measured here passes the gate as written."
+  }
+}
